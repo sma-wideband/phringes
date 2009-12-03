@@ -13,5 +13,5 @@ export PATH=${LMC_HOME}/bin:${XILINX_DSP}/common/bin:${PATH}
 export INSTALLMLLOC=/opt/MathWorks/R2009a/unix
 export TEMP=/tmp/
 export TMP=/tmp/
-$MATLAB/bin/matlab
+$MATLAB/bin/matlab "$@"
 

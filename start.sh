@@ -13,5 +13,6 @@ export PATH=${LMC_HOME}/bin:${XILINX_DSP}/common/bin:${PATH}
 export INSTALLMLLOC=/opt/MathWorks/R2009a/unix
 export TEMP=/tmp/
 export TMP=/tmp/
+#export LD_ASSUME_KERNEL=2.4.1
 $MATLAB/bin/matlab "$@"
 

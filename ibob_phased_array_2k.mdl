@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.443"
+    ComputedModelVersion    "1.448"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -44,9 +44,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Administrator"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 22 03:59:30 2010"
+  LastModifiedDate	  "Wed Feb 24 00:22:52 2010"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:443>"
+  ModelVersionFormat	  "1.%<AutoIncrement:448>"
   ConfigurationManager	  "None"
   SimulationMode	  "normal"
   LinearizationMsg	  "none"
@@ -655,7 +655,7 @@ Model {
   }
   System {
     Name		    "ibob_phased_array_2k"
-    Location		    [2, 78, 1261, 653]
+    Location		    [2, 78, 1421, 833]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -994,7 +994,7 @@ Model {
     Block {
       BlockType		      Constant
       Name		      "Constant22"
-      Position		      [2355, 150, 2385, 180]
+      Position		      [2275, 150, 2305, 180]
       ShowName		      off
       OutDataType	      "sfix(16)"
       OutScaling	      "2^0"
@@ -1051,7 +1051,7 @@ Model {
     Block {
       BlockType		      Constant
       Name		      "Constant29"
-      Position		      [2355, 210, 2385, 240]
+      Position		      [2275, 210, 2305, 240]
       ShowName		      off
       OutDataType	      "sfix(16)"
       OutScaling	      "2^0"
@@ -1068,7 +1068,7 @@ Model {
     Block {
       BlockType		      Constant
       Name		      "Constant30"
-      Position		      [2355, 270, 2385, 300]
+      Position		      [2275, 270, 2305, 300]
       ShowName		      off
       OutDataType	      "sfix(16)"
       OutScaling	      "2^0"
@@ -1119,7 +1119,7 @@ Model {
     Block {
       BlockType		      Constant
       Name		      "Constant8"
-      Position		      [2355, 90, 2385, 120]
+      Position		      [2275, 90, 2305, 120]
       ShowName		      off
       OutDataType	      "sfix(16)"
       OutScaling	      "2^0"
@@ -1270,6 +1270,94 @@ Model {
       block_version	      "10.1.3"
       sg_icon_stat	      "50,30,1,1,white,blue,0,0a7a6cf1,up"
       sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay14"
+      Ports		      [1, 1]
+      Position		      [2520, 109, 2545, 141]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r4/Delay"
+      SourceType	      "Xilinx Delay Block"
+      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+      en		      off
+      latency		      "10"
+      dbl_ovrd		      off
+      reg_retiming	      on
+      xl_use_area	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,348,254"
+      block_type	      "delay"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "25,32,1,1,white,blue,0,fc1feff4,right"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 25 25 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([6 2 8 2 6 13 15 17 24 18 13 9 14 9 13 18 24 17 15 13 6 ],[6 10 16 22 26 26 24 26 26 20 25 21 16 11 7 12 6 6 8 6 6 ],[0.98 0.96 0.92]);\nplot([0 25 25 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-10}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay15"
+      Ports		      [1, 1]
+      Position		      [2520, 169, 2545, 201]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r4/Delay"
+      SourceType	      "Xilinx Delay Block"
+      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+      en		      off
+      latency		      "10"
+      dbl_ovrd		      off
+      reg_retiming	      on
+      xl_use_area	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,348,254"
+      block_type	      "delay"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "25,32,1,1,white,blue,0,fc1feff4,right"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 25 25 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([6 2 8 2 6 13 15 17 24 18 13 9 14 9 13 18 24 17 15 13 6 ],[6 10 16 22 26 26 24 26 26 20 25 21 16 11 7 12 6 6 8 6 6 ],[0.98 0.96 0.92]);\nplot([0 25 25 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-10}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay16"
+      Ports		      [1, 1]
+      Position		      [2520, 229, 2545, 261]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r4/Delay"
+      SourceType	      "Xilinx Delay Block"
+      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+      en		      off
+      latency		      "10"
+      dbl_ovrd		      off
+      reg_retiming	      on
+      xl_use_area	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,348,254"
+      block_type	      "delay"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "25,32,1,1,white,blue,0,fc1feff4,right"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 25 25 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([6 2 8 2 6 13 15 17 24 18 13 9 14 9 13 18 24 17 15 13 6 ],[6 10 16 22 26 26 24 26 26 20 25 21 16 11 7 12 6 6 8 6 6 ],[0.98 0.96 0.92]);\nplot([0 25 25 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-10}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay17"
+      Ports		      [1, 1]
+      Position		      [2520, 289, 2545, 321]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r4/Delay"
+      SourceType	      "Xilinx Delay Block"
+      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+      en		      off
+      latency		      "10"
+      dbl_ovrd		      off
+      reg_retiming	      on
+      xl_use_area	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,348,254"
+      block_type	      "delay"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "25,32,1,1,white,blue,0,fc1feff4,right"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 25 25 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([6 2 8 2 6 13 15 17 24 18 13 9 14 9 13 18 24 17 15 13 6 ],[6 10 16 22 26 26 24 26 26 20 25 21 16 11 7 12 6 6 8 6 6 ],[0.98 0.96 0.92]);\nplot([0 25 25 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-10}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
       BlockType		      Reference
@@ -1480,7 +1568,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From"
-      Position		      [2525, 111, 2565, 139]
+      Position		      [2445, 111, 2485, 139]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "out0"
@@ -1531,7 +1619,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From5"
-      Position		      [2525, 171, 2565, 199]
+      Position		      [2445, 171, 2485, 199]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "out1"
@@ -1548,7 +1636,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From7"
-      Position		      [2525, 231, 2565, 259]
+      Position		      [2445, 231, 2485, 259]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "out2"
@@ -1556,7 +1644,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From8"
-      Position		      [2525, 291, 2565, 319]
+      Position		      [2445, 291, 2485, 319]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "out3"
@@ -1996,24 +2084,6 @@ Model {
       Period		      "200"
       PulseWidth	      "100"
       PhaseDelay	      "200"
-    }
-    Block {
-      BlockType		      DiscretePulseGenerator
-      Name		      "Pulse\nGenerator7"
-      Ports		      [0, 1]
-      Position		      [1150, 133, 1195, 167]
-      ShowName		      off
-      Period		      "200"
-      PulseWidth	      "100"
-    }
-    Block {
-      BlockType		      DiscretePulseGenerator
-      Name		      "Pulse\nGenerator8"
-      Ports		      [0, 1]
-      Position		      [1150, 183, 1195, 217]
-      ShowName		      off
-      Period		      "200"
-      PulseWidth	      "100"
     }
     Block {
       BlockType		      DiscretePulseGenerator
@@ -17215,7 +17285,7 @@ Model {
       FunctionWithSeparateData off
       System {
 	Name			"capt"
-	Location		[533, 82, 1229, 696]
+	Location		[488, 93, 1184, 707]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -19523,7 +19593,7 @@ Model {
       Name		      "gain0"
       Tag		      "xps:sw_reg"
       Ports		      [1, 1]
-      Position		      [2405, 90, 2505, 120]
+      Position		      [2325, 90, 2425, 120]
       BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
       LinkData {
 	BlockName		"ibob_phased_array_2k_gain0_user_data_out"
@@ -19558,7 +19628,7 @@ Model {
       Name		      "gain1"
       Tag		      "xps:sw_reg"
       Ports		      [1, 1]
-      Position		      [2405, 150, 2505, 180]
+      Position		      [2325, 150, 2425, 180]
       BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
       LinkData {
 	BlockName		"ibob_phased_array_2k_gain1_user_data_out"
@@ -19593,7 +19663,7 @@ Model {
       Name		      "gain2"
       Tag		      "xps:sw_reg"
       Ports		      [1, 1]
-      Position		      [2405, 210, 2505, 240]
+      Position		      [2325, 210, 2425, 240]
       BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
       LinkData {
 	BlockName		"ibob_phased_array_2k_gain2_user_data_out"
@@ -19628,7 +19698,7 @@ Model {
       Name		      "gain3"
       Tag		      "xps:sw_reg"
       Ports		      [1, 1]
-      Position		      [2405, 270, 2505, 300]
+      Position		      [2325, 270, 2425, 300]
       BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
       LinkData {
 	BlockName		"ibob_phased_array_2k_gain3_user_data_out"
@@ -19668,7 +19738,7 @@ Model {
       FunctionWithSeparateData off
       System {
 	Name			"gain_calib0"
-	Location		[420, 175, 1010, 784]
+	Location		[2, 78, 1438, 850]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -19680,7 +19750,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"196"
 	Block {
 	  BlockType		  Inport
 	  Name			  "gain"
@@ -19834,17 +19904,17 @@ Model {
 	  bin_pt		  "7"
 	  quantization		  "Truncate"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  pipeline		  off
+	  pipeline		  on
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -19862,10 +19932,10 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  use_embedded		  on
+	  use_behavioral_HDL	  on
+	  use_embedded		  off
 	  opt			  "Speed"
 	  optimum_pipeline	  off
 	  xl_use_area		  off
@@ -19877,8 +19947,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,d5e45138,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -19896,10 +19966,10 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  use_embedded		  on
+	  use_behavioral_HDL	  on
+	  use_embedded		  off
 	  opt			  "Speed"
 	  optimum_pipeline	  off
 	  xl_use_area		  off
@@ -19911,8 +19981,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,d5e45138,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -19930,10 +20000,10 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  use_embedded		  on
+	  use_behavioral_HDL	  on
+	  use_embedded		  off
 	  opt			  "Speed"
 	  optimum_pipeline	  off
 	  xl_use_area		  off
@@ -19945,8 +20015,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,d5e45138,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -19964,10 +20034,10 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  use_embedded		  on
+	  use_behavioral_HDL	  on
+	  use_embedded		  off
 	  opt			  "Speed"
 	  optimum_pipeline	  off
 	  xl_use_area		  off
@@ -19979,8 +20049,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,d5e45138,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -20550,7 +20620,7 @@ Model {
       FunctionWithSeparateData off
       System {
 	Name			"gain_calib1"
-	Location		[420, 175, 1010, 784]
+	Location		[2, 78, 1438, 850]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -20562,7 +20632,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"196"
 	Block {
 	  BlockType		  Inport
 	  Name			  "gain"
@@ -20716,17 +20786,17 @@ Model {
 	  bin_pt		  "7"
 	  quantization		  "Truncate"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  pipeline		  off
+	  pipeline		  on
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -20744,10 +20814,10 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  use_embedded		  on
+	  use_behavioral_HDL	  on
+	  use_embedded		  off
 	  opt			  "Speed"
 	  optimum_pipeline	  off
 	  xl_use_area		  off
@@ -20759,8 +20829,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,d5e45138,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -20778,10 +20848,10 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  use_embedded		  on
+	  use_behavioral_HDL	  on
+	  use_embedded		  off
 	  opt			  "Speed"
 	  optimum_pipeline	  off
 	  xl_use_area		  off
@@ -20793,8 +20863,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,d5e45138,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -20812,10 +20882,10 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  use_embedded		  on
+	  use_behavioral_HDL	  on
+	  use_embedded		  off
 	  opt			  "Speed"
 	  optimum_pipeline	  off
 	  xl_use_area		  off
@@ -20827,8 +20897,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,d5e45138,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -20846,10 +20916,10 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  use_embedded		  on
+	  use_behavioral_HDL	  on
+	  use_embedded		  off
 	  opt			  "Speed"
 	  optimum_pipeline	  off
 	  xl_use_area		  off
@@ -20861,8 +20931,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,d5e45138,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21432,7 +21502,7 @@ Model {
       FunctionWithSeparateData off
       System {
 	Name			"gain_calib2"
-	Location		[420, 175, 1010, 784]
+	Location		[2, 78, 1438, 850]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -21444,7 +21514,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"196"
 	Block {
 	  BlockType		  Inport
 	  Name			  "gain"
@@ -21598,17 +21668,17 @@ Model {
 	  bin_pt		  "7"
 	  quantization		  "Truncate"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  pipeline		  off
+	  pipeline		  on
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21626,10 +21696,10 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  use_embedded		  on
+	  use_behavioral_HDL	  on
+	  use_embedded		  off
 	  opt			  "Speed"
 	  optimum_pipeline	  off
 	  xl_use_area		  off
@@ -21641,8 +21711,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,d5e45138,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21660,10 +21730,10 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  use_embedded		  on
+	  use_behavioral_HDL	  on
+	  use_embedded		  off
 	  opt			  "Speed"
 	  optimum_pipeline	  off
 	  xl_use_area		  off
@@ -21675,8 +21745,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,d5e45138,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21694,10 +21764,10 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  use_embedded		  on
+	  use_behavioral_HDL	  on
+	  use_embedded		  off
 	  opt			  "Speed"
 	  optimum_pipeline	  off
 	  xl_use_area		  off
@@ -21709,8 +21779,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,d5e45138,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21728,10 +21798,10 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  use_embedded		  on
+	  use_behavioral_HDL	  on
+	  use_embedded		  off
 	  opt			  "Speed"
 	  optimum_pipeline	  off
 	  xl_use_area		  off
@@ -21743,8 +21813,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,d5e45138,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -22070,39 +22140,37 @@ Model {
 	      OutScaling	      "2^0"
 	    }
 	    Line {
-	      SrcBlock		      "Reinterpret3"
+	      SrcBlock		      "in"
 	      SrcPort		      1
-	      DstBlock		      "out3"
-	      DstPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		Points			[0, 45]
+		Branch {
+		  DstBlock		  "Slice27"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 45]
+		  Branch {
+		    DstBlock		    "Slice1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 45]
+		    DstBlock		    "Slice2"
+		    DstPort		    1
+		  }
+		}
+	      }
+	      Branch {
+		DstBlock		"Slice26"
+		DstPort			1
+	      }
 	    }
 	    Line {
-	      SrcBlock		      "Reinterpret2"
+	      SrcBlock		      "Slice26"
 	      SrcPort		      1
-	      DstBlock		      "out2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Reinterpret1"
-	      SrcPort		      1
-	      DstBlock		      "out1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Reinterpret"
-	      SrcPort		      1
-	      DstBlock		      "out0"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice2"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret3"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice1"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret2"
+	      DstBlock		      "Reinterpret"
 	      DstPort		      1
 	    }
 	    Line {
@@ -22112,38 +22180,40 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Slice26"
+	      SrcBlock		      "Slice1"
 	      SrcPort		      1
-	      DstBlock		      "Reinterpret"
+	      DstBlock		      "Reinterpret2"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "in"
+	      SrcBlock		      "Slice2"
 	      SrcPort		      1
-	      Points		      [10, 0]
-	      Branch {
-		DstBlock		"Slice26"
-		DstPort			1
-	      }
-	      Branch {
-		Points			[0, 45]
-		Branch {
-		  Points		  [0, 45]
-		  Branch {
-		    Points		    [0, 45]
-		    DstBlock		    "Slice2"
-		    DstPort		    1
-		  }
-		  Branch {
-		    DstBlock		    "Slice1"
-		    DstPort		    1
-		  }
-		}
-		Branch {
-		  DstBlock		  "Slice27"
-		  DstPort		  1
-		}
-	      }
+	      DstBlock		      "Reinterpret3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret"
+	      SrcPort		      1
+	      DstBlock		      "out0"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret1"
+	      SrcPort		      1
+	      DstBlock		      "out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret2"
+	      SrcPort		      1
+	      DstBlock		      "out2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret3"
+	      SrcPort		      1
+	      DstBlock		      "out3"
+	      DstPort		      1
 	    }
 	  }
 	}
@@ -22156,130 +22226,16 @@ Model {
 	  OutScaling		  "2^0"
 	}
 	Line {
-	  SrcBlock		  "Reinterpret3"
-	  SrcPort		  1
-	  DstBlock		  "Concat"
-	  DstPort		  4
-	}
-	Line {
-	  SrcBlock		  "Reinterpret2"
-	  SrcPort		  1
-	  DstBlock		  "Concat"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Reinterpret1"
-	  SrcPort		  1
-	  DstBlock		  "Concat"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Reinterpret"
-	  SrcPort		  1
-	  DstBlock		  "Concat"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert4"
-	  SrcPort		  1
-	  Points		  [40, 0]
-	  Branch {
-	    Points		    [0, -60]
-	    Branch {
-	      Points		      [0, -60]
-	      Branch {
-		Points			[0, -60]
-		DstBlock		"Mult"
-		DstPort			2
-	      }
-	      Branch {
-		DstBlock		"Mult1"
-		DstPort			2
-	      }
-	    }
-	    Branch {
-	      DstBlock		      "Mult2"
-	      DstPort		      2
-	    }
-	  }
-	  Branch {
-	    DstBlock		    "Mult3"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  SrcBlock		  "Convert"
-	  SrcPort		  1
-	  DstBlock		  "Reinterpret"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert1"
-	  SrcPort		  1
-	  DstBlock		  "Reinterpret1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert2"
-	  SrcPort		  1
-	  DstBlock		  "Reinterpret2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert3"
-	  SrcPort		  1
-	  DstBlock		  "Reinterpret3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Concat"
+	  SrcBlock		  "in"
 	  SrcPort		  1
 	  Points		  [0, 0]
-	  DstBlock		  "out"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Mult3"
-	  SrcPort		  1
-	  DstBlock		  "Convert3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Mult2"
-	  SrcPort		  1
-	  DstBlock		  "Convert2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Mult1"
-	  SrcPort		  1
-	  DstBlock		  "Convert1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Mult"
-	  SrcPort		  1
-	  DstBlock		  "Convert"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "gain"
-	  SrcPort		  1
-	  DstBlock		  "Convert4"
+	  DstBlock		  "slice2"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "slice2"
-	  SrcPort		  4
-	  Points		  [25, 0; 0, 150]
-	  DstBlock		  "Mult3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "slice2"
-	  SrcPort		  3
-	  Points		  [35, 0; 0, 100]
-	  DstBlock		  "Mult2"
+	  SrcPort		  1
+	  DstBlock		  "Mult"
 	  DstPort		  1
 	}
 	Line {
@@ -22291,16 +22247,130 @@ Model {
 	}
 	Line {
 	  SrcBlock		  "slice2"
-	  SrcPort		  1
-	  DstBlock		  "Mult"
+	  SrcPort		  3
+	  Points		  [35, 0; 0, 100]
+	  DstBlock		  "Mult2"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "in"
+	  SrcBlock		  "slice2"
+	  SrcPort		  4
+	  Points		  [25, 0; 0, 150]
+	  DstBlock		  "Mult3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "gain"
+	  SrcPort		  1
+	  DstBlock		  "Convert4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult"
+	  SrcPort		  1
+	  DstBlock		  "Convert"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult1"
+	  SrcPort		  1
+	  DstBlock		  "Convert1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult2"
+	  SrcPort		  1
+	  DstBlock		  "Convert2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult3"
+	  SrcPort		  1
+	  DstBlock		  "Convert3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Concat"
 	  SrcPort		  1
 	  Points		  [0, 0]
-	  DstBlock		  "slice2"
+	  DstBlock		  "out"
 	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert3"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert2"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert1"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert4"
+	  SrcPort		  1
+	  Points		  [40, 0]
+	  Branch {
+	    DstBlock		    "Mult3"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -60]
+	    Branch {
+	      DstBlock		      "Mult2"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [0, -60]
+	      Branch {
+		DstBlock		"Mult1"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -60]
+		DstBlock		"Mult"
+		DstPort			2
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Reinterpret"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reinterpret1"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Reinterpret2"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Reinterpret3"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  4
 	}
       }
     }
@@ -22314,7 +22384,7 @@ Model {
       FunctionWithSeparateData off
       System {
 	Name			"gain_calib3"
-	Location		[420, 175, 1010, 784]
+	Location		[2, 78, 1438, 850]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -22326,7 +22396,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"196"
 	Block {
 	  BlockType		  Inport
 	  Name			  "gain"
@@ -22480,17 +22550,17 @@ Model {
 	  bin_pt		  "7"
 	  quantization		  "Truncate"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  pipeline		  off
+	  pipeline		  on
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -22508,10 +22578,10 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  use_embedded		  on
+	  use_behavioral_HDL	  on
+	  use_embedded		  off
 	  opt			  "Speed"
 	  optimum_pipeline	  off
 	  xl_use_area		  off
@@ -22523,8 +22593,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,d5e45138,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -22542,10 +22612,10 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  use_embedded		  on
+	  use_behavioral_HDL	  on
+	  use_embedded		  off
 	  opt			  "Speed"
 	  optimum_pipeline	  off
 	  xl_use_area		  off
@@ -22557,8 +22627,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,d5e45138,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -22576,10 +22646,10 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  use_embedded		  on
+	  use_behavioral_HDL	  on
+	  use_embedded		  off
 	  opt			  "Speed"
 	  optimum_pipeline	  off
 	  xl_use_area		  off
@@ -22591,8 +22661,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,d5e45138,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -22610,10 +22680,10 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "2"
 	  dbl_ovrd		  off
-	  use_behavioral_HDL	  off
-	  use_embedded		  on
+	  use_behavioral_HDL	  on
+	  use_embedded		  off
 	  opt			  "Speed"
 	  optimum_pipeline	  off
 	  xl_use_area		  off
@@ -22625,8 +22695,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,d5e45138,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -22952,67 +23022,9 @@ Model {
 	      OutScaling	      "2^0"
 	    }
 	    Line {
-	      SrcBlock		      "in"
+	      SrcBlock		      "Reinterpret3"
 	      SrcPort		      1
-	      Points		      [10, 0]
-	      Branch {
-		Points			[0, 45]
-		Branch {
-		  DstBlock		  "Slice27"
-		  DstPort		  1
-		}
-		Branch {
-		  Points		  [0, 45]
-		  Branch {
-		    DstBlock		    "Slice1"
-		    DstPort		    1
-		  }
-		  Branch {
-		    Points		    [0, 45]
-		    DstBlock		    "Slice2"
-		    DstPort		    1
-		  }
-		}
-	      }
-	      Branch {
-		DstBlock		"Slice26"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "Slice26"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice27"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice1"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice2"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret3"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Reinterpret"
-	      SrcPort		      1
-	      DstBlock		      "out0"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Reinterpret1"
-	      SrcPort		      1
-	      DstBlock		      "out1"
+	      DstBlock		      "out3"
 	      DstPort		      1
 	    }
 	    Line {
@@ -23022,10 +23034,68 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Reinterpret3"
+	      SrcBlock		      "Reinterpret1"
 	      SrcPort		      1
-	      DstBlock		      "out3"
+	      DstBlock		      "out1"
 	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret"
+	      SrcPort		      1
+	      DstBlock		      "out0"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice2"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice1"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice27"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice26"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "in"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		DstBlock		"Slice26"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 45]
+		Branch {
+		  Points		  [0, 45]
+		  Branch {
+		    Points		    [0, 45]
+		    DstBlock		    "Slice2"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Slice1"
+		    DstPort		    1
+		  }
+		}
+		Branch {
+		  DstBlock		  "Slice27"
+		  DstPort		  1
+		}
+	      }
 	    }
 	  }
 	}
@@ -23038,23 +23108,123 @@ Model {
 	  OutScaling		  "2^0"
 	}
 	Line {
-	  SrcBlock		  "in"
+	  SrcBlock		  "Reinterpret3"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Reinterpret2"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Reinterpret1"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Reinterpret"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert4"
+	  SrcPort		  1
+	  Points		  [40, 0]
+	  Branch {
+	    Points		    [0, -60]
+	    Branch {
+	      Points		      [0, -60]
+	      Branch {
+		Points			[0, -60]
+		DstBlock		"Mult"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Mult1"
+		DstPort			2
+	      }
+	    }
+	    Branch {
+	      DstBlock		      "Mult2"
+	      DstPort		      2
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Mult3"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Convert"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert1"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert2"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert3"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Concat"
 	  SrcPort		  1
 	  Points		  [0, 0]
-	  DstBlock		  "slice2"
+	  DstBlock		  "out"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "slice2"
+	  SrcBlock		  "Mult3"
 	  SrcPort		  1
-	  DstBlock		  "Mult"
+	  DstBlock		  "Convert3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult2"
+	  SrcPort		  1
+	  DstBlock		  "Convert2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult1"
+	  SrcPort		  1
+	  DstBlock		  "Convert1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult"
+	  SrcPort		  1
+	  DstBlock		  "Convert"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "gain"
+	  SrcPort		  1
+	  DstBlock		  "Convert4"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "slice2"
-	  SrcPort		  2
-	  Points		  [45, 0; 0, 50]
-	  DstBlock		  "Mult1"
+	  SrcPort		  4
+	  Points		  [25, 0; 0, 150]
+	  DstBlock		  "Mult3"
 	  DstPort		  1
 	}
 	Line {
@@ -23066,123 +23236,23 @@ Model {
 	}
 	Line {
 	  SrcBlock		  "slice2"
-	  SrcPort		  4
-	  Points		  [25, 0; 0, 150]
-	  DstBlock		  "Mult3"
+	  SrcPort		  2
+	  Points		  [45, 0; 0, 50]
+	  DstBlock		  "Mult1"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "gain"
+	  SrcBlock		  "slice2"
 	  SrcPort		  1
-	  DstBlock		  "Convert4"
+	  DstBlock		  "Mult"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Mult"
-	  SrcPort		  1
-	  DstBlock		  "Convert"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Mult1"
-	  SrcPort		  1
-	  DstBlock		  "Convert1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Mult2"
-	  SrcPort		  1
-	  DstBlock		  "Convert2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Mult3"
-	  SrcPort		  1
-	  DstBlock		  "Convert3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Concat"
+	  SrcBlock		  "in"
 	  SrcPort		  1
 	  Points		  [0, 0]
-	  DstBlock		  "out"
+	  DstBlock		  "slice2"
 	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert3"
-	  SrcPort		  1
-	  DstBlock		  "Reinterpret3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert2"
-	  SrcPort		  1
-	  DstBlock		  "Reinterpret2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert1"
-	  SrcPort		  1
-	  DstBlock		  "Reinterpret1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert"
-	  SrcPort		  1
-	  DstBlock		  "Reinterpret"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert4"
-	  SrcPort		  1
-	  Points		  [40, 0]
-	  Branch {
-	    DstBlock		    "Mult3"
-	    DstPort		    2
-	  }
-	  Branch {
-	    Points		    [0, -60]
-	    Branch {
-	      DstBlock		      "Mult2"
-	      DstPort		      2
-	    }
-	    Branch {
-	      Points		      [0, -60]
-	      Branch {
-		DstBlock		"Mult1"
-		DstPort			2
-	      }
-	      Branch {
-		Points			[0, -60]
-		DstBlock		"Mult"
-		DstPort			2
-	      }
-	    }
-	  }
-	}
-	Line {
-	  SrcBlock		  "Reinterpret"
-	  SrcPort		  1
-	  DstBlock		  "Concat"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Reinterpret1"
-	  SrcPort		  1
-	  DstBlock		  "Concat"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Reinterpret2"
-	  SrcPort		  1
-	  DstBlock		  "Concat"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Reinterpret3"
-	  SrcPort		  1
-	  DstBlock		  "Concat"
-	  DstPort		  4
 	}
       }
     }
@@ -23785,268 +23855,6 @@ Model {
       bitwidth		      "1"
       bin_pt		      "0"
       bit_index		      "7"
-      sample_period	      "1"
-      use_single_ended	      off
-      use_ddr		      off
-      reg_iob		      on
-      reg_clk_phase	      "0"
-      termination	      "None"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "jtag_tck_in"
-      Tag		      "xps:gpio"
-      Ports		      [1, 1]
-      Position		      [1220, 135, 1320, 165]
-      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-      LinkData {
-	BlockName		"ibob_phased_array_2k_jtag_tck_in_gateway"
-	DialogParameters {
-	  arith_type		  "Boolean"
-	  n_bits		  "1"
-	  bin_pt		  "0"
-	  period		  "sample_period"
-	  sg_icon_stat		  "60,20,1,1,white,yellow,0,bc55d28f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([24 21 26 21 24 29 30 31 37 33 29 26 31 26 29 33 37 31 30 29 24 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
-	}
-      }
-      SourceBlock	      "xps_library/gpio"
-      SourceType	      "gpio"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      io_group		      "iBOB:gpio1"
-      io_dir		      "in"
-      arith_type	      "Boolean"
-      bitwidth		      "1"
-      bin_pt		      "0"
-      bit_index		      "0"
-      sample_period	      "1"
-      use_single_ended	      off
-      use_ddr		      off
-      reg_iob		      on
-      reg_clk_phase	      "0"
-      termination	      "None"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "jtag_tck_out0"
-      Tag		      "xps:gpio"
-      Ports		      [1, 1]
-      Position		      [1385, 70, 1485, 100]
-      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-      LinkData {
-	BlockName		"convert"
-	DialogParameters {
-	  arith_type		  "Boolean"
-	  n_bits		  "1"
-	  bin_pt		  "0"
-	  sg_icon_stat		  "30,20,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 30 30 0 ],[0 0 20 20 ],[0.77 0.82 0.91]);\npatch([9 6 11 6 9 14 15 16 22 18 14 11 16 11 14 18 22 16 15 14 9 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 30 30 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"ibob_phased_array_2k_jtag_tck_out0_gateway"
-	DialogParameters {
-	  sg_icon_stat		  "40,20,1,1,white,yellow,0,38220381,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 40 40 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([14 11 16 11 14 19 20 21 27 23 19 16 21 16 19 23 27 21 20 19 14 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 40 40 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-      }
-      SourceBlock	      "xps_library/gpio"
-      SourceType	      "gpio"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      io_group		      "iBOB:gpio1"
-      io_dir		      "out"
-      arith_type	      "Boolean"
-      bitwidth		      "1"
-      bin_pt		      "0"
-      bit_index		      "2"
-      sample_period	      "1"
-      use_single_ended	      off
-      use_ddr		      off
-      reg_iob		      on
-      reg_clk_phase	      "0"
-      termination	      "None"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "jtag_tck_out1"
-      Tag		      "xps:gpio"
-      Ports		      [1, 1]
-      Position		      [1385, 120, 1485, 150]
-      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-      LinkData {
-	BlockName		"convert"
-	DialogParameters {
-	  arith_type		  "Boolean"
-	  n_bits		  "1"
-	  bin_pt		  "0"
-	  sg_icon_stat		  "30,20,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 30 30 0 ],[0 0 20 20 ],[0.77 0.82 0.91]);\npatch([9 6 11 6 9 14 15 16 22 18 14 11 16 11 14 18 22 16 15 14 9 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 30 30 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"ibob_phased_array_2k_jtag_tck_out1_gateway"
-	DialogParameters {
-	  sg_icon_stat		  "40,20,1,1,white,yellow,0,38220381,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 40 40 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([14 11 16 11 14 19 20 21 27 23 19 16 21 16 19 23 27 21 20 19 14 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 40 40 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-      }
-      SourceBlock	      "xps_library/gpio"
-      SourceType	      "gpio"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      io_group		      "iBOB:gpio1"
-      io_dir		      "out"
-      arith_type	      "Boolean"
-      bitwidth		      "1"
-      bin_pt		      "0"
-      bit_index		      "3"
-      sample_period	      "1"
-      use_single_ended	      off
-      use_ddr		      off
-      reg_iob		      on
-      reg_clk_phase	      "0"
-      termination	      "None"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "jtag_tms_in"
-      Tag		      "xps:gpio"
-      Ports		      [1, 1]
-      Position		      [1220, 185, 1320, 215]
-      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-      LinkData {
-	BlockName		"ibob_phased_array_2k_jtag_tms_in_gateway"
-	DialogParameters {
-	  arith_type		  "Boolean"
-	  n_bits		  "1"
-	  bin_pt		  "0"
-	  period		  "sample_period"
-	  sg_icon_stat		  "60,20,1,1,white,yellow,0,bc55d28f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([24 21 26 21 24 29 30 31 37 33 29 26 31 26 29 33 37 31 30 29 24 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
-	}
-      }
-      SourceBlock	      "xps_library/gpio"
-      SourceType	      "gpio"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      io_group		      "iBOB:gpio1"
-      io_dir		      "in"
-      arith_type	      "Boolean"
-      bitwidth		      "1"
-      bin_pt		      "0"
-      bit_index		      "1"
-      sample_period	      "1"
-      use_single_ended	      off
-      use_ddr		      off
-      reg_iob		      on
-      reg_clk_phase	      "0"
-      termination	      "None"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "jtag_tms_out0"
-      Tag		      "xps:gpio"
-      Ports		      [1, 1]
-      Position		      [1385, 170, 1485, 200]
-      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-      LinkData {
-	BlockName		"convert"
-	DialogParameters {
-	  arith_type		  "Boolean"
-	  n_bits		  "1"
-	  bin_pt		  "0"
-	  sg_icon_stat		  "30,20,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 30 30 0 ],[0 0 20 20 ],[0.77 0.82 0.91]);\npatch([9 6 11 6 9 14 15 16 22 18 14 11 16 11 14 18 22 16 15 14 9 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 30 30 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"ibob_phased_array_2k_jtag_tms_out0_gateway"
-	DialogParameters {
-	  sg_icon_stat		  "40,20,1,1,white,yellow,0,38220381,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 40 40 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([14 11 16 11 14 19 20 21 27 23 19 16 21 16 19 23 27 21 20 19 14 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 40 40 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-      }
-      SourceBlock	      "xps_library/gpio"
-      SourceType	      "gpio"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      io_group		      "iBOB:gpio1"
-      io_dir		      "out"
-      arith_type	      "Boolean"
-      bitwidth		      "1"
-      bin_pt		      "0"
-      bit_index		      "4"
-      sample_period	      "1"
-      use_single_ended	      off
-      use_ddr		      off
-      reg_iob		      on
-      reg_clk_phase	      "0"
-      termination	      "None"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "jtag_tms_out1"
-      Tag		      "xps:gpio"
-      Ports		      [1, 1]
-      Position		      [1385, 220, 1485, 250]
-      BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
-      LinkData {
-	BlockName		"convert"
-	DialogParameters {
-	  arith_type		  "Boolean"
-	  n_bits		  "1"
-	  bin_pt		  "0"
-	  sg_icon_stat		  "30,20,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 30 30 0 ],[0 0 20 20 ],[0.77 0.82 0.91]);\npatch([9 6 11 6 9 14 15 16 22 18 14 11 16 11 14 18 22 16 15 14 9 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 30 30 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"ibob_phased_array_2k_jtag_tms_out1_gateway"
-	DialogParameters {
-	  sg_icon_stat		  "40,20,1,1,white,yellow,0,38220381,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 40 40 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([14 11 16 11 14 19 20 21 27 23 19 16 21 16 19 23 27 21 20 19 14 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 40 40 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-      }
-      SourceBlock	      "xps_library/gpio"
-      SourceType	      "gpio"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      io_group		      "iBOB:gpio1"
-      io_dir		      "out"
-      arith_type	      "Boolean"
-      bitwidth		      "1"
-      bin_pt		      "0"
-      bit_index		      "5"
       sample_period	      "1"
       use_single_ended	      off
       use_ddr		      off
@@ -39603,49 +39411,6 @@ Model {
       }
     }
     Line {
-      SrcBlock		      "Pulse\nGenerator7"
-      SrcPort		      1
-      Points		      [0, 0]
-      DstBlock		      "jtag_tck_in"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Pulse\nGenerator8"
-      SrcPort		      1
-      DstBlock		      "jtag_tms_in"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "jtag_tck_in"
-      SrcPort		      1
-      Points		      [30, 0; 0, -15]
-      Branch {
-	Points			[0, -50]
-	DstBlock		"jtag_tck_out0"
-	DstPort			1
-      }
-      Branch {
-	DstBlock		"jtag_tck_out1"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "jtag_tms_in"
-      SrcPort		      1
-      Points		      [0, 0; 30, 0]
-      Branch {
-	Points			[0, -15]
-	DstBlock		"jtag_tms_out0"
-	DstPort			1
-      }
-      Branch {
-	Labels			[2, 0]
-	Points			[0, 35]
-	DstBlock		"jtag_tms_out1"
-	DstPort			1
-      }
-    }
-    Line {
       SrcBlock		      "quant0"
       SrcPort		      2
       DstBlock		      "8bit_out0"
@@ -39915,26 +39680,26 @@ Model {
     Line {
       SrcBlock		      "From"
       SrcPort		      1
-      DstBlock		      "gain_calib0"
-      DstPort		      2
+      DstBlock		      "Delay14"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "From5"
       SrcPort		      1
-      DstBlock		      "gain_calib1"
-      DstPort		      2
+      DstBlock		      "Delay15"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "From7"
       SrcPort		      1
-      DstBlock		      "gain_calib2"
-      DstPort		      2
+      DstBlock		      "Delay16"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "From8"
       SrcPort		      1
-      DstBlock		      "gain_calib3"
-      DstPort		      2
+      DstBlock		      "Delay17"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Delay2"
@@ -40132,6 +39897,30 @@ Model {
       Points		      [0, -85]
       DstBlock		      "capt"
       DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Delay14"
+      SrcPort		      1
+      DstBlock		      "gain_calib0"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Delay15"
+      SrcPort		      1
+      DstBlock		      "gain_calib1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Delay16"
+      SrcPort		      1
+      DstBlock		      "gain_calib2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Delay17"
+      SrcPort		      1
+      DstBlock		      "gain_calib3"
+      DstPort		      2
     }
     Annotation {
       Position		      [2623, 309]

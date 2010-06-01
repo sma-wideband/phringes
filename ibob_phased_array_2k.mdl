@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.443"
+    ComputedModelVersion    "1.452"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -44,9 +44,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Administrator"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 22 03:59:30 2010"
+  LastModifiedDate	  "Tue Jun 01 12:06:54 2010"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:443>"
+  ModelVersionFormat	  "1.%<AutoIncrement:452>"
   ConfigurationManager	  "None"
   SimulationMode	  "normal"
   LinearizationMsg	  "none"
@@ -655,7 +655,7 @@ Model {
   }
   System {
     Name		    "ibob_phased_array_2k"
-    Location		    [2, 78, 1261, 653]
+    Location		    [2, 78, 1421, 833]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -994,7 +994,7 @@ Model {
     Block {
       BlockType		      Constant
       Name		      "Constant22"
-      Position		      [2355, 150, 2385, 180]
+      Position		      [2270, 150, 2300, 180]
       ShowName		      off
       OutDataType	      "sfix(16)"
       OutScaling	      "2^0"
@@ -1051,7 +1051,7 @@ Model {
     Block {
       BlockType		      Constant
       Name		      "Constant29"
-      Position		      [2355, 210, 2385, 240]
+      Position		      [2270, 210, 2300, 240]
       ShowName		      off
       OutDataType	      "sfix(16)"
       OutScaling	      "2^0"
@@ -1068,7 +1068,7 @@ Model {
     Block {
       BlockType		      Constant
       Name		      "Constant30"
-      Position		      [2355, 270, 2385, 300]
+      Position		      [2270, 270, 2300, 300]
       ShowName		      off
       OutDataType	      "sfix(16)"
       OutScaling	      "2^0"
@@ -1119,7 +1119,7 @@ Model {
     Block {
       BlockType		      Constant
       Name		      "Constant8"
-      Position		      [2355, 90, 2385, 120]
+      Position		      [2270, 90, 2300, 120]
       ShowName		      off
       OutDataType	      "sfix(16)"
       OutScaling	      "2^0"
@@ -1270,6 +1270,94 @@ Model {
       block_version	      "10.1.3"
       sg_icon_stat	      "50,30,1,1,white,blue,0,0a7a6cf1,up"
       sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay13"
+      Ports		      [1, 1]
+      Position		      [2525, 169, 2550, 201]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r4/Delay"
+      SourceType	      "Xilinx Delay Block"
+      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+      en		      off
+      latency		      "10"
+      dbl_ovrd		      off
+      reg_retiming	      on
+      xl_use_area	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,348,254"
+      block_type	      "delay"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "25,32,1,1,white,blue,0,fc1feff4,right"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-10}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay14"
+      Ports		      [1, 1]
+      Position		      [2525, 109, 2550, 141]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r4/Delay"
+      SourceType	      "Xilinx Delay Block"
+      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+      en		      off
+      latency		      "10"
+      dbl_ovrd		      off
+      reg_retiming	      on
+      xl_use_area	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,348,254"
+      block_type	      "delay"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "25,32,1,1,white,blue,0,fc1feff4,right"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-10}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay15"
+      Ports		      [1, 1]
+      Position		      [2525, 229, 2550, 261]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r4/Delay"
+      SourceType	      "Xilinx Delay Block"
+      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+      en		      off
+      latency		      "10"
+      dbl_ovrd		      off
+      reg_retiming	      on
+      xl_use_area	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,348,254"
+      block_type	      "delay"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "25,32,1,1,white,blue,0,fc1feff4,right"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-10}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay16"
+      Ports		      [1, 1]
+      Position		      [2525, 289, 2550, 321]
+      ShowName		      off
+      SourceBlock	      "xbsIndex_r4/Delay"
+      SourceType	      "Xilinx Delay Block"
+      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+      en		      off
+      latency		      "10"
+      dbl_ovrd		      off
+      reg_retiming	      on
+      xl_use_area	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      has_advanced_control    "0"
+      sggui_pos		      "20,20,348,254"
+      block_type	      "delay"
+      block_version	      "10.1.3"
+      sg_icon_stat	      "25,32,1,1,white,blue,0,fc1feff4,right"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-10}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
     }
     Block {
       BlockType		      Reference
@@ -1480,7 +1568,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From"
-      Position		      [2525, 111, 2565, 139]
+      Position		      [2440, 111, 2480, 139]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "out0"
@@ -1531,7 +1619,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From5"
-      Position		      [2525, 171, 2565, 199]
+      Position		      [2440, 171, 2480, 199]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "out1"
@@ -1548,7 +1636,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From7"
-      Position		      [2525, 231, 2565, 259]
+      Position		      [2440, 231, 2480, 259]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "out2"
@@ -1556,7 +1644,7 @@ Model {
     Block {
       BlockType		      From
       Name		      "From8"
-      Position		      [2525, 291, 2565, 319]
+      Position		      [2440, 291, 2480, 319]
       ShowName		      off
       CloseFcn		      "tagdialog Close"
       GotoTag		      "out3"
@@ -3098,7 +3186,7 @@ Model {
       FunctionWithSeparateData off
       System {
 	Name			"adder"
-	Location		[2, 93, 1270, 707]
+	Location		[2, 82, 1278, 674]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3354,7 +3442,7 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Reinterpret10"
 	      Ports		      [1, 1]
-	      Position		      [690, 84, 730, 116]
+	      Position		      [615, 84, 655, 116]
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
 	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
@@ -3373,26 +3461,7 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Reinterpret11"
 	      Ports		      [1, 1]
-	      Position		      [690, 189, 725, 221]
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
-	      force_arith_type	      on
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      on
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "10.1.3"
-	      sg_icon_stat	      "35,32,1,1,white,blue,0,8982c1db,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Reinterpret12"
-	      Ports		      [1, 1]
-	      Position		      [685, 299, 725, 331]
+	      Position		      [620, 299, 660, 331]
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
 	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
@@ -3409,9 +3478,9 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "Reinterpret13"
+	      Name		      "Reinterpret12"
 	      Ports		      [1, 1]
-	      Position		      [695, 399, 735, 431]
+	      Position		      [620, 399, 660, 431]
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
 	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
@@ -3561,6 +3630,25 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Reference
+	      Name		      "Reinterpret9"
+	      Ports		      [1, 1]
+	      Position		      [615, 189, 655, 221]
+	      SourceBlock	      "xbsIndex_r4/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreter Block"
+	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
+	      force_arith_type	      on
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      on
+	      bin_pt		      "0"
+	      has_advanced_control    "0"
+	      sggui_pos		      "-1,-1,-1,-1"
+	      block_type	      "reinterpret"
+	      block_version	      "10.1.3"
+	      sg_icon_stat	      "40,32,1,1,white,blue,0,8982c1db,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    Block {
+	      BlockType		      Reference
 	      Name		      "Slice1"
 	      Ports		      [1, 1]
 	      Position		      [190, 81, 235, 109]
@@ -3586,20 +3674,20 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Slice10"
 	      Ports		      [1, 1]
-	      Position		      [625, 301, 670, 329]
+	      Position		      [685, 301, 730, 329]
 	      SourceBlock	      "xbsIndex_r4/Slice"
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
-	      nbits		      "1"
+	      nbits		      "8"
 	      boolean_output	      off
-	      mode		      "Two Bit Locations"
+	      mode		      "Lower Bit Location + Width"
 	      bit1		      "8"
 	      base1		      "LSB of Input"
-	      bit0		      "1"
+	      bit0		      "0"
 	      base0		      "LSB of Input"
 	      dbl_ovrd		      off
 	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
+	      sggui_pos		      "20,20,460,380"
 	      block_type	      "slice"
 	      block_version	      "10.1.3"
 	      sg_icon_stat	      "45,28,1,1,white,blue,0,b1026674,right"
@@ -3632,20 +3720,20 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Slice12"
 	      Ports		      [1, 1]
-	      Position		      [630, 401, 675, 429]
+	      Position		      [690, 401, 735, 429]
 	      SourceBlock	      "xbsIndex_r4/Slice"
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
-	      nbits		      "1"
+	      nbits		      "8"
 	      boolean_output	      off
-	      mode		      "Two Bit Locations"
+	      mode		      "Lower Bit Location + Width"
 	      bit1		      "8"
 	      base1		      "LSB of Input"
-	      bit0		      "1"
+	      bit0		      "0"
 	      base0		      "LSB of Input"
 	      dbl_ovrd		      off
 	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
+	      sggui_pos		      "20,20,460,380"
 	      block_type	      "slice"
 	      block_version	      "10.1.3"
 	      sg_icon_stat	      "45,28,1,1,white,blue,0,b1026674,right"
@@ -3793,20 +3881,20 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Slice8"
 	      Ports		      [1, 1]
-	      Position		      [625, 86, 670, 114]
+	      Position		      [685, 86, 730, 114]
 	      SourceBlock	      "xbsIndex_r4/Slice"
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
-	      nbits		      "1"
+	      nbits		      "8"
 	      boolean_output	      off
-	      mode		      "Two Bit Locations"
+	      mode		      "Lower Bit Location + Width"
 	      bit1		      "8"
 	      base1		      "LSB of Input"
-	      bit0		      "1"
+	      bit0		      "0"
 	      base0		      "LSB of Input"
 	      dbl_ovrd		      off
 	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
+	      sggui_pos		      "20,20,460,380"
 	      block_type	      "slice"
 	      block_version	      "10.1.3"
 	      sg_icon_stat	      "45,28,1,1,white,blue,0,b1026674,right"
@@ -3816,20 +3904,20 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Slice9"
 	      Ports		      [1, 1]
-	      Position		      [625, 191, 670, 219]
+	      Position		      [685, 191, 730, 219]
 	      SourceBlock	      "xbsIndex_r4/Slice"
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
-	      nbits		      "1"
+	      nbits		      "8"
 	      boolean_output	      off
-	      mode		      "Two Bit Locations"
+	      mode		      "Lower Bit Location + Width"
 	      bit1		      "8"
 	      base1		      "LSB of Input"
-	      bit0		      "1"
+	      bit0		      "0"
 	      base0		      "LSB of Input"
 	      dbl_ovrd		      off
 	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
+	      sggui_pos		      "20,20,460,380"
 	      block_type	      "slice"
 	      block_version	      "10.1.3"
 	      sg_icon_stat	      "45,28,1,1,white,blue,0,b1026674,right"
@@ -3851,81 +3939,55 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Reinterpret13"
+	      SrcBlock		      "Slice12"
 	      SrcPort		      1
 	      Points		      [20, 0; 0, -145]
 	      DstBlock		      "Concat"
 	      DstPort		      4
 	    }
 	    Line {
-	      SrcBlock		      "Reinterpret12"
+	      SrcBlock		      "Slice10"
 	      SrcPort		      1
 	      Points		      [0, -60]
 	      DstBlock		      "Concat"
 	      DstPort		      3
 	    }
 	    Line {
-	      SrcBlock		      "Reinterpret11"
+	      SrcBlock		      "Slice9"
 	      SrcPort		      1
 	      Points		      [0, 35]
 	      DstBlock		      "Concat"
 	      DstPort		      2
 	    }
 	    Line {
-	      SrcBlock		      "Reinterpret10"
+	      SrcBlock		      "Slice8"
 	      SrcPort		      1
 	      Points		      [5, 0; 0, 125]
 	      DstBlock		      "Concat"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Slice12"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret13"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice10"
+	      SrcBlock		      "AddSub4"
 	      SrcPort		      1
 	      DstBlock		      "Reinterpret12"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Slice9"
+	      SrcBlock		      "AddSub3"
 	      SrcPort		      1
 	      DstBlock		      "Reinterpret11"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Slice8"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret10"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "AddSub4"
-	      SrcPort		      1
-	      DstBlock		      "Slice12"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "AddSub3"
-	      SrcPort		      1
-	      DstBlock		      "Slice10"
-	      DstPort		      1
-	    }
-	    Line {
 	      SrcBlock		      "AddSub2"
 	      SrcPort		      1
-	      Points		      [0, 0]
-	      DstBlock		      "Slice9"
+	      DstBlock		      "Reinterpret9"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "AddSub1"
 	      SrcPort		      1
-	      Points		      [0, 0]
-	      DstBlock		      "Slice8"
+	      DstBlock		      "Reinterpret10"
 	      DstPort		      1
 	    }
 	    Line {
@@ -4089,6 +4151,30 @@ Model {
 		DstBlock		"Slice11"
 		DstPort			1
 	      }
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret10"
+	      SrcPort		      1
+	      DstBlock		      "Slice8"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret9"
+	      SrcPort		      1
+	      DstBlock		      "Slice9"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret11"
+	      SrcPort		      1
+	      DstBlock		      "Slice10"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret12"
+	      SrcPort		      1
+	      DstBlock		      "Slice12"
+	      DstPort		      1
 	    }
 	  }
 	}
@@ -4300,7 +4386,7 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Reinterpret10"
 	      Ports		      [1, 1]
-	      Position		      [690, 84, 730, 116]
+	      Position		      [615, 84, 655, 116]
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
 	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
@@ -4319,26 +4405,7 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Reinterpret11"
 	      Ports		      [1, 1]
-	      Position		      [690, 189, 725, 221]
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
-	      force_arith_type	      on
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      on
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "10.1.3"
-	      sg_icon_stat	      "35,32,1,1,white,blue,0,8982c1db,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Reinterpret12"
-	      Ports		      [1, 1]
-	      Position		      [685, 299, 725, 331]
+	      Position		      [620, 299, 660, 331]
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
 	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
@@ -4355,9 +4422,9 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "Reinterpret13"
+	      Name		      "Reinterpret12"
 	      Ports		      [1, 1]
-	      Position		      [695, 399, 735, 431]
+	      Position		      [620, 399, 660, 431]
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
 	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
@@ -4507,6 +4574,25 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Reference
+	      Name		      "Reinterpret9"
+	      Ports		      [1, 1]
+	      Position		      [615, 189, 655, 221]
+	      SourceBlock	      "xbsIndex_r4/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreter Block"
+	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
+	      force_arith_type	      on
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      on
+	      bin_pt		      "0"
+	      has_advanced_control    "0"
+	      sggui_pos		      "-1,-1,-1,-1"
+	      block_type	      "reinterpret"
+	      block_version	      "10.1.3"
+	      sg_icon_stat	      "40,32,1,1,white,blue,0,8982c1db,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    Block {
+	      BlockType		      Reference
 	      Name		      "Slice1"
 	      Ports		      [1, 1]
 	      Position		      [190, 81, 235, 109]
@@ -4532,20 +4618,20 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Slice10"
 	      Ports		      [1, 1]
-	      Position		      [625, 301, 670, 329]
+	      Position		      [685, 301, 730, 329]
 	      SourceBlock	      "xbsIndex_r4/Slice"
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
-	      nbits		      "1"
+	      nbits		      "8"
 	      boolean_output	      off
-	      mode		      "Two Bit Locations"
+	      mode		      "Lower Bit Location + Width"
 	      bit1		      "8"
 	      base1		      "LSB of Input"
-	      bit0		      "1"
+	      bit0		      "0"
 	      base0		      "LSB of Input"
 	      dbl_ovrd		      off
 	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
+	      sggui_pos		      "20,20,460,380"
 	      block_type	      "slice"
 	      block_version	      "10.1.3"
 	      sg_icon_stat	      "45,28,1,1,white,blue,0,b1026674,right"
@@ -4578,20 +4664,20 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Slice12"
 	      Ports		      [1, 1]
-	      Position		      [630, 401, 675, 429]
+	      Position		      [690, 401, 735, 429]
 	      SourceBlock	      "xbsIndex_r4/Slice"
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
-	      nbits		      "1"
+	      nbits		      "8"
 	      boolean_output	      off
-	      mode		      "Two Bit Locations"
+	      mode		      "Lower Bit Location + Width"
 	      bit1		      "8"
 	      base1		      "LSB of Input"
-	      bit0		      "1"
+	      bit0		      "0"
 	      base0		      "LSB of Input"
 	      dbl_ovrd		      off
 	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
+	      sggui_pos		      "20,20,460,380"
 	      block_type	      "slice"
 	      block_version	      "10.1.3"
 	      sg_icon_stat	      "45,28,1,1,white,blue,0,b1026674,right"
@@ -4739,20 +4825,20 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Slice8"
 	      Ports		      [1, 1]
-	      Position		      [625, 86, 670, 114]
+	      Position		      [685, 86, 730, 114]
 	      SourceBlock	      "xbsIndex_r4/Slice"
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
-	      nbits		      "1"
+	      nbits		      "8"
 	      boolean_output	      off
-	      mode		      "Two Bit Locations"
+	      mode		      "Lower Bit Location + Width"
 	      bit1		      "8"
 	      base1		      "LSB of Input"
-	      bit0		      "1"
+	      bit0		      "0"
 	      base0		      "LSB of Input"
 	      dbl_ovrd		      off
 	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
+	      sggui_pos		      "20,20,460,380"
 	      block_type	      "slice"
 	      block_version	      "10.1.3"
 	      sg_icon_stat	      "45,28,1,1,white,blue,0,b1026674,right"
@@ -4762,20 +4848,20 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Slice9"
 	      Ports		      [1, 1]
-	      Position		      [625, 191, 670, 219]
+	      Position		      [685, 191, 730, 219]
 	      SourceBlock	      "xbsIndex_r4/Slice"
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
-	      nbits		      "1"
+	      nbits		      "8"
 	      boolean_output	      off
-	      mode		      "Two Bit Locations"
+	      mode		      "Lower Bit Location + Width"
 	      bit1		      "8"
 	      base1		      "LSB of Input"
-	      bit0		      "1"
+	      bit0		      "0"
 	      base0		      "LSB of Input"
 	      dbl_ovrd		      off
 	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
+	      sggui_pos		      "20,20,460,380"
 	      block_type	      "slice"
 	      block_version	      "10.1.3"
 	      sg_icon_stat	      "45,28,1,1,white,blue,0,b1026674,right"
@@ -4788,6 +4874,30 @@ Model {
 	      IconDisplay	      "Port number"
 	      OutDataType	      "sfix(16)"
 	      OutScaling	      "2^0"
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret12"
+	      SrcPort		      1
+	      DstBlock		      "Slice12"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret11"
+	      SrcPort		      1
+	      DstBlock		      "Slice10"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret9"
+	      SrcPort		      1
+	      DstBlock		      "Slice9"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret10"
+	      SrcPort		      1
+	      DstBlock		      "Slice8"
+	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "a_32_in"
@@ -4954,76 +5064,50 @@ Model {
 	    Line {
 	      SrcBlock		      "AddSub1"
 	      SrcPort		      1
-	      Points		      [0, 0]
-	      DstBlock		      "Slice8"
+	      DstBlock		      "Reinterpret10"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "AddSub2"
 	      SrcPort		      1
-	      Points		      [0, 0]
-	      DstBlock		      "Slice9"
+	      DstBlock		      "Reinterpret9"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "AddSub3"
 	      SrcPort		      1
-	      DstBlock		      "Slice10"
+	      DstBlock		      "Reinterpret11"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "AddSub4"
 	      SrcPort		      1
-	      DstBlock		      "Slice12"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice8"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret10"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice9"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret11"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice10"
-	      SrcPort		      1
 	      DstBlock		      "Reinterpret12"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Slice12"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret13"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Reinterpret10"
+	      SrcBlock		      "Slice8"
 	      SrcPort		      1
 	      Points		      [5, 0; 0, 125]
 	      DstBlock		      "Concat"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Reinterpret11"
+	      SrcBlock		      "Slice9"
 	      SrcPort		      1
 	      Points		      [0, 35]
 	      DstBlock		      "Concat"
 	      DstPort		      2
 	    }
 	    Line {
-	      SrcBlock		      "Reinterpret12"
+	      SrcBlock		      "Slice10"
 	      SrcPort		      1
 	      Points		      [0, -60]
 	      DstBlock		      "Concat"
 	      DstPort		      3
 	    }
 	    Line {
-	      SrcBlock		      "Reinterpret13"
+	      SrcBlock		      "Slice12"
 	      SrcPort		      1
 	      Points		      [20, 0; 0, -145]
 	      DstBlock		      "Concat"
@@ -5042,7 +5126,7 @@ Model {
 	  BlockType		  SubSystem
 	  Name			  "Subsystem2"
 	  Ports			  [2, 1]
-	  Position		  [755, 339, 855, 466]
+	  Position		  [750, 339, 850, 466]
 	  MinAlgLoopOccurrences	  off
 	  RTWSystemCode		  "Auto"
 	  FunctionWithSeparateData off
@@ -5246,7 +5330,7 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Reinterpret10"
 	      Ports		      [1, 1]
-	      Position		      [690, 84, 730, 116]
+	      Position		      [615, 84, 655, 116]
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
 	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
@@ -5265,26 +5349,7 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Reinterpret11"
 	      Ports		      [1, 1]
-	      Position		      [690, 189, 725, 221]
-	      SourceBlock	      "xbsIndex_r4/Reinterpret"
-	      SourceType	      "Xilinx Type Reinterpreter Block"
-	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
-	      force_arith_type	      on
-	      arith_type	      "Unsigned"
-	      force_bin_pt	      on
-	      bin_pt		      "0"
-	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
-	      block_type	      "reinterpret"
-	      block_version	      "10.1.3"
-	      sg_icon_stat	      "35,32,1,1,white,blue,0,8982c1db,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Reinterpret12"
-	      Ports		      [1, 1]
-	      Position		      [685, 299, 725, 331]
+	      Position		      [620, 299, 660, 331]
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
 	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
@@ -5301,9 +5366,9 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "Reinterpret13"
+	      Name		      "Reinterpret12"
 	      Ports		      [1, 1]
-	      Position		      [695, 399, 735, 431]
+	      Position		      [620, 399, 660, 431]
 	      SourceBlock	      "xbsIndex_r4/Reinterpret"
 	      SourceType	      "Xilinx Type Reinterpreter Block"
 	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
@@ -5453,6 +5518,25 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Reference
+	      Name		      "Reinterpret9"
+	      Ports		      [1, 1]
+	      Position		      [615, 189, 655, 221]
+	      SourceBlock	      "xbsIndex_r4/Reinterpret"
+	      SourceType	      "Xilinx Type Reinterpreter Block"
+	      infoedit		      "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
+	      force_arith_type	      on
+	      arith_type	      "Unsigned"
+	      force_bin_pt	      on
+	      bin_pt		      "0"
+	      has_advanced_control    "0"
+	      sggui_pos		      "-1,-1,-1,-1"
+	      block_type	      "reinterpret"
+	      block_version	      "10.1.3"
+	      sg_icon_stat	      "40,32,1,1,white,blue,0,8982c1db,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    Block {
+	      BlockType		      Reference
 	      Name		      "Slice1"
 	      Ports		      [1, 1]
 	      Position		      [190, 81, 235, 109]
@@ -5478,20 +5562,20 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Slice10"
 	      Ports		      [1, 1]
-	      Position		      [625, 301, 670, 329]
+	      Position		      [685, 301, 730, 329]
 	      SourceBlock	      "xbsIndex_r4/Slice"
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
-	      nbits		      "1"
+	      nbits		      "8"
 	      boolean_output	      off
-	      mode		      "Two Bit Locations"
+	      mode		      "Lower Bit Location + Width"
 	      bit1		      "8"
 	      base1		      "LSB of Input"
-	      bit0		      "1"
+	      bit0		      "0"
 	      base0		      "LSB of Input"
 	      dbl_ovrd		      off
 	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
+	      sggui_pos		      "20,20,460,380"
 	      block_type	      "slice"
 	      block_version	      "10.1.3"
 	      sg_icon_stat	      "45,28,1,1,white,blue,0,b1026674,right"
@@ -5524,20 +5608,20 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Slice12"
 	      Ports		      [1, 1]
-	      Position		      [630, 401, 675, 429]
+	      Position		      [690, 401, 735, 429]
 	      SourceBlock	      "xbsIndex_r4/Slice"
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
-	      nbits		      "1"
+	      nbits		      "8"
 	      boolean_output	      off
-	      mode		      "Two Bit Locations"
+	      mode		      "Lower Bit Location + Width"
 	      bit1		      "8"
 	      base1		      "LSB of Input"
-	      bit0		      "1"
+	      bit0		      "0"
 	      base0		      "LSB of Input"
 	      dbl_ovrd		      off
 	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
+	      sggui_pos		      "20,20,460,380"
 	      block_type	      "slice"
 	      block_version	      "10.1.3"
 	      sg_icon_stat	      "45,28,1,1,white,blue,0,b1026674,right"
@@ -5685,20 +5769,20 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Slice8"
 	      Ports		      [1, 1]
-	      Position		      [625, 86, 670, 114]
+	      Position		      [685, 86, 730, 114]
 	      SourceBlock	      "xbsIndex_r4/Slice"
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
-	      nbits		      "1"
+	      nbits		      "8"
 	      boolean_output	      off
-	      mode		      "Two Bit Locations"
+	      mode		      "Lower Bit Location + Width"
 	      bit1		      "8"
 	      base1		      "LSB of Input"
-	      bit0		      "1"
+	      bit0		      "0"
 	      base0		      "LSB of Input"
 	      dbl_ovrd		      off
 	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
+	      sggui_pos		      "20,20,460,380"
 	      block_type	      "slice"
 	      block_version	      "10.1.3"
 	      sg_icon_stat	      "45,28,1,1,white,blue,0,b1026674,right"
@@ -5708,20 +5792,20 @@ Model {
 	      BlockType		      Reference
 	      Name		      "Slice9"
 	      Ports		      [1, 1]
-	      Position		      [625, 191, 670, 219]
+	      Position		      [685, 191, 730, 219]
 	      SourceBlock	      "xbsIndex_r4/Slice"
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
-	      nbits		      "1"
+	      nbits		      "8"
 	      boolean_output	      off
-	      mode		      "Two Bit Locations"
+	      mode		      "Lower Bit Location + Width"
 	      bit1		      "8"
 	      base1		      "LSB of Input"
-	      bit0		      "1"
+	      bit0		      "0"
 	      base0		      "LSB of Input"
 	      dbl_ovrd		      off
 	      has_advanced_control    "0"
-	      sggui_pos		      "-1,-1,-1,-1"
+	      sggui_pos		      "20,20,460,380"
 	      block_type	      "slice"
 	      block_version	      "10.1.3"
 	      sg_icon_stat	      "45,28,1,1,white,blue,0,b1026674,right"
@@ -5736,176 +5820,94 @@ Model {
 	      OutScaling	      "2^0"
 	    }
 	    Line {
-	      SrcBlock		      "Concat"
-	      SrcPort		      1
-	      Points		      [0, 0]
-	      DstBlock		      "Out1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Reinterpret13"
-	      SrcPort		      1
-	      Points		      [20, 0; 0, -145]
-	      DstBlock		      "Concat"
-	      DstPort		      4
-	    }
-	    Line {
 	      SrcBlock		      "Reinterpret12"
-	      SrcPort		      1
-	      Points		      [0, -60]
-	      DstBlock		      "Concat"
-	      DstPort		      3
-	    }
-	    Line {
-	      SrcBlock		      "Reinterpret11"
-	      SrcPort		      1
-	      Points		      [0, 35]
-	      DstBlock		      "Concat"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Reinterpret10"
-	      SrcPort		      1
-	      Points		      [5, 0; 0, 125]
-	      DstBlock		      "Concat"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice12"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret13"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice10"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret12"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice9"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret11"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice8"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret10"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "AddSub4"
 	      SrcPort		      1
 	      DstBlock		      "Slice12"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "AddSub3"
+	      SrcBlock		      "Reinterpret11"
 	      SrcPort		      1
 	      DstBlock		      "Slice10"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "AddSub2"
+	      SrcBlock		      "Reinterpret9"
 	      SrcPort		      1
-	      Points		      [0, 0]
 	      DstBlock		      "Slice9"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "AddSub1"
+	      SrcBlock		      "Reinterpret10"
 	      SrcPort		      1
-	      Points		      [0, 0]
 	      DstBlock		      "Slice8"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Reinterpret8"
+	      SrcBlock		      "a_32_in"
 	      SrcPort		      1
-	      DstBlock		      "AddSub4"
-	      DstPort		      2
+	      Points		      [0, 0; 55, 0]
+	      Branch {
+		Points			[0, -50]
+		DstBlock		"Slice11"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Slice1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 50]
+		Branch {
+		  DstBlock		  "Slice2"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 45]
+		  DstBlock		  "Slice3"
+		  DstPort		  1
+		}
+	      }
 	    }
 	    Line {
-	      SrcBlock		      "Reinterpret7"
+	      SrcBlock		      "b_32_in"
 	      SrcPort		      1
-	      Points		      [180, 0]
-	      DstBlock		      "AddSub3"
-	      DstPort		      2
+	      Points		      [0, 0; 55, 0]
+	      Branch {
+		Points			[0, -10]
+		DstBlock		"Slice5"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 40]
+		Branch {
+		  DstBlock		  "Slice4"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 50]
+		  Branch {
+		    DstBlock		    "Slice6"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 45]
+		    DstBlock		    "Slice7"
+		    DstPort		    1
+		  }
+		}
+	      }
 	    }
 	    Line {
-	      SrcBlock		      "Reinterpret6"
+	      SrcBlock		      "Slice11"
 	      SrcPort		      1
-	      Points		      [175, 0]
-	      DstBlock		      "AddSub2"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Reinterpret5"
-	      SrcPort		      1
-	      Points		      [170, 0]
-	      DstBlock		      "AddSub1"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Reinterpret4"
-	      SrcPort		      1
-	      Points		      [65, 0; 0, 200]
-	      DstBlock		      "AddSub4"
+	      DstBlock		      "Reinterpret1"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Reinterpret3"
+	      SrcBlock		      "Slice1"
 	      SrcPort		      1
-	      Points		      [75, 0; 0, 150]
-	      DstBlock		      "AddSub3"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Reinterpret2"
-	      SrcPort		      1
-	      Points		      [85, 0; 0, 95]
-	      DstBlock		      "AddSub2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Reinterpret1"
-	      SrcPort		      1
-	      Points		      [85, 0; 0, 40]
-	      DstBlock		      "AddSub1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice7"
-	      SrcPort		      1
-	      Points		      [25, 0; 0, 10]
-	      DstBlock		      "Reinterpret8"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice6"
-	      SrcPort		      1
-	      Points		      [25, 0; 0, 5]
-	      DstBlock		      "Reinterpret7"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice4"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret6"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice5"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret5"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice3"
-	      SrcPort		      1
-	      Points		      [25, 0; 0, 10]
-	      DstBlock		      "Reinterpret4"
+	      DstBlock		      "Reinterpret2"
 	      DstPort		      1
 	    }
 	    Line {
@@ -5916,71 +5918,151 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Slice1"
+	      SrcBlock		      "Slice3"
 	      SrcPort		      1
-	      DstBlock		      "Reinterpret2"
+	      Points		      [25, 0; 0, 10]
+	      DstBlock		      "Reinterpret4"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Slice11"
+	      SrcBlock		      "Slice5"
 	      SrcPort		      1
-	      DstBlock		      "Reinterpret1"
+	      DstBlock		      "Reinterpret5"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "b_32_in"
+	      SrcBlock		      "Slice4"
 	      SrcPort		      1
-	      Points		      [0, 0; 55, 0]
-	      Branch {
-		Points			[0, 40]
-		Branch {
-		  Points		  [0, 50]
-		  Branch {
-		    Points		    [0, 45]
-		    DstBlock		    "Slice7"
-		    DstPort		    1
-		  }
-		  Branch {
-		    DstBlock		    "Slice6"
-		    DstPort		    1
-		  }
-		}
-		Branch {
-		  DstBlock		  "Slice4"
-		  DstPort		  1
-		}
-	      }
-	      Branch {
-		Points			[0, -10]
-		DstBlock		"Slice5"
-		DstPort			1
-	      }
+	      DstBlock		      "Reinterpret6"
+	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "a_32_in"
+	      SrcBlock		      "Slice6"
 	      SrcPort		      1
-	      Points		      [0, 0; 55, 0]
-	      Branch {
-		Points			[0, 50]
-		Branch {
-		  Points		  [0, 45]
-		  DstBlock		  "Slice3"
-		  DstPort		  1
-		}
-		Branch {
-		  DstBlock		  "Slice2"
-		  DstPort		  1
-		}
-	      }
-	      Branch {
-		DstBlock		"Slice1"
-		DstPort			1
-	      }
-	      Branch {
-		Points			[0, -50]
-		DstBlock		"Slice11"
-		DstPort			1
-	      }
+	      Points		      [25, 0; 0, 5]
+	      DstBlock		      "Reinterpret7"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice7"
+	      SrcPort		      1
+	      Points		      [25, 0; 0, 10]
+	      DstBlock		      "Reinterpret8"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret1"
+	      SrcPort		      1
+	      Points		      [85, 0; 0, 40]
+	      DstBlock		      "AddSub1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret2"
+	      SrcPort		      1
+	      Points		      [85, 0; 0, 95]
+	      DstBlock		      "AddSub2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret3"
+	      SrcPort		      1
+	      Points		      [75, 0; 0, 150]
+	      DstBlock		      "AddSub3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret4"
+	      SrcPort		      1
+	      Points		      [65, 0; 0, 200]
+	      DstBlock		      "AddSub4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret5"
+	      SrcPort		      1
+	      Points		      [170, 0]
+	      DstBlock		      "AddSub1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret6"
+	      SrcPort		      1
+	      Points		      [175, 0]
+	      DstBlock		      "AddSub2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret7"
+	      SrcPort		      1
+	      Points		      [180, 0]
+	      DstBlock		      "AddSub3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret8"
+	      SrcPort		      1
+	      DstBlock		      "AddSub4"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "AddSub1"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret10"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "AddSub2"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret9"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "AddSub3"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret11"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "AddSub4"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret12"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice8"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, 125]
+	      DstBlock		      "Concat"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice9"
+	      SrcPort		      1
+	      Points		      [0, 35]
+	      DstBlock		      "Concat"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Slice10"
+	      SrcPort		      1
+	      Points		      [0, -60]
+	      DstBlock		      "Concat"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Slice12"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -145]
+	      DstBlock		      "Concat"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Concat"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Out1"
+	      DstPort		      1
 	    }
 	  }
 	}
@@ -19523,14 +19605,14 @@ Model {
       Name		      "gain0"
       Tag		      "xps:sw_reg"
       Ports		      [1, 1]
-      Position		      [2405, 90, 2505, 120]
+      Position		      [2320, 90, 2420, 120]
       BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
       LinkData {
 	BlockName		"ibob_phased_array_2k_gain0_user_data_out"
 	DialogParameters {
-	  arith_type		  "Signed  (2's comp)"
+	  arith_type		  "Unsigned"
 	  n_bits		  "32"
-	  bin_pt		  "7"
+	  bin_pt		  "0"
 	  period		  "1"
 	  sg_icon_stat		  "60,20,1,1,white,yellow,0,bc55d28f,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([24 21 26 21 24 29 30 31 37 33 29 26 31 26 29 33 37 31 30 29 24 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
@@ -19547,9 +19629,9 @@ Model {
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
       io_dir		      "From Processor"
-      arith_type	      "Signed  (2's comp)"
+      arith_type	      "Unsigned"
       bitwidth		      "32"
-      bin_pt		      "7"
+      bin_pt		      "0"
       sample_period	      "1"
       gw_name		      "ibob_phased_array_2k_gain0_user_data_out"
     }
@@ -19558,14 +19640,14 @@ Model {
       Name		      "gain1"
       Tag		      "xps:sw_reg"
       Ports		      [1, 1]
-      Position		      [2405, 150, 2505, 180]
+      Position		      [2320, 150, 2420, 180]
       BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
       LinkData {
 	BlockName		"ibob_phased_array_2k_gain1_user_data_out"
 	DialogParameters {
-	  arith_type		  "Signed  (2's comp)"
+	  arith_type		  "Unsigned"
 	  n_bits		  "32"
-	  bin_pt		  "7"
+	  bin_pt		  "0"
 	  period		  "1"
 	  sg_icon_stat		  "60,20,1,1,white,yellow,0,bc55d28f,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([24 21 26 21 24 29 30 31 37 33 29 26 31 26 29 33 37 31 30 29 24 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
@@ -19582,9 +19664,9 @@ Model {
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
       io_dir		      "From Processor"
-      arith_type	      "Signed  (2's comp)"
+      arith_type	      "Unsigned"
       bitwidth		      "32"
-      bin_pt		      "7"
+      bin_pt		      "0"
       sample_period	      "1"
       gw_name		      "ibob_phased_array_2k_gain1_user_data_out"
     }
@@ -19593,14 +19675,14 @@ Model {
       Name		      "gain2"
       Tag		      "xps:sw_reg"
       Ports		      [1, 1]
-      Position		      [2405, 210, 2505, 240]
+      Position		      [2320, 210, 2420, 240]
       BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
       LinkData {
 	BlockName		"ibob_phased_array_2k_gain2_user_data_out"
 	DialogParameters {
-	  arith_type		  "Signed  (2's comp)"
+	  arith_type		  "Unsigned"
 	  n_bits		  "32"
-	  bin_pt		  "7"
+	  bin_pt		  "0"
 	  period		  "1"
 	  sg_icon_stat		  "60,20,1,1,white,yellow,0,bc55d28f,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([24 21 26 21 24 29 30 31 37 33 29 26 31 26 29 33 37 31 30 29 24 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
@@ -19617,9 +19699,9 @@ Model {
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
       io_dir		      "From Processor"
-      arith_type	      "Signed  (2's comp)"
+      arith_type	      "Unsigned"
       bitwidth		      "32"
-      bin_pt		      "7"
+      bin_pt		      "0"
       sample_period	      "1"
       gw_name		      "ibob_phased_array_2k_gain2_user_data_out"
     }
@@ -19628,14 +19710,14 @@ Model {
       Name		      "gain3"
       Tag		      "xps:sw_reg"
       Ports		      [1, 1]
-      Position		      [2405, 270, 2505, 300]
+      Position		      [2320, 270, 2420, 300]
       BackgroundColor	      "[1.000000, 1.000000, 0.000000]"
       LinkData {
 	BlockName		"ibob_phased_array_2k_gain3_user_data_out"
 	DialogParameters {
-	  arith_type		  "Signed  (2's comp)"
+	  arith_type		  "Unsigned"
 	  n_bits		  "32"
-	  bin_pt		  "7"
+	  bin_pt		  "0"
 	  period		  "1"
 	  sg_icon_stat		  "60,20,1,1,white,yellow,0,bc55d28f,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([24 21 26 21 24 29 30 31 37 33 29 26 31 26 29 33 37 31 30 29 24 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
@@ -19652,9 +19734,9 @@ Model {
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
       io_dir		      "From Processor"
-      arith_type	      "Signed  (2's comp)"
+      arith_type	      "Unsigned"
       bitwidth		      "32"
-      bin_pt		      "7"
+      bin_pt		      "0"
       sample_period	      "1"
       gw_name		      "ibob_phased_array_2k_gain3_user_data_out"
     }
@@ -19668,7 +19750,7 @@ Model {
       FunctionWithSeparateData off
       System {
 	Name			"gain_calib0"
-	Location		[420, 175, 1010, 784]
+	Location		[318, 115, 908, 724]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -19728,19 +19810,19 @@ Model {
 	  arith_type		  "Signed  (2's comp)"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  quantization		  "Truncate"
+	  quantization		  "Round  (unbiased: +/- Inf)"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
 	  pipeline		  off
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -19754,19 +19836,19 @@ Model {
 	  arith_type		  "Signed  (2's comp)"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  quantization		  "Truncate"
+	  quantization		  "Round  (unbiased: +/- Inf)"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
 	  pipeline		  off
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -19780,19 +19862,19 @@ Model {
 	  arith_type		  "Signed  (2's comp)"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  quantization		  "Truncate"
+	  quantization		  "Round  (unbiased: +/- Inf)"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
 	  pipeline		  off
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -19806,45 +19888,19 @@ Model {
 	  arith_type		  "Signed  (2's comp)"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  quantization		  "Truncate"
+	  quantization		  "Round  (unbiased: +/- Inf)"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
 	  pipeline		  off
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Convert4"
-	  Ports			  [1, 1]
-	  Position		  [135, 350, 180, 380]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Convert"
-	  SourceType		  "Xilinx Type Converter Block"
-	  infoedit		  "Hardware notes: rounding and saturating require hardware resources; truncating and wrapping do not."
-	  arith_type		  "Unsigned"
-	  n_bits		  "8"
-	  bin_pt		  "7"
-	  quantization		  "Truncate"
-	  overflow		  "Saturate"
-	  latency		  "0"
-	  dbl_ovrd		  off
-	  pipeline		  off
-	  xl_use_area		  off
-	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
-	  block_type		  "convert"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -19862,7 +19918,7 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "7"
 	  dbl_ovrd		  off
 	  use_behavioral_HDL	  off
 	  use_embedded		  on
@@ -19877,8 +19933,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,141dbd41,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -19896,7 +19952,7 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "7"
 	  dbl_ovrd		  off
 	  use_behavioral_HDL	  off
 	  use_embedded		  on
@@ -19911,8 +19967,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,141dbd41,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -19930,7 +19986,7 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "7"
 	  dbl_ovrd		  off
 	  use_behavioral_HDL	  off
 	  use_embedded		  on
@@ -19945,8 +20001,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,141dbd41,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -19964,7 +20020,7 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "7"
 	  dbl_ovrd		  off
 	  use_behavioral_HDL	  off
 	  use_embedded		  on
@@ -19976,11 +20032,11 @@ Model {
 	  use_rpm		  "on"
 	  placement_style	  "Rectangular shape"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,434"
+	  sggui_pos		  "20,20,348,435"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,141dbd41,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -19996,7 +20052,7 @@ Model {
 	  force_bin_pt		  on
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,336,312"
 	  block_type		  "reinterpret"
 	  block_version		  "10.1.3"
 	  sg_icon_stat		  "40,32,1,1,white,blue,0,8982c1db,right"
@@ -20063,6 +20119,50 @@ Model {
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret4"
+	  Ports			  [1, 1]
+	  Position		  [180, 349, 200, 381]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreter Block"
+	  infoedit		  "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
+	  force_arith_type	  on
+	  arith_type		  "Unsigned"
+	  force_bin_pt		  on
+	  bin_pt		  "7"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "20,20,336,312"
+	  block_type		  "reinterpret"
+	  block_version		  "10.1.3"
+	  sg_icon_stat		  "20,32,1,1,white,blue,0,8982c1db,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Slice2"
+	  Ports			  [1, 1]
+	  Position		  [125, 351, 160, 379]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Slice"
+	  SourceType		  "Xilinx Bit Slice Extractor Block"
+	  infoedit		  "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
+	  nbits			  "8"
+	  boolean_output	  off
+	  mode			  "Lower Bit Location + Width"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "0"
+	  base0			  "LSB of Input"
+	  dbl_ovrd		  off
+	  has_advanced_control	  "0"
+	  sggui_pos		  "20,20,460,380"
+	  block_type		  "slice"
+	  block_version		  "10.1.3"
+	  sg_icon_stat		  "35,28,1,1,white,blue,0,b1026674,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([22 17 24 17 22 30 32 34 42 35 29 24 30 24 29 35 42 34 32 30 22 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
 	  BlockType		  SubSystem
 	  Name			  "slice2"
 	  Ports			  [1, 4]
@@ -20073,7 +20173,7 @@ Model {
 	  FunctionWithSeparateData off
 	  System {
 	    Name		    "slice2"
-	    Location		    [614, 204, 1393, 728]
+	    Location		    [385, 208, 1164, 732]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -20428,7 +20528,7 @@ Model {
 	Line {
 	  SrcBlock		  "gain"
 	  SrcPort		  1
-	  DstBlock		  "Convert4"
+	  DstBlock		  "Slice2"
 	  DstPort		  1
 	}
 	Line {
@@ -20487,32 +20587,10 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Convert4"
+	  SrcBlock		  "Slice2"
 	  SrcPort		  1
-	  Points		  [40, 0]
-	  Branch {
-	    DstBlock		    "Mult3"
-	    DstPort		    2
-	  }
-	  Branch {
-	    Points		    [0, -60]
-	    Branch {
-	      DstBlock		      "Mult2"
-	      DstPort		      2
-	    }
-	    Branch {
-	      Points		      [0, -60]
-	      Branch {
-		DstBlock		"Mult1"
-		DstPort			2
-	      }
-	      Branch {
-		Points			[0, -60]
-		DstBlock		"Mult"
-		DstPort			2
-	      }
-	    }
-	  }
+	  DstBlock		  "Reinterpret4"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Reinterpret"
@@ -20538,6 +20616,34 @@ Model {
 	  DstBlock		  "Concat"
 	  DstPort		  4
 	}
+	Line {
+	  SrcBlock		  "Reinterpret4"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    DstBlock		    "Mult3"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -60]
+	    Branch {
+	      DstBlock		      "Mult2"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [0, -60]
+	      Branch {
+		DstBlock		"Mult1"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -60]
+		DstBlock		"Mult"
+		DstPort			2
+	      }
+	    }
+	  }
+	}
       }
     }
     Block {
@@ -20550,7 +20656,7 @@ Model {
       FunctionWithSeparateData off
       System {
 	Name			"gain_calib1"
-	Location		[420, 175, 1010, 784]
+	Location		[318, 115, 908, 724]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -20610,19 +20716,19 @@ Model {
 	  arith_type		  "Signed  (2's comp)"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  quantization		  "Truncate"
+	  quantization		  "Round  (unbiased: +/- Inf)"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
 	  pipeline		  off
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -20636,19 +20742,19 @@ Model {
 	  arith_type		  "Signed  (2's comp)"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  quantization		  "Truncate"
+	  quantization		  "Round  (unbiased: +/- Inf)"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
 	  pipeline		  off
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -20662,19 +20768,19 @@ Model {
 	  arith_type		  "Signed  (2's comp)"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  quantization		  "Truncate"
+	  quantization		  "Round  (unbiased: +/- Inf)"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
 	  pipeline		  off
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -20688,45 +20794,19 @@ Model {
 	  arith_type		  "Signed  (2's comp)"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  quantization		  "Truncate"
+	  quantization		  "Round  (unbiased: +/- Inf)"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
 	  pipeline		  off
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Convert4"
-	  Ports			  [1, 1]
-	  Position		  [135, 350, 180, 380]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Convert"
-	  SourceType		  "Xilinx Type Converter Block"
-	  infoedit		  "Hardware notes: rounding and saturating require hardware resources; truncating and wrapping do not."
-	  arith_type		  "Unsigned"
-	  n_bits		  "8"
-	  bin_pt		  "7"
-	  quantization		  "Truncate"
-	  overflow		  "Saturate"
-	  latency		  "0"
-	  dbl_ovrd		  off
-	  pipeline		  off
-	  xl_use_area		  off
-	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
-	  block_type		  "convert"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -20744,7 +20824,7 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "7"
 	  dbl_ovrd		  off
 	  use_behavioral_HDL	  off
 	  use_embedded		  on
@@ -20759,8 +20839,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,141dbd41,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -20778,7 +20858,7 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "7"
 	  dbl_ovrd		  off
 	  use_behavioral_HDL	  off
 	  use_embedded		  on
@@ -20793,8 +20873,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,141dbd41,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -20812,7 +20892,7 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "7"
 	  dbl_ovrd		  off
 	  use_behavioral_HDL	  off
 	  use_embedded		  on
@@ -20827,8 +20907,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,141dbd41,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -20846,7 +20926,7 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "7"
 	  dbl_ovrd		  off
 	  use_behavioral_HDL	  off
 	  use_embedded		  on
@@ -20858,11 +20938,11 @@ Model {
 	  use_rpm		  "on"
 	  placement_style	  "Rectangular shape"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,434"
+	  sggui_pos		  "20,20,348,435"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,141dbd41,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -20878,7 +20958,7 @@ Model {
 	  force_bin_pt		  on
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,336,312"
 	  block_type		  "reinterpret"
 	  block_version		  "10.1.3"
 	  sg_icon_stat		  "40,32,1,1,white,blue,0,8982c1db,right"
@@ -20945,6 +21025,50 @@ Model {
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret4"
+	  Ports			  [1, 1]
+	  Position		  [180, 349, 200, 381]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreter Block"
+	  infoedit		  "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
+	  force_arith_type	  on
+	  arith_type		  "Unsigned"
+	  force_bin_pt		  on
+	  bin_pt		  "7"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "20,20,336,312"
+	  block_type		  "reinterpret"
+	  block_version		  "10.1.3"
+	  sg_icon_stat		  "20,32,1,1,white,blue,0,8982c1db,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Slice2"
+	  Ports			  [1, 1]
+	  Position		  [125, 351, 160, 379]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Slice"
+	  SourceType		  "Xilinx Bit Slice Extractor Block"
+	  infoedit		  "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
+	  nbits			  "8"
+	  boolean_output	  off
+	  mode			  "Lower Bit Location + Width"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "0"
+	  base0			  "LSB of Input"
+	  dbl_ovrd		  off
+	  has_advanced_control	  "0"
+	  sggui_pos		  "20,20,460,380"
+	  block_type		  "slice"
+	  block_version		  "10.1.3"
+	  sg_icon_stat		  "35,28,1,1,white,blue,0,b1026674,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([22 17 24 17 22 30 32 34 42 35 29 24 30 24 29 35 42 34 32 30 22 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
 	  BlockType		  SubSystem
 	  Name			  "slice2"
 	  Ports			  [1, 4]
@@ -20955,7 +21079,7 @@ Model {
 	  FunctionWithSeparateData off
 	  System {
 	    Name		    "slice2"
-	    Location		    [614, 204, 1393, 728]
+	    Location		    [385, 208, 1164, 732]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -21274,6 +21398,34 @@ Model {
 	  OutScaling		  "2^0"
 	}
 	Line {
+	  SrcBlock		  "Reinterpret4"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    Points		    [0, -60]
+	    Branch {
+	      Points		      [0, -60]
+	      Branch {
+		Points			[0, -60]
+		DstBlock		"Mult"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Mult1"
+		DstPort			2
+	      }
+	    }
+	    Branch {
+	      DstBlock		      "Mult2"
+	      DstPort		      2
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Mult3"
+	    DstPort		    2
+	  }
+	}
+	Line {
 	  SrcBlock		  "Reinterpret3"
 	  SrcPort		  1
 	  DstBlock		  "Concat"
@@ -21298,32 +21450,10 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Convert4"
+	  SrcBlock		  "Slice2"
 	  SrcPort		  1
-	  Points		  [40, 0]
-	  Branch {
-	    Points		    [0, -60]
-	    Branch {
-	      Points		      [0, -60]
-	      Branch {
-		Points			[0, -60]
-		DstBlock		"Mult"
-		DstPort			2
-	      }
-	      Branch {
-		DstBlock		"Mult1"
-		DstPort			2
-	      }
-	    }
-	    Branch {
-	      DstBlock		      "Mult2"
-	      DstPort		      2
-	    }
-	  }
-	  Branch {
-	    DstBlock		    "Mult3"
-	    DstPort		    2
-	  }
+	  DstBlock		  "Reinterpret4"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Convert"
@@ -21383,7 +21513,7 @@ Model {
 	Line {
 	  SrcBlock		  "gain"
 	  SrcPort		  1
-	  DstBlock		  "Convert4"
+	  DstBlock		  "Slice2"
 	  DstPort		  1
 	}
 	Line {
@@ -21432,7 +21562,7 @@ Model {
       FunctionWithSeparateData off
       System {
 	Name			"gain_calib2"
-	Location		[420, 175, 1010, 784]
+	Location		[318, 115, 908, 724]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -21492,19 +21622,19 @@ Model {
 	  arith_type		  "Signed  (2's comp)"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  quantization		  "Truncate"
+	  quantization		  "Round  (unbiased: +/- Inf)"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
 	  pipeline		  off
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21518,19 +21648,19 @@ Model {
 	  arith_type		  "Signed  (2's comp)"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  quantization		  "Truncate"
+	  quantization		  "Round  (unbiased: +/- Inf)"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
 	  pipeline		  off
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21544,19 +21674,19 @@ Model {
 	  arith_type		  "Signed  (2's comp)"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  quantization		  "Truncate"
+	  quantization		  "Round  (unbiased: +/- Inf)"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
 	  pipeline		  off
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21570,45 +21700,19 @@ Model {
 	  arith_type		  "Signed  (2's comp)"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  quantization		  "Truncate"
+	  quantization		  "Round  (unbiased: +/- Inf)"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
 	  pipeline		  off
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Convert4"
-	  Ports			  [1, 1]
-	  Position		  [135, 350, 180, 380]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Convert"
-	  SourceType		  "Xilinx Type Converter Block"
-	  infoedit		  "Hardware notes: rounding and saturating require hardware resources; truncating and wrapping do not."
-	  arith_type		  "Unsigned"
-	  n_bits		  "8"
-	  bin_pt		  "7"
-	  quantization		  "Truncate"
-	  overflow		  "Saturate"
-	  latency		  "0"
-	  dbl_ovrd		  off
-	  pipeline		  off
-	  xl_use_area		  off
-	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
-	  block_type		  "convert"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21626,7 +21730,7 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "7"
 	  dbl_ovrd		  off
 	  use_behavioral_HDL	  off
 	  use_embedded		  on
@@ -21641,8 +21745,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,141dbd41,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21660,7 +21764,7 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "7"
 	  dbl_ovrd		  off
 	  use_behavioral_HDL	  off
 	  use_embedded		  on
@@ -21675,8 +21779,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,141dbd41,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21694,7 +21798,7 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "7"
 	  dbl_ovrd		  off
 	  use_behavioral_HDL	  off
 	  use_embedded		  on
@@ -21709,8 +21813,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,141dbd41,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21728,7 +21832,7 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "7"
 	  dbl_ovrd		  off
 	  use_behavioral_HDL	  off
 	  use_embedded		  on
@@ -21740,11 +21844,11 @@ Model {
 	  use_rpm		  "on"
 	  placement_style	  "Rectangular shape"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,434"
+	  sggui_pos		  "20,20,348,435"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,141dbd41,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -21760,7 +21864,7 @@ Model {
 	  force_bin_pt		  on
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,336,312"
 	  block_type		  "reinterpret"
 	  block_version		  "10.1.3"
 	  sg_icon_stat		  "40,32,1,1,white,blue,0,8982c1db,right"
@@ -21827,6 +21931,50 @@ Model {
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret4"
+	  Ports			  [1, 1]
+	  Position		  [180, 349, 200, 381]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreter Block"
+	  infoedit		  "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
+	  force_arith_type	  on
+	  arith_type		  "Unsigned"
+	  force_bin_pt		  on
+	  bin_pt		  "7"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "20,20,336,312"
+	  block_type		  "reinterpret"
+	  block_version		  "10.1.3"
+	  sg_icon_stat		  "20,32,1,1,white,blue,0,8982c1db,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Slice2"
+	  Ports			  [1, 1]
+	  Position		  [125, 351, 160, 379]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Slice"
+	  SourceType		  "Xilinx Bit Slice Extractor Block"
+	  infoedit		  "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
+	  nbits			  "8"
+	  boolean_output	  off
+	  mode			  "Lower Bit Location + Width"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "0"
+	  base0			  "LSB of Input"
+	  dbl_ovrd		  off
+	  has_advanced_control	  "0"
+	  sggui_pos		  "20,20,460,380"
+	  block_type		  "slice"
+	  block_version		  "10.1.3"
+	  sg_icon_stat		  "35,28,1,1,white,blue,0,b1026674,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([22 17 24 17 22 30 32 34 42 35 29 24 30 24 29 35 42 34 32 30 22 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
 	  BlockType		  SubSystem
 	  Name			  "slice2"
 	  Ports			  [1, 4]
@@ -21837,7 +21985,7 @@ Model {
 	  FunctionWithSeparateData off
 	  System {
 	    Name		    "slice2"
-	    Location		    [614, 204, 1393, 728]
+	    Location		    [385, 208, 1164, 732]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -22070,39 +22218,37 @@ Model {
 	      OutScaling	      "2^0"
 	    }
 	    Line {
-	      SrcBlock		      "Reinterpret3"
+	      SrcBlock		      "in"
 	      SrcPort		      1
-	      DstBlock		      "out3"
-	      DstPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		Points			[0, 45]
+		Branch {
+		  DstBlock		  "Slice27"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 45]
+		  Branch {
+		    DstBlock		    "Slice1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 45]
+		    DstBlock		    "Slice2"
+		    DstPort		    1
+		  }
+		}
+	      }
+	      Branch {
+		DstBlock		"Slice26"
+		DstPort			1
+	      }
 	    }
 	    Line {
-	      SrcBlock		      "Reinterpret2"
+	      SrcBlock		      "Slice26"
 	      SrcPort		      1
-	      DstBlock		      "out2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Reinterpret1"
-	      SrcPort		      1
-	      DstBlock		      "out1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Reinterpret"
-	      SrcPort		      1
-	      DstBlock		      "out0"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice2"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret3"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice1"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret2"
+	      DstBlock		      "Reinterpret"
 	      DstPort		      1
 	    }
 	    Line {
@@ -22112,38 +22258,40 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Slice26"
+	      SrcBlock		      "Slice1"
 	      SrcPort		      1
-	      DstBlock		      "Reinterpret"
+	      DstBlock		      "Reinterpret2"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "in"
+	      SrcBlock		      "Slice2"
 	      SrcPort		      1
-	      Points		      [10, 0]
-	      Branch {
-		DstBlock		"Slice26"
-		DstPort			1
-	      }
-	      Branch {
-		Points			[0, 45]
-		Branch {
-		  Points		  [0, 45]
-		  Branch {
-		    Points		    [0, 45]
-		    DstBlock		    "Slice2"
-		    DstPort		    1
-		  }
-		  Branch {
-		    DstBlock		    "Slice1"
-		    DstPort		    1
-		  }
-		}
-		Branch {
-		  DstBlock		  "Slice27"
-		  DstPort		  1
-		}
-	      }
+	      DstBlock		      "Reinterpret3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret"
+	      SrcPort		      1
+	      DstBlock		      "out0"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret1"
+	      SrcPort		      1
+	      DstBlock		      "out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret2"
+	      SrcPort		      1
+	      DstBlock		      "out2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret3"
+	      SrcPort		      1
+	      DstBlock		      "out3"
+	      DstPort		      1
 	    }
 	  }
 	}
@@ -22156,130 +22304,16 @@ Model {
 	  OutScaling		  "2^0"
 	}
 	Line {
-	  SrcBlock		  "Reinterpret3"
-	  SrcPort		  1
-	  DstBlock		  "Concat"
-	  DstPort		  4
-	}
-	Line {
-	  SrcBlock		  "Reinterpret2"
-	  SrcPort		  1
-	  DstBlock		  "Concat"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Reinterpret1"
-	  SrcPort		  1
-	  DstBlock		  "Concat"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Reinterpret"
-	  SrcPort		  1
-	  DstBlock		  "Concat"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert4"
-	  SrcPort		  1
-	  Points		  [40, 0]
-	  Branch {
-	    Points		    [0, -60]
-	    Branch {
-	      Points		      [0, -60]
-	      Branch {
-		Points			[0, -60]
-		DstBlock		"Mult"
-		DstPort			2
-	      }
-	      Branch {
-		DstBlock		"Mult1"
-		DstPort			2
-	      }
-	    }
-	    Branch {
-	      DstBlock		      "Mult2"
-	      DstPort		      2
-	    }
-	  }
-	  Branch {
-	    DstBlock		    "Mult3"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  SrcBlock		  "Convert"
-	  SrcPort		  1
-	  DstBlock		  "Reinterpret"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert1"
-	  SrcPort		  1
-	  DstBlock		  "Reinterpret1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert2"
-	  SrcPort		  1
-	  DstBlock		  "Reinterpret2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert3"
-	  SrcPort		  1
-	  DstBlock		  "Reinterpret3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Concat"
+	  SrcBlock		  "in"
 	  SrcPort		  1
 	  Points		  [0, 0]
-	  DstBlock		  "out"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Mult3"
-	  SrcPort		  1
-	  DstBlock		  "Convert3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Mult2"
-	  SrcPort		  1
-	  DstBlock		  "Convert2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Mult1"
-	  SrcPort		  1
-	  DstBlock		  "Convert1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Mult"
-	  SrcPort		  1
-	  DstBlock		  "Convert"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "gain"
-	  SrcPort		  1
-	  DstBlock		  "Convert4"
+	  DstBlock		  "slice2"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "slice2"
-	  SrcPort		  4
-	  Points		  [25, 0; 0, 150]
-	  DstBlock		  "Mult3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "slice2"
-	  SrcPort		  3
-	  Points		  [35, 0; 0, 100]
-	  DstBlock		  "Mult2"
+	  SrcPort		  1
+	  DstBlock		  "Mult"
 	  DstPort		  1
 	}
 	Line {
@@ -22291,16 +22325,136 @@ Model {
 	}
 	Line {
 	  SrcBlock		  "slice2"
-	  SrcPort		  1
-	  DstBlock		  "Mult"
+	  SrcPort		  3
+	  Points		  [35, 0; 0, 100]
+	  DstBlock		  "Mult2"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "in"
+	  SrcBlock		  "slice2"
+	  SrcPort		  4
+	  Points		  [25, 0; 0, 150]
+	  DstBlock		  "Mult3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "gain"
+	  SrcPort		  1
+	  DstBlock		  "Slice2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult"
+	  SrcPort		  1
+	  DstBlock		  "Convert"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult1"
+	  SrcPort		  1
+	  DstBlock		  "Convert1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult2"
+	  SrcPort		  1
+	  DstBlock		  "Convert2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult3"
+	  SrcPort		  1
+	  DstBlock		  "Convert3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Concat"
 	  SrcPort		  1
 	  Points		  [0, 0]
-	  DstBlock		  "slice2"
+	  DstBlock		  "out"
 	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert3"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert2"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert1"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Slice2"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reinterpret"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reinterpret1"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Reinterpret2"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Reinterpret3"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Reinterpret4"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    DstBlock		    "Mult3"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -60]
+	    Branch {
+	      DstBlock		      "Mult2"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [0, -60]
+	      Branch {
+		DstBlock		"Mult1"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -60]
+		DstBlock		"Mult"
+		DstPort			2
+	      }
+	    }
+	  }
 	}
       }
     }
@@ -22314,7 +22468,7 @@ Model {
       FunctionWithSeparateData off
       System {
 	Name			"gain_calib3"
-	Location		[420, 175, 1010, 784]
+	Location		[318, 115, 908, 724]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -22374,19 +22528,19 @@ Model {
 	  arith_type		  "Signed  (2's comp)"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  quantization		  "Truncate"
+	  quantization		  "Round  (unbiased: +/- Inf)"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
 	  pipeline		  off
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -22400,19 +22554,19 @@ Model {
 	  arith_type		  "Signed  (2's comp)"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  quantization		  "Truncate"
+	  quantization		  "Round  (unbiased: +/- Inf)"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
 	  pipeline		  off
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -22426,19 +22580,19 @@ Model {
 	  arith_type		  "Signed  (2's comp)"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  quantization		  "Truncate"
+	  quantization		  "Round  (unbiased: +/- Inf)"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
 	  pipeline		  off
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -22452,45 +22606,19 @@ Model {
 	  arith_type		  "Signed  (2's comp)"
 	  n_bits		  "8"
 	  bin_pt		  "0"
-	  quantization		  "Truncate"
+	  quantization		  "Round  (unbiased: +/- Inf)"
 	  overflow		  "Saturate"
-	  latency		  "0"
+	  latency		  "2"
 	  dbl_ovrd		  off
 	  pipeline		  off
 	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,470,336"
 	  block_type		  "convert"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Convert4"
-	  Ports			  [1, 1]
-	  Position		  [135, 350, 180, 380]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Convert"
-	  SourceType		  "Xilinx Type Converter Block"
-	  infoedit		  "Hardware notes: rounding and saturating require hardware resources; truncating and wrapping do not."
-	  arith_type		  "Unsigned"
-	  n_bits		  "8"
-	  bin_pt		  "7"
-	  quantization		  "Truncate"
-	  overflow		  "Saturate"
-	  latency		  "0"
-	  dbl_ovrd		  off
-	  pipeline		  off
-	  xl_use_area		  off
-	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
-	  block_type		  "convert"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,74901e60,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "45,30,1,1,white,blue,0,b1f514c1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\ncolor('black');disp('\\newlinez^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -22508,7 +22636,7 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "7"
 	  dbl_ovrd		  off
 	  use_behavioral_HDL	  off
 	  use_embedded		  on
@@ -22523,8 +22651,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,141dbd41,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -22542,7 +22670,7 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "7"
 	  dbl_ovrd		  off
 	  use_behavioral_HDL	  off
 	  use_embedded		  on
@@ -22557,8 +22685,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,141dbd41,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -22576,7 +22704,7 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "7"
 	  dbl_ovrd		  off
 	  use_behavioral_HDL	  off
 	  use_embedded		  on
@@ -22591,8 +22719,8 @@ Model {
 	  sggui_pos		  "20,20,348,434"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,141dbd41,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -22610,7 +22738,7 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  en			  off
-	  latency		  "5"
+	  latency		  "7"
 	  dbl_ovrd		  off
 	  use_behavioral_HDL	  off
 	  use_embedded		  on
@@ -22622,11 +22750,11 @@ Model {
 	  use_rpm		  "on"
 	  placement_style	  "Rectangular shape"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,434"
+	  sggui_pos		  "20,20,348,435"
 	  block_type		  "mult"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,40,1,1,white,blue,0,77d3bc5f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,40,1,1,white,blue,0,141dbd41,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -22642,7 +22770,7 @@ Model {
 	  force_bin_pt		  on
 	  bin_pt		  "0"
 	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
+	  sggui_pos		  "20,20,336,312"
 	  block_type		  "reinterpret"
 	  block_version		  "10.1.3"
 	  sg_icon_stat		  "40,32,1,1,white,blue,0,8982c1db,right"
@@ -22709,6 +22837,50 @@ Model {
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret4"
+	  Ports			  [1, 1]
+	  Position		  [180, 349, 200, 381]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreter Block"
+	  infoedit		  "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
+	  force_arith_type	  on
+	  arith_type		  "Unsigned"
+	  force_bin_pt		  on
+	  bin_pt		  "7"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "20,20,336,312"
+	  block_type		  "reinterpret"
+	  block_version		  "10.1.3"
+	  sg_icon_stat		  "20,32,1,1,white,blue,0,8982c1db,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Slice2"
+	  Ports			  [1, 1]
+	  Position		  [125, 351, 160, 379]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Slice"
+	  SourceType		  "Xilinx Bit Slice Extractor Block"
+	  infoedit		  "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
+	  nbits			  "8"
+	  boolean_output	  off
+	  mode			  "Lower Bit Location + Width"
+	  bit1			  "0"
+	  base1			  "MSB of Input"
+	  bit0			  "0"
+	  base0			  "LSB of Input"
+	  dbl_ovrd		  off
+	  has_advanced_control	  "0"
+	  sggui_pos		  "20,20,460,380"
+	  block_type		  "slice"
+	  block_version		  "10.1.3"
+	  sg_icon_stat		  "35,28,1,1,white,blue,0,b1026674,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([22 17 24 17 22 30 32 34 42 35 29 24 30 24 29 35 42 34 32 30 22 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'[a:b]');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
 	  BlockType		  SubSystem
 	  Name			  "slice2"
 	  Ports			  [1, 4]
@@ -22719,7 +22891,7 @@ Model {
 	  FunctionWithSeparateData off
 	  System {
 	    Name		    "slice2"
-	    Location		    [614, 204, 1393, 728]
+	    Location		    [385, 208, 1164, 732]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -22952,67 +23124,9 @@ Model {
 	      OutScaling	      "2^0"
 	    }
 	    Line {
-	      SrcBlock		      "in"
+	      SrcBlock		      "Reinterpret3"
 	      SrcPort		      1
-	      Points		      [10, 0]
-	      Branch {
-		Points			[0, 45]
-		Branch {
-		  DstBlock		  "Slice27"
-		  DstPort		  1
-		}
-		Branch {
-		  Points		  [0, 45]
-		  Branch {
-		    DstBlock		    "Slice1"
-		    DstPort		    1
-		  }
-		  Branch {
-		    Points		    [0, 45]
-		    DstBlock		    "Slice2"
-		    DstPort		    1
-		  }
-		}
-	      }
-	      Branch {
-		DstBlock		"Slice26"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "Slice26"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice27"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice1"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Slice2"
-	      SrcPort		      1
-	      DstBlock		      "Reinterpret3"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Reinterpret"
-	      SrcPort		      1
-	      DstBlock		      "out0"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Reinterpret1"
-	      SrcPort		      1
-	      DstBlock		      "out1"
+	      DstBlock		      "out3"
 	      DstPort		      1
 	    }
 	    Line {
@@ -23022,10 +23136,68 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Reinterpret3"
+	      SrcBlock		      "Reinterpret1"
 	      SrcPort		      1
-	      DstBlock		      "out3"
+	      DstBlock		      "out1"
 	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reinterpret"
+	      SrcPort		      1
+	      DstBlock		      "out0"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice2"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice1"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice27"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Slice26"
+	      SrcPort		      1
+	      DstBlock		      "Reinterpret"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "in"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		DstBlock		"Slice26"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 45]
+		Branch {
+		  Points		  [0, 45]
+		  Branch {
+		    Points		    [0, 45]
+		    DstBlock		    "Slice2"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Slice1"
+		    DstPort		    1
+		  }
+		}
+		Branch {
+		  DstBlock		  "Slice27"
+		  DstPort		  1
+		}
+	      }
 	    }
 	  }
 	}
@@ -23038,23 +23210,129 @@ Model {
 	  OutScaling		  "2^0"
 	}
 	Line {
-	  SrcBlock		  "in"
+	  SrcBlock		  "Reinterpret4"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    Points		    [0, -60]
+	    Branch {
+	      Points		      [0, -60]
+	      Branch {
+		Points			[0, -60]
+		DstBlock		"Mult"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Mult1"
+		DstPort			2
+	      }
+	    }
+	    Branch {
+	      DstBlock		      "Mult2"
+	      DstPort		      2
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Mult3"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Reinterpret3"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Reinterpret2"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Reinterpret1"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Reinterpret"
+	  SrcPort		  1
+	  DstBlock		  "Concat"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Slice2"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert1"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert2"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert3"
+	  SrcPort		  1
+	  DstBlock		  "Reinterpret3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Concat"
 	  SrcPort		  1
 	  Points		  [0, 0]
-	  DstBlock		  "slice2"
+	  DstBlock		  "out"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "slice2"
+	  SrcBlock		  "Mult3"
 	  SrcPort		  1
-	  DstBlock		  "Mult"
+	  DstBlock		  "Convert3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult2"
+	  SrcPort		  1
+	  DstBlock		  "Convert2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult1"
+	  SrcPort		  1
+	  DstBlock		  "Convert1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mult"
+	  SrcPort		  1
+	  DstBlock		  "Convert"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "gain"
+	  SrcPort		  1
+	  DstBlock		  "Slice2"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "slice2"
-	  SrcPort		  2
-	  Points		  [45, 0; 0, 50]
-	  DstBlock		  "Mult1"
+	  SrcPort		  4
+	  Points		  [25, 0; 0, 150]
+	  DstBlock		  "Mult3"
 	  DstPort		  1
 	}
 	Line {
@@ -23066,123 +23344,23 @@ Model {
 	}
 	Line {
 	  SrcBlock		  "slice2"
-	  SrcPort		  4
-	  Points		  [25, 0; 0, 150]
-	  DstBlock		  "Mult3"
+	  SrcPort		  2
+	  Points		  [45, 0; 0, 50]
+	  DstBlock		  "Mult1"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "gain"
+	  SrcBlock		  "slice2"
 	  SrcPort		  1
-	  DstBlock		  "Convert4"
+	  DstBlock		  "Mult"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Mult"
-	  SrcPort		  1
-	  DstBlock		  "Convert"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Mult1"
-	  SrcPort		  1
-	  DstBlock		  "Convert1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Mult2"
-	  SrcPort		  1
-	  DstBlock		  "Convert2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Mult3"
-	  SrcPort		  1
-	  DstBlock		  "Convert3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Concat"
+	  SrcBlock		  "in"
 	  SrcPort		  1
 	  Points		  [0, 0]
-	  DstBlock		  "out"
+	  DstBlock		  "slice2"
 	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert3"
-	  SrcPort		  1
-	  DstBlock		  "Reinterpret3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert2"
-	  SrcPort		  1
-	  DstBlock		  "Reinterpret2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert1"
-	  SrcPort		  1
-	  DstBlock		  "Reinterpret1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert"
-	  SrcPort		  1
-	  DstBlock		  "Reinterpret"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert4"
-	  SrcPort		  1
-	  Points		  [40, 0]
-	  Branch {
-	    DstBlock		    "Mult3"
-	    DstPort		    2
-	  }
-	  Branch {
-	    Points		    [0, -60]
-	    Branch {
-	      DstBlock		      "Mult2"
-	      DstPort		      2
-	    }
-	    Branch {
-	      Points		      [0, -60]
-	      Branch {
-		DstBlock		"Mult1"
-		DstPort			2
-	      }
-	      Branch {
-		Points			[0, -60]
-		DstBlock		"Mult"
-		DstPort			2
-	      }
-	    }
-	  }
-	}
-	Line {
-	  SrcBlock		  "Reinterpret"
-	  SrcPort		  1
-	  DstBlock		  "Concat"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Reinterpret1"
-	  SrcPort		  1
-	  DstBlock		  "Concat"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Reinterpret2"
-	  SrcPort		  1
-	  DstBlock		  "Concat"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Reinterpret3"
-	  SrcPort		  1
-	  DstBlock		  "Concat"
-	  DstPort		  4
 	}
       }
     }
@@ -39915,26 +40093,26 @@ Model {
     Line {
       SrcBlock		      "From"
       SrcPort		      1
-      DstBlock		      "gain_calib0"
-      DstPort		      2
+      DstBlock		      "Delay14"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "From5"
       SrcPort		      1
-      DstBlock		      "gain_calib1"
-      DstPort		      2
+      DstBlock		      "Delay13"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "From7"
       SrcPort		      1
-      DstBlock		      "gain_calib2"
-      DstPort		      2
+      DstBlock		      "Delay15"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "From8"
       SrcPort		      1
-      DstBlock		      "gain_calib3"
-      DstPort		      2
+      DstBlock		      "Delay16"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Delay2"
@@ -40132,6 +40310,30 @@ Model {
       Points		      [0, -85]
       DstBlock		      "capt"
       DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Delay14"
+      SrcPort		      1
+      DstBlock		      "gain_calib0"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Delay13"
+      SrcPort		      1
+      DstBlock		      "gain_calib1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Delay15"
+      SrcPort		      1
+      DstBlock		      "gain_calib2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Delay16"
+      SrcPort		      1
+      DstBlock		      "gain_calib3"
+      DstPort		      2
     }
     Annotation {
       Position		      [2623, 309]

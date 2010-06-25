@@ -1,11 +1,11 @@
 me=gcb;
 v=get_param(me,'blocks');
 if(~strcmp(v(8),'tap1'))
-load_system('xbsBasic_r3');
-load_system('simulink');
-load_system('simulink3');
-load_system('xbsMath_r3');
-load_system('xbsIndex_r3');
+%load_system('xbsBasic_r3');
+%load_system('simulink');
+%load_system('simulink3');
+%load_system('xbsMath_r3');
+%load_system('xbsIndex_r3');
 set_param(me, 'LinkStatus', 'inactive');
 a=235;
 b=370;

@@ -79,11 +79,14 @@ void arm1pps_cmd(int argc, char** argv)
 
     xil_printf("Synchronizing internal 1PPS to external 1PPS...\n\r");
 
-    // while (!XIo_In32(XPAR_VSITVG_ONEPPS_SYNC_ARM1PPS_ACK_BASEADDR));
-    while (!sif_reg_read(XPAR_DBE_XAUI_CORR_ONEPPS_SYNC_ARM1PPS_ACK_BASEADDR));
+    // Wait for ack to go low
+    while (sif_reg_read(XPAR_DBE_XAUI_CORR_ONEPPS_SYNC_ARM1PPS_ACK_BASEADDR));
 
     // XIo_Out32(XPAR_VSITVG_ONEPPS_SYNC_ARM1PPS_BASEADDR, 0);
     sif_reg_write(XPAR_DBE_XAUI_CORR_ONEPPS_SYNC_ARM1PPS_BASEADDR, 0);
+
+    // Wait for ack to go high
+    while (!sif_reg_read(XPAR_DBE_XAUI_CORR_ONEPPS_SYNC_ARM1PPS_ACK_BASEADDR));
 
     xil_printf("Internal 1PPS synchronized to external 1PPS.\n\r");
 }

@@ -1,1 +1,5 @@
+*.asv
 *sysgen.log
+*sysgen_error.log
+# Ignore directories containing generated netlists
+*_core/

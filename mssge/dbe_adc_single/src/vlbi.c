@@ -4,7 +4,6 @@ void vlbi_init ()
 /* init */
 {
     sif_reg_write(XPAR_DBE_ADC_SINGLE_SHIFTCTRL_REG_BASEADDR, 0xffffffff);
-    sif_reg_write(XPAR_DBE_ADC_SINGLE_SMASEL_BASEADDR, 0);
 	//new stuff to check rs-232
 	sif_bram_write(XPAR_DBE_ADC_SINGLE_POL0_GAINCTRL0_BASEADDR, 0, 200);
 	sif_bram_write(XPAR_DBE_ADC_SINGLE_POL0_GAINCTRL0_BASEADDR, 1, 200);
@@ -41,7 +40,7 @@ void vlbi_init ()
 	sif_bram_write(XPAR_DBE_ADC_SINGLE_POL1_GAINCTRL1_BASEADDR, 7, 200);
 */	//end new stuff
 
-    sif_reg_write(XPAR_DBE_ADC_SINGLE_OUTPUT_SEL_BASEADDR, 3);
+    sif_reg_write(XPAR_DBE_ADC_SINGLE_OUTSEL_BASEADDR, 3);
 
 
 
@@ -65,7 +64,7 @@ void selectoutput_cmd (int argc, char** argv)
 
     muxsel = tinysh_atoxi(argv[1]);
 
-    sif_reg_write(XPAR_DBE_ADC_SINGLE_OUTPUT_SEL_BASEADDR, muxsel);
+    sif_reg_write(XPAR_DBE_ADC_SINGLE_OUTSEL_BASEADDR, muxsel);
 }
 
 void arm1pps_cmd(int argc, char** argv)

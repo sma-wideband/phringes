@@ -1,33 +1,64 @@
-me=gcb;
-v=get_param(me,'blocks');
-if(~strcmp(v(8),'tap1'))
-%load_system('xbsBasic_r3');
-%load_system('simulink');
-%load_system('simulink3');
-%load_system('xbsMath_r3');
-%load_system('xbsIndex_r3');
-set_param(me, 'LinkStatus', 'inactive');
+function shift_reg_init(blk, varargin)
+% Initialize and configure the shift_reg block
+%
+% shift_reg_init(blk, varargin)
+%
+% blk = The block to configure.
+% varargin = {'varname', 'value', ...} pairs
+% 
+% Valid varnames for this block are:
+% ntaps = The number of implemented taps
+% bin_pt = Binary point (of input value?)
+
+clog('entering shift_reg_init','trace');
+% Declare any default values for arguments you might like.
+defaults = {'ntaps', 10, 'bin_pt', 6};
+
+if same_state(blk, 'defaults', defaults, varargin{:}), return, end
+clog('shift_reg_init post same_state','trace');
+check_mask_type(blk, 'Shift Reg');
+munge_block(blk, varargin{:});
+
+ntaps = get_var('ntaps', 'defaults', defaults, varargin{:});
+bin_pt = get_var('bin_pt', 'defaults', defaults, varargin{:});
+
+% Delete all lines
+delete_lines(blk);
+
+% Find all tap blocks
+taps = find_system(blk, ...
+    'LookUnderMasks','on', ...
+    'RegExp','on', ...
+    'Name','tap[1-9]');
+
+% Delete all tap blocks
+for k=1:length(taps)
+    delete_block(taps{k});
+end
+
+% Add tap blocks
+
 a=235;
 b=370;
 init=0;
-bp=bin_point;
-for i=1:n;
-	name=[me,'/tap',num2str(i)];
-	outpin=['tap',num2str(i),'/1'];
-	inpin=['Mux1/',num2str(i+1)];
+bp=bin_pt;
+for k=1:ntaps;
+	name=[blk,'/tap',num2str(k)];
+	outpin=['tap',num2str(k),'/1'];
+	inpin=['Mux1/',num2str(k+1)];
 	add_block('beamform/filter_tap',name,'Position',[a 185 b 619],'bnpnt',num2str(bp));
 	a=a+180;
 	b=b+180;
-	inpin1=['tap',num2str(i),'/1'];
-	inpin2=['tap',num2str(i),'/2'];
-	inpin3=['tap',num2str(i),'/3'];
-	inpin4=['tap',num2str(i),'/4'];
-	inpin5=['tap',num2str(i),'/5'];
-	inpin6=['tap',num2str(i),'/6'];
-	inpin7=['tap',num2str(i),'/7'];
-	inpin8=['tap',num2str(i),'/8'];
-	inpin9=['tap',num2str(i),'/9'];
-	inpin10=['tap',num2str(i),'/10'];
+	inpin1=['tap',num2str(k),'/1'];
+	inpin2=['tap',num2str(k),'/2'];
+	inpin3=['tap',num2str(k),'/3'];
+	inpin4=['tap',num2str(k),'/4'];
+	inpin5=['tap',num2str(k),'/5'];
+	inpin6=['tap',num2str(k),'/6'];
+	inpin7=['tap',num2str(k),'/7'];
+	inpin8=['tap',num2str(k),'/8'];
+	inpin9=['tap',num2str(k),'/9'];
+	inpin10=['tap',num2str(k),'/10'];
 	outpin1=['Update','/1'];
 	if init==0
 		outpin2=['Serial In/1'];
@@ -41,162 +72,37 @@ for i=1:n;
 		outpin10=['Constant/1'];
 		init=1;
 	else
-		outpin2=['tap',num2str(i-1),'/1'];
-		outpin3=['tap',num2str(i-1),'/2'];
-		outpin4=['tap',num2str(i-1),'/3'];
-		outpin5=['tap',num2str(i-1),'/4'];
-		outpin6=['tap',num2str(i-1),'/5'];
-		outpin7=['tap',num2str(i-1),'/6'];
-		outpin8=['tap',num2str(i-1),'/7'];
-		outpin9=['tap',num2str(i-1),'/8'];
-		outpin10=['tap',num2str(i-1),'/9'];
+		outpin2=['tap',num2str(k-1),'/1'];
+		outpin3=['tap',num2str(k-1),'/2'];
+		outpin4=['tap',num2str(k-1),'/3'];
+		outpin5=['tap',num2str(k-1),'/4'];
+		outpin6=['tap',num2str(k-1),'/5'];
+		outpin7=['tap',num2str(k-1),'/6'];
+		outpin8=['tap',num2str(k-1),'/7'];
+		outpin9=['tap',num2str(k-1),'/8'];
+		outpin10=['tap',num2str(k-1),'/9'];
 	end	
-	add_line(me,num2str(outpin1),num2str(inpin1),'autorouting','on');
-	add_line(me,num2str(outpin2),num2str(inpin2),'autorouting','on');
-	add_line(me,num2str(outpin3),num2str(inpin3),'autorouting','on');
-	add_line(me,num2str(outpin4),num2str(inpin4),'autorouting','on');
-	add_line(me,num2str(outpin5),num2str(inpin5),'autorouting','on');
-	add_line(me,num2str(outpin6),num2str(inpin6),'autorouting','on');
-	add_line(me,num2str(outpin7),num2str(inpin7),'autorouting','on');
-	add_line(me,num2str(outpin8),num2str(inpin8),'autorouting','on');
-	add_line(me,num2str(outpin9),num2str(inpin9),'autorouting','on');
-	add_line(me,num2str(outpin10),num2str(inpin10),'autorouting','on');
+	add_line(blk,num2str(outpin1),num2str(inpin1),'autorouting','on');
+	add_line(blk,num2str(outpin2),num2str(inpin2),'autorouting','on');
+	add_line(blk,num2str(outpin3),num2str(inpin3),'autorouting','on');
+	add_line(blk,num2str(outpin4),num2str(inpin4),'autorouting','on');
+	add_line(blk,num2str(outpin5),num2str(inpin5),'autorouting','on');
+	add_line(blk,num2str(outpin6),num2str(inpin6),'autorouting','on');
+	add_line(blk,num2str(outpin7),num2str(inpin7),'autorouting','on');
+	add_line(blk,num2str(outpin8),num2str(inpin8),'autorouting','on');
+	add_line(blk,num2str(outpin9),num2str(inpin9),'autorouting','on');
+	add_line(blk,num2str(outpin10),num2str(inpin10),'autorouting','on');
 end
-outpin2=['tap',num2str(n),'/10'];
-outpin3=['tap',num2str(n),'/11'];
-outpin4=['tap',num2str(n),'/12'];
-outpin5=['tap',num2str(n),'/13'];
-add_line(me,num2str(outpin2),num2str('fil_out_1/1'),'autorouting','on');
-add_line(me,num2str(outpin3),num2str('fil_out_2/1'),'autorouting','on');
-add_line(me,num2str(outpin4),num2str('fil_out_3/1'),'autorouting','on');
-add_line(me,num2str(outpin5),num2str('fil_out_4/1'),'autorouting','on');
-end
+outpin2=['tap',num2str(ntaps),'/10'];
+outpin3=['tap',num2str(ntaps),'/11'];
+outpin4=['tap',num2str(ntaps),'/12'];
+outpin5=['tap',num2str(ntaps),'/13'];
+add_line(blk,num2str(outpin2),num2str('fil_out_1/1'),'autorouting','on');
+add_line(blk,num2str(outpin3),num2str('fil_out_2/1'),'autorouting','on');
+add_line(blk,num2str(outpin4),num2str('fil_out_3/1'),'autorouting','on');
+add_line(blk,num2str(outpin5),num2str('fil_out_4/1'),'autorouting','on');
 
-%add_block('xbsBasic_r3/Inverter',[me,'/not'],'MakeNameUnique','on','Position',[780 13 830 47],'Orientation','left');
-%add_block('xbsBasic_r3/Inverter',[me,'/not1'],'MakeNameUnique','on','Position',[585 438 635 472],'Orientation','left');
-%add_block('xbsBasic_r3/Counter',[me,'/counter'],'MakeNameUnique','on','Position',[470 180 515 230],...
-%	'cnt_type','Free Running',...
-%	'n_bits','10',...
-%	'bin_pt','0',...
-%	'arith_type','Unsigned',...
-%	'rst','on',...
-%	'en','on');
-%add_block('xbsBasic_r3/Counter',[me,'/wr_ptr'],'MakeNameUnique','on','Position',[465 312 510 363],...
-%	'cnt_type','Free Running',...
-%	'n_bits','10',...
-%	'bin_pt','0',...
-%	'arith_type','Unsigned',...
-%	'rst','on',...
-%	'en','on');
-%add_block('xbsBasic_r3/Counter',[me,'/rd_ptr'],'MakeNameUnique','on','Position',[465 392 510 443],...
-%	'cnt_type','Free Running',...
-%	'n_bits','10',...
-%	'bin_pt','0',...
-%	'arith_type','Unsigned',...
-%	'rst','on',...
-%	'en','on');
-%add_block('xbsBasic_r3/Register',[me,'/init_done'],'MakeNameUnique','on','Position',[785 58 830 107],...
-%	'init','0',...
-%	'rst','on',...
-%	'explicit_period','on',...
-%	'period','1');
-%add_block('xbsMath_r3/Relational',[me,'/compare'],'MakeNameUnique','on','Position',[570 53 615 97],...
-%	'mode','a>=b',...
-%	'latency','1');
-%add_block('xbsMath_r3/Relational',[me,'/compare1'],'MakeNameUnique','on','Position',[665 388 710 432],...
-%	'mode','a>=b',...
-%	'latency','1',...
-%	'explicit_period','on',...
-%	'period','1');
-%add_block('xbsMath_r3/Relational',[me,'/compare2'],'MakeNameUnique','on','Position',[665 488 710 532],...
-%	'mode','a<b',...
-%	'latency','1',...
-%	'explicit_period','on',...
-%	'period','1');
-%add_block('xbsIndex_r3/Delay',[me,'/delay'],'MakeNameUnique','on','Position',[350 688 395 732],...
-%	'latency','2');
-%add_block('xbsIndex_r3/Dual Port RAM',[me,'/mem'],'MakeNameUnique','on','Position',[960 232 1065 348],...
-%	'depth','1024',...
-%	'initVector','0',...
-%	'write_mode_A','Read Before Write',...
-%	'write_mode_B','No Read On Write',...
-%	'mem_collision','on',...
-%	'explicit_period','on',...
-%	'period','1');
-%add_block('xbsIndex_r3/AddSub',[me,'/offset'],'MakeNameUnique','on','Position',[590 262 640 313],...
-%	'mode','Addition',...
-%	'precision','User Defined',...
-%	'arith_type','Unsigned',...
-%	'n_bits','10',...
-%	'bin_pt','0',...
-%	'overflow','wrap',...
-%	'latency','1');
-%%add_block('xbsIndex_r3/Logical',[me,'/and1'],'MakeNameUnique','on','Position',[820 418 865 462],...
-%%	'logical_function','AND',...
-%%	'inputs','2',...
-%%	'precision','full');
-%add_block('xbsIndex_r3/Logical',[me,'/and'],'MakeNameUnique','on','Position',[820 478 865 522],...
-%	'logical_function','AND',...
-%	'inputs','2',...
-%	'precision','full');
-%add_block('xbsIndex_r3/Logical',[me,'/and2'],'MakeNameUnique','on','Position',[1100 303 1145 347],...
-%	'logical_function','AND',...
-%	'inputs','2',...
-%	'precision','full');
-%add_block('xbsIndex_r3/Constant',[me,'/zero'],'MakeNameUnique','on','Position',[770 255 815 285],...
-%	'const','0',...
-%	'arith_type','Unsigned',...
-%	'n_bits','32',...
-%	'bin_pt','0');
-%add_block('xbsIndex_r3/Constant',[me,'/zero1'],'MakeNameUnique','on','Position',[775 325 820 355],...
-%	'const','0',...
-%	'arith_type','Unsigned',...
-%	'n_bits','1',...
-%	'bin_pt','0');
-%add_block('xbsIndex_r3/Slice',[me,'/slice'],'MakeNameUnique','on','Position',[845 326 890 354],...
-%	'mode','Upper Bit location + Width',...
-%	'nbits','1',...
-%	'boolean_output','on');
-%add_block('xbsIndex_r3/Slice',[me,'/slice1'],'MakeNameUnique','on','Position',[380 601 425 629],...
-%	'mode','Upper Bit location + Width',...
-%	'nbits','1',...
-%	'boolean_output','on');
-%add_block('xbsIndex_r3/Mux',[me,'/mux'],'MakeNameUnique','on','Position',[675 52 700 118]);
-%add_line(me,'counter/1','compare/1','autorouting','on');
-%add_line(me,'In3/1','compare/2','autorouting','on');
-%add_line(me,'init_done/1','mux/1','autorouting','on');
-%add_line(me,'init_done/1','mux/3','autorouting','on');
-%add_line(me,'compare/1','mux/2','autorouting','on');
-%add_line(me,'mux/1','init_done/1','autorouting','on');
-%add_line(me,'init_done/1','not/1','autorouting','on');
-%add_line(me,'not/1','counter/2','autorouting','on');
-%add_line(me,'In1/1','counter/1','autorouting','on');
-%add_line(me,'In1/1','wr_ptr/1','autorouting','on');
-%add_line(me,'In1/1','rd_ptr/1','autorouting','on');
-%add_line(me,'In1/1','init_done/2','autorouting','on');
-%add_line(me,'In2/1','delay/1','autorouting','on');
-%add_line(me,'In4/1','slice1/1','autorouting','on');
-%add_line(me,'slice1/1','mem/3','autorouting','on');
-%add_line(me,'delay/1','mem/2','autorouting','on');
-%add_line(me,'wr_ptr/1','mem/1','autorouting','on');
-%add_line(me,'rd_ptr/1','mem/4','autorouting','on');
-%add_line(me,'In3/1','offset/1','autorouting','on');
-%add_line(me,'rd_ptr/1','offset/2','autorouting','on');
-%add_line(me,'wr_ptr/1','compare1/1','autorouting','on');
-%add_line(me,'wr_ptr/1','compare2/2','autorouting','on');
-%add_line(me,'offset/1','compare1/2','autorouting','on');
-%add_line(me,'offset/1','compare2/1','autorouting','on');
-%add_line(me,'compare1/1','and/1','autorouting','on');
-%%add_line(me,'compare2/1','and1/1','autorouting','on');
-%%add_line(me,'init_done/1','and1/2','autorouting','on');
-%add_line(me,'init_done/1','and/2','autorouting','on');
-%add_line(me,'and/1','rd_ptr/2','autorouting','on');
-%add_line(me,'compare2/1','not1/1','autorouting','on');
-%add_line(me,'not1/1','wr_ptr/2','autorouting','on');
-%add_line(me,'mem/4','and2/2','autorouting','on');
-%add_line(me,'init_done/1','and2/1','autorouting','on');
-%add_line(me,'and2/1','Out2/1','autorouting','on');
-%add_line(me,'mem/3','Out1/1','autorouting','on');
-%add_line(me,'zero/1','mem/5','autorouting','on');
-%add_line(me,'zero1/1','slice/1','autorouting','on');
-%add_line(me,'slice/1','mem/6','autorouting','on');
+clean_blocks(blk);
+
+save_state(blk, 'defaults', defaults, varargin{:});
+clog('exiting shift_reg_init','trace');

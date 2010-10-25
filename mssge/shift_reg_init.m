@@ -25,17 +25,6 @@ bin_pt = get_var('bin_pt', 'defaults', defaults, varargin{:});
 % Delete all lines
 delete_lines(blk);
 
-% Find all tap blocks
-taps = find_system(blk, ...
-    'LookUnderMasks','on', ...
-    'RegExp','on', ...
-    'Name','tap[1-9]');
-
-% Delete all tap blocks
-for k=1:length(taps)
-    delete_block(taps{k});
-end
-
 % Add tap blocks
 
 a=235;
@@ -43,10 +32,10 @@ b=370;
 init=0;
 bp=bin_pt;
 for k=1:ntaps;
-	name=[blk,'/tap',num2str(k)];
+	name=['tap',num2str(k)];
 	outpin=['tap',num2str(k),'/1'];
 	inpin=['Mux1/',num2str(k+1)];
-	add_block('beamform/filter_tap',name,'Position',[a 185 b 619],'bnpnt',num2str(bp));
+	reuse_block(blk, name, 'beamform/filter_tap', 'Position',[a 185 b 619], 'bnpnt',num2str(bp));
 	a=a+180;
 	b=b+180;
 	inpin1=['tap',num2str(k),'/1'];

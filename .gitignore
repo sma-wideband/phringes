@@ -4,6 +4,7 @@
 # Ignore directories containing generated netlists
 *_core/
 bit_files/
+!mssge/bit_files/
 core_info.m
 sysgen/
 XPS_*_base/

@@ -1,8 +1,10 @@
 *.asv
 *sysgen.log
 *sysgen_error.log
-# Ignore directories containing generated netlists
-*_core/
+# Ignore contents of directories containing generated
+# netlists, but not the generated netlists themselves
+mssge/*_core/*
+!mssge/*_core/*_core.ngc
 bit_files/
 !mssge/bit_files/
 core_info.m

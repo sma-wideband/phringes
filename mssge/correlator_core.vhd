@@ -16,6 +16,7 @@ entity correlator_core is
     q3: in std_logic_vector(7 downto 0); 
     qdelay: in std_logic_vector(10 downto 0); 
     sync_in: in std_logic; 
+    thresh: in std_logic_vector(6 downto 0); 
     addr: out std_logic_vector(4 downto 0); 
     data_in: out std_logic_vector(31 downto 0); 
     integs: out std_logic_vector(31 downto 0); 

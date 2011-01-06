@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.58"
+    ComputedModelVersion    "1.59"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -45,9 +45,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Administrator"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Dec 21 13:50:12 2010"
+  LastModifiedDate	  "Thu Jan 06 15:56:51 2011"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:58>"
+  ModelVersionFormat	  "1.%<AutoIncrement:59>"
   ConfigurationManager	  "None"
   SimulationMode	  "normal"
   LinearizationMsg	  "none"
@@ -668,7 +668,7 @@ Model {
   }
   System {
     Name		    "correlator_core"
-    Location		    [202, 70, 1418, 852]
+    Location		    [214, 70, 1430, 852]
     Open		    on
     ModelBrowserVisibility  on
     ModelBrowserWidth	    212
@@ -750,14 +750,50 @@ Model {
       Name		      "Constant2"
       Position		      [85, 545, 115, 575]
       ShowName		      off
-      Value		      "32"
+      Value		      "16"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant3"
+      Position		      [920, 290, 950, 320]
+      ShowName		      off
+      Value		      "0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant4"
+      Position		      [920, 325, 950, 355]
+      ShowName		      off
+      Value		      "0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant5"
+      Position		      [920, 360, 950, 390]
+      ShowName		      off
+      Value		      "0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant6"
+      Position		      [920, 395, 950, 425]
+      ShowName		      off
+      Value		      "0"
       OutDataType	      "sfix(16)"
       OutScaling	      "2^0"
     }
     Block {
       BlockType		      RandomNumber
       Name		      "Random\nNumber"
-      Position		      [85, 195, 115, 225]
+      Position		      [85, 335, 115, 365]
       ShowName		      off
       Variance		      "128"
       Seed		      "ceil(1000*rand())"
@@ -766,7 +802,7 @@ Model {
     Block {
       BlockType		      RandomNumber
       Name		      "Random\nNumber1"
-      Position		      [85, 230, 115, 260]
+      Position		      [85, 370, 115, 400]
       ShowName		      off
       Variance		      "128"
       Seed		      "ceil(1000*rand())"
@@ -775,7 +811,7 @@ Model {
     Block {
       BlockType		      RandomNumber
       Name		      "Random\nNumber2"
-      Position		      [85, 265, 115, 295]
+      Position		      [85, 405, 115, 435]
       ShowName		      off
       Variance		      "128"
       Seed		      "ceil(1000*rand())"
@@ -784,7 +820,7 @@ Model {
     Block {
       BlockType		      RandomNumber
       Name		      "Random\nNumber3"
-      Position		      [85, 300, 115, 330]
+      Position		      [85, 440, 115, 470]
       ShowName		      off
       Variance		      "128"
       Seed		      "ceil(1000*rand())"
@@ -1044,6 +1080,7 @@ Model {
 	    DialogParameters {
 	      sg_icon_stat	      "25,80,1,1,white,blue,3,03f9c9b9,right"
 	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 14.8571 89.1429 104 ],[0.77 0.82 0.91]);\npatch([10 3 14 3 10 22 25 28 41 31 21 14 25 14 21 31 41 28 25 22 10 ],[34 41 52 63 70 70 67 70 70 60 70 63 52 41 34 44 34 34 37 34 34 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 14.8571 89.1429 104 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');disp('\\bf{  z^{-1}}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	      sggui_pos		      "162,259,348,303"
 	    }
 	    BlockName		    "Mux1"
 	    DialogParameters {
@@ -1907,7 +1944,7 @@ Model {
 	  block_type		  "bitbasher"
 	  block_version		  "10.1.3"
 	  sg_icon_stat		  "20,156,1,1,white,blue,0,7943dfa0,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 20 20 0 ],[0 0 156 156 ],[0.77 0.82 0.91]);\npatch([4 1 6 1 4 9 10 11 17 13 9 6 11 6 9 13 17 11 10 9 4 ],[70 73 78 83 86 86 85 86 86 82 86 83 78 73 70 74 70 70 71 70 70 ],[0.98 0.96 0.92]);\nplot([0 20 20 0 0 ],[0 0 156 156 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'i');\ncolor('black');port_label('output',1,'q0');\ncolor('black');port_label('output',2,'q1');\ncolor('black');port_label('output',3,'q2');\ncolor('black');port_label('output',4,'q3');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([17 7 21 7 17 33 37 41 58 45 32 23 38 23 32 45 58 41 37 33 17 ],[6 16 30 44 54 54 50 54 54 41 54 45 30 15 6 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'i');\ncolor('black');port_label('output',1,'q0');\ncolor('black');port_label('output',2,'q1');\ncolor('black');port_label('output',3,'q2');\ncolor('black');port_label('output',4,'q3');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -1925,7 +1962,7 @@ Model {
 	  block_type		  "concat"
 	  block_version		  "10.1.3"
 	  sg_icon_stat		  "20,133,1,1,white,blue,0,ad63c393,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 20 20 0 ],[0 0 133 133 ],[0.77 0.82 0.91]);\npatch([4 1 6 1 4 9 10 11 17 13 9 6 11 6 9 13 17 11 10 9 4 ],[59 62 67 72 75 75 74 75 75 71 75 72 67 62 59 63 59 59 60 59 59 ],[0.98 0.96 0.92]);\nplot([0 20 20 0 0 ],[0 0 133 133 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'hi');\ncolor('black');port_label('input',4,'lo');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([14 4 18 4 14 30 34 38 55 42 29 20 35 20 29 42 55 38 34 30 14 ],[6 16 30 44 54 54 50 54 54 41 54 45 30 15 6 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'hi');\ncolor('black');port_label('input',4,'lo');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -2172,6 +2209,26 @@ Model {
 	  block_type		  "reinterpret"
 	  block_version		  "10.1.3"
 	  sg_icon_stat		  "30,32,1,1,white,blue,0,8982c1db,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Reinterpret1"
+	  Ports			  [1, 1]
+	  Position		  [75, 455, 90, 485]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Reinterpret"
+	  SourceType		  "Xilinx Type Reinterpreter Block"
+	  infoedit		  "Changes signal type without altering the binary representation.   You can changed the signal between signed and unsigned, and relocate the binary point.<P><P>Hardware notes: In hardware this block costs nothing.<P><P>Example:  Suppose the input is 6 bits wide, signed, with 2 fractional bits, and the output is forced to unsigned with 0 fractional bits.  Then an input of -2.0 (1110.00 in binary 2's complement) becomes an output of 56 (111000 in binary)."
+	  force_arith_type	  off
+	  arith_type		  "Unsigned"
+	  force_bin_pt		  on
+	  bin_pt		  "7"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "20,20,336,312"
+	  block_type		  "reinterpret"
+	  block_version		  "10.1.3"
+	  sg_icon_stat		  "15,30,1,1,white,blue,0,8982c1db,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
@@ -45428,7 +45485,31 @@ Model {
 	Line {
 	  SrcBlock		  "qthresh"
 	  SrcPort		  1
-	  Points		  [35, 0; 0, -65]
+	  DstBlock		  "Reinterpret1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "coarse_delay"
+	  SrcPort		  1
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay7"
+	  SrcPort		  1
+	  DstBlock		  "simple_bram_vacc"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay8"
+	  SrcPort		  1
+	  DstBlock		  "Delay3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reinterpret1"
+	  SrcPort		  1
+	  Points		  [0, -65]
 	  Branch {
 	    DstBlock		    "2bit_quantizer_q3"
 	    DstPort		    2
@@ -45480,24 +45561,6 @@ Model {
 	      }
 	    }
 	  }
-	}
-	Line {
-	  SrcBlock		  "coarse_delay"
-	  SrcPort		  1
-	  DstBlock		  "Terminator"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Delay7"
-	  SrcPort		  1
-	  DstBlock		  "simple_bram_vacc"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Delay8"
-	  SrcPort		  1
-	  DstBlock		  "Delay3"
-	  DstPort		  1
 	}
       }
     }
@@ -45961,62 +46024,6 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Random\nNumber"
-      SrcPort		      1
-      Points		      [10, 0]
-      Branch {
-	DstBlock		"i0"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, 140]
-	DstBlock		"q0"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "Random\nNumber1"
-      SrcPort		      1
-      Points		      [20, 0]
-      Branch {
-	DstBlock		"i1"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, 140]
-	DstBlock		"q1"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "Random\nNumber2"
-      SrcPort		      1
-      Points		      [30, 0]
-      Branch {
-	DstBlock		"i2"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, 140]
-	DstBlock		"q2"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "Random\nNumber3"
-      SrcPort		      1
-      Points		      [40, 0]
-      Branch {
-	DstBlock		"i3"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, 140]
-	DstBlock		"q3"
-	DstPort			1
-      }
-    }
-    Line {
       SrcBlock		      "Step"
       SrcPort		      1
       DstBlock		      "sync_in"
@@ -46111,6 +46118,62 @@ Model {
       SrcPort		      1
       DstBlock		      "thresh"
       DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Random\nNumber"
+      SrcPort		      1
+      Points		      [5, 0]
+      Branch {
+	DstBlock		"q0"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -140]
+	DstBlock		"i0"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Random\nNumber1"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	DstBlock		"q1"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -140]
+	DstBlock		"i1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Random\nNumber2"
+      SrcPort		      1
+      Points		      [25, 0]
+      Branch {
+	DstBlock		"q2"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -140]
+	DstBlock		"i2"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Random\nNumber3"
+      SrcPort		      1
+      Points		      [35, 0]
+      Branch {
+	DstBlock		"q3"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -140]
+	DstBlock		"i3"
+	DstPort			1
+      }
     }
   }
 }

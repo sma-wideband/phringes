@@ -1,0 +1,363 @@
+\documentclass[12pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{graphicx}
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly accentuated characters
+
+% PDF Bookmarks and hyperref stuff
+\usepackage[
+  bookmarks=true,
+  bookmarksnumbered=true,
+  colorlinks=true,
+  filecolor=blue,
+  linkcolor=blue,
+  urlcolor=blue,
+  hyperfootnotes=true
+]{hyperref}
+
+\author{David MacMahon}
+\title{VLBI Phased Array \\ iBob and BEE2 \\ Registers and Devices}
+
+\begin{document}
+\maketitle
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\newlength{\itemseporig}
+\setlength{\itemseporig}{\itemsep}
+
+% Put new commands here
+\newcommand{\tighten}{
+  \setlength{\itemsep}{-\parskip}
+}
+\newcommand{\loosen}{
+  \setlength{\itemsep}{\itemseporig}
+}
+\newcommand{\LSB}{least significant byte }
+\newcommand{\LSb}{least significant bit }
+\newcommand{\LSbs}{least significant bits }
+\newcommand{\devitem}[2]{\item[#1] [#2] \\ }
+\newcommand{\rwreg}[1]{\devitem{#1}{R/W register}}
+\newcommand{\rwregn}[1]{\item[#1] {} \tighten} % For "stacked" rwregs
+\newcommand{\rwregs}[1]{\devitem{#1}{R/W registers} \loosen} % Ends stacked rwregs
+\newcommand{\roreg}[1]{\devitem{#1}{R register}}
+\newcommand{\roregn}[1]{\item[#1] {} \tighten} % For "stacked" rregs
+\newcommand{\roregs}[1]{\devitem{#1}{R registers} \loosen} % Ends stacked rregs
+\newcommand{\degree}[1]{$#1^{\circ}$}
+
+\begin{abstract}
+Describes the registers and devices in the various iBob and BEE2 designs used
+in the VLBI phased array processor for CARMA and SMA.
+\end{abstract}
+
+\section{ibob\_phased\_array\_2k}
+
+The ibob\_phased\_array\_2k design has a few critical registers that must be
+set to non-zero values for proper operation.  These registers are briefly
+listed here; full details are provided below.
+
+\begin{description}
+\rwreg{valid} Must be 1 to enable data to flow through the delay line.
+\rwreg{start\_xaui} Must be 1 to enable XAUI transmission as well as the clock
+output for the BEE2 calibration correlator.
+\rwregs{gain0 - gain3} At least one gain register must be non-zero to get
+non-zero output.
+\end{description}
+
+  \subsection{Sync and 1~PPS}
+To facilitate synchronized seeding of noise sources on different devices, the
+noise generators are armed via software.  This causes them to re-seed on the
+next rising edge of the internal 1~PPS signal.  The internal 1~PPS is generated
+by counting clock cycles and can be synchronized with one or the other of the
+ADCs sync pulses.
+
+\begin{description}
+\rwreg{ppssel} Selects the ADC sync pulse to which the interally generated
+1~PPS signal will be synchronized.
+
+0: Select ADC0 sync signal (typically for CARMA) \\
+1: Select ADC1 sync signal (typically for SMA)
+
+\rwreg{onepps\_sync/arm1pps} A 0 to 1 transition of the \LSb of this register
+will arm the internal 1~PPS generator to re-synchronize with the next rising
+edge of the selected sync pulse.
+
+\roreg{onepps\_sync/arm1pps\_ack} A 1 to 0 transition of the \LSb of
+\verb|onepps_sync/arm1pps| clears (i.e. sets to zero) this register.  This
+register is set to 1 on the rising edge of the next sync pulse that
+re-synchronizes the internal 1~PPS generator.  This can be used to verify that
+the internal 1~PPS generator did indeed re-synchronize after being armed.
+
+\end{description}
+
+  \subsection{Input Selection}
+
+\begin{description}
+
+\rwreg{insel}  Input selection.  Uses one bit per demux path per input.
+
+0: Select ADC \\
+1: Select noise source
+
+Examples:
+\begin{description}
+
+\item[0x0000] Select ADC for all demux paths of all inputs.
+\item[0x0001] Select noise source for demux path 0 of input0, select ADC  for
+               all other demux paths.
+\item[0x000F] Select noise source for all demux paths of input 0, select ADC
+               for all other inputs.
+\item[0xFFFF] Select noise source for all demux paths of all inputs.
+\item[0xF000] Select noise source for all demux paths of input 3, select ADC
+               for all other inputs.
+\item[0xC000] Select noise source for demux paths 2 and 3 of input 3, select
+               ADC for all other inputs.
+\end{description}
+\end{description}
+
+  \subsection{Noise Generators}
+
+\begin{description}
+
+\rwreg{noise/arm}  A 0 to 1 transition of the \LSb of each
+nybble arms that input's noise generator.  The least significant nybble
+corresponds to input0.  A value of 0x0011 wil arm the noise generators for
+input0 and input1.  A value of 0x1111 will arm all noise generators.
+
+Once a noise generator is armed, it will re-seed starting on the next internal
+1~PPS rising edge.  This can be used to synchronously seed noise generators
+across multiple devices or within one device.
+
+\filbreak
+\rwregn{noise/seed/0}
+\rwregn{noise/seed/1}
+\rwregn{noise/seed/2}
+\rwregs{noise/seed/3} Sets 32~bit seed for noise generators for corresponding
+inputs.  Because the inputs are demultiplexed by 4, each noise generator
+actually contains two noise generators that each output two indpendent normally
+distributed values each.  The 32~bit seed is actually split into two 16~bits
+seeds to seed the two contained noise generators.  Using a seed whose two
+halves are identical (i.e.\ a multiple of 65537) will result in a signal that
+has a lag-2 correlation coefficient of 1 resulting in a non-flat spectrum.
+
+\end{description}
+
+  \subsection{XAUI}
+The sum of the phased inputs is sent to the DBE via the XAUI0 connector.  The
+2-bit quantized inputs are sent to the calibration correlator via the XAUI1
+connector.  XAUI data transmission is \emph{dis}abled by default and must be
+explicitly enabled via software (see below).
+
+\begin{description}
+
+\rwreg{start\_xaui} Writing a 1 to this register enables data transmission over
+both XAUI links as well as enabling the dive-by-two counter used to drive the
+BEE2 calibration correlator's \verb|usr2_clk|.
+
+Writing a 0 (the default) disables XAUI data transmission over both XAUI links
+as well as enabling the dive-by-two counter used to drive the BEE2 calibration
+correlator's \verb|usr2_clk|.
+
+\filbreak
+\roregn{xaui\_0/rx\_linkdown}
+\roregs{xaui\_1/rx\_linkdown} A value of 1 indicates a ``link down'' status on
+the (unused) receive side of the indicated XAUI connection, which strongly
+implies a similar status for its transmit side.
+
+\end{description}
+
+  \subsection{Front Panel SMA Output}
+\begin{description}
+
+\rwreg{smasel} Selects the signal output over the front panel \verb|SMA0|
+connector.
+
+\begin{description}
+
+\item[0] Outputs a 128 MHz square wave (50\% duty cycle) if XAUI ouput is
+enabled, otherwise a constant 0 or 1.
+
+\item[1] Outputs a slightly delayed copy of ADC0's sync
+input.
+
+\item[2] Outputs the SMA walsh signal used for input1.
+
+\end{description}
+\end{description}
+
+  \subsection{Fractional Delay FIR Filter}
+
+\begin{description}
+
+\rwreg{valid} Writing a 1 to this register enables the delay line that performs
+coarse (FPGA clock cyles) and fine (ADC clock cycles) delays before feeding the
+fractional (i.e. sub-sample) delay filter.  Writing a 0 (the default) causes
+the delay line to output a constant value from some earlier sample.  When
+\verb|valid| is set, LED1 will be lit.
+
+\filbreak
+\rwregn{delay1}
+\rwregn{delay2}
+\rwregn{delay3}
+\rwregs{delay4} Sets the coarse delay in units of $4 T_s$.  Only the 11 \LSbs
+are used corresponding to a coarse delay range of $1 T_s$ to $8192 T_s$ (a 0
+value is effectively 2048).  Note that the \verb|delayN| registers are numbered
+1 through 4 corresponding to inputs 0 through 3.
+
+\filbreak
+\rwregn{select1}
+\rwregn{select2}
+\rwregn{select3}
+\rwregs{select4} Sets the fine delay in units of $T_s$.  Only the 2 \LSbs
+are used corresponding to a coarse delay range of $0 T_s$ to $3 T_s$.  Note
+that the \verb|selectN| registers are numbered 1 through 4 corresponding to
+inputs 0 through 3.
+
+\filbreak
+\rwregn{fdelay1}
+\rwregn{fdelay2}
+\rwregn{fdelay3}
+\rwregs{fdelay4} Sets the sub-sample delay in units of $\frac{1}{10}T_s$.  Only
+the 4 \LSbs are used, but the valid sub-sample delay range is
+$\frac{0}{10} T_s$ to $\frac{9}{10} T_s$.  Note that the \verb|fdelayN|
+registers are numbered 1 through 4 corresponding to inputs 0 through 3.
+
+\filbreak
+\rwregn{bypass1}
+\rwregn{bypass2}
+\rwregn{bypass3}
+\rwregs{bypass4} A value of 1 will bypass the sub-sample delay FIR filter
+altogther (but not the coarse or fine delays).  Although bypassing is
+theoretically equivalent to setting \verb|fdelayN| to 0, it differs in that the
+non-theoretical filter passband is not imposed on the signal.  It also differs
+in that the latency of the signal path is change (which could be considered a
+bug).
+
+\end{description}
+
+  \subsection{Front Panel LEDs}
+\begin{description}
+\item[LED0] On when the \verb|valid| register is set to 15 (0xF).
+\item[LED1] Not used.
+\item[LED2] Briefly blinks on each rising edge of the sync0 input.
+\item[LED3] Not used.
+\item[LED4] Indicates the state of \degree{180} phase switching for input 0.
+\item[LED5] Indicates the state of \degree{180} phase switching for input 1.
+\item[LED6] Indicates the state of \degree{180} phase switching for input 2.
+\item[LED7] Indicates the state of \degree{180} phase switching for input 3.
+\item[LED8] Indicates FPGA is configured (non-functional on some iBobs).
+\end{description}
+
+  \subsection{TODO}
+count\_out
+datasel
+
+\begin{description}
+\filbreak
+\rwregn{gain0}
+\rwregn{gain1}
+\rwregn{gain2}
+\rwregs{gain3}
+\end{description}
+
+ibob\_lwip/ethlite
+ibob\_lwip/macbits
+
+reset
+
+sum\_out
+
+\begin{description}
+\filbreak
+\rwregn{thresh0}
+\rwregn{thresh1}
+\rwregn{thresh2}
+\rwregs{thresh3}
+\end{description}
+
+wgrp\_sel
+xcapt\_en
+xcapt\_rst
+xhb\_walsh
+
+\section{dbe\_xaui\_corr}
+
+The dbe\_xaui\_corr design receives two signals (i.e. streams of data) from two
+different ibobs via XAUI.  It must time-align these two incoming signals, sum
+them, and then process and format the final summed signal for recording to the
+Mark 5 data recorder.  The design also contains a digital noise generator that
+can be used in place of the final sum for engineering purposes.
+
+\subsection{XAUI alignment and monitoring}
+
+The alignment of the two incoming XAUI streams is critical to achieveing proper
+summing.  The design will automatically align the two XAUI streams and, if ever
+necessary, re-align them at the next 1024 PPS.  This ensures that the two
+streams are never misaligned for more than 1/1024 of a second.  Additionally,
+the out-of-band sync signals sent over the xaui link are monitored for any
+anomalous behavior.  The registers involved in the XAUI alignment and
+monitoring are described here.
+
+\begin{description}
+\rwreg{xaui\_rst}  Resets various parts of XAUI related logic.  Setting the
+\LSb (bit 0) to 1 will reset the XAUI core itself (rarely needed).  Setting bit
+1 to 1 will reset the counters associated with XAUI monitoring.  Setting bit 2
+to 1 will reset the registers that capture the relative delays of the two XAUI
+links.
+\end{description}
+
+xaui0/linkdown\_cnt
+xaui0/period
+xaui0/period\_err
+xaui0/period\_err\_cnt
+xaui0/sync\_cnt
+
+xaui0/almost\_full
+xaui0/rx\_empty\_cnt
+xaui0/rx\_linkdown
+xaui0/valid
+xaui1/almost\_full
+xaui1/linkdown\_cnt
+xaui1/period
+xaui1/period\_err
+xaui1/period\_err\_cnt
+xaui1/rx\_empty\_cnt
+xaui1/rx\_linkdown
+xaui1/sync\_cnt
+xaui1/valid
+
+correlate
+delay\_adj
+ibob\_lwip/ethlite
+ibob\_lwip/macbits
+insel
+noise/arm
+noise/seed
+onepps\_sync/arm1pps
+onepps\_sync/arm1pps\_ack
+outsel
+pol0/gainctrl0
+pol0/gainctrl1
+pol0/gainreset
+shiftctrl\_reg
+sma1pps\_sel
+smavsisel
+snap/addr
+snap/bram
+snap/ctrl
+trig\_capt
+xaui\_summer/corr\_out-4
+xaui\_summer/corr\_out-8
+xaui\_summer/corr\_out0
+xaui\_summer/corr\_out4
+xaui\_summer/corr\_out8
+xaui\_summer/delay0
+xaui\_summer/delay1
+
+
+\section{dbe\_adc\_single}
+
+\section{bee2\_calib\_corr}
+
+
+\end{document}

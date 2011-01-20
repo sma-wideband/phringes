@@ -34,9 +34,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "mdexter"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jan 11 15:16:44 2011"
+  LastModifiedDate	  "Wed Jan 12 12:16:01 2011"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:37>"
+  ModelVersionFormat	  "1.%<AutoIncrement:38>"
   ConfigurationManager	  "None"
   SimulationMode	  "normal"
   LinearizationMsg	  "none"
@@ -196,7 +196,7 @@ Library {
   }
   System {
     Name		    "beamform"
-    Location		    [255, 194, 1148, 979]
+    Location		    [637, 117, 1531, 870]
     Open		    on
     ModelBrowserVisibility  on
     ModelBrowserWidth	    212
@@ -3199,7 +3199,7 @@ Library {
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "55,128,1,1,white,blue,0,0f604aa0,right"
+	  sg_icon_stat		  "55,128,4,1,white,blue,0,0f604aa0,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 128 128 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[42 51 64 77 86 86 82 86 86 74 86 77 64 51 42 54 42 42 46 42 42 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 128 128 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'in0');\ncolor('black');port_label('input',2,'in1');\ncolor('black');port_label('input',3,'in2');\ncolor('black');port_label('input',4,'in3');\ncolor('black');port_label('output',1,'in');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
@@ -3938,7 +3938,7 @@ Library {
 	      SourceType	      "Xilinx BitBasher Block"
 	      infoedit		      "Allows extraction, concatenation and augmentation of bits"
 	      bitexpr		      "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg'; font-size:8pt;\">addr={sb_sel,fine}</p></body></html>"
-	      display_expr	      "off"
+	      display_expr	      off
 	      sr_1		      "1"
 	      arith_type1	      "Unsigned"
 	      bin_pt1		      "0"
@@ -3951,7 +3951,7 @@ Library {
 	      sr_4		      "4"
 	      arith_type4	      "Unsigned"
 	      bin_pt4		      "0"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,336,351"
 	      block_type	      "bitbasher"
@@ -3968,18 +3968,18 @@ Library {
 	      SourceBlock	      "xbsIndex_r4/Delay"
 	      SourceType	      "Xilinx Delay Block"
 	      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	      en		      "off"
-	      latency		      "5"
-	      dbl_ovrd		      "off"
-	      reg_retiming	      "off"
-	      xl_use_area	      "off"
+	      en		      off
+	      latency		      "7"
+	      dbl_ovrd		      off
+	      reg_retiming	      off
+	      xl_use_area	      off
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,348,255"
 	      block_type	      "delay"
 	      block_version	      "10.1.3"
-	      sg_icon_stat	      "30,16,1,1,white,blue,0,4edfc01c,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	      sg_icon_stat	      "30,16,1,1,white,blue,0,4c76d8d2,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -3990,18 +3990,18 @@ Library {
 	      SourceBlock	      "xbsIndex_r4/Delay"
 	      SourceType	      "Xilinx Delay Block"
 	      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	      en		      "off"
-	      latency		      "5"
-	      dbl_ovrd		      "off"
-	      reg_retiming	      "off"
-	      xl_use_area	      "off"
+	      en		      off
+	      latency		      "7"
+	      dbl_ovrd		      off
+	      reg_retiming	      off
+	      xl_use_area	      off
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,348,255"
 	      block_type	      "delay"
 	      block_version	      "10.1.3"
-	      sg_icon_stat	      "30,16,1,1,white,blue,0,4edfc01c,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	      sg_icon_stat	      "30,16,1,1,white,blue,0,4c76d8d2,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -4013,17 +4013,17 @@ Library {
 	      depth		      "8"
 	      initVector	      "[2 3 0 1 2 1 0 3]"
 	      distributed_mem	      "Distributed memory"
-	      rst		      "off"
+	      rst		      off
 	      init_reg		      "0"
-	      en		      "off"
+	      en		      off
 	      latency		      "1"
 	      arith_type	      "Unsigned"
 	      n_bits		      "2"
 	      bin_pt		      "0"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      optimize		      "Area"
-	      use_rpm		      "off"
-	      xl_use_area	      "off"
+	      use_rpm		      off
+	      xl_use_area	      off
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,348,308"
@@ -4084,9 +4084,9 @@ Library {
 		  SourceBlock		  "xbsIndex_r4/AddSub"
 		  SourceType		  "Xilinx Adder/Subtractor Block"
 		  mode			  "Subtraction"
-		  use_carryin		  "off"
-		  use_carryout		  "off"
-		  en			  "off"
+		  use_carryin		  off
+		  use_carryout		  off
+		  en			  off
 		  latency		  "1"
 		  precision		  "Full"
 		  arith_type		  "Unsigned"
@@ -4094,18 +4094,18 @@ Library {
 		  bin_pt		  "14"
 		  quantization		  "Truncate"
 		  overflow		  "Wrap"
-		  dbl_ovrd		  "off"
-		  use_behavioral_HDL	  "off"
-		  pipelined		  "off"
-		  use_rpm		  "on"
+		  dbl_ovrd		  off
+		  use_behavioral_HDL	  off
+		  pipelined		  off
+		  use_rpm		  on
 		  hw_selection		  "Fabric"
-		  xl_use_area		  "off"
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,344"
 		  block_type		  "addsub"
 		  block_version		  "10.1.3"
-		  sg_icon_stat		  "45,118,1,1,white,blue,0,f900bd06,right"
+		  sg_icon_stat		  "45,118,2,1,white,blue,0,f900bd06,right"
 		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a - b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 		}
 		Block {
@@ -4117,9 +4117,9 @@ Library {
 		  SourceBlock		  "xbsIndex_r4/AddSub"
 		  SourceType		  "Xilinx Adder/Subtractor Block"
 		  mode			  "Subtraction"
-		  use_carryin		  "off"
-		  use_carryout		  "off"
-		  en			  "off"
+		  use_carryin		  off
+		  use_carryout		  off
+		  en			  off
 		  latency		  "1"
 		  precision		  "Full"
 		  arith_type		  "Unsigned"
@@ -4127,18 +4127,18 @@ Library {
 		  bin_pt		  "14"
 		  quantization		  "Truncate"
 		  overflow		  "Wrap"
-		  dbl_ovrd		  "off"
-		  use_behavioral_HDL	  "off"
-		  pipelined		  "off"
-		  use_rpm		  "on"
+		  dbl_ovrd		  off
+		  use_behavioral_HDL	  off
+		  pipelined		  off
+		  use_rpm		  on
 		  hw_selection		  "Fabric"
-		  xl_use_area		  "off"
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,344"
 		  block_type		  "addsub"
 		  block_version		  "10.1.3"
-		  sg_icon_stat		  "45,118,1,1,white,blue,0,f900bd06,right"
+		  sg_icon_stat		  "45,118,2,1,white,blue,0,f900bd06,right"
 		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a - b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 		}
 		Block {
@@ -4150,9 +4150,9 @@ Library {
 		  SourceBlock		  "xbsIndex_r4/AddSub"
 		  SourceType		  "Xilinx Adder/Subtractor Block"
 		  mode			  "Subtraction"
-		  use_carryin		  "off"
-		  use_carryout		  "off"
-		  en			  "off"
+		  use_carryin		  off
+		  use_carryout		  off
+		  en			  off
 		  latency		  "1"
 		  precision		  "Full"
 		  arith_type		  "Unsigned"
@@ -4160,18 +4160,18 @@ Library {
 		  bin_pt		  "14"
 		  quantization		  "Truncate"
 		  overflow		  "Wrap"
-		  dbl_ovrd		  "off"
-		  use_behavioral_HDL	  "off"
-		  pipelined		  "off"
-		  use_rpm		  "on"
+		  dbl_ovrd		  off
+		  use_behavioral_HDL	  off
+		  pipelined		  off
+		  use_rpm		  on
 		  hw_selection		  "Fabric"
-		  xl_use_area		  "off"
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,344"
 		  block_type		  "addsub"
 		  block_version		  "10.1.3"
-		  sg_icon_stat		  "45,118,1,1,white,blue,0,f900bd06,right"
+		  sg_icon_stat		  "45,118,2,1,white,blue,0,f900bd06,right"
 		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a - b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 		}
 		Block {
@@ -4183,9 +4183,9 @@ Library {
 		  SourceBlock		  "xbsIndex_r4/AddSub"
 		  SourceType		  "Xilinx Adder/Subtractor Block"
 		  mode			  "Subtraction"
-		  use_carryin		  "off"
-		  use_carryout		  "off"
-		  en			  "off"
+		  use_carryin		  off
+		  use_carryout		  off
+		  en			  off
 		  latency		  "1"
 		  precision		  "Full"
 		  arith_type		  "Unsigned"
@@ -4193,18 +4193,18 @@ Library {
 		  bin_pt		  "14"
 		  quantization		  "Truncate"
 		  overflow		  "Wrap"
-		  dbl_ovrd		  "off"
-		  use_behavioral_HDL	  "off"
-		  pipelined		  "off"
-		  use_rpm		  "on"
+		  dbl_ovrd		  off
+		  use_behavioral_HDL	  off
+		  pipelined		  off
+		  use_rpm		  on
 		  hw_selection		  "Fabric"
-		  xl_use_area		  "off"
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,344"
 		  block_type		  "addsub"
 		  block_version		  "10.1.3"
-		  sg_icon_stat		  "45,118,1,1,white,blue,0,f900bd06,right"
+		  sg_icon_stat		  "45,118,2,1,white,blue,0,f900bd06,right"
 		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a - b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 		}
 		Block {
@@ -4217,7 +4217,7 @@ Library {
 		  SourceType		  "Xilinx BitBasher Block"
 		  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 		  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg'; font-size:8pt;\">re0={in[31:24]}<br />im0={in[23:16]}<br />re1={in[15:8]}<br />im1={in[7:0]}<br /></p></body></html>"
-		  display_expr		  "off"
+		  display_expr		  off
 		  sr_1			  "1"
 		  arith_type1		  "Signed  (2's comp)"
 		  bin_pt1		  "7"
@@ -4230,12 +4230,12 @@ Library {
 		  sr_4			  "4"
 		  arith_type4		  "Signed  (2's comp)"
 		  bin_pt4		  "7"
-		  dbl_ovrd		  "off"
+		  dbl_ovrd		  off
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,336,351"
 		  block_type		  "bitbasher"
 		  block_version		  "10.1.3"
-		  sg_icon_stat		  "70,67,1,1,white,blue,0,9681c9e0,right"
+		  sg_icon_stat		  "70,67,1,4,white,blue,0,9681c9e0,right"
 		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 70 70 0 ],[0 0 67 67 ],[0.77 0.82 0.91]);\npatch([17 6 22 6 17 35 40 45 64 49 35 25 41 25 35 49 64 45 40 35 17 ],[7 18 34 50 61 61 56 61 61 46 60 50 34 18 8 22 7 7 12 7 7 ],[0.98 0.96 0.92]);\nplot([0 70 70 0 0 ],[0 0 67 67 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'in');\ncolor('black');port_label('output',1,'re0');\ncolor('black');port_label('output',2,'im0');\ncolor('black');port_label('output',3,'re1');\ncolor('black');port_label('output',4,'im1');\nfprintf('','COMMENT: end icon text');\n"
 		}
 		Block {
@@ -4247,11 +4247,11 @@ Library {
 		  SourceBlock		  "xbsIndex_r4/Delay"
 		  SourceType		  "Xilinx Delay Block"
 		  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-		  en			  "off"
+		  en			  off
 		  latency		  "2"
-		  dbl_ovrd		  "off"
-		  reg_retiming		  "off"
-		  xl_use_area		  "off"
+		  dbl_ovrd		  off
+		  reg_retiming		  off
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,255"
@@ -4269,11 +4269,11 @@ Library {
 		  SourceBlock		  "xbsIndex_r4/Delay"
 		  SourceType		  "Xilinx Delay Block"
 		  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-		  en			  "off"
+		  en			  off
 		  latency		  "1"
-		  dbl_ovrd		  "off"
-		  reg_retiming		  "off"
-		  xl_use_area		  "off"
+		  dbl_ovrd		  off
+		  reg_retiming		  off
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,255"
@@ -4291,11 +4291,11 @@ Library {
 		  SourceBlock		  "xbsIndex_r4/Delay"
 		  SourceType		  "Xilinx Delay Block"
 		  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-		  en			  "off"
+		  en			  off
 		  latency		  "1"
-		  dbl_ovrd		  "off"
-		  reg_retiming		  "off"
-		  xl_use_area		  "off"
+		  dbl_ovrd		  off
+		  reg_retiming		  off
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,255"
@@ -4313,11 +4313,11 @@ Library {
 		  SourceBlock		  "xbsIndex_r4/Delay"
 		  SourceType		  "Xilinx Delay Block"
 		  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-		  en			  "off"
+		  en			  off
 		  latency		  "2"
-		  dbl_ovrd		  "off"
-		  reg_retiming		  "off"
-		  xl_use_area		  "off"
+		  dbl_ovrd		  off
+		  reg_retiming		  off
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,255"
@@ -4335,11 +4335,11 @@ Library {
 		  SourceBlock		  "xbsIndex_r4/Delay"
 		  SourceType		  "Xilinx Delay Block"
 		  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-		  en			  "off"
+		  en			  off
 		  latency		  "1"
-		  dbl_ovrd		  "off"
-		  reg_retiming		  "off"
-		  xl_use_area		  "off"
+		  dbl_ovrd		  off
+		  reg_retiming		  off
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,255"
@@ -4357,11 +4357,11 @@ Library {
 		  SourceBlock		  "xbsIndex_r4/Delay"
 		  SourceType		  "Xilinx Delay Block"
 		  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-		  en			  "off"
+		  en			  off
 		  latency		  "1"
-		  dbl_ovrd		  "off"
-		  reg_retiming		  "off"
-		  xl_use_area		  "off"
+		  dbl_ovrd		  off
+		  reg_retiming		  off
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,255"
@@ -4379,11 +4379,11 @@ Library {
 		  SourceBlock		  "xbsIndex_r4/Delay"
 		  SourceType		  "Xilinx Delay Block"
 		  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-		  en			  "off"
+		  en			  off
 		  latency		  "1"
-		  dbl_ovrd		  "off"
-		  reg_retiming		  "off"
-		  xl_use_area		  "off"
+		  dbl_ovrd		  off
+		  reg_retiming		  off
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,255"
@@ -4401,11 +4401,11 @@ Library {
 		  SourceBlock		  "xbsIndex_r4/Delay"
 		  SourceType		  "Xilinx Delay Block"
 		  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-		  en			  "off"
+		  en			  off
 		  latency		  "2"
-		  dbl_ovrd		  "off"
-		  reg_retiming		  "off"
-		  xl_use_area		  "off"
+		  dbl_ovrd		  off
+		  reg_retiming		  off
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,255"
@@ -4423,18 +4423,18 @@ Library {
 		  SourceBlock		  "xbsIndex_r4/Delay"
 		  SourceType		  "Xilinx Delay Block"
 		  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-		  en			  "off"
-		  latency		  "4"
-		  dbl_ovrd		  "off"
-		  reg_retiming		  "off"
-		  xl_use_area		  "off"
+		  en			  off
+		  latency		  "7"
+		  dbl_ovrd		  off
+		  reg_retiming		  off
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,255"
 		  block_type		  "delay"
 		  block_version		  "10.1.3"
-		  sg_icon_stat		  "60,20,1,1,white,blue,0,c2217bc4,right"
-		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-4}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+		  sg_icon_stat		  "60,20,1,1,white,blue,0,4c76d8d2,right"
+		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-7}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 		}
 		Block {
 		  BlockType		  Reference
@@ -4445,11 +4445,11 @@ Library {
 		  SourceBlock		  "xbsIndex_r4/Delay"
 		  SourceType		  "Xilinx Delay Block"
 		  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-		  en			  "off"
+		  en			  off
 		  latency		  "1"
-		  dbl_ovrd		  "off"
-		  reg_retiming		  "off"
-		  xl_use_area		  "off"
+		  dbl_ovrd		  off
+		  reg_retiming		  off
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,255"
@@ -4470,7 +4470,7 @@ Library {
 		  SourceType		  "DocBlock"
 		  ShowPortLabels	  "FromPortIcon"
 		  SystemSampleTime	  "-1"
-		  FunctionWithSeparateData "off"
+		  FunctionWithSeparateData off
 		  RTWMemSecFuncInitTerm	  "Inherit from model"
 		  RTWMemSecFuncExecute	  "Inherit from model"
 		  RTWMemSecDataConstants  "Inherit from model"
@@ -4703,7 +4703,7 @@ Library {
 		  SourceBlock		  "xbsIndex_r4/Mux"
 		  SourceType		  "Xilinx Bus Multiplexer Block"
 		  inputs		  "2"
-		  en			  "off"
+		  en			  off
 		  latency		  "1"
 		  precision		  "Full"
 		  arith_type		  "Unsigned"
@@ -4711,14 +4711,14 @@ Library {
 		  bin_pt		  "14"
 		  quantization		  "Truncate"
 		  overflow		  "Wrap"
-		  dbl_ovrd		  "off"
-		  xl_use_area		  "off"
+		  dbl_ovrd		  off
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,303"
 		  block_type		  "mux"
 		  block_version		  "10.1.3"
-		  sg_icon_stat		  "25,100,1,1,white,blue,3,03f9c9b9,right"
+		  sg_icon_stat		  "25,100,3,1,white,blue,3,03f9c9b9,right"
 		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 14.8571 89.1429 104 ],[0.77 0.82 0.91]);\npatch([10 3 14 3 10 22 25 28 41 31 21 14 25 14 21 31 41 28 25 22 10 ],[34 41 52 63 70 70 67 70 70 60 70 63 52 41 34 44 34 34 37 34 34 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 14.8571 89.1429 104 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');disp('\\bf{  z^{-1}}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 		}
 		Block {
@@ -4730,7 +4730,7 @@ Library {
 		  SourceBlock		  "xbsIndex_r4/Mux"
 		  SourceType		  "Xilinx Bus Multiplexer Block"
 		  inputs		  "2"
-		  en			  "off"
+		  en			  off
 		  latency		  "1"
 		  precision		  "Full"
 		  arith_type		  "Unsigned"
@@ -4738,14 +4738,14 @@ Library {
 		  bin_pt		  "14"
 		  quantization		  "Truncate"
 		  overflow		  "Wrap"
-		  dbl_ovrd		  "off"
-		  xl_use_area		  "off"
+		  dbl_ovrd		  off
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,303"
 		  block_type		  "mux"
 		  block_version		  "10.1.3"
-		  sg_icon_stat		  "25,100,1,1,white,blue,3,03f9c9b9,right"
+		  sg_icon_stat		  "25,100,3,1,white,blue,3,03f9c9b9,right"
 		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 14.8571 89.1429 104 ],[0.77 0.82 0.91]);\npatch([10 3 14 3 10 22 25 28 41 31 21 14 25 14 21 31 41 28 25 22 10 ],[34 41 52 63 70 70 67 70 70 60 70 63 52 41 34 44 34 34 37 34 34 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 14.8571 89.1429 104 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');disp('\\bf{  z^{-1}}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 		}
 		Block {
@@ -4762,10 +4762,10 @@ Library {
 		  bin_pt		  "22"
 		  quantization		  "Truncate"
 		  overflow		  "Wrap"
-		  en			  "off"
+		  en			  off
 		  latency		  "1"
-		  dbl_ovrd		  "off"
-		  xl_use_area		  "off"
+		  dbl_ovrd		  off
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,391"
@@ -4788,10 +4788,10 @@ Library {
 		  bin_pt		  "22"
 		  quantization		  "Truncate"
 		  overflow		  "Wrap"
-		  en			  "off"
+		  en			  off
 		  latency		  "1"
-		  dbl_ovrd		  "off"
-		  xl_use_area		  "off"
+		  dbl_ovrd		  off
+		  xl_use_area		  off
 		  xl_area		  "[0,0,0,0,0,0,0]"
 		  has_advanced_control	  "0"
 		  sggui_pos		  "20,20,348,391"

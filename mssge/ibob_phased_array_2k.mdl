@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.528"
+    ComputedModelVersion    "1.531"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -45,9 +45,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Rurik A Primiani"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jan 25 16:03:41 2011"
+  LastModifiedDate	  "Tue Jan 25 16:55:22 2011"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:528>"
+  ModelVersionFormat	  "1.%<AutoIncrement:531>"
   ConfigurationManager	  "None"
   SimulationMode	  "normal"
   LinearizationMsg	  "none"
@@ -55273,6 +55273,22 @@ Model {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
+      MaskDescription	      "Please enter the appropriate delay values to align the phase switching signals to the data."
+      MaskPromptString	      "Walsh Latency:|Phase Swith Latency:|Quantizer Latency:"
+      MaskStyleString	      "edit,edit,edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "walsh_delay=@1;phsw_delay=@2;quant_delay=@3;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "5|21|4"
+      MaskTabNameString	      ",,"
       System {
 	Name			"sync_demux2"
 	Location		[202, 74, 1430, 856]
@@ -55388,7 +55404,7 @@ Model {
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
 	  en			  off
-	  latency		  "5+21+3"
+	  latency		  "walsh_delay+phsw_delay+quant_delay"
 	  dbl_ovrd		  off
 	  reg_retiming		  off
 	  xl_use_area		  off
@@ -55397,8 +55413,8 @@ Model {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,16,1,1,white,blue,0,c3f57baf,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-29}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,16,1,1,white,blue,0,c4a969c7,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-30}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -55438,7 +55454,7 @@ Model {
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
 	  en			  off
-	  latency		  "5+21+3"
+	  latency		  "walsh_delay+phsw_delay+quant_delay"
 	  dbl_ovrd		  off
 	  reg_retiming		  off
 	  xl_use_area		  off
@@ -55447,34 +55463,12 @@ Model {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,16,1,1,white,blue,0,c3f57baf,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-29}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,16,1,1,white,blue,0,c4a969c7,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-30}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "Delay4"
-	  Ports			  [1, 1]
-	  Position		  [170, 222, 200, 238]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Delay"
-	  SourceType		  "Xilinx Delay Block"
-	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
-	  latency		  "5+21+3"
-	  dbl_ovrd		  off
-	  reg_retiming		  off
-	  xl_use_area		  off
-	  xl_area		  "[0,0,0,0,0,0,0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "20,20,348,255"
-	  block_type		  "delay"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,16,1,1,white,blue,0,c3f57baf,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-29}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Delay5"
 	  Ports			  [1, 1]
 	  Position		  [170, 242, 200, 258]
 	  ShowName		  off
@@ -55482,7 +55476,7 @@ Model {
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
 	  en			  off
-	  latency		  "5+21+3"
+	  latency		  "walsh_delay+phsw_delay+quant_delay"
 	  dbl_ovrd		  off
 	  reg_retiming		  off
 	  xl_use_area		  off
@@ -55491,20 +55485,20 @@ Model {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,16,1,1,white,blue,0,c3f57baf,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-29}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,16,1,1,white,blue,0,c4a969c7,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-30}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Delay6"
+	  Name			  "Delay5"
 	  Ports			  [1, 1]
-	  Position		  [170, 262, 200, 278]
+	  Position		  [170, 222, 200, 238]
 	  ShowName		  off
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
 	  en			  off
-	  latency		  "5+21+3"
+	  latency		  "walsh_delay+phsw_delay+quant_delay"
 	  dbl_ovrd		  off
 	  reg_retiming		  off
 	  xl_use_area		  off
@@ -55513,12 +55507,12 @@ Model {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,16,1,1,white,blue,0,c3f57baf,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-29}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,16,1,1,white,blue,0,c4a969c7,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-30}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Delay7"
+	  Name			  "Delay6"
 	  Ports			  [1, 1]
 	  Position		  [170, 282, 200, 298]
 	  ShowName		  off
@@ -55526,7 +55520,7 @@ Model {
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
 	  en			  off
-	  latency		  "5+21+3"
+	  latency		  "walsh_delay+phsw_delay+quant_delay"
 	  dbl_ovrd		  off
 	  reg_retiming		  off
 	  xl_use_area		  off
@@ -55535,8 +55529,30 @@ Model {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,16,1,1,white,blue,0,c3f57baf,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-29}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,16,1,1,white,blue,0,c4a969c7,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-30}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay7"
+	  Ports			  [1, 1]
+	  Position		  [170, 262, 200, 278]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Delay"
+	  SourceType		  "Xilinx Delay Block"
+	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
+	  en			  off
+	  latency		  "walsh_delay+phsw_delay+quant_delay"
+	  dbl_ovrd		  off
+	  reg_retiming		  off
+	  xl_use_area		  off
+	  xl_area		  "[0,0,0,0,0,0,0]"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "20,20,348,255"
+	  block_type		  "delay"
+	  block_version		  "10.1.3"
+	  sg_icon_stat		  "30,16,1,1,white,blue,0,c4a969c7,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-30}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  Reference
@@ -55548,7 +55564,7 @@ Model {
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
 	  en			  off
-	  latency		  "5+21+3"
+	  latency		  "walsh_delay+phsw_delay+quant_delay"
 	  dbl_ovrd		  off
 	  reg_retiming		  off
 	  xl_use_area		  off
@@ -55557,8 +55573,8 @@ Model {
 	  sggui_pos		  "20,20,348,255"
 	  block_type		  "delay"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "30,16,1,1,white,blue,0,c3f57baf,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-29}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,16,1,1,white,blue,0,c4a969c7,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-30}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
 	  BlockType		  From
@@ -55958,25 +55974,25 @@ Model {
 	Line {
 	  SrcBlock		  "From2"
 	  SrcPort		  1
-	  DstBlock		  "Delay4"
+	  DstBlock		  "Delay5"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "From5"
 	  SrcPort		  1
-	  DstBlock		  "Delay5"
+	  DstBlock		  "Delay4"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "From7"
 	  SrcPort		  1
-	  DstBlock		  "Delay6"
+	  DstBlock		  "Delay7"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "From8"
 	  SrcPort		  1
-	  DstBlock		  "Delay7"
+	  DstBlock		  "Delay6"
 	  DstPort		  1
 	}
 	Line {
@@ -56068,25 +56084,25 @@ Model {
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "Delay4"
+	  SrcBlock		  "Delay5"
 	  SrcPort		  1
 	  DstBlock		  "BitBasher1"
 	  DstPort		  4
 	}
 	Line {
-	  SrcBlock		  "Delay5"
+	  SrcBlock		  "Delay4"
 	  SrcPort		  1
 	  DstBlock		  "BitBasher1"
 	  DstPort		  5
 	}
 	Line {
-	  SrcBlock		  "Delay6"
+	  SrcBlock		  "Delay7"
 	  SrcPort		  1
 	  DstBlock		  "BitBasher1"
 	  DstPort		  6
 	}
 	Line {
-	  SrcBlock		  "Delay7"
+	  SrcBlock		  "Delay6"
 	  SrcPort		  1
 	  DstBlock		  "BitBasher1"
 	  DstPort		  7
@@ -56130,7 +56146,7 @@ Model {
 	  }
 	}
 	Annotation {
-	  Name			  "We want to send 7 signals over OOB (3 syncs + 4 walsh states),\nso we need to do special demux here and special mux on other\nside.  We want to send 8 bit OOB and 32 bit data.  This mean that\na 1 cycle sync0 signal would be missed whenever it occurs the\ncycle after int_1024pps goes high.  To avoid this, we stretch out\nthe sync0 signal by one cycle.  We also delay the sync and walsh\nso that they will be sent along with the data samples that reflect\nthe wlash state being transmitted.\n\nwalsh select latency = 5 cycles\nphase switch latency = 21 cycles\n2-bit quantize latency = 3 cycles"
+	  Name			  "We want to send 7 signals over OOB (3 syncs + 4 walsh states),\nso we need to do special demux here and special mux on other\nside.  We want to send 8 bit OOB and 32 bit data.  This mean that\na 1 cycle sync0 signal would be missed whenever it occurs the\ncycle after int_1024pps goes high.  To avoid this, we stretch out\nthe sync0 signal by one cycle.  We also delay the sync and walsh\nso that they will be sent along with the data samples that reflect\nthe wlash state being transmitted.\n\nwalsh select latency = 5 cycles\nphase switch latency = 21 cycles\n2-bit quantize latency = 4 cycles"
 	  Position		  [448, 96]
 	  HorizontalAlignment	  "left"
 	  DropShadow		  on

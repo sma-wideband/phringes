@@ -18,27 +18,35 @@ function complex_cc_core_config(this_block)
   %this_block.tagAsCombinational;
 
   this_block.addSimulinkInport('sync_in');
-  this_block.addSimulinkInport('i_r0'); % input 0, sample 0, real
-  this_block.addSimulinkInport('i_i0'); % input 0, sample 0, imag
-  this_block.addSimulinkInport('i_r1'); % input 0, sample 1, real
-  this_block.addSimulinkInport('i_i1'); % input 0, sample 1, imag
-  this_block.addSimulinkInport('q_r0'); % input 1, sample 0, real
-  this_block.addSimulinkInport('q_i0'); % input 1, sample 0, imag
-  this_block.addSimulinkInport('q_r1'); % input 1, sample 1, real
-  this_block.addSimulinkInport('q_i1'); % input 1, sample 1, imag
+  this_block.addSimulinkInport('in0_r0'); % input 0, sample 0, real
+  this_block.addSimulinkInport('in0_i0'); % input 0, sample 0, imag
+  this_block.addSimulinkInport('in0_r1'); % input 0, sample 1, real
+  this_block.addSimulinkInport('in0_i1'); % input 0, sample 1, imag
+  this_block.addSimulinkInport('in0_w');  % input 0, walsh state (0=I; 1=Q)
+  this_block.addSimulinkInport('in1_r0'); % input 1, sample 0, real
+  this_block.addSimulinkInport('in1_i0'); % input 1, sample 0, imag
+  this_block.addSimulinkInport('in1_r1'); % input 1, sample 1, real
+  this_block.addSimulinkInport('in1_i1'); % input 1, sample 1, imag
+  this_block.addSimulinkInport('in1_w');  % input 1, walsh state (0=I; 1=Q)
   this_block.addSimulinkInport('integ_time');
 
   this_block.addSimulinkOutport('addr');
-  this_block.addSimulinkOutport('real_data');
-  this_block.addSimulinkOutport('imag_data');
+  this_block.addSimulinkOutport('usb_data_re');
+  this_block.addSimulinkOutport('usb_data_im');
+  this_block.addSimulinkOutport('lsb_data_re');
+  this_block.addSimulinkOutport('lsb_data_im');
   this_block.addSimulinkOutport('we');
   this_block.addSimulinkOutport('integs');
 
   addr_port = this_block.port('addr');
   addr_port.setType('UFix_4_0');
-  real_data_port = this_block.port('real_data');
+  real_data_port = this_block.port('usb_data_re');
   real_data_port.setType('UFix_32_0');
-  imag_data_port = this_block.port('imag_data');
+  imag_data_port = this_block.port('usb_data_im');
+  imag_data_port.setType('UFix_32_0');
+  real_data_port = this_block.port('lsb_data_re');
+  real_data_port.setType('UFix_32_0');
+  imag_data_port = this_block.port('lsb_data_im');
   imag_data_port.setType('UFix_32_0');
   we_port = this_block.port('we');
   we_port.setType('Bool');
@@ -50,47 +58,57 @@ function complex_cc_core_config(this_block)
   if (this_block.inputTypesKnown)
     % do input type checking, dynamic output type and generic setup in this code block.
 
-    if (this_block.port('i_i0').width ~= 2);
-      this_block.setError('Input data type for port "i_i0" must have width=2.');
+    if (this_block.port('in0_i0').width ~= 2);
+      this_block.setError('Input data type for port "in0_i0" must have width=2.');
     end
 
-    if (this_block.port('i_i1').width ~= 2);
-      this_block.setError('Input data type for port "i_i1" must have width=2.');
+    if (this_block.port('in0_i1').width ~= 2);
+      this_block.setError('Input data type for port "in0_i1" must have width=2.');
     end
 
-    if (this_block.port('i_r0').width ~= 2);
-      this_block.setError('Input data type for port "i_r0" must have width=2.');
+    if (this_block.port('in0_r0').width ~= 2);
+      this_block.setError('Input data type for port "in0_r0" must have width=2.');
     end
 
-    if (this_block.port('i_r1').width ~= 2);
-      this_block.setError('Input data type for port "i_r1" must have width=2.');
+    if (this_block.port('in0_r1').width ~= 2);
+      this_block.setError('Input data type for port "in0_r1" must have width=2.');
     end
 
     if (this_block.port('integ_time').width ~= 32);
       this_block.setError('Input data type for port "integ_time" must have width=32.');
     end
 
-    if (this_block.port('q_i0').width ~= 2);
-      this_block.setError('Input data type for port "q_i0" must have width=2.');
+    if (this_block.port('in1_i0').width ~= 2);
+      this_block.setError('Input data type for port "in1_i0" must have width=2.');
     end
 
-    if (this_block.port('q_i1').width ~= 2);
-      this_block.setError('Input data type for port "q_i1" must have width=2.');
+    if (this_block.port('in1_i1').width ~= 2);
+      this_block.setError('Input data type for port "in1_i1" must have width=2.');
     end
 
-    if (this_block.port('q_r0').width ~= 2);
-      this_block.setError('Input data type for port "q_r0" must have width=2.');
+    if (this_block.port('in1_r0').width ~= 2);
+      this_block.setError('Input data type for port "in1_r0" must have width=2.');
     end
 
-    if (this_block.port('q_r1').width ~= 2);
-      this_block.setError('Input data type for port "q_r1" must have width=2.');
+    if (this_block.port('in1_r1').width ~= 2);
+      this_block.setError('Input data type for port "in1_r1" must have width=2.');
     end
 
     if (this_block.port('sync_in').width ~= 1);
       this_block.setError('Input data type for port "sync_in" must have width=1.');
     end
 
+    if (this_block.port('in0_w').width ~= 1);
+      this_block.setError('Input data type for port "in0_w" must have width=1.');
+    end
+
+    if (this_block.port('in1_w').width ~= 1);
+      this_block.setError('Input data type for port "in1_w" must have width=1.');
+    end
+
     this_block.port('sync_in').useHDLVector(false);
+    this_block.port('in0_w').useHDLVector(false);
+    this_block.port('in1_w').useHDLVector(false);
 
   end  % if(inputTypesKnown)
   % -----------------------------

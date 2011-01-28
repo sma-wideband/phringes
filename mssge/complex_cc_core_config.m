@@ -37,6 +37,8 @@ function complex_cc_core_config(this_block)
   this_block.addSimulinkOutport('lsb_data_im');
   this_block.addSimulinkOutport('we');
   this_block.addSimulinkOutport('integs');
+  this_block.addSimulinkOutport('sample_cnt');
+  this_block.addSimulinkOutport('subint_cnt');
 
   addr_port = this_block.port('addr');
   addr_port.setType('UFix_4_0');
@@ -50,9 +52,13 @@ function complex_cc_core_config(this_block)
   imag_data_port.setType('UFix_32_0');
   we_port = this_block.port('we');
   we_port.setType('Bool');
+  we_port.useHDLVector(false);
   integs_port = this_block.port('integs');
   integs_port.setType('UFix_32_0');
-  we_port.useHDLVector(false);
+  sample_cnt_port = this_block.port('sample_cnt');
+  sample_cnt_port.setType('UFix_32_0');
+  subint_cnt_port = this_block.port('subint_cnt');
+  subint_cnt_port.setType('UFix_32_0');
 
   % -----------------------------
   if (this_block.inputTypesKnown)

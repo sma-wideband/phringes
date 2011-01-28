@@ -21,6 +21,8 @@ entity complex_cc_core is
     integs: out std_logic_vector(31 downto 0); 
     lsb_data_im: out std_logic_vector(31 downto 0); 
     lsb_data_re: out std_logic_vector(31 downto 0); 
+    sample_cnt: out std_logic_vector(31 downto 0); 
+    subint_cnt: out std_logic_vector(31 downto 0); 
     usb_data_im: out std_logic_vector(31 downto 0); 
     usb_data_re: out std_logic_vector(31 downto 0); 
     we: out std_logic

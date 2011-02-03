@@ -34,15 +34,21 @@
   \setlength{\itemsep}{\itemseporig}
 }
 \newcommand{\LSB}{least significant byte }
+\newcommand{\LSn}{least significant nybble }
 \newcommand{\LSb}{least significant bit }
+\newcommand{\LSns}{least significant nybbles }
 \newcommand{\LSbs}{least significant bits }
+\newcommand{\MSb}{most significant bit }
 \newcommand{\devitem}[2]{\item[#1] [#2] \\ }
 \newcommand{\rwreg}[1]{\devitem{#1}{R/W register}}
 \newcommand{\rwregn}[1]{\item[#1] {} \tighten} % For "stacked" rwregs
 \newcommand{\rwregs}[1]{\devitem{#1}{R/W registers} \loosen} % Ends stacked rwregs
 \newcommand{\roreg}[1]{\devitem{#1}{R register}}
-\newcommand{\roregn}[1]{\item[#1] {} \tighten} % For "stacked" rregs
-\newcommand{\roregs}[1]{\devitem{#1}{R registers} \loosen} % Ends stacked rregs
+\newcommand{\roregn}[1]{\item[#1] {} \tighten} % For "stacked" roregs
+\newcommand{\roregs}[1]{\devitem{#1}{R registers} \loosen} % Ends stacked roregs
+\newcommand{\bram}[1]{\devitem{#1}{Block RAM}}
+\newcommand{\bramn}[1]{\item[#1] {} \tighten} % For "stacked" brams
+\newcommand{\brams}[1]{\devitem{#1}{Block RAM} \loosen} % Ends stacked brams
 \newcommand{\degree}[1]{$#1^{\circ}$}
 
 \begin{abstract}
@@ -50,29 +56,73 @@ Describes the registers and devices in the various iBob and BEE2 designs used
 in the VLBI phased array processor for CARMA and SMA.
 \end{abstract}
 
+\section{Gateware Versions}
+
+The history of the gateware designs has two major epochs: real and complex.
+The real epoch covers the original designs, which processed the signal as real
+(i.e. non-complex) data.  Due to limitations in dealing with real data, namely
+lack of phase information and control, the gateware designs were modified to
+convert the real signal into complex form.  These designs dealing with complex
+data comprise the complex epoch.
+
+Within each epoch, registers and devices have been added, removed, and renamed.
+Instead of attempting to describe all revisions of the gateware, this document
+only describes specific versions of the gateware as noted in each section.  The
+complete history for the various designs are available in the Git repository.
+
+git@vlbi-devel.cfa.harvard.edu:phringes.git
+
 \section{ibob\_phased\_array\_2k}
 
-The ibob\_phased\_array\_2k design has a few critical registers that must be
-set to non-zero values for proper operation.  These registers are briefly
-listed here; full details are provided below.
+This section documents the ibob\_phased\_array\_2k\_2011\_Jan\_27\_1903 design.
+
+In addition to synchronizing internal timing signals with external timing
+signals.  The ibob\_phased\_array\_2k design has a few critical registers that
+must be set to non-zero values for proper operation.  These registers are
+briefly listed here; full details are provided below.
 
 \begin{description}
-\rwreg{valid} Must be 1 to enable data to flow through the delay line.
 \rwreg{start\_xaui} Must be 1 to enable XAUI transmission as well as the clock
 output for the BEE2 calibration correlator.
 \rwregs{gain0 - gain3} At least one gain register must be non-zero to get
-non-zero output.
+non-zero output through to the DBE.
 \end{description}
 
-  \subsection{Sync and 1~PPS}
-To facilitate synchronized seeding of noise sources on different devices, the
-noise generators are armed via software.  This causes them to re-seed on the
-next rising edge of the internal 1~PPS signal.  The internal 1~PPS is generated
-by counting clock cycles and can be synchronized with one or the other of the
-ADCs sync pulses.
+  \subsection{Synchronization}
+
+Different observatories use different synchronization and phase switching
+schemes.  The ibob\_phased\_array\_2k design accommodates the schemes used at
+SMA and CARMA.  Additionally, the design requires an external 1~PPS pulse with
+which it synchronizes internally generated sync signals used with downstream
+systems.
+
+SMA phase switching is based on a Heartbeat (HB) signal with frequency
+$\frac{52 \, \mathrm{MHz}}{2^{19}} \approx 99.182 \, \mathrm{Hz}$.  This signal
+is generated on board from the 256 MHz FPGA clock and is synchronized with the
+external SMA Start of Walsh Frame (SOWF) signal using the \verb|armsowf|
+command.  An internal SOWF signal is also generated on board synchronized with
+the external SOWF signal.  The frequency of SOWF is $\frac{52 \,
+\mathrm{MHz}}{2^{25}} \approx 1.550 \, \mathrm{Hz}$.
+
+CARMA phase switching is based on a 1024~PPS signal.  This signal is generated
+on board from the 256~MHz FPGA clock and is synchronized with the external
+1~PPS signal using the \verb|arm1pps| command.  An internal 1~PPS signal is
+also generated on board synchronized with the external 1~PPS.
+
+The design also uses the internally generated 1024~PPS and 1~PPS signals for
+other purposes (e.g. XAUI synchronization and synchronous noise source seeding)
+independent of the phase switching scheme being used, so the external 1~PPS
+must always be supplied and the internal 1~PPS must always be synchronized to
+it via the \verb|arm1pps| command.
+
+%To facilitate synchronized seeding of noise sources on different devices, the
+%noise generators are armed via software.  This causes them to re-seed on the
+%next rising edge of the internal 1~PPS signal.  The internal 1~PPS is generated
+%by counting clock cycles and can be synchronized with one or the other of the
+%ADCs sync pulses.
 
 \begin{description}
-\rwreg{ppssel} Selects the ADC sync pulse to which the interally generated
+\rwreg{ppssel} Selects the ADC sync pulse to which the internally generated
 1~PPS signal will be synchronized.
 
 0: Select ADC0 sync signal (typically for CARMA) \\
@@ -80,13 +130,28 @@ ADCs sync pulses.
 
 \rwreg{onepps\_sync/arm1pps} A 0 to 1 transition of the \LSb of this register
 will arm the internal 1~PPS generator to re-synchronize with the next rising
-edge of the selected sync pulse.
+edge of the selected sync pulse.  This register is not often used directly
+since (re-)arming is normally done via the \verb|arm1pps| command.
 
 \roreg{onepps\_sync/arm1pps\_ack} A 1 to 0 transition of the \LSb of
 \verb|onepps_sync/arm1pps| clears (i.e. sets to zero) this register.  This
 register is set to 1 on the rising edge of the next sync pulse that
 re-synchronizes the internal 1~PPS generator.  This can be used to verify that
-the internal 1~PPS generator did indeed re-synchronize after being armed.
+the internal 1~PPS generator did indeed re-synchronize after being armed.  This
+register is not often used directly since (re-)arming is normally done via the
+\verb|arm1pps| command.
+
+\rwreg{hb\_sync/arm\_sowf} A 0 to 1 transition of the \LSb of this register
+will arm the internal HB and SOWF generators to re-synchronize with the next
+rising edge of the external SOWF signal.  This register is not often used
+directly since (re-)arming is normally done via the \verb|armsowf| command.
+
+\roreg{hb\_sync/armsowf\_ack} A 1 to 0 transition of the \LSb of
+\verb|hb_sync/arm\_sowf| clears (i.e. sets to zero) this register.  This
+register is set to 1 on the next rising edge of the external SOWF signal.  This
+can be used to verify that the internal HB and SOWF generators did indeed
+re-synchronize after being armed.  This register is not often used directly
+since (re-)arming is normally done via the \verb|armsowf| command.
 
 \end{description}
 
@@ -121,7 +186,7 @@ Examples:
 
 \rwreg{noise/arm}  A 0 to 1 transition of the \LSb of each
 nybble arms that input's noise generator.  The least significant nybble
-corresponds to input0.  A value of 0x0011 wil arm the noise generators for
+corresponds to input0.  A value of 0x0011 will arm the noise generators for
 input0 and input1.  A value of 0x1111 will arm all noise generators.
 
 Once a noise generator is armed, it will re-seed starting on the next internal
@@ -134,15 +199,187 @@ across multiple devices or within one device.
 \rwregn{noise/seed/2}
 \rwregs{noise/seed/3} Sets 32~bit seed for noise generators for corresponding
 inputs.  Because the inputs are demultiplexed by 4, each noise generator
-actually contains two noise generators that each output two indpendent normally
-distributed values each.  The 32~bit seed is actually split into two 16~bits
-seeds to seed the two contained noise generators.  Using a seed whose two
-halves are identical (i.e.\ a multiple of 65537) will result in a signal that
-has a lag-2 correlation coefficient of 1 resulting in a non-flat spectrum.
+actually contains two noise generators that each output two independent
+normally distributed values each.  The 32~bit seed is actually split into two
+16~bits seeds to seed the two contained noise generators.  Using a seed whose
+two halves are identical (i.e.\ a multiple of 65537) will result in a signal
+that has a lag-2 correlation coefficient of 1 resulting in a non-flat spectrum.
+
+\end{description}
+
+  \subsection{Delay Core}
+
+The Delay Core consists of a coarse delay (in units of FPGA clock cycles), a
+fine delay (in units of ADC sample clock cycles), and a sub-sample delay (in
+units of 1/16 an ADC sample clock cycle).  The sub-sample delay is implemented
+using a quadrature fractional delay FIR filter that not only does sub sample
+delay, but also converts the signal to complex form.  Converting to complex
+form involves mixing by a local oscillator at $\pm F_s/4$.  The sign of the LO
+frequency is user selectable and determines whether the Delay Core's complex
+output will consist of the positive or negative frequencies of the real input.
+Selecting the negative frequencies will result in a frequency reversal and
+conjugation relative the positive frequencies.  See the \verb|sbsel| register
+for more details.
+
+\begin{description}
+
+%\filbreak
+\rwregn{delay0}
+\rwregn{delay1}
+\rwregn{delay2}
+\rwregs{delay3} These registers specify the overall delay to be applied to by
+each input's Delay Core.  The value written into these registers should be 16
+times the desired delay in terms of ADC samples.  Thus, if a delay of $10
+\frac{3}{16}$ ADC samples is desired, the value to write would be $16 * 10 + 3
+== 163$.
+
+\end{description}
+
+\begin{description}
+
+\rwreg{sbsel} The \verb|sbsel| (sideband select) register specifies whether the
+complex output will consist of the positive or negative frequencies of the real
+input.  Each of the four \LSns (i.e. hex digit) of \verb|sbsel| corresponds one
+input.  The \LSn specifies the sideband selection for input 0.  A value of 0
+selects the positive frequencies; a value of 1 selects the negative
+frequencies.  Writing 0x0100 will select positive frequencies for inputs~0,1,3
+and negative frequencies for input2.
+
+\end{description}
+
+  \subsection{Phase Rotation}
+
+After the Delay Core's conversion to complex, the signal passes through a phase
+rotator.  The amount of phase rotation applied is a combination of the phase
+offset introduced by fine delay, the phase value specified in the input's
+\verb|phaseN| register, and the 0/90/180/270 degree phase switching specified
+by the input's current phase switching state.  The phase offset introduced by
+fine delay is automatically compensated; no user input is required.  The
+\verb|phaseN| registers are described here and the phase switching states are
+described in a separate subsection.
+
+\begin{description}
+
+\rwregn{phase0}
+\rwregn{phase1}
+\rwregn{phase2}
+\rwregs{phase3} These registers specify the amount of user-specified phase
+rotation to be applied to each input's complex signal.  The 12 least
+significant bits of these registers are used.  The resolution is therefore
+$\frac{2 \pi}{2^{12}}$ radians per step or $\frac{360}{2^{12}}$ degrees per
+step (i.e. approximately 88 millidegrees per step).  For example, to phase
+rotate a given input by 30 degrees, the value to use would be
+$\mathrm{round}(30 \cdot 2^{12} / 360) = 341$.
+
+\end{description}
+
+  \subsection{Phase Switching}
+
+As mentioned elsewhere, the design supports both SMA and CARMA phase switching
+schemes.  Both observatories use nested Walsh functions whereby the 180 degree
+phase switching cycle completes once per 90 degree phase switching state.  The
+Wash functions themselves are stored in two shared block RAM lookup tables.
+One table is for the 180 degree phase switch cycle and the other table is for
+the 90 degree phase switching cycle.  Each entry (i.e. row) in a Walsh table is
+32 bits wide.  Each bit (i.e. column) corresponds to a given Walsh function.
+Each input uses a user specified column for both the 90 and 180 degree Walsh
+functions.  To provide the simplest and most versatile interface, the Walsh
+tables are stored in unrolled form.
+
+\begin{description}
+
+\rwreg {walsh/syncsel} This register is used to select the timing of the Walsh functions.  A value of 0 selects the internal 1024~PPS (for CARMA).  A value of 1 selects the internal HB signal (for SMA).
+
+\end{description}
+
+\begin{description}
+
+\rwreg{walsh/colsel} This register is used to specify which columns (i.e. bits)
+of the Walsh tables to use for each input.  Each input is controlled by one
+byte of this register.  Input~0 uses the \LSB of this register.  Only the five
+\LSbs of each byte are used to select columns~0 through 31.  Column~0 is the
+\MSb of the 32~bit Walsh table entries.
+
+\end{description}
+
+\begin{description}
+
+\bramn{walsh/table/90} \brams{walsh/table/180} These shared block RAMs must be
+programmed with the unrolled Walsh tables.  Table \verb|walsh/table/90| is for
+the 90 degree phase switching states while table \verb|walsh/table/180| is for
+the 180 degree phase switching states.  Each table is 2048 entries long.  Each
+entry is 32~bit wide.  The \MSb of each 32-bit entry corresponds to column~0 of
+the (up to) 32~column Walsh table.  The Walsh tables are addressed by a counter
+that increments every every phase switching state (i.e. every 1024~PPS for
+CARMA; every HB for SMA) and is reset at the end of every Walsh function cycle
+(i.e. every 1~PPS for CARMA and every SOWF for SMA).  Only the first N entries
+need to be populated, where N is the number of phase switching states per
+complete phase switching cycle (i.e. 1024 for CARMA, 64 for SMA).
+
+\end{description}
+
+  \subsection{2-Bit Data Path}
+
+After the Delay Core and Phase Rotation, the signals are sent to the
+calibration correlator and the DBE.  The calibration correlator gets 2~bit data
+(at the ADC sample rate) from all inputs.  The quantization to 2~bits is
+controlled by user specified threshold values.  The 2~bit coding represents
+four distinct values: -3, -1, +1, +3.
+
+\begin{description}
+
+\filbreak
+\rwregn{thresh0}
+\rwregn{thresh1}
+\rwregn{thresh2}
+\rwregs{thresh3}  These registers set the thresholding level for each input.
+The quantized value for a given input value of $x$ and threshold value $thresh$
+is determined according to the equations shown here.  Note that the output
+value for a zero valued input alternates between -1 and +1.
+
+\begin{align*}
+          &\,x <= -thresh &\Rightarrow -3 \\
+-thresh < &\,x < 0        &\Rightarrow -1 \\
+          &\,x = 0        &\Rightarrow \pm1 \\
+      0 < &\,x < thresh   &\Rightarrow +1 \\
+ thresh < &\,x            &\Rightarrow +3
+\end{align*}
+
+\end{description}
+
+  \subsection{8-bit Data Path}
+
+After the Delay Core and Phase Rotation, the signals are sent to the
+calibration correlator and the DBE.  Before being sent to the DBE, the four
+signals are summed together.  Before the sum each signal is multiplied by a
+gain factor.  This gain factor is intended to weight the inputs according to
+system temperature, but thus far they have been used only to scale all inputs
+equally or to zero out an input to exclude it from the sum.  The sum can be
+scaled by~$\frac{1}{2}$ or~$\frac{1}{4}$ to prevent overflow.
+
+\begin{description}
+
+\filbreak
+\rwregn{gain0}
+\rwregn{gain1}
+\rwregn{gain2}
+\rwregs{gain3} These registers control the gain factor for each input.  Only
+the 8 \LSbs are used.  They are currently interpreted as an unsigned number
+with 7 fractional bits.  Thus, the range of gain values that can be applied to
+each input is~$0$ to~$1\frac{127}{128}$.
+
+\end{description}
+
+\begin{description}
+
+\rwreg{summer/shift} Set this to~0 to scale the sum by~$\frac{1}{2}$ (e.g. for
+independent noise dominated inputs).  Set this to~1 to scale the sum
+by~$\frac{1}{4}$ (e.g. for coherent inputs).
 
 \end{description}
 
   \subsection{XAUI}
+
 The sum of the phased inputs is sent to the DBE via the XAUI0 connector.  The
 2-bit quantized inputs are sent to the calibration correlator via the XAUI1
 connector.  XAUI data transmission is \emph{dis}abled by default and must be
@@ -167,118 +404,63 @@ implies a similar status for its transmit side.
 \end{description}
 
   \subsection{Front Panel SMA Output}
+
 \begin{description}
 
-\rwreg{smasel} Selects the signal output over the front panel \verb|SMA0|
+\rwreg{smasel} Selects which signal to output over the front panel \verb|SMA0|
 connector.
 
 \begin{description}
 
-\item[0] Outputs a 128 MHz square wave (50\% duty cycle) if XAUI ouput is
+\item[0] Outputs a 128~MHz square wave (50\% duty cycle) if XAUI output is
 enabled, otherwise a constant 0 or 1.
 
-\item[1] Outputs a slightly delayed copy of ADC0's sync
-input.
-
-\item[2] Outputs the SMA walsh signal used for input1.
+\item[1] Outputs a constant 0.
 
 \end{description}
-\end{description}
 
-  \subsection{Fractional Delay FIR Filter}
+\rwreg{monsel} Selects which signal to output over the front panel \verb|SMA1|
+connector.
 
 \begin{description}
 
-\rwreg{valid} Writing a 1 to this register enables the delay line that performs
-coarse (FPGA clock cyles) and fine (ADC clock cycles) delays before feeding the
-fractional (i.e. sub-sample) delay filter.  Writing a 0 (the default) causes
-the delay line to output a constant value from some earlier sample.  When
-\verb|valid| is set, LED1 will be lit.
+\item[0] Outputs a constant 0.
 
-\filbreak
-\rwregn{delay1}
-\rwregn{delay2}
-\rwregn{delay3}
-\rwregs{delay4} Sets the coarse delay in units of $4 T_s$.  Only the 11 \LSbs
-are used corresponding to a coarse delay range of $1 T_s$ to $8192 T_s$ (a 0
-value is effectively 2048).  Note that the \verb|delayN| registers are numbered
-1 through 4 corresponding to inputs 0 through 3.
+\item[1] Outputs the internal 1024~PPS signal.
 
-\filbreak
-\rwregn{select1}
-\rwregn{select2}
-\rwregn{select3}
-\rwregs{select4} Sets the fine delay in units of $T_s$.  Only the 2 \LSbs
-are used corresponding to a coarse delay range of $0 T_s$ to $3 T_s$.  Note
-that the \verb|selectN| registers are numbered 1 through 4 corresponding to
-inputs 0 through 3.
+\item[2] Outputs the internal Heartbeat (HB) signal.
 
-\filbreak
-\rwregn{fdelay1}
-\rwregn{fdelay2}
-\rwregn{fdelay3}
-\rwregs{fdelay4} Sets the sub-sample delay in units of $\frac{1}{10}T_s$.  Only
-the 4 \LSbs are used, but the valid sub-sample delay range is
-$\frac{0}{10} T_s$ to $\frac{9}{10} T_s$.  Note that the \verb|fdelayN|
-registers are numbered 1 through 4 corresponding to inputs 0 through 3.
+\item[3] Outputs the internal Start of Walsh Frame (HB) signal.
 
-\filbreak
-\rwregn{bypass1}
-\rwregn{bypass2}
-\rwregn{bypass3}
-\rwregs{bypass4} A value of 1 will bypass the sub-sample delay FIR filter
-altogther (but not the coarse or fine delays).  Although bypassing is
-theoretically equivalent to setting \verb|fdelayN| to 0, it differs in that the
-non-theoretical filter passband is not imposed on the signal.  It also differs
-in that the latency of the signal path is change (which could be considered a
-bug).
+\item[4] Outputs the internal 1~PPS signal.
+
+\item[5] Outputs the sampled sync0 signal (from ADC0)
+
+\item[6] Outputs the sampled sync1 signal (from ADC1)
 
 \end{description}
 
+\end{description}
+
+%\begin{description}
+%\end{description}
+%
+%\begin{description}
+%\end{description}
+
+\filbreak
   \subsection{Front Panel LEDs}
 \begin{description}
-\item[LED0] On when the \verb|valid| register is set to 15 (0xF).
+\item[LED0] Not used.
 \item[LED1] Not used.
 \item[LED2] Briefly blinks on each rising edge of the sync0 input.
 \item[LED3] Not used.
-\item[LED4] Indicates the state of \degree{180} phase switching for input 0.
-\item[LED5] Indicates the state of \degree{180} phase switching for input 1.
-\item[LED6] Indicates the state of \degree{180} phase switching for input 2.
-\item[LED7] Indicates the state of \degree{180} phase switching for input 3.
+\item[LED4] Not used.
+\item[LED5] Not used.
+\item[LED6] Not used.
+\item[LED7] Not used.
 \item[LED8] Indicates FPGA is configured (non-functional on some iBobs).
 \end{description}
-
-  \subsection{TODO}
-count\_out
-datasel
-
-\begin{description}
-\filbreak
-\rwregn{gain0}
-\rwregn{gain1}
-\rwregn{gain2}
-\rwregs{gain3}
-\end{description}
-
-ibob\_lwip/ethlite
-ibob\_lwip/macbits
-
-reset
-
-sum\_out
-
-\begin{description}
-\filbreak
-\rwregn{thresh0}
-\rwregn{thresh1}
-\rwregn{thresh2}
-\rwregs{thresh3}
-\end{description}
-
-wgrp\_sel
-xcapt\_en
-xcapt\_rst
-xhb\_walsh
 
 \section{dbe\_xaui\_corr}
 
@@ -290,11 +472,11 @@ can be used in place of the final sum for engineering purposes.
 
 \subsection{XAUI alignment and monitoring}
 
-The alignment of the two incoming XAUI streams is critical to achieveing proper
+The alignment of the two incoming XAUI streams is critical to achieving proper
 summing.  The design will automatically align the two XAUI streams and, if ever
-necessary, re-align them at the next 1024 PPS.  This ensures that the two
+necessary, re-align them at the next 1024~PPS.  This ensures that the two
 streams are never misaligned for more than 1/1024 of a second.  Additionally,
-the out-of-band sync signals sent over the xaui link are monitored for any
+the out-of-band sync signals sent over the XAUI link are monitored for any
 anomalous behavior.  The registers involved in the XAUI alignment and
 monitoring are described here.
 
@@ -357,7 +539,7 @@ xaui\_summer/delay1
 
 \section{dbe\_adc\_single}
 
-\section{bee2\_calib\_corr}
+\section{bee2\_complex\_corr}
 
 
 \end{document}

@@ -9,7 +9,7 @@ ps:	$(TEXFILE:.tex=.ps)
 dvi:	$(TEXFILE:.tex=.dvi)
 
 %.dvi: %.tex
-	( \
+	@( \
 	latex $<; \
 	while grep -q "Rerun to get .* right" $(<:.tex=.log); \
 	do \
@@ -21,7 +21,7 @@ dvi:	$(TEXFILE:.tex=.dvi)
 	dvips -q $< -o $(<:.dvi=.ps)
 
 %.pdf: %.tex
-	( \
+	@( \
 	pdflatex $<; \
 	while grep -q "Rerun to get .* right" $(<:.tex=.log); \
 	do \

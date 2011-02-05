@@ -223,15 +223,28 @@ for more details.
 
 \begin{description}
 
-%\filbreak
+\filbreak
 \rwregn{delay0}
 \rwregn{delay1}
 \rwregn{delay2}
-\rwregs{delay3} These registers specify the overall delay to be applied to by
-each input's Delay Core.  The value written into these registers should be 16
-times the desired delay in terms of ADC samples.  Thus, if a delay of $10
-\frac{3}{16}$ ADC samples is desired, the value to write would be $16 * 10 + 3
-== 163$.
+\rwregs{delay3} The 17 \LSbs of these registers specify the overall delay to be
+applied to by each input's Delay Core.  The value written into these registers
+should be
+
+\begin{align*}
+register\_value &= 16 \cdot adc\_sample\_delay + 64 &(\mathrm{mod}\:2^{17}) \\
+                &= \mathrm{round}(16.384 \cdot ns\_delay) + 64 &(\mathrm{mod}\:2^{17})
+\end{align*}
+
+Because of the 64 sample offset and modulo $2^{17}$ behavior, minimum delay is
+obtained with a value of 64, while maximum delay is obtained with a value of
+63.  For example, to obtain a delay of 123.456~ns, the value to use would be
+computed as
+
+\begin{align*}
+register\_value &= \mathrm{round}(16.384 \cdot 123.456) + 64 &(\mathrm{mod}\:2^{17}) \\
+                &= 2087
+\end{align*}
 
 \end{description}
 
@@ -239,9 +252,9 @@ times the desired delay in terms of ADC samples.  Thus, if a delay of $10
 
 \rwreg{sbsel} The \verb|sbsel| (sideband select) register specifies whether the
 complex output will consist of the positive or negative frequencies of the real
-input.  Each of the four \LSns (i.e. hex digit) of \verb|sbsel| corresponds one
-input.  The \LSn specifies the sideband selection for input 0.  A value of 0
-selects the positive frequencies; a value of 1 selects the negative
+input.  Each of the four \LSns (i.e. hex digits) of \verb|sbsel| corresponds
+one input.  The \LSn specifies the sideband selection for input 0.  A value of
+0 selects the positive frequencies; a value of 1 selects the negative
 frequencies.  Writing 0x0100 will select positive frequencies for inputs~0,1,3
 and negative frequencies for input2.
 

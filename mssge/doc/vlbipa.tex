@@ -16,8 +16,25 @@
   hyperfootnotes=true
 ]{hyperref}
 
+% the following command sets a 1-inch left margin.
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+
+% set width of the text - what is left will be the right
+% margin; in this case, right margin is
+% 8.5in - 1in - 6.5in = 1in.
+\setlength{\textwidth}{6.5in}
+
+% set top margin "extras" to 0 to get a 1 inch usable margin
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+
+% set text length to 9 inches
+\setlength{\textheight}{9in}
+
 \author{David MacMahon}
-\title{VLBI Phased Array \\ iBob and BEE2 \\ Registers and Devices}
+\title{VLBI Phased Array \\ iBob and BEE2 \\ Programmer's Guide}
 
 \begin{document}
 \maketitle
@@ -68,9 +85,18 @@ data comprise the complex epoch.
 Within each epoch, registers and devices have been added, removed, and renamed.
 Instead of attempting to describe all revisions of the gateware, this document
 only describes specific versions of the gateware as noted in each section.  The
-complete history for the various designs are available in the Git repository.
+complete history for the various designs are in a Git repository.  The official
+Git repository is only available via (non-public) ssh using this URL:
 
-git@vlbi-devel.cfa.harvard.edu:phringes.git
+\begin{center}
+\nolinkurl{git@vlbi-devel.cfa.harvard.edu:phringes.git}
+\end{center}
+
+A publicly visible mirror is available using this URL:
+
+\begin{center}
+\url{http://astro.berkeley.edu/~davidm/phringes.git}
+\end{center}
 
 \section{ibob\_phased\_array\_2k}
 
@@ -229,16 +255,14 @@ for more details.
 \rwregn{delay2}
 \rwregs{delay3} The 17 \LSbs of these registers specify the overall delay to be
 applied to by each input's Delay Core.  The value written into these registers
-should be
+can be computed as
 
 \begin{align*}
 register\_value &= 16 \cdot adc\_sample\_delay + 64 &(\mathrm{mod}\:2^{17}) \\
                 &= \mathrm{round}(16.384 \cdot ns\_delay) + 64 &(\mathrm{mod}\:2^{17})
 \end{align*}
 
-Because of the 64 sample offset and modulo $2^{17}$ behavior, minimum delay is
-obtained with a value of 64, while maximum delay is obtained with a value of
-63.  For example, to obtain a delay of 123.456~ns, the value to use would be
+For example, to obtain a delay of 123.456~ns, the value to use would be
 computed as
 
 \begin{align*}
@@ -246,9 +270,9 @@ register\_value &= \mathrm{round}(16.384 \cdot 123.456) + 64 &(\mathrm{mod}\:2^{
                 &= 2087
 \end{align*}
 
-\end{description}
-
-\begin{description}
+Because of the 64 sample offset and modulo $2^{17}$ behavior, minimum delay is
+obtained with a value of 64, while maximum delay is obtained with a value of
+63.
 
 \rwreg{sbsel} The \verb|sbsel| (sideband select) register specifies whether the
 complex output will consist of the positive or negative frequencies of the real
@@ -273,6 +297,7 @@ described in a separate subsection.
 
 \begin{description}
 
+\filbreak
 \rwregn{phase0}
 \rwregn{phase1}
 \rwregn{phase2}
@@ -280,9 +305,26 @@ described in a separate subsection.
 rotation to be applied to each input's complex signal.  The 12 least
 significant bits of these registers are used.  The resolution is therefore
 $\frac{2 \pi}{2^{12}}$ radians per step or $\frac{360}{2^{12}}$ degrees per
-step (i.e. approximately 88 millidegrees per step).  For example, to phase
-rotate a given input by 30 degrees, the value to use would be
-$\mathrm{round}(30 \cdot 2^{12} / 360) = 341$.
+step (i.e. approximately 88 millidegrees per step).  The value written into
+these registers and be computed as
+
+\begin{align*}
+register\_value &=  \mathrm{round}\left(
+                      phase\_radians \cdot \frac{2^{12}}{2 \pi}
+                    \right) \\
+                &   \:\text{or} \\
+register\_value &=  \mathrm{round}\left(
+                      phase\_degrees \cdot \frac{2^{12}}{360}
+                    \right)
+\end{align*}
+
+For example, to phase
+rotate a given input by 30 degrees, the value to use would be computed as
+
+\begin{align*}
+register\_value &=  \mathrm{round}\left(30 \cdot \frac{2^{12}}{360}\right) \\
+                &=  341
+\end{align*}
 
 \end{description}
 
@@ -303,19 +345,11 @@ tables are stored in unrolled form.
 
 \rwreg {walsh/syncsel} This register is used to select the timing of the Walsh functions.  A value of 0 selects the internal 1024~PPS (for CARMA).  A value of 1 selects the internal HB signal (for SMA).
 
-\end{description}
-
-\begin{description}
-
 \rwreg{walsh/colsel} This register is used to specify which columns (i.e. bits)
 of the Walsh tables to use for each input.  Each input is controlled by one
 byte of this register.  Input~0 uses the \LSB of this register.  Only the five
 \LSbs of each byte are used to select columns~0 through 31.  Column~0 is the
 \MSb of the 32~bit Walsh table entries.
-
-\end{description}
-
-\begin{description}
 
 \bramn{walsh/table/90} \brams{walsh/table/180} These shared block RAMs must be
 programmed with the unrolled Walsh tables.  Table \verb|walsh/table/90| is for
@@ -323,11 +357,11 @@ the 90 degree phase switching states while table \verb|walsh/table/180| is for
 the 180 degree phase switching states.  Each table is 2048 entries long.  Each
 entry is 32~bit wide.  The \MSb of each 32-bit entry corresponds to column~0 of
 the (up to) 32~column Walsh table.  The Walsh tables are addressed by a counter
-that increments every every phase switching state (i.e. every 1024~PPS for
-CARMA; every HB for SMA) and is reset at the end of every Walsh function cycle
-(i.e. every 1~PPS for CARMA and every SOWF for SMA).  Only the first N entries
-need to be populated, where N is the number of phase switching states per
-complete phase switching cycle (i.e. 1024 for CARMA, 64 for SMA).
+that increments every phase switching state (i.e. every 1024~PPS for CARMA;
+every HB for SMA) and is reset at the end of every Walsh function cycle (i.e.
+every 1~PPS for CARMA and every SOWF for SMA).  Only the first N entries need
+to be populated, where N is the number of phase switching states per complete
+phase switching cycle (i.e. 1024 for CARMA, 64 for SMA).
 
 \end{description}
 
@@ -341,21 +375,20 @@ four distinct values: -3, -1, +1, +3.
 
 \begin{description}
 
-\filbreak
-\rwregn{thresh0}
-\rwregn{thresh1}
-\rwregn{thresh2}
-\rwregs{thresh3}  These registers set the thresholding level for each input.
-The quantized value for a given input value of $x$ and threshold value $thresh$
-is determined according to the equations shown here.  Note that the output
-value for a zero valued input alternates between -1 and +1.
+\rwregn{quant/thresh0}
+\rwregn{quant/thresh1}
+\rwregn{quant/thresh2}
+\rwregs{quant/thresh3}  These registers set the thresholding level for each
+input.  The quantized value for a given input value of $x$ and threshold value
+$thresh$ is determined according to the equations shown here.  Note that the
+output value for a zero valued input alternates between -1 and +1.
 
 \begin{align*}
-          &\,x <= -thresh &\Rightarrow -3 \\
--thresh < &\,x < 0        &\Rightarrow -1 \\
-          &\,x = 0        &\Rightarrow \pm1 \\
-      0 < &\,x < thresh   &\Rightarrow +1 \\
- thresh < &\,x            &\Rightarrow +3
+           &\,x <= -thresh &\Rightarrow -3 \\
+-thresh <  &\,x < 0        &\Rightarrow -1 \\
+           &\,x = 0        &\Rightarrow \pm1 \\
+      0 <  &\,x < thresh   &\Rightarrow +1 \\
+ thresh <= &\,x            &\Rightarrow +3
 \end{align*}
 
 \end{description}
@@ -364,15 +397,15 @@ value for a zero valued input alternates between -1 and +1.
 
 After the Delay Core and Phase Rotation, the signals are sent to the
 calibration correlator and the DBE.  Before being sent to the DBE, the four
-signals are summed together.  Before the sum each signal is multiplied by a
-gain factor.  This gain factor is intended to weight the inputs according to
-system temperature, but thus far they have been used only to scale all inputs
-equally or to zero out an input to exclude it from the sum.  The sum can be
-scaled by~$\frac{1}{2}$ or~$\frac{1}{4}$ to prevent overflow.
+8~bit input signals are summed together then scaled and rounded back to 8~bits.
+Before the sum each input signal is multiplied by a gain factor.  This gain
+factor is intended to weight the inputs according to system temperature, but
+thus far they have been used only to scale all inputs equally or to zero out an
+input to exclude it from the sum.  The sum is scaled by~$\frac{1}{2}$
+or~$\frac{1}{4}$ and then rounded to 8~bits prevent overflow.
 
 \begin{description}
 
-\filbreak
 \rwregn{gain0}
 \rwregn{gain1}
 \rwregn{gain2}
@@ -380,10 +413,6 @@ scaled by~$\frac{1}{2}$ or~$\frac{1}{4}$ to prevent overflow.
 the 8 \LSbs are used.  They are currently interpreted as an unsigned number
 with 7 fractional bits.  Thus, the range of gain values that can be applied to
 each input is~$0$ to~$1\frac{127}{128}$.
-
-\end{description}
-
-\begin{description}
 
 \rwreg{summer/shift} Set this to~0 to scale the sum by~$\frac{1}{2}$ (e.g. for
 independent noise dominated inputs).  Set this to~1 to scale the sum
@@ -400,15 +429,18 @@ explicitly enabled via software (see below).
 
 \begin{description}
 
-\rwreg{start\_xaui} Writing a 1 to this register enables data transmission over
-both XAUI links as well as enabling the dive-by-two counter used to drive the
-BEE2 calibration correlator's \verb|usr2_clk|.
+\rwreg{start\_xaui} Writing a 1 to this register enables a divide-by-2 counter
+that drives the BEE2 calibration correlator's \verb|usr2_clk| input and the two
+XAUI links' data valid inputs (data is de-muxed by two for XAUI transmission)
+thereby enabling transmission over the XAUI links.
 
-Writing a 0 (the default) disables XAUI data transmission over both XAUI links
-as well as enabling the dive-by-two counter used to drive the BEE2 calibration
-correlator's \verb|usr2_clk|.
+Writing a 0 (the default) disables the divide-by-two counter that drives the
+BEE2 calibration correlator's \verb|usr2_clk| input and the two XAUI links'
+data valid inputs (data is de-muxed by two for XAUI transmission).  Whether
+this actually disables transmissions over the XAUI links depends on whether the
+counter is stopped in the 0 state or the 1 state.  Future designs may remove
+this ambiguity.
 
-\filbreak
 \roregn{xaui\_0/rx\_linkdown}
 \roregs{xaui\_1/rx\_linkdown} A value of 1 indicates a ``link down'' status on
 the (unused) receive side of the indicated XAUI connection, which strongly
@@ -416,6 +448,7 @@ implies a similar status for its transmit side.
 
 \end{description}
 
+\filbreak
   \subsection{Front Panel SMA Output}
 
 \begin{description}
@@ -426,7 +459,8 @@ connector.
 \begin{description}
 
 \item[0] Outputs a 128~MHz square wave (50\% duty cycle) if XAUI output is
-enabled, otherwise a constant 0 or 1.
+enabled (i.e. register \verb|start_xaui| is 1), otherwise a constant 0 or 1.
+Future designs may remove this ambiguity.
 
 \item[1] Outputs a constant 0.
 
@@ -455,12 +489,6 @@ connector.
 
 \end{description}
 
-%\begin{description}
-%\end{description}
-%
-%\begin{description}
-%\end{description}
-
 \filbreak
   \subsection{Front Panel LEDs}
 \begin{description}
@@ -475,10 +503,179 @@ connector.
 \item[LED8] Indicates FPGA is configured (non-functional on some iBobs).
 \end{description}
 
+\section{bee2\_complex\_corr}
+
+This section documents the bee2\_complex\_corr\_floating\_2011\_Feb\_03\_1041
+design.
+
+The bee2\_complex\_corr design receives 2+2 bit samples (i.e. 2 real bits and 2
+imaginary bits per sample) from a total of eight inputs (two IPAs).  It cross
+correlates one of these signals (user selectable) with itself and the other
+seven inputs.  Each of the 7 cross-correlations and 1 auto-correlation consists
+of 16 lags (-8 to +7).  In addition to the data samples, the design also
+receives sync and 90 degree phase state information from the IPAs over the XAUI
+links' out of band channel.  This allows the correlator to perform sideband
+separation, producing both upper and lower sideband lag spectra for each
+baseline.
+
+\subsection{Input numbering}
+
+The four signals arriving over XAUI1 are considered to be input0 through
+input3.  The four signals arriving over XAUI0 are considered to be input4
+through input7.  Note that the higher number XAUI port contains the lower
+number inputs and vice versa.
+
+\subsection{XAUI alignment and monitoring}
+
+The alignment of the two incoming XAUI streams is critical to achieving proper
+correlation.  The design will automatically align the two XAUI streams and, if
+ever necessary, re-align them at the next 1024~PPS.  This ensures that the two
+streams are never misaligned for more than 1/1024 of a second.  Additionally,
+the out-of-band sync signals sent over the XAUI link are monitored for any
+anomalous behavior.  The registers involved in the XAUI alignment and
+monitoring are described here.
+
+\begin{description}
+\rwreg{xaui\_rst}  Resets various parts of XAUI related logic.  Setting the
+\LSb (bit 0) to 1 will reset the XAUI core itself (rarely needed).  Setting bit
+1 to 1 will reset the counters associated with XAUI monitoring.  Setting bit 2
+to 1 will reset the registers that capture the relative delays of the two XAUI
+links.
+
+\roregn{xaui0/linkdown\_cnt}
+\roregs{xaui1/linkdown\_cnt} Indicates how many times the link has gone down
+(i.e. transitioned from up to down).  Under normal operations this register
+should read~0, though it may increment some during system startup.
+Reset by bit~1 of the \verb|xaui_rst| register.
+
+\roregn{xaui0/period}
+\roregs{xaui1/period}
+Indicates the number of FPGA (256 MHz) clock cycles between the most recently
+received 1024~PPS pulse and the previous one.  Under normal operations, this
+register should read~250000.
+Reset by bit~1 of the \verb|xaui_rst| register.
+
+\roregn{xaui0/period\_err}
+\roregn{xaui1/period\_err}
+\roregn{xaui0/period\_err\_cnt}
+\roregs{xaui1/period\_err\_cnt}
+The XAUI monitoring logic constantly monitors the number of FPGA cycles between
+1024~PPS pulses.  It counts the number of period errors and remembers the most
+recent erroneous period value.  The \verb|xauiN/period_err_cnt| registers
+indicate the total number of erroneous periods detected.  Under normal
+operations, these registers should read~0.  The \verb|xauiN/period_err|
+registers indicate the most recent erroneous period value.  Under normal
+operations, these registers should read~0 (i.e. no erroneous period measured).
+These registers are reset by bit~1 of the \verb|xaui_rst| register.
+
+\roregn{xaui0/sync\_cnt}
+\roregs{xaui1/sync\_cnt} This register indicates the total number of 1024~PPS
+pulses received.  Since it is a 32~bit counter, it will roll over approximately
+every 48.5 days.
+Reset by bit~1 of the \verb|xaui_rst| register.
+
+\roregn{xaui0/rx\_empty\_cnt}
+\roregs{xaui1/rx\_empty\_cnt} Indicates how many times the XAUI FIFO has
+underflowed.  Under normal operations this register should read~0, though it
+may increment some during system startup.
+Reset by bit~1 of the \verb|xaui_rst| register.
+
+\roregn{xaui0/almost\_full}
+\roregs{xaui1/almost\_full} Indicates the current state of the XAUI's
+\verb|almost_full| status bit.  Under normal operation, this register should
+read~0.
+
+\roregn{xaui0/rx\_linkdown}
+\roregs{xaui1/rx\_linkdown} Indicates the current state of the XAUI's
+\verb|link_down| status bit.  Under normal operation, this register should
+read~0.
+
+\roregn{xaui0/valid}
+\roregs{xaui1/valid} The two \LSbs of this register contain the current and
+previous value of the XAUI block's \verb|valid| status bit.  Since this status
+bit should toggle every clock cycle, this register should read~1 or~2 under
+normal operation.
+
+\roregn{xaui\_aligner/delay0}
+\roregs{xaui\_aligner/delay1} These registers indicate the number of cycles
+from the stream's incoming 1024~PPS and the reference 1024~PPS.  Since the
+reference 1024~PPS is just a 32 cycle delayed version of XAUI0's 1024~PPS,
+\verb|xaui_aligner/delay0| should always read 32.  Under normal operations,
+\verb|xaui_aligner/delay1| should be $32\pm32$, but usually it will be
+$32\pm4$.
+\end{description}
+
+\subsection{Synchronization and Integration}
+
+In order to perform sideband separation, the correlator must integrate for an
+integral number of Walsh cycles.  The registers used to control and monitor
+synchronization of the integrations are described here.
+
+\begin{description}
+
+\rwreg{syncsel} This register selects the sync signal that specifies the time
+granularity of the integrations.  It determines the units of the
+\verb|integ_time| register.  The four choices are:
+
+\begin{description}
+\item[0] Use the 1024~PPS signal to define the integration units.
+\item[1] Use the HB signal to define the integration units.
+\item[2] Use the SOWF signal to define the integration units.
+\item[3] Use the 1~PPS signal to define the integration units.
+\end{description}
+
+\rwreg{integ\_time} This register sets the integration time in units of the
+sync signal selected via the \verb|syncsel| register.  Changing the value of
+this register resets the correlator's internals as well as the
+\verb|integ_cnt| register.
+
+\roreg{integ\_cnt} This register simply counts the number of integrations that
+have completed.  When this register increments, a new integration is ready to
+be read.  Changing the \verb|integ_time| register resets this register.
+
+\roreg{sample\_cnt} The correlator always integrates in multiples of 16 samples
+(since there are 16 lags per baseline).  If the selected integration unit (see
+\verb|syncsel|) is not commensurate with 16 samples (e.g. the Heartbeat signal)
+then the number of samples per integration can vary from integration to
+integration.  This register provides the number of samples integrated in the
+most recently completed integration.  It can be used to properly average the
+data.
+
+\roreg{subint\_cnt} This register indicates how far along the current
+integration is.  It is in units of the sync signal selected via the
+\verb|syncsel| register.  It counts from 0 to $integ\_time - 1$, then starts
+over.
+
+\rwreg{refant} This register selects the reference \emph{input} (NB: \emph{not}
+antenna) that is common to all eight of the computed baselines, including the
+auto-correlation ``baseline''.
+
+\filbreak
+\bramn{rx0/usb\_real}
+\bramn{rx0/usb\_imag}
+\bramn{rx0/lsb\_real}
+\bramn{rx0/lsb\_imag}
+\bramn{$\vdots$}
+\bramn{rx7/usb\_real}
+\bramn{rx7/usb\_imag}
+\bramn{rx7/lsb\_real}
+\brams{rx7/lsb\_imag} These shared BRAMs hold the integrated 16~lag spectra for
+the upper and lower sidebands of each of the eight computed baselines.  The
+\verb|rx0/usb_real| BRAM contains the integrated real component of the upper
+sideband (USB) of input0 times the complex conjugate of the reference input.
+The \verb|rx7/lsb_imag| BRAM contains the integrated imaginary component of the
+lower sideband (USB) of input7 times the complex conjugate of the reference
+input.  Note that some baselines can have a conjugation convention that differs
+from MIRIAD's conjugation convention depending on which input is chosen to be
+the reference input and which antennas are connected to which inputs.  The 16
+lags are stored from lag~-8 to lag~+7.
+
+\end{description}
+
 \section{dbe\_xaui\_corr}
 
 The dbe\_xaui\_corr design receives two signals (i.e. streams of data) from two
-different ibobs via XAUI.  It must time-align these two incoming signals, sum
+different iBobs via XAUI.  It must time-align these two incoming signals, sum
 them, and then process and format the final summed signal for recording to the
 Mark 5 data recorder.  The design also contains a digital noise generator that
 can be used in place of the final sum for engineering purposes.
@@ -501,13 +698,13 @@ to 1 will reset the registers that capture the relative delays of the two XAUI
 links.
 \end{description}
 
-xaui0/linkdown\_cnt
+{}xaui0/linkdown\_cnt
 xaui0/period
 xaui0/period\_err
 xaui0/period\_err\_cnt
 xaui0/sync\_cnt
 
-xaui0/almost\_full
+{}xaui0/almost\_full
 xaui0/rx\_empty\_cnt
 xaui0/rx\_linkdown
 xaui0/valid
@@ -521,7 +718,7 @@ xaui1/rx\_linkdown
 xaui1/sync\_cnt
 xaui1/valid
 
-correlate
+{}correlate
 delay\_adj
 ibob\_lwip/ethlite
 ibob\_lwip/macbits
@@ -551,8 +748,5 @@ xaui\_summer/delay1
 
 
 \section{dbe\_adc\_single}
-
-\section{bee2\_complex\_corr}
-
 
 \end{document}

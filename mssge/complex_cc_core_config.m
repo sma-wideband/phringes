@@ -114,8 +114,8 @@ function complex_cc_core_config(this_block)
       this_block.setError('Input data type for port "in1_w" must have width=1.');
     end
 
-    if (this_block.port('wdelay').width ~= 7);
-      this_block.setError('Input data type for port "wdelay" must have width=7.');
+    if (this_block.port('wdelay').width ~= 6);
+      this_block.setError('Input data type for port "wdelay" must have width=6.');
     end
 
     this_block.port('sync_in').useHDLVector(false);

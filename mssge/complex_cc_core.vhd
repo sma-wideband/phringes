@@ -17,7 +17,7 @@ entity complex_cc_core is
     in1_w: in std_logic; 
     integ_time: in std_logic_vector(31 downto 0); 
     sync_in: in std_logic; 
-    wdelay: in std_logic_vector(6 downto 0); 
+    wdelay: in std_logic_vector(5 downto 0); 
     addr: out std_logic_vector(3 downto 0); 
     integs: out std_logic_vector(31 downto 0); 
     lsb_data_im: out std_logic_vector(31 downto 0); 

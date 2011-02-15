@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage[usenames]{color} %used for font color
 \usepackage{graphicx}
+\usepackage{textcomp}
 \usepackage{amssymb} %maths
 \usepackage{amsmath} %maths
 \usepackage[utf8]{inputenc} %useful to type directly accentuated characters
@@ -56,6 +57,8 @@
 \newcommand{\LSns}{least significant nybbles }
 \newcommand{\LSbs}{least significant bits }
 \newcommand{\MSb}{most significant bit }
+\newcommand{\MSbs}{most significant bits }
+\newcommand{\MSB}{most significant byte }
 \newcommand{\devitem}[2]{\item[#1] [#2] \\ }
 \newcommand{\rwreg}[1]{\devitem{#1}{R/W register}}
 \newcommand{\rwregn}[1]{\item[#1] {} \tighten} % For "stacked" rwregs
@@ -637,9 +640,10 @@ be read.  Changing the \verb|integ_time| register resets this register.
 (since there are 16 lags per baseline).  If the selected integration unit (see
 \verb|syncsel|) is not commensurate with 16 samples (e.g. the Heartbeat signal)
 then the number of samples per integration can vary from integration to
-integration.  This register provides the number of samples integrated in the
-most recently completed integration.  It can be used to properly average the
-data.
+integration.  This register provides the number of 16-sample sub-integrations
+in the most recently completed integration.  It can be used to properly average
+the data.  To determine the number of individual samples integrated, multiply
+the value of this register by 16.
 
 \roreg{subint\_cnt} This register indicates how far along the current
 integration is.  It is in units of the sync signal selected via the
@@ -669,6 +673,64 @@ input.  Note that some baselines can have a conjugation convention that differs
 from MIRIAD's conjugation convention depending on which input is chosen to be
 the reference input and which antennas are connected to which inputs.  The 16
 lags are stored from lag~-8 to lag~+7.
+
+\roregn{phsw\_bal/0}
+\roregn{$\vdots$}
+\roregs{phsw\_bal/7} These registers indicate the \emph{phase switching
+balance} for the most recently completed integration for each of the baselines.
+During the integration, a counter (accumulator, really) counts +1 for each
+sample where the inputs were in the same 90 degree phase switch state and -1
+for each sample where the inputs were in different 90 degree phase switch
+states.  For optimum sideband separation, the inputs should have an equal
+number of samples while in the same and different 90 degree phase switching
+states, so ideally this output should read zero.  If it is positive, then there
+that many more samples with the same 90 degree phase switch state.  If it is
+negative, then there that many more samples with different 90 degree phase
+switch state.
+
+\rwreg{wdelay} This register adjusts the delay applied to the Walsh inputs to
+align them with the data out from the correlator.  This delay is calculated to
+be 65, but to accommodate errors in the calculation, a variable delay element
+is provided.  The range of valid values for this register are 0 to 63.  Some of
+the estimated delay is built in to the design already.  The estimated value
+required for this register is 32.  Once a good value is determined empirically,
+it will be hard-coded into the design and this register will be removed.
+
+\end{description}
+
+\subsection{Status and Data Monitoring}
+
+The design includes an uptime counter and a snapshot block.  The uptime counter
+counts in seconds and cannot be be reset without reprogramming the FPGA.  The
+snapshot block can be used to capture some input samples to help set the
+upstream threshold registers.
+
+\begin{description}
+
+\roreg{uptime} The uptime register is a 32~bit counter that counts seconds
+since the FPGA started running.  It cannot be reset (other than reprogramming
+the FPGA) and is not synchronized with external 1 PPS.
+
+\rwreg{snap/ctrl} This register controls the snapshot block.  A 0 to 1
+transition of the \LSb enabled a snapshot sequence.  Once the snapshot
+sequence is enabled, the data capture will begin immediately if bit~1 is 1 or
+on the next selected sync pulse (see \verb|syncsel|) if bit~1 is 0.
+
+\roreg{snap/addr} During data capture, this register provides the address
+withing the shared BRAMs to which the data are being written.  When the data
+capture is complete, the address holds at the final value of 2047.  The data
+capture completes in 8~\textmu s, so this register is useful primarily when the
+data capture is setup to begin on the next sync pulse (otherwise it is unlikely
+that any value other than 2047 will be observed in this register).
+
+\bramn{snap/in0123}
+\brams{snap/in4567} These shared BRAMs hold the snap shot data.  Each BRAM
+is 2048 words deep and stores data for the four inputs implied by its name.
+Within a BRAM, each 32~bit word stores four samples for all four inputs.  The
+\MSB holds four samples of the BRAM's lowest numbered input; the \LSB holds
+four samples of the BRAM's highest numbered input.  Within a byte, the two
+\MSbs represent the first (in time) of the byte's four samples.  Thus, each
+shared BRAM can hold 8192 samples for four inputs.
 
 \end{description}
 

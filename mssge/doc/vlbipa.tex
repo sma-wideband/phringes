@@ -640,14 +640,14 @@ this register resets the correlator's internals as well as the
 have completed.  When this register increments, a new integration is ready to
 be read.  Changing the \verb|integ_time| register resets this register.
 
-\roreg{sample\_cnt} The correlator always integrates in multiples of 16 samples
-(since there are 16 lags per baseline).  If the selected integration unit (see
-\verb|syncsel|) is not commensurate with 16 samples (e.g. the Heartbeat signal)
-then the number of samples per integration can vary from integration to
-integration.  This register provides the number of 16-sample sub-integrations
-in the most recently completed integration.  It can be used to properly average
-the data.  To determine the number of individual samples integrated, multiply
-the value of this register by 16.
+\roreg{sample\_cnt} The correlator always integrates in multiples of 32 samples
+(since there are 16 lags per baseline and 2 samples per FPGA clock cycle).  If
+the selected integration unit (see \verb|syncsel|) is not commensurate with 32
+samples (e.g. the Heartbeat signal) then the number of samples per integration
+can vary from integration to integration.  This register provides the number of
+32-sample sub-integrations in the most recently completed integration.  It can
+be used to properly average the data.  To determine the number of individual
+samples integrated, multiply the value of this register by 32.
 
 \roreg{subint\_cnt} This register indicates how far along the current
 integration is.  It is in units of the sync signal selected via the

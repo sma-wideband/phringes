@@ -2,6 +2,7 @@
 \usepackage[usenames]{color} %used for font color
 \usepackage{graphicx}
 \usepackage{textcomp}
+\usepackage{bytefield}
 \usepackage{amssymb} %maths
 \usepackage{amsmath} %maths
 \usepackage[utf8]{inputenc} %useful to type directly accentuated characters
@@ -690,7 +691,8 @@ number of samples while in the same and different 90 degree phase switching
 states, so ideally this output should read zero.  If it is positive, then there
 that many more samples with the same 90 degree phase switch state.  If it is
 negative, then there that many more samples with different 90 degree phase
-switch state.
+switch state.  Note that the count is in FPGA cycles, which is half the number
+of data samples (due to demux-by-2 data).
 
 \rwreg{wdelay} This register adjusts the delay applied to the Walsh inputs to
 align them with the data out from the correlator.  This delay is calculated to
@@ -728,13 +730,41 @@ data capture is setup to begin on the next sync pulse (otherwise it is unlikely
 that any value other than 2047 will be observed in this register).
 
 \bramn{snap/in0123}
-\brams{snap/in4567} These shared BRAMs hold the snap shot data.  Each BRAM
-is 2048 words deep and stores data for the four inputs implied by its name.
-Within a BRAM, each 32~bit word stores four samples for all four inputs.  The
-\MSB holds four samples of the BRAM's lowest numbered input; the \LSB holds
-four samples of the BRAM's highest numbered input.  Within a byte, the two
-\MSbs represent the first (in time) of the byte's four samples.  Thus, each
-shared BRAM can hold 8192 samples for four inputs.
+\brams{snap/in4567} These shared BRAMs hold the snap shot data.  Each BRAM is
+2048 words deep and stores data for the four inputs implied by its name.
+Within a BRAM, each 32~bit word stores two complex samples for all four inputs.
+The \MSB holds two complex samples of the BRAM's lowest numbered input; the
+\LSB holds two complex samples of the BRAM's highest numbered input.  Within a
+byte, the two \MSbs represent the real component of the first (in time) of the
+byte's two complex samples.  Thus, each shared BRAM can hold 4096 complex
+samples for four inputs.  The storage format for the first word (BRAM address
+0) of \verb|snap/in0123| is shown in the following diagram (\verb|snap/in4567|
+is similar).\\
+
+\centering
+\settowidth{\bitwidth}{\scriptsize in0}
+\begin{bytefield}{32}
+  \bitbox[]{1}{\rotatebox{90}{\scriptsize MSb}}
+  \bitbox[]{30}{} &
+  \bitbox[]{1}{\rotatebox{90}{\scriptsize LSb}} \\
+  \bitheader[b]{0,7,8,15,16,23,24,31} \\
+  \bitbox{2}{\scriptsize in0 \\ re0} &
+  \bitbox{2}{\scriptsize in0 \\ im0} &
+  \bitbox{2}{\scriptsize in0 \\ re1} &
+  \bitbox{2}{\scriptsize in0 \\ im1} &
+  \bitbox{2}{\scriptsize in1 \\ re0} &
+  \bitbox{2}{\scriptsize in1 \\ im0} &
+  \bitbox{2}{\scriptsize in1 \\ re1} &
+  \bitbox{2}{\scriptsize in1 \\ im1} &
+  \bitbox{2}{\scriptsize in2 \\ re0} &
+  \bitbox{2}{\scriptsize in2 \\ im0} &
+  \bitbox{2}{\scriptsize in2 \\ re1} &
+  \bitbox{2}{\scriptsize in2 \\ im1} &
+  \bitbox{2}{\scriptsize in3 \\ re0} &
+  \bitbox{2}{\scriptsize in3 \\ im0} &
+  \bitbox{2}{\scriptsize in3 \\ re1} &
+  \bitbox{2}{\scriptsize in3 \\ im1}
+\end{bytefield}
 
 \end{description}
 

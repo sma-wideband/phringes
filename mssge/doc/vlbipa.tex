@@ -145,41 +145,79 @@ independent of the phase switching scheme being used, so the external 1~PPS
 must always be supplied and the internal 1~PPS must always be synchronized to
 it via the \verb|arm1pps| command.
 
-%To facilitate synchronized seeding of noise sources on different devices, the
-%noise generators are armed via software.  This causes them to re-seed on the
-%next rising edge of the internal 1~PPS signal.  The internal 1~PPS is generated
-%by counting clock cycles and can be synchronized with one or the other of the
-%ADCs sync pulses.
-
 \begin{description}
+\filbreak
 \rwreg{ppssel} Selects the ADC sync pulse to which the internally generated
 1~PPS signal will be synchronized.
 
-0: Select ADC0 sync signal (typically for CARMA) \\
-1: Select ADC1 sync signal (typically for SMA)
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize sel}}
+\end{bytefield}
 
-\rwreg{onepps\_sync/arm1pps} A 0 to 1 transition of the \LSb of this register
-will arm the internal 1~PPS generator to re-synchronize with the next rising
-edge of the selected sync pulse.  This register is not often used directly
-since (re-)arming is normally done via the \verb|arm1pps| command.
+\begin{description}
+\item[0] Select ADC0 sync signal (typically for CARMA)
+\item[1] Select ADC1 sync signal (typically for SMA)
+\end{description}
 
-\roreg{onepps\_sync/arm1pps\_ack} A 1 to 0 transition of the \LSb of
-\verb|onepps_sync/arm1pps| clears (i.e. sets to zero) this register.  This
-register is set to 1 on the rising edge of the next sync pulse that
-re-synchronizes the internal 1~PPS generator.  This can be used to verify that
-the internal 1~PPS generator did indeed re-synchronize after being armed.  This
-register is not often used directly since (re-)arming is normally done via the
-\verb|arm1pps| command.
+\rwreg{onepps\_sync/arm1pps} A 0 to 1 transition of bit~0 of this register will
+arm the internal 1~PPS generator to re-synchronize with the next rising edge of
+the selected sync pulse.
 
-\rwreg{hb\_sync/arm\_sowf} A 0 to 1 transition of the \LSb of this register
-will arm the internal HB and SOWF generators to re-synchronize with the next
-rising edge of the external SOWF signal.  This register is not often used
-directly since (re-)arming is normally done via the \verb|armsowf| command.
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize arm}}
+\end{bytefield}
 
-\roreg{hb\_sync/armsowf\_ack} A 1 to 0 transition of the \LSb of
-\verb|hb_sync/arm\_sowf| clears (i.e. sets to zero) this register.  This
-register is set to 1 on the next rising edge of the external SOWF signal.  This
-can be used to verify that the internal HB and SOWF generators did indeed
+This register is not often used directly since (re-)arming is normally done via
+the \verb|arm1pps| command.
+
+\roreg{onepps\_sync/arm1pps\_ack} A 1 to 0 transition of bit~0 of
+\verb|onepps_sync/arm1pps| clears (i.e. sets to zero) this register.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize ack}}
+\end{bytefield}
+
+Bit~0 of this register is set to 1 on the rising edge of the next sync pulse
+that re-synchronizes the internal 1~PPS generator.  This can be used to verify
+that the internal 1~PPS generator did indeed re-synchronize after being armed.
+This register is not often used directly since (re-)arming is normally done via
+the \verb|arm1pps| command.
+
+\rwreg{hb\_sync/arm\_sowf} A 0 to 1 transition of bit~0 of this register will
+arm the internal HB and SOWF generators to re-synchronize with the next rising
+edge of the external SOWF signal.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize arm}}
+\end{bytefield}
+
+This register is not often used directly since (re-)arming is normally done via
+the \verb|armsowf| command.
+
+\roreg{hb\_sync/armsowf\_ack} A 1 to 0 transition of bit~0 of
+\verb|hb_sync/arm\_sowf| clears (i.e. sets to zero) this register.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize ack}}
+\end{bytefield}
+
+This register is set to 1 on the next rising edge of the external SOWF signal.
+This can be used to verify that the internal HB and SOWF generators did indeed
 re-synchronize after being armed.  This register is not often used directly
 since (re-)arming is normally done via the \verb|armsowf| command.
 
@@ -191,8 +229,21 @@ since (re-)arming is normally done via the \verb|armsowf| command.
 
 \rwreg{insel}  Input selection.  Uses one bit per demux path per input.
 
-0: Select ADC \\
-1: Select noise source
+\vspace{2\parskip}
+\settowidth{\bitwidth}{\scriptsize in0}
+\begin{bytefield}{32}
+  \bitheader[b]{0,3,4,7,8,11,12,15,16,31} \\
+  \bitbox{16}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{4}{\scriptsize insel3} &
+  \bitbox{4}{\scriptsize insel2} &
+  \bitbox{4}{\scriptsize insel1} &
+  \bitbox{4}{\scriptsize insel0}
+\end{bytefield}
+
+\begin{description}
+\item[bit = 0] Select ADC for one demux path of one input
+\item[bit = 1] Select noise source for one demux path of one input
+\end{description}
 
 Examples:
 \begin{description}
@@ -202,11 +253,11 @@ Examples:
                all other demux paths.
 \item[0x000F] Select noise source for all demux paths of input 0, select ADC
                for all other inputs.
-\item[0xFFFF] Select noise source for all demux paths of all inputs.
-\item[0xF000] Select noise source for all demux paths of input 3, select ADC
-               for all other inputs.
 \item[0xC000] Select noise source for demux paths 2 and 3 of input 3, select
                ADC for all other inputs.
+\item[0xF000] Select noise source for all demux paths of input 3, select ADC
+               for all other inputs.
+\item[0xFFFF] Select noise source for all demux paths of all inputs.
 \end{description}
 \end{description}
 
@@ -214,8 +265,23 @@ Examples:
 
 \begin{description}
 
-\rwreg{noise/arm}  A 0 to 1 transition of the \LSb of each
-nybble arms that input's noise generator.  The least significant nybble
+\rwreg{noise/arm}  A 0 to 1 transition of bit~0 of each nybble arms that
+input's noise generator.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{19}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize in3}} &
+  \bitbox{3}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize in2}} &
+  \bitbox{3}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize in1}} &
+  \bitbox{3}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize in0}}
+\end{bytefield}
+
+The least significant nybble
 corresponds to input0.  A value of 0x0011 will arm the noise generators for
 input0 and input1.  A value of 0x1111 will arm all noise generators.
 
@@ -223,7 +289,6 @@ Once a noise generator is armed, it will re-seed starting on the next internal
 1~PPS rising edge.  This can be used to synchronously seed noise generators
 across multiple devices or within one device.
 
-\filbreak
 \rwregn{noise/seed/0}
 \rwregn{noise/seed/1}
 \rwregn{noise/seed/2}
@@ -234,6 +299,13 @@ normally distributed values each.  The 32~bit seed is actually split into two
 16~bits seeds to seed the two contained noise generators.  Using a seed whose
 two halves are identical (i.e.\ a multiple of 65537) will result in a signal
 that has a lag-2 correlation coefficient of 1 resulting in a non-flat spectrum.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{16}{seed high} &
+  \bitbox{16}{seed low}
+\end{bytefield}
 
 \end{description}
 
@@ -253,19 +325,27 @@ for more details.
 
 \begin{description}
 
-\filbreak
 \rwregn{delay0}
 \rwregn{delay1}
 \rwregn{delay2}
 \rwregs{delay3} The 17 \LSbs of these registers specify the overall delay to be
-applied to by each input's Delay Core.  The value written into these registers
-can be computed as
+applied to by each input's Delay Core.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{15}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{17}{delay}
+\end{bytefield}
+
+The value written into these registers can be computed as
 
 \begin{align*}
 register\_value &= 16 \cdot adc\_sample\_delay + 64 &(\mathrm{mod}\:2^{17}) \\
                 &= \mathrm{round}(16.384 \cdot ns\_delay) + 64 &(\mathrm{mod}\:2^{17})
 \end{align*}
 
+\filbreak
 For example, to obtain a delay of 123.456~ns, the value to use would be
 computed as
 
@@ -280,7 +360,23 @@ obtained with a value of 64, while maximum delay is obtained with a value of
 
 \rwreg{sbsel} The \verb|sbsel| (sideband select) register specifies whether the
 complex output will consist of the positive or negative frequencies of the real
-input.  Each of the four \LSns (i.e. hex digits) of \verb|sbsel| corresponds
+input.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{16}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox[tb]{3}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize sb3}} &
+  \bitbox[tb]{3}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize sb2}} &
+  \bitbox[tb]{3}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize sb1}} &
+  \bitbox[tb]{3}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize sb0}}
+\end{bytefield}
+
+Each of the four \LSns (i.e. hex digits) of \verb|sbsel| corresponds
 one input.  The \LSn specifies the sideband selection for input 0.  A value of
 0 selects the positive frequencies; a value of 1 selects the negative
 frequencies.  Writing 0x0100 will select positive frequencies for inputs~0,1,3
@@ -301,16 +397,24 @@ described in a separate subsection.
 
 \begin{description}
 
-\filbreak
 \rwregn{phase0}
 \rwregn{phase1}
 \rwregn{phase2}
 \rwregs{phase3} These registers specify the amount of user-specified phase
-rotation to be applied to each input's complex signal.  The 12 least
-significant bits of these registers are used.  The resolution is therefore
-$\frac{2 \pi}{2^{12}}$ radians per step or $\frac{360}{2^{12}}$ degrees per
-step (i.e. approximately 88 millidegrees per step).  The value written into
-these registers and be computed as
+rotation to be applied to each input's complex signal.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{20}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{12}{phase}
+\end{bytefield}
+
+Because only the 12 least significant bits of these registers are used for one
+complete turn in phase, the resolution is $\frac{2 \pi}{2^{12}}$ radians per
+step or $\frac{360}{2^{12}}$ degrees per step (i.e. approximately 88
+millidegrees per step).  The value written into these registers can be computed
+as
 
 \begin{align*}
 register\_value &=  \mathrm{round}\left(
@@ -347,25 +451,69 @@ tables are stored in unrolled form.
 
 \begin{description}
 
-\rwreg {walsh/syncsel} This register is used to select the timing of the Walsh functions.  A value of 0 selects the internal 1024~PPS (for CARMA).  A value of 1 selects the internal HB signal (for SMA).
+\rwreg {walsh/syncsel} This register is used to select the timing of the Walsh functions.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize sel}}
+\end{bytefield}
+
+A value of 0 selects the internal 1024~PPS (for CARMA).  A value of 1 selects
+the internal HB signal (for SMA).
 
 \rwreg{walsh/colsel} This register is used to specify which columns (i.e. bits)
-of the Walsh tables to use for each input.  Each input is controlled by one
-byte of this register.  Input~0 uses the \LSB of this register.  Only the five
-\LSbs of each byte are used to select columns~0 through 31.  Column~0 is the
-\MSb of the 32~bit Walsh table entries.
+of the Walsh tables to use for each input.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox[ltb]{3}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{5}{\scriptsize in3 \\ colsel} &
+  \bitbox[tb]{3}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{5}{\scriptsize in2 \\ colsel} &
+  \bitbox[tb]{3}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{5}{\scriptsize in1 \\ colsel} &
+  \bitbox[tb]{3}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{5}{\scriptsize in0 \\ colsel}
+\end{bytefield}
+
+Each input is controlled by one byte of this register.  Input~0 uses the \LSB
+of this register.  Only the five \LSbs of each byte are used to select
+columns~0 through 31.  Column~0 is the \MSb of the 32~bit Walsh table entries.
 
 \bramn{walsh/table/90} \brams{walsh/table/180} These shared block RAMs must be
-programmed with the unrolled Walsh tables.  Table \verb|walsh/table/90| is for
-the 90 degree phase switching states while table \verb|walsh/table/180| is for
-the 180 degree phase switching states.  Each table is 2048 entries long.  Each
-entry is 32~bit wide.  The \MSb of each 32-bit entry corresponds to column~0 of
-the (up to) 32~column Walsh table.  The Walsh tables are addressed by a counter
-that increments every phase switching state (i.e. every 1024~PPS for CARMA;
-every HB for SMA) and is reset at the end of every Walsh function cycle (i.e.
-every 1~PPS for CARMA and every SOWF for SMA).  Only the first N entries need
-to be populated, where N is the number of phase switching states per complete
-phase switching cycle (i.e. 1024 for CARMA, 64 for SMA).
+programmed with the unrolled Walsh tables.  Each table (i.e. BRAM) is 2048
+entries long.  Each entry is 32~bit wide.  Each bit position corresponds to a
+column of a Walsh table.  The \MSb of each 32-bit entry corresponds to column~0
+of the (up to) 32~column Walsh table.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{1}{\rotatebox{90}{\scriptsize col0}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize col1}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize col2}} &
+  \bitbox[blt]{3}{\dots} &
+  \bitbox[bt]{8}{} &
+  \bitbox[bt]{4}{\dots} &
+  \bitbox[bt]{8}{} &
+  \bitbox[brt]{3}{\dots} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize col29}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize col30}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize col31}}
+\end{bytefield}
+
+Table \verb|walsh/table/90| is for the 90 degree phase switching states.\\
+Table \verb|walsh/table/180| is for the 180 degree phase switching states.
+
+The Walsh tables are addressed by a counter that increments every phase
+switching state (i.e. every 1024~PPS for CARMA; every HB for SMA) and is reset
+at the end of every Walsh function cycle (i.e.  every 1~PPS for CARMA and every
+SOWF for SMA).  Only the first N entries need to be populated, where N is the
+number of phase switching states per complete phase switching cycle (i.e. 1024
+for CARMA, 64 for SMA).
 
 \end{description}
 
@@ -383,13 +531,18 @@ four distinct values: -3, -1, +1, +3.
 \rwregn{quant/thresh1}
 \rwregn{quant/thresh2}
 \rwregs{quant/thresh3}  These registers set the thresholding level used for
-quantizing each input to 2~bits.  When using a digital noise source as an
-input, a threshold value of 16 results in a $\left\{\frac{1}{6}, \frac{2}{6},
-\frac{2}{6}, \frac{1}{6}\right\}$ distribution in the 2~bit quantized values.
+quantizing each input to 2~bits.
 
-The quantized value for a given input value of $x$ and threshold value $thresh$
-is determined according to the equations shown here.  Note that the output
-value for a zero valued input alternates between -1 and +1.
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{25}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{7}{threshold}
+\end{bytefield}
+
+The quantized value for a given input value of $x$ and unsigned 7~bit threshold
+value $thresh$ is determined according to the equations shown here.  Note that
+the output value for a zero valued input alternates between -1 and +1.
 
 \begin{align*}
            &\,x <= -thresh &\Rightarrow -3 \\
@@ -398,6 +551,10 @@ value for a zero valued input alternates between -1 and +1.
       0 <  &\,x < thresh   &\Rightarrow +1 \\
  thresh <= &\,x            &\Rightarrow +3
 \end{align*}
+
+When using a digital noise source as an input, a threshold value of 16 results
+in a $\left\{\frac{1}{6}, \frac{2}{6}, \frac{2}{6}, \frac{1}{6}\right\}$
+distribution in the 2~bit quantized values.
 
 \end{description}
 
@@ -417,14 +574,33 @@ or~$\frac{1}{4}$ and then rounded to 8~bits prevent overflow.
 \rwregn{gain0}
 \rwregn{gain1}
 \rwregn{gain2}
-\rwregs{gain3} These registers control the gain factor for each input.  Only
-the 8 \LSbs are used.  They are currently interpreted as an unsigned number
-with 7 fractional bits.  Thus, the range of gain values that can be applied to
-each input is~$0$ to~$1\frac{127}{128}$.
+\rwregs{gain3} These registers control the gain factor for each input.
 
-\rwreg{summer/shift} Set this to~0 to scale the sum by~$\frac{1}{2}$ (e.g. for
-independent noise dominated inputs).  Set this to~1 to scale the sum
-by~$\frac{1}{4}$ (e.g. for coherent inputs).
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{24}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{8}{gain}
+\end{bytefield}
+
+Only the 8 \LSbs are used.  They are currently interpreted as an unsigned
+number with 7 fractional bits.  Thus, the range of gain values that can be
+applied to each input is~$0$ to~$1\frac{127}{128}$.
+
+\filbreak
+\rwreg{summer/shift} This register select the scaling factor applied to the sum
+before re-quantizing to 8~bits.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize sel}}
+\end{bytefield}
+
+Set this to~0 to scale the sum by~$\frac{1}{2}$ (e.g. for independent noise
+dominated inputs).  Set this to~1 to scale the sum by~$\frac{1}{4}$ (e.g. for
+coherent inputs).
 
 \end{description}
 
@@ -437,10 +613,19 @@ explicitly enabled via software (see below).
 
 \begin{description}
 
-\rwreg{start\_xaui} Writing a 1 to this register enables a divide-by-2 counter
-that drives the BEE2 calibration correlator's \verb|usr2_clk| input and the two
-XAUI links' data valid inputs (data is de-muxed by two for XAUI transmission)
-thereby enabling transmission over the XAUI links.
+\rwreg{start\_xaui} This register controls transmission over the XAUI links.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize stx}}
+\end{bytefield}
+
+Writing a 1 to this register enables a divide-by-2 counter that drives the BEE2
+calibration correlator's \verb|usr2_clk| input and the two XAUI links' data
+valid inputs (data is de-muxed by two for XAUI transmission) thereby enabling
+transmission over the XAUI links.
 
 Writing a 0 (the default) disables the divide-by-two counter that drives the
 BEE2 calibration correlator's \verb|usr2_clk| input and the two XAUI links'
@@ -454,15 +639,28 @@ this ambiguity.
 the (unused) receive side of the indicated XAUI connection, which strongly
 implies a similar status for its transmit side.
 
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize ldn}}
+\end{bytefield}
+
 \end{description}
 
-\filbreak
   \subsection{Front Panel SMA Output}
 
 \begin{description}
 
 \rwreg{smasel} Selects which signal to output over the front panel \verb|SMA0|
 connector.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize sel}}
+\end{bytefield}
 
 \begin{description}
 
@@ -476,6 +674,13 @@ Future designs may remove this ambiguity.
 
 \rwreg{monsel} Selects which signal to output over the front panel \verb|SMA1|
 connector.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{29}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{3}{sel}
+\end{bytefield}
 
 \begin{description}
 
@@ -544,11 +749,23 @@ anomalous behavior.  The registers involved in the XAUI alignment and
 monitoring are described here.
 
 \begin{description}
-\rwreg{xaui\_rst}  Resets various parts of XAUI related logic.  Setting the
-\LSb (bit 0) to 1 will reset the XAUI core itself (rarely needed).  Setting bit
-1 to 1 will reset the counters associated with XAUI monitoring.  Setting bit 2
-to 1 will reset the registers that capture the relative delays of the two XAUI
-links.
+\rwreg{xaui\_rst}  Resets various parts of XAUI related logic.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{29}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize del}} &&
+  \bitbox{1}{\rotatebox{90}{\scriptsize mon}} &&
+  \bitbox{1}{\rotatebox{90}{\scriptsize cor}}
+\end{bytefield}
+
+Setting bit~0 (cor) to 1 will reset the XAUI core itself (rarely needed).
+Setting bit~1 (mon) to 1 will reset the counters associated with XAUI
+monitoring.  Setting bit~2 (del) to 1 will reset the registers that capture the
+relative delays of the two XAUI links.  These bits are level sensitive, not
+edge sensitive, so they must be cleared before to take the associated circuitry
+out of reset.
 
 \roregn{xaui0/linkdown\_cnt}
 \roregs{xaui1/linkdown\_cnt} Indicates how many times the link has gone down
@@ -590,20 +807,45 @@ Reset by bit~1 of the \verb|xaui_rst| register.
 
 \roregn{xaui0/almost\_full}
 \roregs{xaui1/almost\_full} Indicates the current state of the XAUI's
-\verb|almost_full| status bit.  Under normal operation, this register should
-read~0.
+\verb|almost_full| status bit.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize af}}
+\end{bytefield}
+
+Under normal operation, this register should read~0.
 
 \roregn{xaui0/rx\_linkdown}
 \roregs{xaui1/rx\_linkdown} Indicates the current state of the XAUI's
-\verb|link_down| status bit.  Under normal operation, this register should
-read~0.
+\verb|link_down| status bit.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize ldn}}
+\end{bytefield}
+
+Under normal operation, this register should read~0.
 
 \roregn{xaui0/valid}
 \roregs{xaui1/valid} The two \LSbs of this register contain the current and
-previous value of the XAUI block's \verb|valid| status bit.  Since this status
-bit should toggle every clock cycle, this register should read~1 or~2 under
-normal operation.
+previous value of the XAUI block's \verb|valid| status bit.
 
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{30}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{2}{\scriptsize val}
+\end{bytefield}
+
+Since this status bit should toggle every clock cycle, this register should
+read~1 or~2 under normal operation.
+
+\filbreak
 \roregn{xaui\_aligner/delay0}
 \roregs{xaui\_aligner/delay1} These registers indicate the number of cycles
 from the stream's incoming 1024~PPS and the reference 1024~PPS.  Since the
@@ -621,9 +863,18 @@ synchronization of the integrations are described here.
 
 \begin{description}
 
-\rwreg{syncsel} This register selects the sync signal that specifies the time
-granularity of the integrations.  It determines the units of the
-\verb|integ_time| register.  The four choices are:
+\rwreg{syncsel} This register selects the sync signal used to drive integration
+timing.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{30}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{2}{\scriptsize sel}
+\end{bytefield}
+
+The sync signal selection determines the units of the \verb|integ_time|
+register.  The four choices are:
 
 \begin{description}
 \item[0] Use the 1024~PPS signal to define the integration units.
@@ -659,7 +910,13 @@ over.
 antenna) that is common to all eight of the computed baselines, including the
 auto-correlation ``baseline''.
 
-\filbreak
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{29}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{3}{\scriptsize ref\\ant}
+\end{bytefield}
+
 \bramn{rx0/usb\_real}
 \bramn{rx0/usb\_imag}
 \bramn{rx0/lsb\_real}
@@ -695,12 +952,21 @@ switch state.  Note that the count is in FPGA cycles, which is half the number
 of data samples (due to demux-by-2 data).
 
 \rwreg{wdelay} This register adjusts the delay applied to the Walsh inputs to
-align them with the data out from the correlator.  This delay is calculated to
-be 65, but to accommodate errors in the calculation, a variable delay element
-is provided.  The range of valid values for this register are 0 to 63.  Some of
-the estimated delay is built in to the design already.  The estimated value
-required for this register is 32.  Once a good value is determined empirically,
-it will be hard-coded into the design and this register will be removed.
+align them with the data out from the correlator.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{26}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{6}{\scriptsize wdelay}
+\end{bytefield}
+
+The total delay needed is calculated to be 65, but to accommodate errors in the
+calculation, a variable delay element is provided.  The range of valid values
+for this register are 0 to 63.  Some of the estimated delay is built in to the
+design already.  The estimated value required for this register is 32.  Once a
+good value is determined empirically, it will be hard-coded into the design and
+this register will be removed.
 
 \end{description}
 
@@ -717,18 +983,38 @@ upstream threshold registers.
 since the FPGA started running.  It cannot be reset (other than reprogramming
 the FPGA) and is not synchronized with external 1 PPS.
 
-\rwreg{snap/ctrl} This register controls the snapshot block.  A 0 to 1
-transition of the \LSb enabled a snapshot sequence.  Once the snapshot
-sequence is enabled, the data capture will begin immediately if bit~1 is 1 or
-on the next selected sync pulse (see \verb|syncsel|) if bit~1 is 0.
+\rwreg{snap/ctrl} This register controls the snapshot block.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{30}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize trg}} &&
+  \bitbox{1}{\rotatebox{90}{\scriptsize en}}
+\end{bytefield}
+
+A 0 to 1 transition of bit~0 (en) enables a snapshot sequence.  Once the
+snapshot sequence is enabled, the data capture will begin immediately if bit~1
+(trg) is 1 or on the next selected sync pulse (see \verb|syncsel|) if bit~1
+(trg) is 0.
 
 \roreg{snap/addr} During data capture, this register provides the address
-withing the shared BRAMs to which the data are being written.  When the data
-capture is complete, the address holds at the final value of 2047.  The data
-capture completes in 8~\textmu s, so this register is useful primarily when the
-data capture is setup to begin on the next sync pulse (otherwise it is unlikely
-that any value other than 2047 will be observed in this register).
+withing the shared BRAMs to which the data are being written.
 
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{21}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{11}{snap address}
+\end{bytefield}
+
+When the data capture is complete, the address holds at the final value of
+2047.  The data capture completes in 8~\textmu s, so this register is useful
+primarily when the data capture is setup to begin on the next sync pulse
+(otherwise it is unlikely that any value other than 2047 will be observed in
+this register).
+
+\filbreak
 \bramn{snap/in0123}
 \brams{snap/in4567} These shared BRAMs hold the snap shot data.  Each BRAM is
 2048 words deep and stores data for the four inputs implied by its name.
@@ -739,15 +1025,11 @@ byte, the two \MSbs represent the real component of the first (in time) of the
 byte's two complex samples.  Thus, each shared BRAM can hold 4096 complex
 samples for four inputs.  The storage format for the first word (BRAM address
 0) of \verb|snap/in0123| is shown in the following diagram (\verb|snap/in4567|
-is similar).\\
+is similar).
 
-\centering
-\settowidth{\bitwidth}{\scriptsize in0}
+\vspace{2\parskip}
 \begin{bytefield}{32}
-  \bitbox[]{1}{\rotatebox{90}{\scriptsize MSb}}
-  \bitbox[]{30}{} &
-  \bitbox[]{1}{\rotatebox{90}{\scriptsize LSb}} \\
-  \bitheader[b]{0,7,8,15,16,23,24,31} \\
+  \bitheader[b]{0-31} \\
   \bitbox{2}{\scriptsize in0 \\ re0} &
   \bitbox{2}{\scriptsize in0 \\ im0} &
   \bitbox{2}{\scriptsize in0 \\ re1} &
@@ -788,9 +1070,9 @@ monitoring are described here.
 
 \begin{description}
 \rwreg{xaui\_rst}  Resets various parts of XAUI related logic.  Setting the
-\LSb (bit 0) to 1 will reset the XAUI core itself (rarely needed).  Setting bit
-1 to 1 will reset the counters associated with XAUI monitoring.  Setting bit 2
-to 1 will reset the registers that capture the relative delays of the two XAUI
+bit~0 to 1 will reset the XAUI core itself (rarely needed).  Setting bit 1 to 1
+will reset the counters associated with XAUI monitoring.  Setting bit 2 to 1
+will reset the registers that capture the relative delays of the two XAUI
 links.
 \end{description}
 

@@ -764,8 +764,8 @@ Setting bit~0 (cor) to 1 will reset the XAUI core itself (rarely needed).
 Setting bit~1 (mon) to 1 will reset the counters associated with XAUI
 monitoring.  Setting bit~2 (del) to 1 will reset the registers that capture the
 relative delays of the two XAUI links.  These bits are level sensitive, not
-edge sensitive, so they must be cleared before to take the associated circuitry
-out of reset.
+edge sensitive, so they must be cleared to take the associated circuitry out of
+reset.
 
 \roregn{xaui0/linkdown\_cnt}
 \roregs{xaui1/linkdown\_cnt} Indicates how many times the link has gone down

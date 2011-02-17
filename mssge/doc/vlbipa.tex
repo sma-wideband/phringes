@@ -162,6 +162,13 @@ it via the \verb|arm1pps| command.
 \item[1] Select ADC1 sync signal (typically for SMA)
 \end{description}
 
+\roreg{onepps\_sync/diff} This register captures the difference, in FPGA clock
+cycles, between the external 1~PPS signal and the internally generated 1~PPS
+signal.  Normally this register will read 0, but since the external 1~PPS
+signal is not synchronous with the ADC sample clock, values of 1 or 256,000,000
+(plus or minus a few clock cycles) are also acceptable.  Other values indicate
+a problem.
+
 \rwreg{onepps\_sync/arm1pps} A 0 to 1 transition of bit~0 of this register will
 arm the internal 1~PPS generator to re-synchronize with the next rising edge of
 the selected sync pulse.
@@ -192,6 +199,29 @@ that the internal 1~PPS generator did indeed re-synchronize after being armed.
 This register is not often used directly since (re-)arming is normally done via
 the \verb|arm1pps| command.
 
+\filbreak
+\rwreg{sowfsel} Selects the source of the external SOWF signal to which the
+internally generated SOWF signal will be synchronized.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize sel}}
+\end{bytefield}
+
+\begin{description}
+\item[0] Select GPIO 0 bit index 8 (aka J6 pin 17)
+\item[1] Select ADC0 sync signal
+\end{description}
+
+\roreg{hb\_sync/diff} This register captures the difference, in FPGA clock
+cycles, between the external SOWF signal and the internally generated SOWF
+signal.  Normally this register will read 0, but since the external SOWF period
+is not commensurate with the ADC clock period, values of 1 or 165,191,049 (plus
+or minus a few clock cycles) are also acceptable.  Other values indicate a
+problem.
+
 \rwreg{hb\_sync/arm\_sowf} A 0 to 1 transition of bit~0 of this register will
 arm the internal HB and SOWF generators to re-synchronize with the next rising
 edge of the external SOWF signal.
@@ -221,43 +251,60 @@ This can be used to verify that the internal HB and SOWF generators did indeed
 re-synchronize after being armed.  This register is not often used directly
 since (re-)arming is normally done via the \verb|armsowf| command.
 
+\roreg{uptime} The uptime register is a 32~bit counter that counts seconds
+since the FPGA started running.  It cannot be reset (other than reprogramming
+the FPGA) and is not synchronized with any other 1 PPS source.
+
 \end{description}
 
+  \filbreak
   \subsection{Input Selection}
 
 \begin{description}
 
-\rwreg{insel}  Input selection.  Uses one bit per demux path per input.
+\rwreg{insel}  Input selection.  Uses two bits per time sample (i.e. demux
+path) per input.
 
 \vspace{2\parskip}
-\settowidth{\bitwidth}{\scriptsize in0}
 \begin{bytefield}{32}
-  \bitheader[b]{0,3,4,7,8,11,12,15,16,31} \\
-  \bitbox{16}{\color[gray]{0.75}\rule{\width}{\height}} &
-  \bitbox{4}{\scriptsize insel3} &
-  \bitbox{4}{\scriptsize insel2} &
-  \bitbox{4}{\scriptsize insel1} &
-  \bitbox{4}{\scriptsize insel0}
+  \bitheader[b]{0-31} \\
+  \bitbox{2}{\scriptsize in3 \\ t3} &
+  \bitbox{2}{\scriptsize in3 \\ t2} &
+  \bitbox{2}{\scriptsize in3 \\ t1} &
+  \bitbox{2}{\scriptsize in3 \\ t0} &
+  \bitbox{2}{\scriptsize in2 \\ t3} &
+  \bitbox{2}{\scriptsize in2 \\ t2} &
+  \bitbox{2}{\scriptsize in2 \\ t1} &
+  \bitbox{2}{\scriptsize in2 \\ t0} &
+  \bitbox{2}{\scriptsize in1 \\ t3} &
+  \bitbox{2}{\scriptsize in1 \\ t2} &
+  \bitbox{2}{\scriptsize in1 \\ t1} &
+  \bitbox{2}{\scriptsize in1 \\ t0} &
+  \bitbox{2}{\scriptsize in0 \\ t3} &
+  \bitbox{2}{\scriptsize in0 \\ t2} &
+  \bitbox{2}{\scriptsize in0 \\ t1} &
+  \bitbox{2}{\scriptsize in0 \\ t0}
 \end{bytefield}
 
 \begin{description}
-\item[bit = 0] Select ADC for one demux path of one input
-\item[bit = 1] Select noise source for one demux path of one input
+\item[0] Select ADC for one demux path of one input
+\item[1] Select noise source for one demux path of one input
+\item[2] Select constant 0 for one demux path of one input
 \end{description}
 
 Examples:
 \begin{description}
 
-\item[0x0000] Select ADC for all demux paths of all inputs.
-\item[0x0001] Select noise source for demux path 0 of input0, select ADC  for
-               all other demux paths.
-\item[0x000F] Select noise source for all demux paths of input 0, select ADC
-               for all other inputs.
-\item[0xC000] Select noise source for demux paths 2 and 3 of input 3, select
-               ADC for all other inputs.
-\item[0xF000] Select noise source for all demux paths of input 3, select ADC
-               for all other inputs.
-\item[0xFFFF] Select noise source for all demux paths of all inputs.
+\item[0x00000000] Select ADC for all demux paths of all inputs
+\item[0x00000001] Select noise source for demux path 0 of input0, select ADC
+                  for all other demux paths
+\item[0x00000055] Seelct noise source for all demux paths of input 0, select
+                  ADC for all other inputs \item[0x55555555] Select noise
+                  source for all demux paths of all inputs
+\item[0x55000000] Select noise source for all demux paths of input 3, select
+                  ADC for all other inputs \item[0xA0000000] Select constant 0
+                  for demux paths 2 and 3 of input 3, select ADC for all other
+                  inputs
 \end{description}
 \end{description}
 
@@ -289,6 +336,7 @@ Once a noise generator is armed, it will re-seed starting on the next internal
 1~PPS rising edge.  This can be used to synchronously seed noise generators
 across multiple devices or within one device.
 
+\filbreak
 \rwregn{noise/seed/0}
 \rwregn{noise/seed/1}
 \rwregn{noise/seed/2}
@@ -413,8 +461,9 @@ rotation to be applied to each input's complex signal.
 Because only the 12 least significant bits of these registers are used for one
 complete turn in phase, the resolution is $\frac{2 \pi}{2^{12}}$ radians per
 step or $\frac{360}{2^{12}}$ degrees per step (i.e. approximately 88
-millidegrees per step).  The value written into these registers can be computed
-as
+millidegrees per step).
+
+The value written into these registers can be computed as
 
 \begin{align*}
 register\_value &=  \mathrm{round}\left(
@@ -540,6 +589,7 @@ quantizing each input to 2~bits.
   \bitbox{7}{threshold}
 \end{bytefield}
 
+\filbreak
 The quantized value for a given input value of $x$ and unsigned 7~bit threshold
 value $thresh$ is determined according to the equations shown here.  Note that
 the output value for a zero valued input alternates between -1 and +1.
@@ -951,6 +1001,10 @@ negative, then there that many more samples with different 90 degree phase
 switch state.  Note that the count is in FPGA cycles, which is half the number
 of data samples (due to demux-by-2 data).
 
+\roreg{uptime} The uptime register is a 32~bit counter that counts seconds
+since the FPGA started running.  It cannot be reset (other than reprogramming
+the FPGA) and is not synchronized with any other 1 PPS source.
+
 \rwreg{wdelay} This register adjusts the delay applied to the Walsh inputs to
 align them with the data out from the correlator.
 
@@ -970,18 +1024,13 @@ this register will be removed.
 
 \end{description}
 
-\subsection{Status and Data Monitoring}
+\subsection{Snapshot Data}
 
-The design includes an uptime counter and a snapshot block.  The uptime counter
-counts in seconds and cannot be be reset without reprogramming the FPGA.  The
-snapshot block can be used to capture some input samples to help set the
-upstream threshold registers.
+The design includes a snapshot block that can be used to capture some input
+samples to help set the upstream threshold registers and other diagnostic
+purposes.
 
 \begin{description}
-
-\roreg{uptime} The uptime register is a 32~bit counter that counts seconds
-since the FPGA started running.  It cannot be reset (other than reprogramming
-the FPGA) and is not synchronized with external 1 PPS.
 
 \rwreg{snap/ctrl} This register controls the snapshot block.
 

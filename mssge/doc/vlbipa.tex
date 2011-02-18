@@ -71,6 +71,7 @@
 \newcommand{\bramn}[1]{\item[#1] {} \tighten} % For "stacked" brams
 \newcommand{\brams}[1]{\devitem{#1}{Block RAM} \loosen} % Ends stacked brams
 \newcommand{\degree}[1]{$#1^{\circ}$}
+\newcommand{\e}[1]{\ensuremath{\times 10^{#1}}}
 
 \begin{abstract}
 Describes the registers and devices in the various iBob and BEE2 designs used
@@ -765,9 +766,10 @@ connector.
 \item[LED8] Indicates FPGA is configured (non-functional on some iBobs).
 \end{description}
 
+\newpage
 \section{bee2\_complex\_corr}
 
-This section documents the bee2\_complex\_corr\_floating\_2011\_Feb\_07\_2108
+This section documents the bee2\_complex\_corr\_floating\_2011\_Feb\_17\_2045
 design.
 
 The bee2\_complex\_corr design receives 2+2 bit samples (i.e. 2 real bits and 2
@@ -786,6 +788,37 @@ The four signals arriving over XAUI1 are considered to be input0 through
 input3.  The four signals arriving over XAUI0 are considered to be input4
 through input7.  Note that the higher number XAUI port contains the lower
 number inputs and vice versa.
+
+\subsection{Input values}
+
+The four distinct values of the 2~bit samples represent signal values of -3,
+-1, +1, and +3.  The threshold registers in the ibob\_phased\_array\_2k design
+should be set such that approximately 1/6 of the samples are -3, 1/3 are -1,
+1/3 are +1, and 1/6 are +3.  With this distribution, the lag~0 auto-correlation
+will have a mean of 11/3 and a variance of 128/9.
+
+\subsection{Integration limit}
+
+With an input signal distribution as described above, a one second (i.e.
+1024\e6 samples) integration will have a mean of $\frac{11}{3}\cdot1024\e6$ and
+a variance of $\frac{128}{8}\cdot1024\e6$.  This integrated mean is more
+3.75\e9, which is well over 2.1475\e9, the maximum value supported by a signed
+32-bit value.  To delay overflowing, the BRAM vector accumulators are 36 bits
+wide.  Their output values are rounded to 32 bits wide before writing them into
+shared BRAMs.
+
+Another factor of 2 savings is obtained by dropping the LSB of the
+sub-integrations.  The input values are all odd so their products will all be
+odd too.  Since an even number of odd products are integrated before the BRAM
+vector accumulators, the \LSb will always be 0, so it is dropped without any
+loss of precision.
+
+These two techniques result in scaling down the integrations by a factor of 32.
+This allows integrations as long as 18 seconds without overflowing the 36 bit
+vector accumulators (or the 32 bit shared BRAMs).  This limit is only for
+highly correlated signals such as the lag~0 auto-correlation or coherent noise
+sources.  Inputs dominated by independent noise (e.g. astronomical cross
+correlations) have far higher maximum integration times.
 
 \subsection{XAUI alignment and monitoring}
 
@@ -842,6 +875,7 @@ registers indicate the most recent erroneous period value.  Under normal
 operations, these registers should read~0 (i.e. no erroneous period measured).
 These registers are reset by bit~1 of the \verb|xaui_rst| register.
 
+\filbreak
 \roregn{xaui0/sync\_cnt}
 \roregs{xaui1/sync\_cnt} This register indicates the total number of 1024~PPS
 pulses received.  Since it is a 32~bit counter, it will roll over approximately
@@ -947,8 +981,9 @@ the selected integration unit (see \verb|syncsel|) is not commensurate with 32
 samples (e.g. the Heartbeat signal) then the number of samples per integration
 can vary from integration to integration.  This register provides the number of
 32-sample sub-integrations in the most recently completed integration.  It can
-be used to properly average the data.  To determine the number of individual
-samples integrated, multiply the value of this register by 32.
+be used to properly average the data.  Since the integrated values are
+pre-divided by 32 in the FPGA, the output values can be divided by this
+register value directly to get the average of the integrated products.
 
 \roreg{subint\_cnt} This register indicates how far along the current
 integration is.  It is in units of the sync signal selected via the

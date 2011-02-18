@@ -105,7 +105,7 @@ A publicly visible mirror is available using this URL:
 
 \section{ibob\_phased\_array\_2k}
 
-This section documents the ibob\_phased\_array\_2k\_2011\_Feb\_17\_0251 design.
+This section documents the ibob\_phased\_array\_2k\_2011\_Feb\_18\_1600 design.
 
 In addition to synchronizing internal timing signals with external timing
 signals.  The ibob\_phased\_array\_2k design has a few critical registers that
@@ -166,9 +166,16 @@ it via the \verb|arm1pps| command.
 \roreg{onepps\_sync/diff} This register captures the difference, in FPGA clock
 cycles, between the external 1~PPS signal and the internally generated 1~PPS
 signal.  Normally this register will read 0, but since the external 1~PPS
-signal is not synchronous with the ADC sample clock, values of 1 or 256,000,000
-(plus or minus a few clock cycles) are also acceptable.  Other values indicate
-a problem.
+signal is not synchronous with the ADC sample clock, values of 1 or
+256,000,000 are also acceptable.  Other values indicate a problem.
+
+\roreg{onepps\_sync/ext\_cnt} This register contains to number of rising edges
+seen on the external 1~PPS signal since the last re-arming of the internal
+1~PPS signal.
+
+\roreg{onepps\_sync/ext\_period} This register contains to number of FPGA clock
+cycles between the two most recent rising edges seen on the external 1~PPS
+signal.  It should read $256,000,000 \pm 1$.
 
 \rwreg{onepps\_sync/arm1pps} A 0 to 1 transition of bit~0 of this register will
 arm the internal 1~PPS generator to re-synchronize with the next rising edge of
@@ -223,6 +230,14 @@ is not commensurate with the ADC clock period, values of 1 or 165,191,049 (plus
 or minus a few clock cycles) are also acceptable.  Other values indicate a
 problem.
 
+\roreg{hb\_sync/ext\_cnt} This register contains to number of rising edges seen
+on the external SOWF signal since the last re-arming of the internal SOWF
+signal.
+
+\roreg{hb\_sync/ext\_period} This register contains to number of FPGA clock
+cycles between the two most recent rising edges seen on the external SOWF
+signal.  It should read $165,191,049 \pm 2$.
+
 \rwreg{hb\_sync/arm\_sowf} A 0 to 1 transition of bit~0 of this register will
 arm the internal HB and SOWF generators to re-synchronize with the next rising
 edge of the external SOWF signal.
@@ -258,7 +273,6 @@ the FPGA) and is not synchronized with any other 1 PPS source.
 
 \end{description}
 
-  \filbreak
   \subsection{Input Selection}
 
 \begin{description}

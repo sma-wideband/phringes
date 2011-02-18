@@ -104,7 +104,7 @@ A publicly visible mirror is available using this URL:
 
 \section{ibob\_phased\_array\_2k}
 
-This section documents the ibob\_phased\_array\_2k\_2011\_Jan\_27\_1903 design.
+This section documents the ibob\_phased\_array\_2k\_2011\_Feb\_17\_0251 design.
 
 In addition to synchronizing internal timing signals with external timing
 signals.  The ibob\_phased\_array\_2k design has a few critical registers that
@@ -512,6 +512,7 @@ tables are stored in unrolled form.
 A value of 0 selects the internal 1024~PPS (for CARMA).  A value of 1 selects
 the internal HB signal (for SMA).
 
+\filbreak
 \rwreg{walsh/colsel} This register is used to specify which columns (i.e. bits)
 of the Walsh tables to use for each input.
 
@@ -677,12 +678,10 @@ calibration correlator's \verb|usr2_clk| input and the two XAUI links' data
 valid inputs (data is de-muxed by two for XAUI transmission) thereby enabling
 transmission over the XAUI links.
 
-Writing a 0 (the default) disables the divide-by-two counter that drives the
-BEE2 calibration correlator's \verb|usr2_clk| input and the two XAUI links'
-data valid inputs (data is de-muxed by two for XAUI transmission).  Whether
-this actually disables transmissions over the XAUI links depends on whether the
-counter is stopped in the 0 state or the 1 state.  Future designs may remove
-this ambiguity.
+Writing a 0 (the default) disables, and holds in reset, the divide-by-two
+counter that drives the BEE2 calibration correlator's \verb|usr2_clk| input and
+the two XAUI links' data valid inputs (data is de-muxed by two for XAUI
+transmission).
 
 \roregn{xaui\_0/rx\_linkdown}
 \roregs{xaui\_1/rx\_linkdown} A value of 1 indicates a ``link down'' status on
@@ -715,13 +714,13 @@ connector.
 \begin{description}
 
 \item[0] Outputs a 128~MHz square wave (50\% duty cycle) if XAUI output is
-enabled (i.e. register \verb|start_xaui| is 1), otherwise a constant 0 or 1.
-Future designs may remove this ambiguity.
+enabled (i.e. register \verb|start_xaui| is 1), otherwise a constant 0.
 
 \item[1] Outputs a constant 0.
 
 \end{description}
 
+\filbreak
 \rwreg{monsel} Selects which signal to output over the front panel \verb|SMA1|
 connector.
 
@@ -740,7 +739,7 @@ connector.
 
 \item[2] Outputs the internal Heartbeat (HB) signal.
 
-\item[3] Outputs the internal Start of Walsh Frame (HB) signal.
+\item[3] Outputs the internal Start of Walsh Frame (SOWF) signal.
 
 \item[4] Outputs the internal 1~PPS signal.
 

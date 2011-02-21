@@ -175,7 +175,7 @@ seen on the external 1~PPS signal since the last re-arming of the internal
 
 \roreg{onepps\_sync/ext\_period} This register contains to number of FPGA clock
 cycles between the two most recent rising edges seen on the external 1~PPS
-signal.  It should read $256,000,000 \pm 1$.
+signal.  It should read 256,000,000 $\pm$ 1.
 
 \rwreg{onepps\_sync/arm1pps} A 0 to 1 transition of bit~0 of this register will
 arm the internal 1~PPS generator to re-synchronize with the next rising edge of
@@ -236,7 +236,7 @@ signal.
 
 \roreg{hb\_sync/ext\_period} This register contains to number of FPGA clock
 cycles between the two most recent rising edges seen on the external SOWF
-signal.  It should read $165,191,049 \pm 2$.
+signal.  It should read 165,191,049 $\pm$ 2.
 
 \rwreg{hb\_sync/arm\_sowf} A 0 to 1 transition of bit~0 of this register will
 arm the internal HB and SOWF generators to re-synchronize with the next rising

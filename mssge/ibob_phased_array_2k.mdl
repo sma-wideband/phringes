@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.572"
+    ComputedModelVersion    "1.573"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -44,9 +44,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "mdexter"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 21 12:39:24 2011"
+  LastModifiedDate	  "Mon Feb 21 12:45:11 2011"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:572>"
+  ModelVersionFormat	  "1.%<AutoIncrement:573>"
   ConfigurationManager	  "None"
   SimulationMode	  "normal"
   LinearizationMsg	  "none"
@@ -7520,9 +7520,9 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/AddSub"
 	  SourceType		  "Xilinx Adder/Subtractor Block"
 	  mode			  "Subtraction"
-	  use_carryin		  off
-	  use_carryout		  off
-	  en			  off
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
 	  latency		  "8"
 	  precision		  "User Defined"
 	  arith_type		  "Unsigned"
@@ -7530,12 +7530,12 @@ Model {
 	  bin_pt		  "0"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  on
-	  pipelined		  off
-	  use_rpm		  on
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "on"
+	  pipelined		  "off"
+	  use_rpm		  "on"
 	  hw_selection		  "Fabric"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,344"
@@ -7553,9 +7553,9 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/AddSub"
 	  SourceType		  "Xilinx Adder/Subtractor Block"
 	  mode			  "Addition"
-	  use_carryin		  off
-	  use_carryout		  off
-	  en			  off
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
 	  latency		  "2"
 	  precision		  "User Defined"
 	  arith_type		  "Unsigned"
@@ -7563,12 +7563,12 @@ Model {
 	  bin_pt		  "0"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  on
-	  pipelined		  off
-	  use_rpm		  on
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "on"
+	  pipelined		  "off"
+	  use_rpm		  "on"
 	  hw_selection		  "Fabric"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,344"
@@ -7587,7 +7587,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">in0={in[31:24]}<br />in1={in[23:16]}<br />in2={in[15:8]}<br />in3={in[7:0]}<br /></p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Signed  (2's comp)"
 	  bin_pt1		  "7"
@@ -7600,7 +7600,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -7618,7 +7618,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\">div90={phase[11:10]}<br />mod90={phase[9:0]}</p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Unsigned"
 	  bin_pt1		  "0"
@@ -7631,7 +7631,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -7649,7 +7649,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\">phase={div90,mod90}</p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Unsigned"
 	  bin_pt1		  "0"
@@ -7662,7 +7662,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -7680,7 +7680,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\">out={in0,in1,in2,in3}</p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Unsigned"
 	  bin_pt1		  "0"
@@ -7693,7 +7693,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -7711,7 +7711,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\">o={i[16:0]}</p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Unsigned"
 	  bin_pt1		  "4"
@@ -7724,7 +7724,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -7741,11 +7741,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "8"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -7763,11 +7763,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "7"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -7785,11 +7785,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "7"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -7807,11 +7807,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "7"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -7829,11 +7829,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "7"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -7851,11 +7851,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -7873,19 +7873,19 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/SineCosine"
 	  SourceType		  "Xilinx Sine/Cosine Generator Block"
 	  mode			  "Sine and Cosine"
-	  neg_sin		  off
-	  neg_cos		  off
+	  neg_sin		  "off"
+	  neg_cos		  "off"
 	  n_bits		  "18"
-	  sym_output		  on
-	  en			  off
+	  sym_output		  "on"
+	  en			  "off"
 	  latency		  "5"
-	  dbl_ovrd		  off
-	  explicit_period	  off
+	  dbl_ovrd		  "off"
+	  explicit_period	  "off"
 	  period		  "1"
 	  mem_type		  "Block RAM"
-	  pipeline		  on
-	  use_rpm		  off
-	  xl_use_area		  off
+	  pipeline		  "on"
+	  use_rpm		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[44 42 1 81 0 0 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,320"
@@ -7904,7 +7904,7 @@ Model {
 	  infoedit		  " Incorporates black box HDL and simulation model into a System Generator design.<P><P>You must supply a Black Box with certain information about the HDL component you would like to bring into System Generator. This information is provided through a Matlab function.<P><P>When \"Simulation mode\" is set to \"Inactive\", you will typically want to provide a separate simulation model by using a Simulation Multiplexer.<P>When \"Simulation mode\" is set to \"External co-simulator\", you must include a ModelSim block in the design."
 	  init_code		  "delay_core_config"
 	  sim_method		  "Inactive"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,387"
@@ -12177,9 +12177,9 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/AddSub"
 	  SourceType		  "Xilinx Adder/Subtractor Block"
 	  mode			  "Subtraction"
-	  use_carryin		  off
-	  use_carryout		  off
-	  en			  off
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
 	  latency		  "8"
 	  precision		  "User Defined"
 	  arith_type		  "Unsigned"
@@ -12187,12 +12187,12 @@ Model {
 	  bin_pt		  "0"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  on
-	  pipelined		  off
-	  use_rpm		  on
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "on"
+	  pipelined		  "off"
+	  use_rpm		  "on"
 	  hw_selection		  "Fabric"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,344"
@@ -12210,9 +12210,9 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/AddSub"
 	  SourceType		  "Xilinx Adder/Subtractor Block"
 	  mode			  "Addition"
-	  use_carryin		  off
-	  use_carryout		  off
-	  en			  off
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
 	  latency		  "2"
 	  precision		  "User Defined"
 	  arith_type		  "Unsigned"
@@ -12220,12 +12220,12 @@ Model {
 	  bin_pt		  "0"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  on
-	  pipelined		  off
-	  use_rpm		  on
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "on"
+	  pipelined		  "off"
+	  use_rpm		  "on"
 	  hw_selection		  "Fabric"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,344"
@@ -12244,7 +12244,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">in0={in[31:24]}<br />in1={in[23:16]}<br />in2={in[15:8]}<br />in3={in[7:0]}<br /></p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Signed  (2's comp)"
 	  bin_pt1		  "7"
@@ -12257,7 +12257,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -12275,7 +12275,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\">div90={phase[11:10]}<br />mod90={phase[9:0]}</p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Unsigned"
 	  bin_pt1		  "0"
@@ -12288,7 +12288,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -12306,7 +12306,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\">phase={div90,mod90}</p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Unsigned"
 	  bin_pt1		  "0"
@@ -12319,7 +12319,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -12337,7 +12337,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\">out={in0,in1,in2,in3}</p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Unsigned"
 	  bin_pt1		  "0"
@@ -12350,7 +12350,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -12368,7 +12368,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\">o={i[16:0]}</p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Unsigned"
 	  bin_pt1		  "4"
@@ -12381,7 +12381,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -12398,11 +12398,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "8"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -12420,11 +12420,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "7"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -12442,11 +12442,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "7"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -12464,11 +12464,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "7"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -12486,11 +12486,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "7"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -12508,11 +12508,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -12530,19 +12530,19 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/SineCosine"
 	  SourceType		  "Xilinx Sine/Cosine Generator Block"
 	  mode			  "Sine and Cosine"
-	  neg_sin		  off
-	  neg_cos		  off
+	  neg_sin		  "off"
+	  neg_cos		  "off"
 	  n_bits		  "18"
-	  sym_output		  on
-	  en			  off
+	  sym_output		  "on"
+	  en			  "off"
 	  latency		  "5"
-	  dbl_ovrd		  off
-	  explicit_period	  off
+	  dbl_ovrd		  "off"
+	  explicit_period	  "off"
 	  period		  "1"
 	  mem_type		  "Block RAM"
-	  pipeline		  on
-	  use_rpm		  off
-	  xl_use_area		  off
+	  pipeline		  "on"
+	  use_rpm		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[44 42 1 81 0 0 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,320"
@@ -12561,7 +12561,7 @@ Model {
 	  infoedit		  " Incorporates black box HDL and simulation model into a System Generator design.<P><P>You must supply a Black Box with certain information about the HDL component you would like to bring into System Generator. This information is provided through a Matlab function.<P><P>When \"Simulation mode\" is set to \"Inactive\", you will typically want to provide a separate simulation model by using a Simulation Multiplexer.<P>When \"Simulation mode\" is set to \"External co-simulator\", you must include a ModelSim block in the design."
 	  init_code		  "delay_core_config"
 	  sim_method		  "Inactive"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,387"
@@ -16834,9 +16834,9 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/AddSub"
 	  SourceType		  "Xilinx Adder/Subtractor Block"
 	  mode			  "Subtraction"
-	  use_carryin		  off
-	  use_carryout		  off
-	  en			  off
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
 	  latency		  "8"
 	  precision		  "User Defined"
 	  arith_type		  "Unsigned"
@@ -16844,12 +16844,12 @@ Model {
 	  bin_pt		  "0"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  on
-	  pipelined		  off
-	  use_rpm		  on
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "on"
+	  pipelined		  "off"
+	  use_rpm		  "on"
 	  hw_selection		  "Fabric"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,344"
@@ -16867,9 +16867,9 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/AddSub"
 	  SourceType		  "Xilinx Adder/Subtractor Block"
 	  mode			  "Addition"
-	  use_carryin		  off
-	  use_carryout		  off
-	  en			  off
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
 	  latency		  "2"
 	  precision		  "User Defined"
 	  arith_type		  "Unsigned"
@@ -16877,12 +16877,12 @@ Model {
 	  bin_pt		  "0"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  on
-	  pipelined		  off
-	  use_rpm		  on
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "on"
+	  pipelined		  "off"
+	  use_rpm		  "on"
 	  hw_selection		  "Fabric"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,344"
@@ -16901,7 +16901,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">in0={in[31:24]}<br />in1={in[23:16]}<br />in2={in[15:8]}<br />in3={in[7:0]}<br /></p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Signed  (2's comp)"
 	  bin_pt1		  "7"
@@ -16914,7 +16914,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -16932,7 +16932,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\">div90={phase[11:10]}<br />mod90={phase[9:0]}</p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Unsigned"
 	  bin_pt1		  "0"
@@ -16945,7 +16945,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -16963,7 +16963,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\">phase={div90,mod90}</p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Unsigned"
 	  bin_pt1		  "0"
@@ -16976,7 +16976,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -16994,7 +16994,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\">out={in0,in1,in2,in3}</p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Unsigned"
 	  bin_pt1		  "0"
@@ -17007,7 +17007,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -17025,7 +17025,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\">o={i[16:0]}</p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Unsigned"
 	  bin_pt1		  "4"
@@ -17038,7 +17038,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -17055,11 +17055,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "8"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -17077,11 +17077,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "7"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -17099,11 +17099,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "7"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -17121,11 +17121,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "7"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -17143,11 +17143,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "7"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -17165,11 +17165,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -17187,19 +17187,19 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/SineCosine"
 	  SourceType		  "Xilinx Sine/Cosine Generator Block"
 	  mode			  "Sine and Cosine"
-	  neg_sin		  off
-	  neg_cos		  off
+	  neg_sin		  "off"
+	  neg_cos		  "off"
 	  n_bits		  "18"
-	  sym_output		  on
-	  en			  off
+	  sym_output		  "on"
+	  en			  "off"
 	  latency		  "5"
-	  dbl_ovrd		  off
-	  explicit_period	  off
+	  dbl_ovrd		  "off"
+	  explicit_period	  "off"
 	  period		  "1"
 	  mem_type		  "Block RAM"
-	  pipeline		  on
-	  use_rpm		  off
-	  xl_use_area		  off
+	  pipeline		  "on"
+	  use_rpm		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[44 42 1 81 0 0 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,320"
@@ -17218,7 +17218,7 @@ Model {
 	  infoedit		  " Incorporates black box HDL and simulation model into a System Generator design.<P><P>You must supply a Black Box with certain information about the HDL component you would like to bring into System Generator. This information is provided through a Matlab function.<P><P>When \"Simulation mode\" is set to \"Inactive\", you will typically want to provide a separate simulation model by using a Simulation Multiplexer.<P>When \"Simulation mode\" is set to \"External co-simulator\", you must include a ModelSim block in the design."
 	  init_code		  "delay_core_config"
 	  sim_method		  "Inactive"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,387"
@@ -21491,9 +21491,9 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/AddSub"
 	  SourceType		  "Xilinx Adder/Subtractor Block"
 	  mode			  "Subtraction"
-	  use_carryin		  off
-	  use_carryout		  off
-	  en			  off
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
 	  latency		  "8"
 	  precision		  "User Defined"
 	  arith_type		  "Unsigned"
@@ -21501,12 +21501,12 @@ Model {
 	  bin_pt		  "0"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  on
-	  pipelined		  off
-	  use_rpm		  on
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "on"
+	  pipelined		  "off"
+	  use_rpm		  "on"
 	  hw_selection		  "Fabric"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,344"
@@ -21524,9 +21524,9 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/AddSub"
 	  SourceType		  "Xilinx Adder/Subtractor Block"
 	  mode			  "Addition"
-	  use_carryin		  off
-	  use_carryout		  off
-	  en			  off
+	  use_carryin		  "off"
+	  use_carryout		  "off"
+	  en			  "off"
 	  latency		  "2"
 	  precision		  "User Defined"
 	  arith_type		  "Unsigned"
@@ -21534,12 +21534,12 @@ Model {
 	  bin_pt		  "0"
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
-	  dbl_ovrd		  off
-	  use_behavioral_HDL	  on
-	  pipelined		  off
-	  use_rpm		  on
+	  dbl_ovrd		  "off"
+	  use_behavioral_HDL	  "on"
+	  pipelined		  "off"
+	  use_rpm		  "on"
 	  hw_selection		  "Fabric"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,344"
@@ -21558,7 +21558,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">in0={in[31:24]}<br />in1={in[23:16]}<br />in2={in[15:8]}<br />in3={in[7:0]}<br /></p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Signed  (2's comp)"
 	  bin_pt1		  "7"
@@ -21571,7 +21571,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -21589,7 +21589,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\">div90={phase[11:10]}<br />mod90={phase[9:0]}</p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Unsigned"
 	  bin_pt1		  "0"
@@ -21602,7 +21602,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -21620,7 +21620,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\">phase={div90,mod90}</p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Unsigned"
 	  bin_pt1		  "0"
@@ -21633,7 +21633,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -21651,7 +21651,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\">out={in0,in1,in2,in3}</p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Unsigned"
 	  bin_pt1		  "0"
@@ -21664,7 +21664,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -21682,7 +21682,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\">o={i[16:0]}</p></body></html>"
-	  display_expr		  off
+	  display_expr		  "off"
 	  sr_1			  "1"
 	  arith_type1		  "Unsigned"
 	  bin_pt1		  "4"
@@ -21695,7 +21695,7 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Signed  (2's comp)"
 	  bin_pt4		  "7"
-	  dbl_ovrd		  off
+	  dbl_ovrd		  "off"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
@@ -21712,11 +21712,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "8"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -21734,11 +21734,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "7"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -21756,11 +21756,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "7"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -21778,11 +21778,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "7"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -21800,11 +21800,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "7"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -21822,11 +21822,11 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Delay"
 	  SourceType		  "Xilinx Delay Block"
 	  infoedit		  "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	  en			  off
+	  en			  "off"
 	  latency		  "2"
-	  dbl_ovrd		  off
-	  reg_retiming		  on
-	  xl_use_area		  off
+	  dbl_ovrd		  "off"
+	  reg_retiming		  "on"
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,255"
@@ -21844,19 +21844,19 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/SineCosine"
 	  SourceType		  "Xilinx Sine/Cosine Generator Block"
 	  mode			  "Sine and Cosine"
-	  neg_sin		  off
-	  neg_cos		  off
+	  neg_sin		  "off"
+	  neg_cos		  "off"
 	  n_bits		  "18"
-	  sym_output		  on
-	  en			  off
+	  sym_output		  "on"
+	  en			  "off"
 	  latency		  "5"
-	  dbl_ovrd		  off
-	  explicit_period	  off
+	  dbl_ovrd		  "off"
+	  explicit_period	  "off"
 	  period		  "1"
 	  mem_type		  "Block RAM"
-	  pipeline		  on
-	  use_rpm		  off
-	  xl_use_area		  off
+	  pipeline		  "on"
+	  use_rpm		  "off"
+	  xl_use_area		  "off"
 	  xl_area		  "[44 42 1 81 0 0 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,320"
@@ -21875,7 +21875,7 @@ Model {
 	  infoedit		  " Incorporates black box HDL and simulation model into a System Generator design.<P><P>You must supply a Black Box with certain information about the HDL component you would like to bring into System Generator. This information is provided through a Matlab function.<P><P>When \"Simulation mode\" is set to \"Inactive\", you will typically want to provide a separate simulation model by using a Simulation Multiplexer.<P>When \"Simulation mode\" is set to \"External co-simulator\", you must include a ModelSim block in the design."
 	  init_code		  "delay_core_config"
 	  sim_method		  "Inactive"
-	  xl_use_area		  off
+	  xl_use_area		  "off"
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,387"
@@ -60449,7 +60449,7 @@ Model {
 	  SourceType		  "Xilinx BitBasher Block"
 	  infoedit		  "Allows extraction, concatenation and augmentation of bits"
 	  bitexpr		  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg'; font-size:8pt;\">cs0={cs[4:0]}<br />cs1={cs[12:8]}<br />cs2={cs[20:16]}<br />cs3={cs[28:24]}<br /></p></body></html>"
-	  display_expr		  "off"
+	  display_expr		  off
 	  sr_1			  "1"
 	  arith_type1		  "Unsigned"
 	  bin_pt1		  "0"
@@ -60462,12 +60462,12 @@ Model {
 	  sr_4			  "4"
 	  arith_type4		  "Unsigned"
 	  bin_pt4		  "0"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,336,351"
 	  block_type		  "bitbasher"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "65,86,1,1,white,blue,0,9d55e7bb,right"
+	  sg_icon_stat		  "65,86,1,4,white,blue,0,9d55e7bb,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 86 86 ],[0.77 0.82 0.91]);\npatch([15 4 19 4 15 32 37 42 60 45 31 21 36 21 31 45 60 42 37 32 15 ],[18 29 44 59 70 70 65 70 70 55 69 59 44 29 19 33 18 18 23 18 18 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 86 86 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'cs');\ncolor('black');port_label('output',1,'cs0');\ncolor('black');port_label('output',2,'cs1');\ncolor('black');port_label('output',3,'cs2');\ncolor('black');port_label('output',4,'cs3');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
@@ -60480,12 +60480,12 @@ Model {
 	  SourceType		  "Xilinx Bus Concatenator Block"
 	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at zero."
 	  num_inputs		  "2"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "concat"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "20,156,1,1,white,blue,0,df1e5aba,right"
+	  sg_icon_stat		  "20,156,2,1,white,blue,0,df1e5aba,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([14 4 18 4 14 30 34 38 55 42 29 20 35 20 29 42 55 38 34 30 14 ],[6 16 30 44 54 54 50 54 54 41 54 45 30 15 6 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'hi');\ncolor('black');port_label('input',2,'lo');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
@@ -60498,12 +60498,12 @@ Model {
 	  SourceType		  "Xilinx Bus Concatenator Block"
 	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at zero."
 	  num_inputs		  "2"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "concat"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "20,156,1,1,white,blue,0,df1e5aba,right"
+	  sg_icon_stat		  "20,156,2,1,white,blue,0,df1e5aba,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([14 4 18 4 14 30 34 38 55 42 29 20 35 20 29 42 55 38 34 30 14 ],[6 16 30 44 54 54 50 54 54 41 54 45 30 15 6 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'hi');\ncolor('black');port_label('input',2,'lo');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
@@ -60516,12 +60516,12 @@ Model {
 	  SourceType		  "Xilinx Bus Concatenator Block"
 	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at zero."
 	  num_inputs		  "2"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "concat"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "20,156,1,1,white,blue,0,df1e5aba,right"
+	  sg_icon_stat		  "20,156,2,1,white,blue,0,df1e5aba,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([14 4 18 4 14 30 34 38 55 42 29 20 35 20 29 42 55 38 34 30 14 ],[6 16 30 44 54 54 50 54 54 41 54 45 30 15 6 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'hi');\ncolor('black');port_label('input',2,'lo');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
@@ -60534,12 +60534,12 @@ Model {
 	  SourceType		  "Xilinx Bus Concatenator Block"
 	  infoedit		  "Concatenates two or more inputs.  Output will be cast to an unsigned value with the binary point at zero."
 	  num_inputs		  "2"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "concat"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "20,156,1,1,white,blue,0,df1e5aba,right"
+	  sg_icon_stat		  "20,156,2,1,white,blue,0,df1e5aba,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([14 4 18 4 14 30 34 38 55 42 29 20 35 20 29 42 55 38 34 30 14 ],[6 16 30 44 54 54 50 54 54 41 54 45 30 15 6 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'hi');\ncolor('black');port_label('input',2,'lo');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
@@ -60641,13 +60641,13 @@ Model {
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
 	  infoedit		  "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	  nbits			  "1"
-	  boolean_output	  "on"
+	  boolean_output	  on
 	  mode			  "Lower Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
@@ -60728,10 +60728,10 @@ Model {
 	    }
 	  }
 	  SourceBlock		  "xps_library/software register"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -60917,7 +60917,7 @@ Model {
 	      SourceBlock	      "xbsIndex_r4/Mux"
 	      SourceType	      "Xilinx Bus Multiplexer Block"
 	      inputs		      "32"
-	      en		      "off"
+	      en		      off
 	      latency		      "2"
 	      precision		      "Full"
 	      arith_type	      "Unsigned"
@@ -60925,8 +60925,8 @@ Model {
 	      bin_pt		      "14"
 	      quantization	      "Truncate"
 	      overflow		      "Wrap"
-	      dbl_ovrd		      "off"
-	      xl_use_area	      "off"
+	      dbl_ovrd		      off
+	      xl_use_area	      off
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,348,303"
@@ -60945,13 +60945,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "0"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -60969,13 +60969,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-1"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -60993,13 +60993,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-10"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61017,13 +61017,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-11"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61041,13 +61041,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-12"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61065,13 +61065,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-13"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61089,13 +61089,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-14"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61113,13 +61113,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-15"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61137,13 +61137,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-16"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61161,13 +61161,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-17"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61185,13 +61185,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-18"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61209,13 +61209,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-19"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61233,13 +61233,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-2"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61257,13 +61257,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-20"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61281,13 +61281,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-21"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61305,13 +61305,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-22"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61329,13 +61329,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-23"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61353,13 +61353,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-24"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61377,13 +61377,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-25"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61401,13 +61401,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-26"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61425,13 +61425,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-27"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61449,13 +61449,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-28"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61473,13 +61473,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-29"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61497,13 +61497,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-3"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61521,13 +61521,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-30"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61545,13 +61545,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-31"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61569,13 +61569,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-4"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61593,13 +61593,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-5"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61617,13 +61617,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-6"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61641,13 +61641,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-7"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61665,13 +61665,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-8"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -61689,13 +61689,13 @@ Model {
 	      SourceType	      "Xilinx Bit Slice Extractor Block"
 	      infoedit		      "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	      nbits		      "1"
-	      boolean_output	      "off"
+	      boolean_output	      off
 	      mode		      "Upper Bit Location + Width"
 	      bit1		      "-9"
 	      base1		      "MSB of Input"
 	      bit0		      "0"
 	      base0		      "LSB of Input"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,449,376"
 	      block_type	      "slice"
@@ -71098,10 +71098,10 @@ Model {
 	    }
 	  }
 	  SourceBlock		  "xps_library/software register"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -71156,7 +71156,7 @@ Model {
 		BlockName		"convert_addr"
 		DialogParameters {
 		  sg_icon_stat		  "35,24,1,1,white,blue,0,74901e60,right"
-		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npatch([0.314286 0.2 0.371429 0.2 0.314286 0.485714 0.542857 0.6 0.8 0.657143 0.514286 0.4 0.571429 0.4 0.514286 0.657143 0.8 0.6 0.542857 0.485714 0.314286 ],[0.125 0.291667 0.541667 0.791667 0.958333 0.958333 0.875 0.958333 0.958333 0.75 0.958333 0.791667 0.541667 0.291667 0.125 0.333333 0.125 0.125 0.208333 0.125 0.125 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
 		}
 		BlockName		"convert_din"
 		DialogParameters {
@@ -71198,7 +71198,7 @@ Model {
 		BlockName		"mem/sim_addr"
 		DialogParameters {
 		  sg_icon_stat		  "55,20,1,1,white,yellow,0,bc55d28f,right"
-		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([22 19 24 19 22 27 28 29 35 31 27 24 29 24 27 31 35 29 28 27 22 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 0 55 55 0 ],[0 20 20 0 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
 		}
 		BlockName		"mem/sim_data_in"
 		DialogParameters {
@@ -71214,14 +71214,14 @@ Model {
 		BlockName		"mem/sim_we"
 		DialogParameters {
 		  sg_icon_stat		  "55,20,1,1,white,yellow,0,bc55d28f,right"
-		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([22 19 24 19 22 27 28 29 35 31 27 24 29 24 27 31 35 29 28 27 22 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 0 55 55 0 ],[0 20 20 0 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
 		}
 	      }
 	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
+	      SourceType	      ""
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -71245,7 +71245,7 @@ Model {
 		BlockName		"convert_addr"
 		DialogParameters {
 		  sg_icon_stat		  "35,24,1,1,white,blue,0,74901e60,right"
-		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 1 1 0 ],[0 0 1 1 ],[0.77 0.82 0.91]);\npatch([0.314286 0.2 0.371429 0.2 0.314286 0.485714 0.542857 0.6 0.8 0.657143 0.514286 0.4 0.571429 0.4 0.514286 0.657143 0.8 0.6 0.542857 0.485714 0.314286 ],[0.125 0.291667 0.541667 0.791667 0.958333 0.958333 0.875 0.958333 0.958333 0.75 0.958333 0.791667 0.541667 0.291667 0.125 0.333333 0.125 0.125 0.208333 0.125 0.125 ],[0.98 0.96 0.92]);\nplot([0 1 1 0 0 ],[0 0 1 1 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
 		}
 		BlockName		"convert_din"
 		DialogParameters {
@@ -71287,7 +71287,7 @@ Model {
 		BlockName		"mem/sim_addr"
 		DialogParameters {
 		  sg_icon_stat		  "55,20,1,1,white,yellow,0,bc55d28f,right"
-		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([22 19 24 19 22 27 28 29 35 31 27 24 29 24 27 31 35 29 28 27 22 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 0 55 55 0 ],[0 20 20 0 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
 		}
 		BlockName		"mem/sim_data_in"
 		DialogParameters {
@@ -71303,14 +71303,14 @@ Model {
 		BlockName		"mem/sim_we"
 		DialogParameters {
 		  sg_icon_stat		  "55,20,1,1,white,yellow,0,bc55d28f,right"
-		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([22 19 24 19 22 27 28 29 35 31 27 24 29 24 27 31 35 29 28 27 22 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 0 55 55 0 ],[0 20 20 0 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+		  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
 		}
 	      }
 	      SourceBlock	      "xps_library/Shared BRAM"
-	      SourceType	      "Unknown"
+	      SourceType	      ""
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
-	      FunctionWithSeparateData "off"
+	      FunctionWithSeparateData off
 	      RTWMemSecFuncInitTerm   "Inherit from model"
 	      RTWMemSecFuncExecute    "Inherit from model"
 	      RTWMemSecDataConstants  "Inherit from model"
@@ -71325,37 +71325,6 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "BitBasher"
-	      Ports		      [1, 2]
-	      Position		      [315, 32, 350, 228]
-	      ShowName		      off
-	      SourceBlock	      "xbsIndex_r4/BitBasher"
-	      SourceType	      "Xilinx BitBasher Block"
-	      infoedit		      "Allows extraction, concatenation and augmentation of bits"
-	      bitexpr		      "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg'; font-size:8pt;\">a90={6'b0000000, c[9:5]}<br />w180={6'b000000, c[4:0]}</p></body></html>"
-	      display_expr	      "off"
-	      sr_1		      "1"
-	      arith_type1	      "Unsigned"
-	      bin_pt1		      "0"
-	      sr_2		      "2"
-	      arith_type2	      "Unsigned"
-	      bin_pt2		      "0"
-	      sr_3		      "3"
-	      arith_type3	      "Unsigned"
-	      bin_pt3		      "0"
-	      sr_4		      "4"
-	      arith_type4	      "Unsigned"
-	      bin_pt4		      "0"
-	      dbl_ovrd		      "off"
-	      has_advanced_control    "0"
-	      sggui_pos		      "20,20,336,351"
-	      block_type	      "bitbasher"
-	      block_version	      "10.1.3"
-	      sg_icon_stat	      "35,196,1,1,white,blue,0,a028cdd9,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([17 7 21 7 17 33 37 41 58 45 32 23 38 23 32 45 58 41 37 33 17 ],[6 16 30 44 54 54 50 54 54 41 54 45 30 15 6 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'c');\ncolor('black');port_label('output',1,'a90');\ncolor('black');port_label('output',2,'w180');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    Block {
-	      BlockType		      Reference
 	      Name		      "Constant"
 	      Ports		      [0, 1]
 	      Position		      [380, 91, 400, 109]
@@ -71366,7 +71335,7 @@ Model {
 	      const		      "0"
 	      n_bits		      "32"
 	      bin_pt		      "0"
-	      explicit_period	      "on"
+	      explicit_period	      on
 	      period		      "1"
 	      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	      equ		      "P=C"
@@ -71375,12 +71344,12 @@ Model {
 	      opr		      "+"
 	      inp1		      "P"
 	      carry		      "CIN"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,400,346"
 	      block_type	      "constant"
 	      block_version	      "10.1.3"
-	      sg_icon_stat	      "20,18,1,1,white,blue,0,72d575a1,right"
+	      sg_icon_stat	      "20,18,0,1,white,blue,0,72d575a1,right"
 	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
 	    }
 	    Block {
@@ -71395,7 +71364,7 @@ Model {
 	      const		      "0"
 	      n_bits		      "32"
 	      bin_pt		      "0"
-	      explicit_period	      "on"
+	      explicit_period	      on
 	      period		      "1"
 	      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	      equ		      "P=C"
@@ -71404,12 +71373,12 @@ Model {
 	      opr		      "+"
 	      inp1		      "P"
 	      carry		      "CIN"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,400,346"
 	      block_type	      "constant"
 	      block_version	      "10.1.3"
-	      sg_icon_stat	      "20,18,1,1,white,blue,0,72d575a1,right"
+	      sg_icon_stat	      "20,18,0,1,white,blue,0,72d575a1,right"
 	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
 	    }
 	    Block {
@@ -71424,7 +71393,7 @@ Model {
 	      const		      "0"
 	      n_bits		      "32"
 	      bin_pt		      "0"
-	      explicit_period	      "on"
+	      explicit_period	      on
 	      period		      "1"
 	      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	      equ		      "P=C"
@@ -71433,12 +71402,12 @@ Model {
 	      opr		      "+"
 	      inp1		      "P"
 	      carry		      "CIN"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,400,346"
 	      block_type	      "constant"
 	      block_version	      "10.1.3"
-	      sg_icon_stat	      "20,18,1,1,white,blue,0,72d575a1,right"
+	      sg_icon_stat	      "20,18,0,1,white,blue,0,72d575a1,right"
 	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
 	    }
 	    Block {
@@ -71453,7 +71422,7 @@ Model {
 	      const		      "0"
 	      n_bits		      "32"
 	      bin_pt		      "0"
-	      explicit_period	      "on"
+	      explicit_period	      on
 	      period		      "1"
 	      dsp48_infoedit	      "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	      equ		      "P=C"
@@ -71462,12 +71431,12 @@ Model {
 	      opr		      "+"
 	      inp1		      "P"
 	      carry		      "CIN"
-	      dbl_ovrd		      "off"
+	      dbl_ovrd		      off
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,400,346"
 	      block_type	      "constant"
 	      block_version	      "10.1.3"
-	      sg_icon_stat	      "20,18,1,1,white,blue,0,72d575a1,right"
+	      sg_icon_stat	      "20,18,0,1,white,blue,0,72d575a1,right"
 	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
 	    }
 	    Block {
@@ -71487,22 +71456,22 @@ Model {
 	      arith_type	      "Unsigned"
 	      n_bits		      "10"
 	      bin_pt		      "0"
-	      load_pin		      "off"
-	      rst		      "on"
-	      en		      "on"
+	      load_pin		      off
+	      rst		      on
+	      en		      on
 	      explicit_period	      "on"
 	      period		      "1"
-	      dbl_ovrd		      "off"
-	      use_behavioral_HDL      "on"
-	      use_rpm		      "off"
+	      dbl_ovrd		      off
+	      use_behavioral_HDL      on
+	      use_rpm		      off
 	      implementation	      "Fabric"
-	      xl_use_area	      "off"
+	      xl_use_area	      off
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,348,619"
 	      block_type	      "counter"
 	      block_version	      "10.1.3"
-	      sg_icon_stat	      "60,60,1,1,white,blue,0,46c73e85,right"
+	      sg_icon_stat	      "60,60,2,1,white,blue,0,46c73e85,right"
 	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([14 4 18 4 14 30 34 38 55 42 29 20 35 20 29 42 55 38 34 30 14 ],[6 16 30 44 54 54 50 54 54 41 54 45 30 15 6 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'rst');\ncolor('black');port_label('input',2,'en');\ncolor('black');port_label('output',1,'out');\nfprintf('','COMMENT: end icon text');\n"
 	    }
 	    Block {
@@ -71522,16 +71491,16 @@ Model {
 	      arith_type	      "Unsigned"
 	      n_bits		      "10"
 	      bin_pt		      "0"
-	      load_pin		      "off"
-	      rst		      "on"
-	      en		      "on"
+	      load_pin		      off
+	      rst		      on
+	      en		      on
 	      explicit_period	      "on"
 	      period		      "1"
-	      dbl_ovrd		      "off"
-	      use_behavioral_HDL      "on"
-	      use_rpm		      "off"
+	      dbl_ovrd		      off
+	      use_behavioral_HDL      on
+	      use_rpm		      off
 	      implementation	      "Fabric"
-	      xl_use_area	      "off"
+	      xl_use_area	      off
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,348,619"
@@ -71550,11 +71519,11 @@ Model {
 	      SourceBlock	      "xbsIndex_r4/Delay"
 	      SourceType	      "Xilinx Delay Block"
 	      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	      en		      "off"
+	      en		      off
 	      latency		      "1"
-	      dbl_ovrd		      "off"
-	      reg_retiming	      "on"
-	      xl_use_area	      "off"
+	      dbl_ovrd		      off
+	      reg_retiming	      on
+	      xl_use_area	      off
 	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,348,255"
@@ -71573,11 +71542,11 @@ Model {
 	      SourceBlock	      "xbsIndex_r4/Delay"
 	      SourceType	      "Xilinx Delay Block"
 	      infoedit		      "Hardware notes: A delay line is a chain, each link of which is an SRL16 followed by a flip-flop."
-	      en		      "off"
+	      en		      off
 	      latency		      "1"
-	      dbl_ovrd		      "off"
-	      reg_retiming	      "on"
-	      xl_use_area	      "off"
+	      dbl_ovrd		      off
+	      reg_retiming	      on
+	      xl_use_area	      off
 	      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,348,255"
@@ -71595,7 +71564,7 @@ Model {
 	      SourceBlock	      "xbsIndex_r4/Mux"
 	      SourceType	      "Xilinx Bus Multiplexer Block"
 	      inputs		      "2"
-	      en		      "off"
+	      en		      off
 	      latency		      "0"
 	      precision		      "Full"
 	      arith_type	      "Unsigned"
@@ -71603,14 +71572,14 @@ Model {
 	      bin_pt		      "14"
 	      quantization	      "Truncate"
 	      overflow		      "Wrap"
-	      dbl_ovrd		      "off"
-	      xl_use_area	      "off"
+	      dbl_ovrd		      off
+	      xl_use_area	      off
 	      xl_area		      "[0,0,0,0,0,0,0]"
 	      has_advanced_control    "0"
 	      sggui_pos		      "20,20,348,303"
 	      block_type	      "mux"
 	      block_version	      "10.1.3"
-	      sg_icon_stat	      "25,232,1,1,white,blue,3,613f58e1,right"
+	      sg_icon_stat	      "25,232,3,1,white,blue,3,613f58e1,right"
 	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 14.8571 89.1429 104 ],[0.77 0.82 0.91]);\npatch([10 3 14 3 10 22 25 28 41 31 21 14 25 14 21 31 41 28 25 22 10 ],[34 41 52 63 70 70 67 70 70 60 70 63 52 41 34 44 34 34 37 34 34 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 14.8571 89.1429 104 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');disp('\\bf{}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	    }
 	    Block {
@@ -71675,18 +71644,6 @@ Model {
 	      DstPort		      2
 	    }
 	    Line {
-	      SrcBlock		      "BitBasher"
-	      SrcPort		      1
-	      DstBlock		      "90"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "BitBasher"
-	      SrcPort		      2
-	      DstBlock		      "180"
-	      DstPort		      1
-	    }
-	    Line {
 	      SrcBlock		      "Constant"
 	      SrcPort		      1
 	      DstBlock		      "90"
@@ -71749,8 +71706,17 @@ Model {
 	    Line {
 	      SrcBlock		      "Mux"
 	      SrcPort		      1
-	      DstBlock		      "BitBasher"
-	      DstPort		      1
+	      Points		      [30, 0]
+	      Branch {
+		Points			[0, 50]
+		DstBlock		"180"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -50]
+		DstBlock		"90"
+		DstPort			1
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "Counter1"

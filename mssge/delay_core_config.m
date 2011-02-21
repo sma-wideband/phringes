@@ -20,22 +20,22 @@ function delay_core_config(this_block)
   this_block.addSimulinkInport('delay');
   this_block.addSimulinkInport('sb_sel');
 
-  this_block.addSimulinkOutport('z0_im');
   this_block.addSimulinkOutport('z0_re');
-  this_block.addSimulinkOutport('z2_im');
+  this_block.addSimulinkOutport('z0_im');
   this_block.addSimulinkOutport('z2_re');
+  this_block.addSimulinkOutport('z2_im');
   this_block.addSimulinkOutport('ph_comp');
 
-  ph_comp_port = this_block.port('ph_comp');
-  ph_comp_port.setType('UFix_2_0');
-  z0_im_port = this_block.port('z0_im');
-  z0_im_port.setType('Fix_25_22');
   z0_re_port = this_block.port('z0_re');
   z0_re_port.setType('Fix_25_22');
-  z2_im_port = this_block.port('z2_im');
-  z2_im_port.setType('Fix_25_22');
+  z0_im_port = this_block.port('z0_im');
+  z0_im_port.setType('Fix_25_22');
   z2_re_port = this_block.port('z2_re');
   z2_re_port.setType('Fix_25_22');
+  z2_im_port = this_block.port('z2_im');
+  z2_im_port.setType('Fix_25_22');
+  ph_comp_port = this_block.port('ph_comp');
+  ph_comp_port.setType('UFix_2_0');
 
   % -----------------------------
   if (this_block.inputTypesKnown)

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.574"
+    ComputedModelVersion    "1.575"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -44,9 +44,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "mdexter"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Feb 22 21:10:39 2011"
+  LastModifiedDate	  "Tue Feb 22 21:49:47 2011"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:574>"
+  ModelVersionFormat	  "1.%<AutoIncrement:575>"
   ConfigurationManager	  "None"
   SimulationMode	  "normal"
   LinearizationMsg	  "none"
@@ -71988,553 +71988,12 @@ Model {
       BlockType		      SubSystem
       Name		      "xaui0"
       Ports		      [3]
-      Position		      [1450, 115, 1525, 285]
-      MinAlgLoopOccurrences   off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      System {
-	Name			"xaui0"
-	Location		[205, 286, 1189, 662]
-	Open			off
-	ModelBrowserVisibility	on
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "din"
-	  Position		  [105, 168, 135, 182]
-	  IconDisplay		  "Port number"
-	  OutDataType		  "sfix(16)"
-	  OutScaling		  "2^0"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "oob"
-	  Position		  [105, 203, 135, 217]
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	  OutDataType		  "sfix(16)"
-	  OutScaling		  "2^0"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "valid"
-	  Position		  [105, 118, 135, 132]
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	  OutDataType		  "sfix(16)"
-	  OutScaling		  "2^0"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Constant22"
-	  Ports			  [0, 1]
-	  Position		  [510, 85, 555, 115]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Constant"
-	  SourceType		  "Xilinx Constant Block Block"
-	  arith_type		  "Boolean"
-	  const			  "0"
-	  n_bits		  "32"
-	  bin_pt		  "0"
-	  explicit_period	  "on"
-	  period		  "1"
-	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
-	  equ			  "P=C"
-	  opselect		  "C"
-	  inp2			  "PCIN>>17"
-	  opr			  "+"
-	  inp1			  "P"
-	  carry			  "CIN"
-	  dbl_ovrd		  "off"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
-	  block_type		  "constant"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,72d575a1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Constant25"
-	  Ports			  [0, 1]
-	  Position		  [510, 120, 555, 150]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Constant"
-	  SourceType		  "Xilinx Constant Block Block"
-	  arith_type		  "Boolean"
-	  const			  "0"
-	  n_bits		  "32"
-	  bin_pt		  "0"
-	  explicit_period	  "on"
-	  period		  "1"
-	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
-	  equ			  "P=C"
-	  opselect		  "C"
-	  inp2			  "PCIN>>17"
-	  opr			  "+"
-	  inp1			  "P"
-	  carry			  "CIN"
-	  dbl_ovrd		  "off"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
-	  block_type		  "constant"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,72d575a1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Expression1"
-	  Ports			  [2, 1]
-	  Position		  [310, 72, 355, 143]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Expression"
-	  SourceType		  "Xilinx Bitwise Expression Evaluator Block"
-	  expression		  "a & b"
-	  align_bp		  "on"
-	  en			  "off"
-	  latency		  "0"
-	  precision		  "Full"
-	  arith_type		  "Unsigned"
-	  n_bits		  "8"
-	  bin_pt		  "2"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
-	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
-	  block_type		  "expr"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,71,1,1,white,blue,0,af5c1937,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([17 7 21 7 17 33 37 41 58 45 32 23 38 23 32 45 58 41 37 33 17 ],[6 16 30 44 54 54 50 54 54 41 54 45 30 15 6 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');disp('a & b');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  From
-	  Name			  "From2"
-	  Position		  [160, 75, 235, 105]
-	  ShowName		  off
-	  CloseFcn		  "tagdialog Close"
-	  GotoTag		  "linkdown_0"
-	}
-	Block {
-	  BlockType		  Goto
-	  Name			  "Goto19"
-	  Position		  [795, 165, 865, 195]
-	  ShowName		  off
-	  GotoTag		  "linkdown_0"
-	  TagVisibility		  "local"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Inverter"
-	  Ports			  [1, 1]
-	  Position		  [250, 76, 285, 104]
-	  ShowName		  off
-	  SourceBlock		  "xbsIndex_r4/Inverter"
-	  SourceType		  "Xilinx Inverter Block"
-	  infoedit		  "Bitwise logical negation (one's complement) operator."
-	  en			  "off"
-	  latency		  "0"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
-	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
-	  has_advanced_control	  "0"
-	  sggui_pos		  "-1,-1,-1,-1"
-	  block_type		  "inv"
-	  block_version		  "10.1.3"
-	  sg_icon_stat		  "35,28,1,1,white,blue,0,1ab4a85f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[7 16 29 42 51 51 47 51 51 39 51 42 29 16 7 19 7 7 11 7 7 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('not');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator"
-	  Position		  [735, 115, 755, 135]
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator1"
-	  Position		  [735, 90, 755, 110]
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator2"
-	  Position		  [735, 140, 755, 160]
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator3"
-	  Position		  [735, 215, 755, 235]
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator6"
-	  Position		  [735, 165, 755, 185]
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator8"
-	  Position		  [735, 240, 755, 260]
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator9"
-	  Position		  [915, 215, 935, 235]
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "XAUI_1"
-	  Tag			  "xps:xaui"
-	  Ports			  [5, 7]
-	  Position		  [575, 91, 715, 259]
-	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
-	  LinkData {
-	    BlockName		    "convert_rx_get"
-	    DialogParameters {
-	      sg_icon_stat	      "50,16,1,1,white,blue,0,74901e60,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "convert_rx_reset"
-	    DialogParameters {
-	      sg_icon_stat	      "50,16,1,1,white,blue,0,74901e60,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "convert_tx_data"
-	    DialogParameters {
-	      n_bits		      "64"
-	      sg_icon_stat	      "50,16,1,1,white,blue,0,74901e60,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "convert_tx_outofband"
-	    DialogParameters {
-	      n_bits		      "8"
-	      sg_icon_stat	      "50,16,1,1,white,blue,0,74901e60,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "convert_tx_valid"
-	    DialogParameters {
-	      sg_icon_stat	      "50,16,1,1,white,blue,0,74901e60,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_rx_almost_full"
-	    DialogParameters {
-	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_rx_data"
-	    DialogParameters {
-	      n_bits		      "64"
-	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_rx_empty"
-	    DialogParameters {
-	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_rx_get"
-	    DialogParameters {
-	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_rx_linkdown"
-	    DialogParameters {
-	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_rx_outofband"
-	    DialogParameters {
-	      n_bits		      "8"
-	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_rx_reset"
-	    DialogParameters {
-	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_rx_valid"
-	    DialogParameters {
-	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_tx_data"
-	    DialogParameters {
-	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_tx_full"
-	    DialogParameters {
-	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_tx_outofband"
-	    DialogParameters {
-	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_tx_valid"
-	    DialogParameters {
-	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_rx_almost_full"
-	    DialogParameters {
-	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_rx_data"
-	    DialogParameters {
-	      n_bits		      "64"
-	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_rx_empty"
-	    DialogParameters {
-	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_rx_get"
-	    DialogParameters {
-	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_rx_linkdown"
-	    DialogParameters {
-	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_rx_outofband"
-	    DialogParameters {
-	      n_bits		      "8"
-	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_rx_reset"
-	    DialogParameters {
-	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_rx_valid"
-	    DialogParameters {
-	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_tx_data"
-	    DialogParameters {
-	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_tx_full"
-	    DialogParameters {
-	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_tx_outofband"
-	    DialogParameters {
-	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_tx_valid"
-	    DialogParameters {
-	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	  }
-	  SourceBlock		  "xps_library/XAUI"
-	  SourceType		  "xaui"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  demux			  "1"
-	  port			  "iBOB:1"
-	  open_phy		  "off"
-	  show_param		  "off"
-	  pre_emph		  "3"
-	  swing			  "800"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "rx_linkdown"
-	  Tag			  "xps:sw_reg"
-	  Ports			  [1, 1]
-	  Position		  [795, 210, 895, 240]
-	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
-	  LinkData {
-	    BlockName		    "convert"
-	    DialogParameters {
-	      arith_type	      "Unsigned"
-	      n_bits		      "32"
-	      bin_pt		      "0"
-	      sg_icon_stat	      "30,20,1,1,white,blue,0,74901e60,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 30 30 0 ],[0 0 20 20 ],[0.77 0.82 0.91]);\npatch([9 6 11 6 9 14 15 16 22 18 14 11 16 11 14 18 22 16 15 14 9 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 30 30 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui0_rx_linkdown_user_data_in"
-	    DialogParameters {
-	      sg_icon_stat	      "40,20,1,1,white,yellow,0,38220381,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 40 40 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([14 11 16 11 14 19 20 21 27 23 19 16 21 16 19 23 27 21 20 19 14 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 40 40 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	    BlockName		    "ibob_phased_array_2k_xaui_1_rx_linkdown_user_data_in"
-	    DialogParameters {
-	      sg_icon_stat	      "40,20,1,1,white,yellow,0,38220381,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 40 40 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([14 11 16 11 14 19 20 21 27 23 19 16 21 16 19 23 27 21 20 19 14 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 40 40 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	    }
-	  }
-	  SourceBlock		  "xps_library/software register"
-	  SourceType		  "Unknown"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  io_dir		  "To Processor"
-	  arith_type		  "Unsigned"
-	  bitwidth		  "32"
-	  bin_pt		  "0"
-	  sample_period		  "1"
-	  gw_name		  "ibob_phased_array_2k_xaui0_rx_linkdown_user_data_in"
-	}
-	Line {
-	  SrcBlock		  "valid"
-	  SrcPort		  1
-	  DstBlock		  "Expression1"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "din"
-	  SrcPort		  1
-	  DstBlock		  "XAUI_1"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Expression1"
-	  SrcPort		  1
-	  Points		  [130, 0; 0, 135]
-	  DstBlock		  "XAUI_1"
-	  DstPort		  5
-	}
-	Line {
-	  SrcBlock		  "oob"
-	  SrcPort		  1
-	  DstBlock		  "XAUI_1"
-	  DstPort		  4
-	}
-	Line {
-	  SrcBlock		  "Inverter"
-	  SrcPort		  1
-	  DstBlock		  "Expression1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "From2"
-	  SrcPort		  1
-	  DstBlock		  "Inverter"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Constant25"
-	  SrcPort		  1
-	  DstBlock		  "XAUI_1"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Constant22"
-	  SrcPort		  1
-	  DstBlock		  "XAUI_1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "rx_linkdown"
-	  SrcPort		  1
-	  DstBlock		  "Terminator9"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "XAUI_1"
-	  SrcPort		  7
-	  DstBlock		  "Terminator8"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "XAUI_1"
-	  SrcPort		  5
-	  Points		  [45, 0]
-	  Branch {
-	    Points		    [0, -20]
-	    DstBlock		    "Goto19"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, 25]
-	    DstBlock		    "rx_linkdown"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "XAUI_1"
-	  SrcPort		  4
-	  DstBlock		  "Terminator6"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "XAUI_1"
-	  SrcPort		  3
-	  DstBlock		  "Terminator2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "XAUI_1"
-	  SrcPort		  2
-	  DstBlock		  "Terminator"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "XAUI_1"
-	  SrcPort		  1
-	  DstBlock		  "Terminator1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "XAUI_1"
-	  SrcPort		  6
-	  DstBlock		  "Terminator3"
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "xaui1"
-      Ports		      [3]
       Position		      [1450, 330, 1525, 500]
       MinAlgLoopOccurrences   off
       RTWSystemCode	      "Auto"
       FunctionWithSeparateData off
       System {
-	Name			"xaui1"
+	Name			"xaui0"
 	Location		[298, 248, 1282, 624]
 	Open			off
 	ModelBrowserVisibility	on
@@ -72586,7 +72045,7 @@ Model {
 	  const			  "0"
 	  n_bits		  "32"
 	  bin_pt		  "0"
-	  explicit_period	  "on"
+	  explicit_period	  on
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -72595,12 +72054,12 @@ Model {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "constant"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,72d575a1,right"
+	  sg_icon_stat		  "45,30,0,1,white,blue,0,72d575a1,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
@@ -72615,7 +72074,7 @@ Model {
 	  const			  "0"
 	  n_bits		  "32"
 	  bin_pt		  "0"
-	  explicit_period	  "on"
+	  explicit_period	  on
 	  period		  "1"
 	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
 	  equ			  "P=C"
@@ -72624,12 +72083,12 @@ Model {
 	  opr			  "+"
 	  inp1			  "P"
 	  carry			  "CIN"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
 	  block_type		  "constant"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "45,30,1,1,white,blue,0,72d575a1,right"
+	  sg_icon_stat		  "45,30,0,1,white,blue,0,72d575a1,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
@@ -72647,9 +72106,9 @@ Model {
 	  quantization		  "Truncate"
 	  overflow		  "Wrap"
 	  latency		  "0"
-	  dbl_ovrd		  "off"
-	  pipeline		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  pipeline		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,461,334"
@@ -72675,16 +72134,16 @@ Model {
 	  arith_type		  "Unsigned"
 	  n_bits		  "1"
 	  bin_pt		  "0"
-	  load_pin		  "off"
-	  rst			  "on"
-	  en			  "off"
+	  load_pin		  off
+	  rst			  on
+	  en			  off
 	  explicit_period	  "on"
 	  period		  "1"
-	  dbl_ovrd		  "off"
-	  use_behavioral_HDL	  "off"
-	  use_rpm		  "off"
+	  dbl_ovrd		  off
+	  use_behavioral_HDL	  off
+	  use_rpm		  off
 	  implementation	  "Fabric"
-	  xl_use_area		  "off"
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,619"
@@ -72718,10 +72177,10 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
 	  infoedit		  "Bitwise logical negation (one's complement) operator."
-	  en			  "off"
+	  en			  off
 	  latency		  "0"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -72739,10 +72198,10 @@ Model {
 	  SourceBlock		  "xbsIndex_r4/Inverter"
 	  SourceType		  "Xilinx Inverter Block"
 	  infoedit		  "Bitwise logical negation (one's complement) operator."
-	  en			  "off"
+	  en			  off
 	  latency		  "0"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "-1,-1,-1,-1"
@@ -72761,21 +72220,21 @@ Model {
 	  SourceType		  "Xilinx Logical Block Block"
 	  logical_function	  "AND"
 	  inputs		  "3"
-	  en			  "off"
+	  en			  off
 	  latency		  "0"
 	  precision		  "Full"
 	  arith_type		  "Unsigned"
 	  n_bits		  "16"
 	  bin_pt		  "0"
-	  align_bp		  "on"
-	  dbl_ovrd		  "off"
-	  xl_use_area		  "off"
+	  align_bp		  on
+	  dbl_ovrd		  off
+	  xl_use_area		  off
 	  xl_area		  "[0,0,0,0,0,0,0]"
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,348,261"
 	  block_type		  "logical"
 	  block_version		  "10.1.3"
-	  sg_icon_stat		  "55,118,1,1,white,blue,0,5c2bfaa2,right"
+	  sg_icon_stat		  "55,118,3,1,white,blue,0,5c2bfaa2,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[8 17 30 43 52 52 48 52 52 40 52 43 30 17 8 20 8 8 12 8 8 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\newlineand\\newlinez^{-0}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	Block {
@@ -72788,13 +72247,13 @@ Model {
 	  SourceType		  "Xilinx Bit Slice Extractor Block"
 	  infoedit		  "Extracts a given range of bits from each input sample and presents it at the output.  The output type is ordinarily unsigned with binary point at zero, but can be Boolean when the slice is one bit wide.<P><P>Hardware notes: In hardware this block costs nothing."
 	  nbits			  "1"
-	  boolean_output	  "on"
+	  boolean_output	  on
 	  mode			  "Lower Bit Location + Width"
 	  bit1			  "0"
 	  base1			  "MSB of Input"
 	  bit0			  "0"
 	  base0			  "LSB of Input"
-	  dbl_ovrd		  "off"
+	  dbl_ovrd		  off
 	  has_advanced_control	  "0"
 	  sggui_pos		  "20,20,449,376"
 	  block_type		  "slice"
@@ -73008,16 +72467,16 @@ Model {
 	  SourceType		  "xaui"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
 	  RTWMemSecDataInternal	  "Inherit from model"
 	  RTWMemSecDataParameters "Inherit from model"
 	  demux			  "1"
-	  port			  "iBOB:0"
-	  open_phy		  "off"
-	  show_param		  "off"
+	  port			  "iBOB:1"
+	  open_phy		  off
+	  show_param		  off
 	  pre_emph		  "3"
 	  swing			  "800"
 	}
@@ -73233,7 +72692,7 @@ Model {
 	      n_bits		      "32"
 	      bin_pt		      "0"
 	      sg_icon_stat	      "30,20,1,1,white,blue,0,74901e60,right"
-	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 30 30 0 ],[0 0 20 20 ],[0.77 0.82 0.91]);\npatch([9 6 11 6 9 14 15 16 22 18 14 11 16 11 14 18 22 16 15 14 9 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 30 30 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
 	    }
 	    BlockName		    "ibob_phased_array_2k_xaui1_rx_linkdown_user_data_in"
 	    DialogParameters {
@@ -73247,10 +72706,10 @@ Model {
 	    }
 	  }
 	  SourceBlock		  "xps_library/software register"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData "off"
+	  FunctionWithSeparateData off
 	  RTWMemSecFuncInitTerm	  "Inherit from model"
 	  RTWMemSecFuncExecute	  "Inherit from model"
 	  RTWMemSecDataConstants  "Inherit from model"
@@ -73261,7 +72720,7 @@ Model {
 	  bitwidth		  "32"
 	  bin_pt		  "0"
 	  sample_period		  "1"
-	  gw_name		  "ibob_phased_array_2k_xaui1_rx_linkdown_user_data_in"
+	  gw_name		  "ibob_phased_array_2k_xaui0_rx_linkdown_user_data_in"
 	}
 	Line {
 	  SrcBlock		  "XAUI"
@@ -73416,6 +72875,547 @@ Model {
 	}
       }
     }
+    Block {
+      BlockType		      SubSystem
+      Name		      "xaui1"
+      Ports		      [3]
+      Position		      [1450, 115, 1525, 285]
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      System {
+	Name			"xaui1"
+	Location		[205, 286, 1189, 662]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "din"
+	  Position		  [105, 168, 135, 182]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "oob"
+	  Position		  [105, 203, 135, 217]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "valid"
+	  Position		  [105, 118, 135, 132]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant22"
+	  Ports			  [0, 1]
+	  Position		  [510, 85, 555, 115]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Constant"
+	  SourceType		  "Xilinx Constant Block Block"
+	  arith_type		  "Boolean"
+	  const			  "0"
+	  n_bits		  "32"
+	  bin_pt		  "0"
+	  explicit_period	  on
+	  period		  "1"
+	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
+	  equ			  "P=C"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  dbl_ovrd		  off
+	  has_advanced_control	  "0"
+	  sggui_pos		  "-1,-1,-1,-1"
+	  block_type		  "constant"
+	  block_version		  "10.1.3"
+	  sg_icon_stat		  "45,30,0,1,white,blue,0,72d575a1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Constant25"
+	  Ports			  [0, 1]
+	  Position		  [510, 120, 555, 150]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Constant"
+	  SourceType		  "Xilinx Constant Block Block"
+	  arith_type		  "Boolean"
+	  const			  "0"
+	  n_bits		  "32"
+	  bin_pt		  "0"
+	  explicit_period	  on
+	  period		  "1"
+	  dsp48_infoedit	  "The use of this block for DSP48 instructions is deprecated.  Please use the Opmode block."
+	  equ			  "P=C"
+	  opselect		  "C"
+	  inp2			  "PCIN>>17"
+	  opr			  "+"
+	  inp1			  "P"
+	  carry			  "CIN"
+	  dbl_ovrd		  off
+	  has_advanced_control	  "0"
+	  sggui_pos		  "-1,-1,-1,-1"
+	  block_type		  "constant"
+	  block_version		  "10.1.3"
+	  sg_icon_stat		  "45,30,0,1,white,blue,0,72d575a1,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Expression1"
+	  Ports			  [2, 1]
+	  Position		  [310, 72, 355, 143]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Expression"
+	  SourceType		  "Xilinx Bitwise Expression Evaluator Block"
+	  expression		  "a & b"
+	  align_bp		  on
+	  en			  off
+	  latency		  "0"
+	  precision		  "Full"
+	  arith_type		  "Unsigned"
+	  n_bits		  "8"
+	  bin_pt		  "2"
+	  dbl_ovrd		  off
+	  xl_use_area		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "-1,-1,-1,-1"
+	  block_type		  "expr"
+	  block_version		  "10.1.3"
+	  sg_icon_stat		  "45,71,1,1,white,blue,0,af5c1937,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([17 7 21 7 17 33 37 41 58 45 32 23 38 23 32 45 58 41 37 33 17 ],[6 16 30 44 54 54 50 54 54 41 54 45 30 15 6 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');disp('a & b');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From2"
+	  Position		  [160, 75, 235, 105]
+	  ShowName		  off
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "linkdown_0"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto19"
+	  Position		  [795, 165, 865, 195]
+	  ShowName		  off
+	  GotoTag		  "linkdown_0"
+	  TagVisibility		  "local"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Inverter"
+	  Ports			  [1, 1]
+	  Position		  [250, 76, 285, 104]
+	  ShowName		  off
+	  SourceBlock		  "xbsIndex_r4/Inverter"
+	  SourceType		  "Xilinx Inverter Block"
+	  infoedit		  "Bitwise logical negation (one's complement) operator."
+	  en			  off
+	  latency		  "0"
+	  dbl_ovrd		  off
+	  xl_use_area		  off
+	  xl_area		  "[0, 0, 0, 0, 0, 0, 0]"
+	  has_advanced_control	  "0"
+	  sggui_pos		  "-1,-1,-1,-1"
+	  block_type		  "inv"
+	  block_version		  "10.1.3"
+	  sg_icon_stat		  "35,28,1,1,white,blue,0,1ab4a85f,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[7 16 29 42 51 51 47 51 51 39 51 42 29 16 7 19 7 7 11 7 7 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('not');\nfprintf('','COMMENT: end icon text');\n"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  Position		  [735, 115, 755, 135]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator1"
+	  Position		  [735, 90, 755, 110]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator2"
+	  Position		  [735, 140, 755, 160]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator3"
+	  Position		  [735, 215, 755, 235]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator6"
+	  Position		  [735, 165, 755, 185]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator8"
+	  Position		  [735, 240, 755, 260]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator9"
+	  Position		  [915, 215, 935, 235]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "XAUI_1"
+	  Tag			  "xps:xaui"
+	  Ports			  [5, 7]
+	  Position		  [575, 91, 715, 259]
+	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
+	  LinkData {
+	    BlockName		    "convert_rx_get"
+	    DialogParameters {
+	      sg_icon_stat	      "50,16,1,1,white,blue,0,74901e60,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "convert_rx_reset"
+	    DialogParameters {
+	      sg_icon_stat	      "50,16,1,1,white,blue,0,74901e60,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "convert_tx_data"
+	    DialogParameters {
+	      n_bits		      "64"
+	      sg_icon_stat	      "50,16,1,1,white,blue,0,74901e60,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "convert_tx_outofband"
+	    DialogParameters {
+	      n_bits		      "8"
+	      sg_icon_stat	      "50,16,1,1,white,blue,0,74901e60,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "convert_tx_valid"
+	    DialogParameters {
+	      sg_icon_stat	      "50,16,1,1,white,blue,0,74901e60,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_rx_almost_full"
+	    DialogParameters {
+	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_rx_data"
+	    DialogParameters {
+	      n_bits		      "64"
+	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_rx_empty"
+	    DialogParameters {
+	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_rx_get"
+	    DialogParameters {
+	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_rx_linkdown"
+	    DialogParameters {
+	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_rx_outofband"
+	    DialogParameters {
+	      n_bits		      "8"
+	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_rx_reset"
+	    DialogParameters {
+	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_rx_valid"
+	    DialogParameters {
+	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_tx_data"
+	    DialogParameters {
+	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_tx_full"
+	    DialogParameters {
+	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_tx_outofband"
+	    DialogParameters {
+	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui0_XAUI_1_tx_valid"
+	    DialogParameters {
+	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_rx_almost_full"
+	    DialogParameters {
+	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_rx_data"
+	    DialogParameters {
+	      n_bits		      "64"
+	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_rx_empty"
+	    DialogParameters {
+	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_rx_get"
+	    DialogParameters {
+	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_rx_linkdown"
+	    DialogParameters {
+	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_rx_outofband"
+	    DialogParameters {
+	      n_bits		      "8"
+	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_rx_reset"
+	    DialogParameters {
+	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_rx_valid"
+	    DialogParameters {
+	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_tx_data"
+	    DialogParameters {
+	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_tx_full"
+	    DialogParameters {
+	      sg_icon_stat	      "100,16,1,1,white,yellow,0,bc55d28f,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([27 24 29 24 27 32 33 34 40 36 32 29 34 29 32 36 40 34 33 32 27 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_tx_outofband"
+	    DialogParameters {
+	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui_1_XAUI_1_tx_valid"
+	    DialogParameters {
+	      sg_icon_stat	      "50,16,1,1,white,yellow,0,38220381,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 16 16 ],[0.95 0.93 0.65]);\npatch([21 18 22 18 21 25 26 27 32 28 25 23 27 23 25 28 32 27 26 25 21 ],[2 5 9 13 16 16 15 16 16 12 15 13 9 5 3 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 16 16 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	  }
+	  SourceBlock		  "xps_library/XAUI"
+	  SourceType		  "xaui"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  demux			  "1"
+	  port			  "iBOB:0"
+	  open_phy		  off
+	  show_param		  off
+	  pre_emph		  "3"
+	  swing			  "800"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "rx_linkdown"
+	  Tag			  "xps:sw_reg"
+	  Ports			  [1, 1]
+	  Position		  [795, 210, 895, 240]
+	  BackgroundColor	  "[1.000000, 1.000000, 0.000000]"
+	  LinkData {
+	    BlockName		    "convert"
+	    DialogParameters {
+	      arith_type	      "Unsigned"
+	      n_bits		      "32"
+	      bin_pt		      "0"
+	      sg_icon_stat	      "30,20,1,1,white,blue,0,74901e60,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 0 30 30 ],[0.77 0.82 0.91]);\npatch([15 10 17 10 15 23 25 27 35 28 22 17 23 17 22 28 35 27 25 23 15 ],[3 8 15 22 27 27 25 27 27 20 26 21 15 9 4 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 0 30 30 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'cast');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui0_rx_linkdown_user_data_in"
+	    DialogParameters {
+	      sg_icon_stat	      "40,20,1,1,white,yellow,0,38220381,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 40 40 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([14 11 16 11 14 19 20 21 27 23 19 16 21 16 19 23 27 21 20 19 14 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 40 40 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	    BlockName		    "ibob_phased_array_2k_xaui_1_rx_linkdown_user_data_in"
+	    DialogParameters {
+	      sg_icon_stat	      "40,20,1,1,white,yellow,0,38220381,right"
+	      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 40 40 0 ],[0 0 20 20 ],[0.95 0.93 0.65]);\npatch([14 11 16 11 14 19 20 21 27 23 19 16 21 16 19 23 27 21 20 19 14 ],[2 5 10 15 18 18 17 18 18 14 18 15 10 5 2 6 2 2 3 2 2 ],[0.98 0.96 0.92]);\nplot([0 40 40 0 0 ],[0 0 20 20 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	    }
+	  }
+	  SourceBlock		  "xps_library/software register"
+	  SourceType		  ""
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  io_dir		  "To Processor"
+	  arith_type		  "Unsigned"
+	  bitwidth		  "32"
+	  bin_pt		  "0"
+	  sample_period		  "1"
+	  gw_name		  "ibob_phased_array_2k_xaui1_rx_linkdown_user_data_in"
+	}
+	Line {
+	  SrcBlock		  "valid"
+	  SrcPort		  1
+	  DstBlock		  "Expression1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "din"
+	  SrcPort		  1
+	  DstBlock		  "XAUI_1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Expression1"
+	  SrcPort		  1
+	  Points		  [130, 0; 0, 135]
+	  DstBlock		  "XAUI_1"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "oob"
+	  SrcPort		  1
+	  DstBlock		  "XAUI_1"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Inverter"
+	  SrcPort		  1
+	  DstBlock		  "Expression1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From2"
+	  SrcPort		  1
+	  DstBlock		  "Inverter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant25"
+	  SrcPort		  1
+	  DstBlock		  "XAUI_1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant22"
+	  SrcPort		  1
+	  DstBlock		  "XAUI_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "rx_linkdown"
+	  SrcPort		  1
+	  DstBlock		  "Terminator9"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "XAUI_1"
+	  SrcPort		  7
+	  DstBlock		  "Terminator8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "XAUI_1"
+	  SrcPort		  5
+	  Points		  [45, 0]
+	  Branch {
+	    Points		    [0, -20]
+	    DstBlock		    "Goto19"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 25]
+	    DstBlock		    "rx_linkdown"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "XAUI_1"
+	  SrcPort		  4
+	  DstBlock		  "Terminator6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "XAUI_1"
+	  SrcPort		  3
+	  DstBlock		  "Terminator2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "XAUI_1"
+	  SrcPort		  2
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "XAUI_1"
+	  SrcPort		  1
+	  DstBlock		  "Terminator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "XAUI_1"
+	  SrcPort		  6
+	  DstBlock		  "Terminator3"
+	  DstPort		  1
+	}
+      }
+    }
     Line {
       SrcBlock		      "Constant9"
       SrcPort		      1
@@ -73534,7 +73534,7 @@ Model {
       SrcPort		      3
       Points		      [10, 0]
       Branch {
-	DstBlock		"xaui0"
+	DstBlock		"xaui1"
 	DstPort			3
       }
       Branch {
@@ -73654,7 +73654,7 @@ Model {
     Line {
       SrcBlock		      "sync_demux2"
       SrcPort		      2
-      DstBlock		      "xaui0"
+      DstBlock		      "xaui1"
       DstPort		      2
     }
     Line {
@@ -73685,7 +73685,7 @@ Model {
       SrcBlock		      "adder"
       SrcPort		      1
       Points		      [25, 0; 0, -105]
-      DstBlock		      "xaui1"
+      DstBlock		      "xaui0"
       DstPort		      3
     }
     Line {
@@ -73697,7 +73697,7 @@ Model {
     Line {
       SrcBlock		      "BitBasher"
       SrcPort		      1
-      DstBlock		      "xaui1"
+      DstBlock		      "xaui0"
       DstPort		      2
     }
     Line {
@@ -73775,7 +73775,7 @@ Model {
     Line {
       SrcBlock		      "sync_demux2"
       SrcPort		      1
-      DstBlock		      "xaui0"
+      DstBlock		      "xaui1"
       DstPort		      1
     }
     Line {
@@ -74263,7 +74263,7 @@ Model {
     Line {
       SrcBlock		      "Delay2"
       SrcPort		      1
-      DstBlock		      "xaui1"
+      DstBlock		      "xaui0"
       DstPort		      1
     }
     Line {

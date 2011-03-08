@@ -1,11 +1,15 @@
-function fx=plot_delay_core_test(x0,x2,y0,y2)
-x=reshape([x0,x2].',1,[]);
-y=reshape([y0,y2].',1,[]);
-xx=x([1:2^15]+120);
-yy=y([1:2^15]+120);
-xx128=reshape(xx,128,[]);
-yy128=reshape(yy,128,[]);
-fx=fftshift(fxcorr(xx128,yy128));
+function fx=plot_delay_core_test_rvc(n0,n1,n2,n3,z0,z2,extra_latency)
+n=reshape([n0,n1,n2,n3].',1,[]);
+z=reshape([z0,z2].',1,[]);
+nn=n([1:2^16]+120-extra_latency);
+zz=z([1:2^15]+120);
+nn256=reshape(nn,256,[]);
+zz128=reshape(zz,128,[]);
+fn=fft(nn256);
+fn128=fn(1:128,:);
+fz=fft(zz128);
+fz128=circshift(fz,64);
+fx=sum(conj(fn128).*fz128,2);
 ph=angle(fx);
 subplot(2,1,1);
 plot(angle(fx)*180/pi,'-o');

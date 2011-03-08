@@ -44,7 +44,7 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "mdexter"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jan 11 16:06:45 2011"
+  LastModifiedDate	  "Tue Mar 08 13:58:32 2011"
   RTWModifiedTimeStamp	  0
   ModelVersionFormat	  "1.%<AutoIncrement:37>"
   ConfigurationManager	  "None"
@@ -548,6 +548,9 @@ Model {
       InitialOutput	      "[]"
     }
     Block {
+      BlockType		      Reference
+    }
+    Block {
       BlockType		      "S-Function"
       FunctionName	      "system"
       SFunctionModules	      "''"
@@ -788,12 +791,12 @@ Model {
 	BlockName		"BitBasher"
 	DialogParameters {
 	  sg_icon_stat		  "60,60,1,1,white,blue,0,aaed90eb,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([17 7 21 7 17 33 37 41 58 45 32 23 38 23 32 45 58 41 37 33 17 ],[6 16 30 44 54 54 50 54 54 41 54 45 30 15 6 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'delay');\ncolor('black');port_label('output',1,'coarse');\ncolor('black');port_label('output',2,'fine');\ncolor('black');port_label('output',3,'sub');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([17 7 21 7 17 33 37 41 58 45 32 23 38 23 32 45 58 41 37 33 17 ],[6 16 30 44 54 54 50 54 54 41 54 45 30 15 6 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'b');\ncolor('black');port_label('input',2,'c');\ncolor('black');port_label('output',1,'a');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"BitBasher1"
 	DialogParameters {
-	  sg_icon_stat		  "55,128,1,1,white,blue,0,0f604aa0,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 128 128 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[42 51 64 77 86 86 82 86 86 74 86 77 64 51 42 54 42 42 46 42 42 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 128 128 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'in0');\ncolor('black');port_label('input',2,'in1');\ncolor('black');port_label('input',3,'in2');\ncolor('black');port_label('input',4,'in3');\ncolor('black');port_label('output',1,'in');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "55,130,1,1,white,blue,0,0f604aa0,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 130 130 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[43 52 65 78 87 87 83 87 87 75 87 78 65 52 43 55 43 43 47 43 43 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 130 130 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'b');\ncolor('black');port_label('input',2,'c');\ncolor('black');port_label('output',1,'a');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"Delay1"
 	DialogParameters {
@@ -808,82 +811,37 @@ Model {
 	BlockName		"Delay3"
 	DialogParameters {
 	  sg_icon_stat		  "30,16,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"Delay4"
 	DialogParameters {
 	  sg_icon_stat		  "30,16,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"Delay5"
 	DialogParameters {
 	  sg_icon_stat		  "30,16,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"Delay6"
 	DialogParameters {
 	  sg_icon_stat		  "30,16,1,1,white,blue,0,fc531c0e,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
-	BlockName		"coarse_delay/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,f900bd06,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a - b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"coarse_delay/Constant"
-	DialogParameters {
-	  sg_icon_stat		  "15,14,1,1,white,blue,0,06094819,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'1');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"coarse_delay/Constant1"
-	DialogParameters {
-	  sg_icon_stat		  "15,14,1,1,white,blue,0,72d575a1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"coarse_delay/Constant2"
-	DialogParameters {
-	  sg_icon_stat		  "15,14,1,1,white,blue,0,72d575a1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"coarse_delay/Counter"
-	DialogParameters {
-	  sg_icon_stat		  "40,24,1,1,white,blue,0,a170c862,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([14 4 18 4 14 30 34 38 55 42 29 20 35 20 29 42 55 38 34 30 14 ],[6 16 30 44 54 54 50 54 54 41 54 45 30 15 6 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'out');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"coarse_delay/Dual Port RAM"
-	DialogParameters {
-	  sg_icon_stat		  "75,165,1,1,white,blue,0,f19ffcf5,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 75 75 0 ],[0 0 165 165 ],[0.77 0.82 0.91]);\npatch([17 5 23 5 17 37 42 47 68 51 35 23 40 23 35 51 68 47 42 37 17 ],[53 65 83 101 113 113 108 113 113 96 112 100 83 66 54 70 53 53 58 53 53 ],[0.98 0.96 0.92]);\nplot([0 75 75 0 0 ],[0 0 165 165 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addra');\ncolor('black');port_label('input',2,'dina');\ncolor('black');port_label('input',3,'wea');\ncolor('black');port_label('input',4,'addrb');\ncolor('black');port_label('input',5,'dinb');\ncolor('black');port_label('input',6,'web');\ncolor('black');port_label('output',1,'A');\ncolor('black');port_label('output',2,'B');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"fine_delay/BitBasher"
-	DialogParameters {
-	  sg_icon_stat		  "90,111,1,1,white,blue,0,6c2f908f,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([17 7 21 7 17 33 37 41 58 45 32 23 38 23 32 45 58 41 37 33 17 ],[6 16 30 44 54 54 50 54 54 41 54 45 30 15 6 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'abcd_in');\ncolor('black');port_label('input',2,'wxyz_in');\ncolor('black');port_label('output',1,'abcd');\ncolor('black');port_label('output',2,'zabc');\ncolor('black');port_label('output',3,'yzab');\ncolor('black');port_label('output',4,'xyza');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"fine_delay/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,26,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"fine_delay/Mux"
-	DialogParameters {
-	  sg_icon_stat		  "35,134,1,1,white,blue,3,4258e972,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 14.8571 89.1429 104 ],[0.77 0.82 0.91]);\npatch([10 3 14 3 10 22 25 28 41 31 21 14 25 14 21 31 41 28 25 22 10 ],[34 41 52 63 70 70 67 70 70 60 70 63 52 41 34 44 34 34 37 34 34 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 14.8571 89.1429 104 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');port_label('input',4,'d2');\ncolor('black');port_label('input',5,'d3');\ncolor('black');disp('\\bf{  z^{-1}}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
 	BlockName		"sub_delay/BitBasher"
 	DialogParameters {
 	  sg_icon_stat		  "60,56,1,1,white,blue,0,228db0d3,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([17 7 21 7 17 33 37 41 58 45 32 23 38 23 32 45 58 41 37 33 17 ],[6 16 30 44 54 54 50 54 54 41 54 45 30 15 6 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'fine');\ncolor('black');port_label('input',2,'sb_sel');\ncolor('black');port_label('output',1,'addr');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 65 65 0 ],[0 0 60 60 ],[0.77 0.82 0.91]);\npatch([17 7 21 7 17 33 37 41 58 45 32 23 38 23 32 45 58 41 37 33 17 ],[6 16 30 44 54 54 50 54 54 41 54 45 30 15 6 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 65 65 0 0 ],[0 0 60 60 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'b');\ncolor('black');port_label('input',2,'c');\ncolor('black');port_label('output',1,'a');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"sub_delay/Delay1"
 	DialogParameters {
-	  sg_icon_stat		  "30,16,1,1,white,blue,0,4edfc01c,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,16,1,1,white,blue,0,4c76d8d2,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"sub_delay/Delay2"
 	DialogParameters {
-	  sg_icon_stat		  "30,16,1,1,white,blue,0,4edfc01c,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-5}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "30,16,1,1,white,blue,0,4c76d8d2,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"sub_delay/phase_comp_lut"
 	DialogParameters {
@@ -893,32 +851,32 @@ Model {
 	BlockName		"sub_delay/qfdfir/AddSub"
 	DialogParameters {
 	  sg_icon_stat		  "45,118,1,1,white,blue,0,f900bd06,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a - b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"sub_delay/qfdfir/AddSub1"
 	DialogParameters {
 	  sg_icon_stat		  "45,118,1,1,white,blue,0,f900bd06,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a - b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"sub_delay/qfdfir/AddSub2"
 	DialogParameters {
 	  sg_icon_stat		  "45,118,1,1,white,blue,0,f900bd06,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a - b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"sub_delay/qfdfir/AddSub3"
 	DialogParameters {
 	  sg_icon_stat		  "45,118,1,1,white,blue,0,f900bd06,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a - b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"sub_delay/qfdfir/BitBasher"
 	DialogParameters {
-	  sg_icon_stat		  "70,67,1,1,white,blue,0,9681c9e0,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 70 70 0 ],[0 0 67 67 ],[0.77 0.82 0.91]);\npatch([17 6 22 6 17 35 40 45 64 49 35 25 41 25 35 49 64 45 40 35 17 ],[7 18 34 50 61 61 56 61 61 46 60 50 34 18 8 22 7 7 12 7 7 ],[0.98 0.96 0.92]);\nplot([0 70 70 0 0 ],[0 0 67 67 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'in');\ncolor('black');port_label('output',1,'re0');\ncolor('black');port_label('output',2,'im0');\ncolor('black');port_label('output',3,'re1');\ncolor('black');port_label('output',4,'im1');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_icon_stat		  "70,69,1,1,white,blue,0,9681c9e0,right"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 70 70 0 ],[0 0 69 69 ],[0.77 0.82 0.91]);\npatch([16 5 21 5 16 34 39 44 64 49 34 23 39 23 34 49 64 44 39 34 16 ],[7 18 34 50 61 61 56 61 61 46 61 50 34 18 7 22 7 7 12 7 7 ],[0.98 0.96 0.92]);\nplot([0 70 70 0 0 ],[0 0 69 69 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'b');\ncolor('black');port_label('input',2,'c');\ncolor('black');port_label('output',1,'a');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"sub_delay/qfdfir/Delay"
 	DialogParameters {
 	  sg_icon_stat		  "60,20,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"sub_delay/qfdfir/Delay1"
 	DialogParameters {
@@ -933,14 +891,9 @@ Model {
 	BlockName		"sub_delay/qfdfir/Delay11"
 	DialogParameters {
 	  sg_icon_stat		  "30,16,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/Delay2"
-	DialogParameters {
-	  sg_icon_stat		  "30,16,1,1,white,blue,0,fc531c0e,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
-	BlockName		"sub_delay/qfdfir/Delay3"
+	BlockName		"sub_delay/qfdfir/Delay2"
 	DialogParameters {
 	  sg_icon_stat		  "30,16,1,1,white,blue,0,fc531c0e,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
@@ -953,1182 +906,32 @@ Model {
 	BlockName		"sub_delay/qfdfir/Delay5"
 	DialogParameters {
 	  sg_icon_stat		  "30,16,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"sub_delay/qfdfir/Delay6"
 	DialogParameters {
-	  sg_icon_stat		  "60,20,1,1,white,blue,0,c2217bc4,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-4}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/Delay8"
-	DialogParameters {
-	  sg_icon_stat		  "30,16,1,1,white,blue,0,fc531c0e,right"
+	  sg_icon_stat		  "60,20,1,1,white,blue,0,4c76d8d2,right"
 	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"sub_delay/qfdfir/Mux"
 	DialogParameters {
 	  sg_icon_stat		  "25,100,1,1,white,blue,3,03f9c9b9,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 14.8571 89.1429 104 ],[0.77 0.82 0.91]);\npatch([10 3 14 3 10 22 25 28 41 31 21 14 25 14 21 31 41 28 25 22 10 ],[34 41 52 63 70 70 67 70 70 60 70 63 52 41 34 44 34 34 37 34 34 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 14.8571 89.1429 104 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');disp('\\bf{  z^{-1}}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 14.8571 89.1429 104 ],[0.77 0.82 0.91]);\npatch([10 3 14 3 10 22 25 28 41 31 21 14 25 14 21 31 41 28 25 22 10 ],[34 41 52 63 70 70 67 70 70 60 70 63 52 41 34 44 34 34 37 34 34 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 14.8571 89.1429 104 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');disp('\\bf{}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"sub_delay/qfdfir/Mux1"
 	DialogParameters {
 	  sg_icon_stat		  "25,100,1,1,white,blue,3,03f9c9b9,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 14.8571 89.1429 104 ],[0.77 0.82 0.91]);\npatch([10 3 14 3 10 22 25 28 41 31 21 14 25 14 21 31 41 28 25 22 10 ],[34 41 52 63 70 70 67 70 70 60 70 63 52 41 34 44 34 34 37 34 34 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 14.8571 89.1429 104 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');disp('\\bf{  z^{-1}}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 45 45 0 ],[0 14.8571 89.1429 104 ],[0.77 0.82 0.91]);\npatch([10 3 14 3 10 22 25 28 41 31 21 14 25 14 21 31 41 28 25 22 10 ],[34 41 52 63 70 70 67 70 70 60 70 63 52 41 34 44 34 34 37 34 34 ],[0.98 0.96 0.92]);\nplot([0 45 45 0 0 ],[0 14.8571 89.1429 104 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'sel');\ncolor('black');port_label('input',2,'d0');\ncolor('black');port_label('input',3,'d1');\ncolor('black');disp('\\bf{}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"sub_delay/qfdfir/Negate"
 	DialogParameters {
 	  sg_icon_stat		  "50,20,1,1,white,blue,0,3a1ba0d1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\bf{x(-1)  z^{-1}}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\bf{x(-1)}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
 	BlockName		"sub_delay/qfdfir/Negate1"
 	DialogParameters {
 	  sg_icon_stat		  "50,20,1,1,white,blue,0,3a1ba0d1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\bf{x(-1)  z^{-1}}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,16,1,1,white,blue,0,fc531c0e,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h0"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h1"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h10"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h11"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h12"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h13"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h14"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h15"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h16"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h17"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h18"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h19"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h2"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h3"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h4"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h5"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h6"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h7"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h8"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/fdcoefs/h9"
-	DialogParameters {
-	  sg_icon_stat		  "80,18,1,1,white,blue,0,a8b86474,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'addr');\ncolor('black');disp('z^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/Constant"
-	DialogParameters {
-	  sg_icon_stat		  "15,14,1,1,white,blue,0,72d575a1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap1/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap1/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap1/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap1/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap1/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap2/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap2/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap2/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap2/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap2/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap3/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap3/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap3/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap3/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap3/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap4/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap4/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap4/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap4/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap4/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap5/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap5/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap5/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap5/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_1_4_N/qfdsubfir/fir_tap5/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/Constant"
-	DialogParameters {
-	  sg_icon_stat		  "15,14,1,1,white,blue,0,72d575a1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap1/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap1/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap1/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap1/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap1/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap2/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap2/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap2/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap2/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap2/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap3/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap3/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap3/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap3/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap3/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap4/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap4/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap4/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap4/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap4/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap5/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap5/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap5/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap5/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im0*h_3_4_N/qfdsubfir/fir_tap5/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/Constant"
-	DialogParameters {
-	  sg_icon_stat		  "15,14,1,1,white,blue,0,72d575a1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap1/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap1/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap1/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap1/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap1/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap2/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap2/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap2/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap2/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap2/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap3/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap3/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap3/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap3/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap3/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap4/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap4/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap4/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap4/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap4/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap5/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap5/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap5/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap5/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_1_4_N/qfdsubfir/fir_tap5/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/Constant"
-	DialogParameters {
-	  sg_icon_stat		  "15,14,1,1,white,blue,0,72d575a1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap1/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap1/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap1/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap1/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap1/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap2/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap2/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap2/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap2/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap2/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap3/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap3/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap3/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap3/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap3/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap4/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap4/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap4/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap4/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap4/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap5/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap5/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap5/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap5/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/im1*h_3_4_N/qfdsubfir/fir_tap5/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/Constant"
-	DialogParameters {
-	  sg_icon_stat		  "15,14,1,1,white,blue,0,72d575a1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap1/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap1/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap1/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap1/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap1/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap2/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap2/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap2/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap2/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap2/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap3/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap3/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap3/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap3/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap3/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap4/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap4/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap4/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap4/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap4/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap5/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap5/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap5/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap5/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_0_4_N/qfdsubfir/fir_tap5/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/Constant"
-	DialogParameters {
-	  sg_icon_stat		  "15,14,1,1,white,blue,0,72d575a1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap1/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap1/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap1/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap1/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap1/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap2/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap2/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap2/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap2/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap2/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap3/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap3/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap3/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap3/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap3/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap4/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap4/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap4/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap4/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap4/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap5/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap5/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap5/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap5/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re0*h_2_4_N/qfdsubfir/fir_tap5/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/Constant"
-	DialogParameters {
-	  sg_icon_stat		  "15,14,1,1,white,blue,0,72d575a1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap1/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap1/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap1/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap1/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap1/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap2/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap2/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap2/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap2/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap2/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap3/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap3/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap3/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap3/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap3/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap4/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap4/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap4/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap4/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap4/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap5/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap5/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap5/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap5/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_0_4_N/qfdsubfir/fir_tap5/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/Constant"
-	DialogParameters {
-	  sg_icon_stat		  "15,14,1,1,white,blue,0,72d575a1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 26 26 ],[0.77 0.82 0.91]);\npatch([20 16 22 16 20 27 29 31 38 32 26 22 28 22 26 32 38 31 29 27 20 ],[3 7 13 19 23 23 21 23 23 17 23 19 13 7 3 9 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 26 26 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('output',1,'0');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap1/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap1/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap1/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap1/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap1/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap2/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap2/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap2/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap2/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap2/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap3/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap3/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap3/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap3/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap3/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap4/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap4/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap4/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap4/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap4/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap5/AddSub"
-	DialogParameters {
-	  sg_icon_stat		  "60,58,1,1,white,blue,0,d7118884,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 58 58 ],[0.77 0.82 0.91]);\npatch([15 5 19 5 15 30 34 38 54 41 29 20 34 20 29 41 54 38 34 30 15 ],[6 16 30 44 54 54 50 54 54 41 53 44 30 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 58 58 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'\\bf{a + b}','texmode','on');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-1}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap5/Delay"
-	DialogParameters {
-	  sg_icon_stat		  "60,24,1,1,white,blue,0,0a7a6cf1,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([15 6 19 6 15 30 34 38 54 41 29 20 32 20 29 41 54 38 34 30 15 ],[6 15 28 41 50 50 46 50 50 37 49 40 28 16 7 19 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 60 60 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('z^{-2}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap5/Mult"
-	DialogParameters {
-	  sg_icon_stat		  "55,78,1,1,white,blue,0,9c0d74db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 55 55 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 55 55 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'a');\ncolor('black');port_label('input',2,'b');\ncolor('black');port_label('output',1,'(ab)');\ncolor('black');disp('\\newline\\bf{}\\newlinez^{-3}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap5/Reinterpret"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
-	}
-	BlockName		"sub_delay/qfdfir/re1*h_2_4_N/qfdsubfir/fir_tap5/Reinterpret1"
-	DialogParameters {
-	  sg_icon_stat		  "55,16,1,1,white,blue,0,8982c1db,right"
-	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 50 50 0 ],[0 0 32 32 ],[0.77 0.82 0.91]);\npatch([16 11 18 11 16 24 26 28 37 30 23 18 25 18 23 30 37 28 26 24 16 ],[3 8 15 22 27 27 25 27 27 20 27 22 15 8 3 10 3 3 5 3 3 ],[0.98 0.96 0.92]);\nplot([0 50 50 0 0 ],[0 0 32 32 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('reinterpret');\nfprintf('','COMMENT: end icon text');\n"
+	  sg_mask_display	  "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 ],[0 0 56 56 ],[0.77 0.82 0.91]);\npatch([13 4 17 4 13 28 32 36 52 40 28 19 32 19 28 40 52 36 32 28 13 ],[6 15 28 41 50 50 46 50 50 38 50 41 28 15 6 18 6 6 10 6 6 ],[0.98 0.96 0.92]);\nplot([0 55 55 0 0 ],[0 0 56 56 0 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');disp('\\bf{x(-1)}','texmode','on');\nfprintf('','COMMENT: end icon text');\n"
 	}
       }
       SourceBlock	      "beamform/delay_core"

@@ -105,7 +105,7 @@ A publicly visible mirror is available using this URL:
 
 \section{ibob\_phased\_array\_2k}
 
-This section documents the ibob\_phased\_array\_2k\_2011\_Feb\_23\_0158 design.
+This section documents the ibob\_phased\_array\_2k\_2011\_Mar\_10\_1856 design.
 
 In addition to synchronizing internal timing signals with external timing
 signals.  The ibob\_phased\_array\_2k design has a few critical registers that
@@ -515,7 +515,7 @@ tables are stored in unrolled form.
 
 \begin{description}
 
-\rwreg {walsh/syncsel} This register is used to select the timing of the Walsh functions.
+\rwreg{walsh/syncsel} This register is used to select the timing of the Walsh functions.
 
 \vspace{2\parskip}
 \begin{bytefield}{32}
@@ -547,6 +547,39 @@ of the Walsh tables to use for each input.
 Each input is controlled by one byte of this register.  Input~0 uses the \LSB
 of this register.  Only the five \LSbs of each byte are used to select
 columns~0 through 31.  Column~0 is the \MSb of the 32~bit Walsh table entries.
+
+\rwreg{walsh/sign90}
+The \LSb of the \verb|walsh/sign90| register specifies the sign of 90 degree phase
+switch in the upper sideband.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize s90}}
+\end{bytefield}
+
+The signal and its 90 degree phase switching may be conjugated multiple times
+before the 90 degree phase switching gets undone (for the sky upper sideband)
+in the phase rotator.  The conjugations are caused by lower sideband
+downconversions, including sampling the second (or any even) Nyquist zone and
+setting \verb|sbsel=1|, both of which are essentially lower sideband down
+conversions.  If the total number of conjugations is odd, then the final signal
+and its 90 degree phase switching will be conjugated, which will require
+rotating the phase in the opposite direction as compared to the original,
+non-conjugated signal.
+
+\begin{description}
+\item[0] The analog 90 degree phase switching is assumed to be a +90 degree
+         phase rotation in the USB and a -90 degree phase rotation in the LSB.
+         The complex signal is phase rotated by -90 degrees, which rotates the
+         USB to 0 degrees and the LSB to 180 degrees.
+
+\item[1] The analog 90 degree phase switching is assumed to be a -90 degree
+         phase rotation in the USB and a +90 degree phase rotation in the LSB.
+         The complex signal is phase rotated by +90 degrees, which rotates the
+         USB to 0 degrees and the LSB to 180 degrees.
+\end{description}
 
 \bramn{walsh/table/90} \brams{walsh/table/180} These shared block RAMs must be
 programmed with the unrolled Walsh tables.  Each table (i.e. BRAM) is 2048

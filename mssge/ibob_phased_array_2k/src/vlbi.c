@@ -157,17 +157,17 @@ void bramload_cmd(int argc, char** argv)
 	switch(find_core(name,xps_bram,&corep)) {
 		case CORE_WRONG_TYPE:
 			xil_printf("Core '%s' is not a bram\n\r",name);
-			break;
+			return;
 		case CORE_NOT_FOUND:
 			xil_printf("Core '%s' not found\n\r",name);
-			break;
+			return;
 		case CORE_OK:
 			word_size = tinysh_atoxi(corep->params);
 
 			if (address >= word_size) {
 				xil_printf("The specified address is outside of the BRAM\n\r");
 			}
-			break;
+			return;
 	}
 
   // Read in word_count values
@@ -217,4 +217,62 @@ void bramload_cmd(int argc, char** argv)
   }
 
   xil_printf("Loaded %d values at %d (0x%08x)\n\r", loaded, address_start, address_start);
+}
+
+void loadlut_cmd(int argc, char** argv)
+/* command = "loadlut" */
+/* help    = "load linear values into a LUT" */
+/* params  = "<bram name> <address> <value> <step> <count>" */
+{
+	char *name;
+	core * corep = NULL;
+	Xuint32 address;
+	Xuint32 value;
+	Xuint32 step;
+	Xuint32 count;
+	Xuint32 size;
+
+	if(argc != 6) {
+		xil_printf("Wrong number of arguments\n\r");
+		return;
+	}
+
+  name = argv[1];
+	address = tinysh_atoxi(argv[2]);
+	value = tinysh_atoxi(argv[3]);
+	step = tinysh_atoxi(argv[4]);
+	count = tinysh_atoxi(argv[5]);
+
+  // Find core
+	switch(find_core(name,xps_bram,&corep)) {
+		case CORE_WRONG_TYPE:
+			xil_printf("Core '%s' is not a bram\n\r",name);
+			return;
+		case CORE_NOT_FOUND:
+			xil_printf("Core '%s' not found\n\r",name);
+			return;
+	}
+
+  // Get size
+  size = tinysh_atoxi(corep->params);
+
+  // Limit count to size of core
+  if(count > size) {
+			count = size;
+  }
+
+  // Ensure address starts out in range
+  address %= size;
+
+  for(; count > 0; count--)
+  {
+    // Write value to BRAM
+    sif_bram_write(corep->address, address, value);
+
+    address++;
+    if(address >= size) {
+      address = 0;
+    }
+    value += step;
+  }
 }

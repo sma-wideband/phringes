@@ -222,7 +222,7 @@ void bramload_cmd(int argc, char** argv)
 void loadlut_cmd(int argc, char** argv)
 /* command = "loadlut" */
 /* help    = "load linear values into a LUT" */
-/* params  = "<bram name> <address> <value> <step> <count>" */
+/* params  = "<bram name> <address> <value> <step> <count> <shift>" */
 {
 	char *name;
 	core * corep = NULL;
@@ -230,9 +230,10 @@ void loadlut_cmd(int argc, char** argv)
 	Xuint32 value;
 	Xuint32 step;
 	Xuint32 count;
+  Xuint32 shift;
 	Xuint32 size;
 
-	if(argc != 6) {
+	if(argc != 7) {
 		xil_printf("Wrong number of arguments\n\r");
 		return;
 	}
@@ -242,6 +243,7 @@ void loadlut_cmd(int argc, char** argv)
 	value = tinysh_atoxi(argv[3]);
 	step = tinysh_atoxi(argv[4]);
 	count = tinysh_atoxi(argv[5]);
+	shift = tinysh_atoxi(argv[6]);
 
   // Find core
 	switch(find_core(name,xps_bram,&corep)) {
@@ -267,7 +269,7 @@ void loadlut_cmd(int argc, char** argv)
   for(; count > 0; count--)
   {
     // Write value to BRAM
-    sif_bram_write(corep->address, address, value);
+    sif_bram_write(corep->address, address, value >> shift);
 
     address++;
     if(address >= size) {

@@ -166,8 +166,8 @@ void bramload_cmd(int argc, char** argv)
 
 			if (address >= word_size) {
 				xil_printf("The specified address is outside of the BRAM\n\r");
+        return;
 			}
-			return;
 	}
 
   // Read in word_count values

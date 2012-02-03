@@ -808,9 +808,16 @@ calibration correlator and the DBE.  Before being sent to the DBE, the four
 Before the sum each input signal is multiplied by a gain factor.  This gain
 factor is intended to weight the inputs according to system temperature, but
 thus far they have been used only to scale all inputs equally or to zero out an
-input to exclude it from the sum.  The sum can be scaled by~$\frac{1}{2}$
-or~$\frac{1}{4}$ (see the \verb|summer/shift| register) before rounding to
-8~bits prevent to overflow.
+input to exclude it from the sum.
+
+The sum is scaled by~$\frac{1}{2}$ or~$\frac{1}{4}$ (see the
+\verb|adder/shift| register) and then rounded to 8~bits before being sent over
+the XAUI links to the Digital Back End (DBE).  The unbiased rounding mode known
+as "round-to-even" is used.  Scaling by~$\frac{1}{2}$ and rounding to even will
+result in three times as many even values as odd values, assuming the \LSb is
+uniformly distributed.  Scaling by~$\frac{1}{4}$ and rounding to even will
+result in~$\frac{5}{3}$ times as many even values as odd values, assuming the
+two \LSbs are uniformly distributed.
 
 \begin{description}
 
@@ -843,7 +850,9 @@ before re-quantizing to 8~bits.
 
 Set this to~0 to scale the sum by~$\frac{1}{2}$ (e.g. for independent noise
 dominated inputs).  Set this to~1 to scale the sum by~$\frac{1}{4}$ (e.g. for
-coherent inputs).
+coherent inputs).  The current gateware is setup to wrap instead of saturate
+when scaling by~$\frac{1}{4}$.  Future gateware versions may change this
+arguably erroneous behavior. 
 
 \end{description}
 

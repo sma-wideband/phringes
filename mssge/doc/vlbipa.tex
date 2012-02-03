@@ -70,6 +70,7 @@
 \newcommand{\bram}[1]{\devitem{#1}{Block RAM}}
 \newcommand{\bramn}[1]{\item[#1] {} \tighten} % For "stacked" brams
 \newcommand{\brams}[1]{\devitem{#1}{Block RAM} \loosen} % Ends stacked brams
+\newcommand{\tinysh}[1]{\devitem{#1}{TinySh Command}}
 \newcommand{\degree}[1]{$#1^{\circ}$}
 \newcommand{\e}[1]{\ensuremath{\times 10^{#1}}}
 
@@ -77,6 +78,9 @@
 Describes the registers and devices in the various iBob and BEE2 designs used
 in the VLBI phased array processor for CARMA and SMA.
 \end{abstract}
+
+%\tableofcontents
+%\newpage
 
 \section{Gateware Versions}
 
@@ -90,22 +94,21 @@ data comprise the complex epoch.
 Within each epoch, registers and devices have been added, removed, and renamed.
 Instead of attempting to describe all revisions of the gateware, this document
 only describes specific versions of the gateware as noted in each section.  The
-complete history for the various designs are in a Git repository.  The official
-Git repository is only available via (non-public) ssh using this URL:
+complete history for the various designs are in a Git repository.  The
+Git repository is available using one of these URLs:
 
 \begin{center}
-\nolinkurl{git@vlbi-devel.cfa.harvard.edu:phringes.git}
+\nolinkurl{git://github.com/sma-wideband/phringes.git}
 \end{center}
-
-A publicly visible mirror is available using this URL:
 
 \begin{center}
-\url{http://astro.berkeley.edu/~davidm/phringes.git}
+\nolinkurl{http://astro.berkeley.edu/~davidm/phringes.git}
 \end{center}
 
-\section{ibob\_phased\_array\_2k}
+\newpage
+\section{iBob Phased Array}
 
-This section documents the ibob\_phased\_array\_2k\_2011\_Mar\_10\_1856 design.
+This section documents the ibob\_phased\_array\_2k\_2012\_Feb\_02\_1601 design.
 
 In addition to synchronizing internal timing signals with external timing
 signals.  The ibob\_phased\_array\_2k design has a few critical registers that
@@ -113,8 +116,6 @@ must be set to non-zero values for proper operation.  These registers are
 briefly listed here; full details are provided below.
 
 \begin{description}
-\rwreg{start\_xaui} Must be 1 to enable XAUI transmission as well as the clock
-output for the BEE2 calibration correlator.
 \rwregs{gain0 - gain3} At least one gain register must be non-zero to get
 non-zero output through to the DBE.
 \end{description}
@@ -374,12 +375,15 @@ that has a lag-2 correlation coefficient of 1 resulting in a non-flat spectrum.
 
   \subsection{Delay Core}
 
-The Delay Core consists of a coarse delay (in units of FPGA clock cycles), a
-fine delay (in units of ADC sample clock cycles), and a sub-sample delay (in
-units of 1/16 an ADC sample clock cycle).  The sub-sample delay is implemented
+The Delay Core delays the input signal and converts it from real to complex
+representation.  The delay can range from $0$ to $8191\frac{15}{16}$ samples in
+increments of $\frac{1}{16}$ of a sample.  The delay is implemented as a
+combination of coarse delay (in units of FPGA clock cycles), fine delay (in
+units of ADC sample clock cycles), and sub-sample delay (in units of
+$\frac{1}{16}$ an ADC sample clock cycle).  The sub-sample delay is implemented
 using a quadrature fractional delay FIR filter that not only does sub sample
-delay, but also converts the signal to complex form.  Converting to complex
-form involves mixing by a local oscillator at $\pm F_s/4$.  The sign of the LO
+delay, but also the conversion to complex form.  Converting to complex form
+involves mixing by a local oscillator at $\pm F_s/4$.  The sign of the LO
 frequency is user selectable and determines whether the Delay Core's complex
 output will consist of the positive or negative frequencies of the real input.
 Selecting the negative frequencies will result in a frequency reversal and
@@ -391,8 +395,10 @@ for more details.
 \rwregn{delay0}
 \rwregn{delay1}
 \rwregn{delay2}
-\rwregs{delay3} The 17 \LSbs of these registers specify the overall delay to be
-applied to by each input's Delay Core.
+\rwregs{delay3} The 17 \LSbs of these registers specify the "constant" (i.e.
+rarely changing) delay to be applied by each input's Delay Core.  The overall
+delay that is applied may optionally include an additional time-varying delay
+from the delay LUTs (see section TODO).
 
 \vspace{2\parskip}
 \begin{bytefield}{32}
@@ -463,8 +469,12 @@ described in a separate subsection.
 \rwregn{phase0}
 \rwregn{phase1}
 \rwregn{phase2}
-\rwregs{phase3} These registers specify the amount of user-specified phase
-rotation to be applied to each input's complex signal.
+\rwregs{phase3} These registers specify the amount of user-specified "constant"
+(i.e. rarely changing) phase rotation to be applied to each input's complex
+signal.  The overall phase offset that is applied may optionally include an
+additional time-varying phase offset from the phase LUTs (see section TODO).
+These phase offsets are independent phase switching, which is handled
+separately (see section TODO).
 
 \vspace{2\parskip}
 \begin{bytefield}{32}
@@ -581,11 +591,12 @@ non-conjugated signal.
          USB to 0 degrees and the LSB to 180 degrees.
 \end{description}
 
-\bramn{walsh/table/90} \brams{walsh/table/180} These shared block RAMs must be
-programmed with the unrolled Walsh tables.  Each table (i.e. BRAM) is 2048
-entries long.  Each entry is 32~bit wide.  Each bit position corresponds to a
-column of a Walsh table.  The \MSb of each 32-bit entry corresponds to column~0
-of the (up to) 32~column Walsh table.
+\bramn{walsh/table/90}
+\brams{walsh/table/180} These shared block RAMs must be programmed with the
+unrolled Walsh tables.  Each table (i.e. BRAM) is 2048 entries long.  Each
+entry is 32~bit wide.  Each bit position corresponds to a column of a Walsh
+table.  The \MSb of each 32-bit entry corresponds to column~0 of the (up to)
+32~column Walsh table.
 
 \vspace{2\parskip}
 \begin{bytefield}{32}
@@ -615,6 +626,137 @@ for CARMA, 64 for SMA).
 
 \end{description}
 
+  \subsection{Look-Up Tables}
+
+The delay and phase offsets required to properly sum the signals together
+change over time.  Often these changes must be applied more frequently and with
+greater timing precision (e.g. on 0/180 degree phase switch boundaries) than is
+possible over the limited interface of the iBobs.  To address this problem, the
+design provides both delay and phase lookup tables (LUTs) which are stepped
+through at a predetermined rate to provide precisely timed delay and phase
+tracking.  The use of these LUTs is optional.  A custom command,
+\verb|loadlut|, has been added to the iBob interface to facilitate rapid
+pre-population of the delay and phase lookup tables, thereby avoiding the
+interface performance limitations of the iBob.  The outputs of the LUTs are
+registered on every address increment so changing the value of the currently
+addressed LUT location will not change the current overall delay or phase
+offset.
+
+
+\begin{description}
+
+\rwreg{lut/arm} A rising edge of the \LSb of this register synchronizes the LUT
+address counter with the start of the next Walsh cycle.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize arm}} &
+\end{bytefield}
+
+The delay and phase LUTs are addressed by a common counter that increments
+after every 32 (CARMA) or 64 (SMA) Walsh states, depending on the setting of
+the \verb|walsh/syncsel| register.  The LUT address counter is synchronized
+with the start of the next complete Walsh cycle after a rising edge of the \LSb
+of the \verb|lut/arm| register.  Knowing the absolute time of LUT address
+synchronization and the rate at which the LUT address increments, the
+controlling software can compute the LUT addresses at which to store upcoming
+delay and phase tracking values.
+
+\roreg{lut/addr} The current value of the 11-bit LUT address counter.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{21}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{11}{LUT address} &
+\end{bytefield}
+
+\filbreak
+\rwreg{lut/enable} Controls whether the LUT output values are included in the
+overall delay and phase offsets applied to the input signals.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize en}} &
+\end{bytefield}
+
+When the \LSb of this register is set to 1, the LUT values will be added to
+the corresponding \verb|delayN| and \verb|phaseN| offsets applied to the input
+signals, otherwise they will not be added.  Note that the LUT address counter
+always increments regardless of whether the LUT outputs are enabled.
+
+\bramn{lut/delay/0}
+\bramn{lut/delay/1}
+\bramn{lut/delay/2}
+\brams{lut/delay/3} These shared block RAMs contain the delay LUT values for
+each of the four inputs.  Each LUT is 2048 entries long.  The 18 \LSbs of each
+32-bit entry is treated as a two's complement value with four fractional bits
+providing a delay LUT offset ranging from $-8192\frac{0}{16}$ to
+$+8191\frac{15}{16}$~ADC~samples.  This allows one to set the "constant"
+\verb|delayN| offset registers to a midrange value and then use the delay LUTs
+to go plus or minus the midrange values.  When \verb|lut/enable| is 1, the
+overall delay (in units of $\frac{1}{16}$ of an ADC sample) is given by
+\begin{equation*}
+\mathtt{delay}N + \mathtt{lut\_delay\_}N\mathtt{[lut\_addr]} \pmod{2^{17}}
+\end{equation*}
+The result will always be treated as a positive value, so care must be taken to
+avoid unintended overflow/wrapping of the 17-bit unsigned input range of the
+Delay Core.
+
+\bramn{lut/phase/0}
+\bramn{lut/phase/1}
+\bramn{lut/phase/2}
+\brams{lut/phase/3} These shared block RAMs contain the phase LUT values for
+each of the four inputs.  Each LUT is 2048 entries long.  The 12 \LSbs of each
+32-bit entry is treated as an unsigned phase value in units of $\frac{2
+\pi}{2^{12}}$~radians.  When \verb|lut/enable| is 1, the overall phase offset,
+in units of $\frac{2 \pi}{2^{12}}$ radians, is given by
+\begin{equation*}
+\mathtt{phase}N + \mathtt{lut\_phase\_}N\mathtt{[lut\_addr]} \pmod{2^{12}}
+\end{equation*}
+
+\filbreak
+\tinysh{loadlut} Over time intervals of a minute or less, the delay and phase
+variations that remain in the sampled IF signal can be approximated with
+negligible error by a linear function.  The \verb|loadlut| command can be used
+to pre-populate a range of consecutive locations within the delay and phase
+LUTs with such a linear function.  The syntax of the \verb|loadlut| command is:
+\begin{verbatim}
+loadlut LUT_NAME START_ADDR START_VALUE STEP COUNT SHIFT
+\end{verbatim}
+Where:
+\begin{description}
+\item[$\mathtt{LUT\_NAME}$] is the name of the LUT to load (e.g.
+\verb|lut/delay/0|).
+\item[$\mathtt{START\_ADDR}$] is the address at which the first value will be
+stored.
+\item[$\mathtt{START\_VALUE}$] is the first value to be stored.
+\item[$\mathtt{STEP}$] is the increment between each successive value.
+\item[$\mathtt{COUNT}$] is the total number of values to store.
+\item[$\mathtt{SHIFT}$] is the number of bits to right shift the value before
+storing.
+\end{description}
+
+The LUT addresses are always treated modulo the LUT size.  This "wrap around"
+behavior simplifies pre-populating a series of LUT entries that would otherwise
+overrun the end of the LUT.
+
+The \verb|SHIFT| parameter allows \verb|START_VALUE| and \verb|STEP| to be
+given with higher precision than that of the LUT itself.
+
+The values and locations at which they are stored are given by
+\begin{equation*}
+\mathtt{LUT\_NAME}[(\mathtt{START\_ADDR} + n) \% 2048]
+= (\mathtt{START\_VALUE} + n \cdot \mathtt{STEP}) \gg \mathtt{SHIFT} 
+\end{equation*}
+where $n$ ranges from 0 to $\mathtt{COUNT}-1$.
+
+\end{description}
+
   \subsection{2-Bit Data Path}
 
 After the Delay Core and Phase Rotation, the signals are sent to the
@@ -629,7 +771,8 @@ four distinct values: -3, -1, +1, +3.
 \rwregn{quant/thresh1}
 \rwregn{quant/thresh2}
 \rwregs{quant/thresh3}  These registers set the thresholding level used for
-quantizing each input to 2~bits.
+quantizing each input to 2~bits.  When using the digital noise sources, 16 is a
+suitable value.  For CARMA IFs, 22 is a suitable value.
 
 \vspace{2\parskip}
 \begin{bytefield}{32}
@@ -688,7 +831,7 @@ number with 7 fractional bits.  Thus, the range of gain values that can be
 applied to each input is~$0$ to~$1\frac{127}{128}$.
 
 \filbreak
-\rwreg{summer/shift} This register select the scaling factor applied to the sum
+\rwreg{adder/shift} This register select the scaling factor applied to the sum
 before re-quantizing to 8~bits.
 
 \vspace{2\parskip}
@@ -708,29 +851,23 @@ coherent inputs).
 
 The sum of the phased inputs is sent to the DBE via the XAUI0 connector.  The
 2-bit quantized inputs are sent to the calibration correlator via the XAUI1
-connector.  XAUI data transmission is \emph{dis}abled by default and must be
-explicitly enabled via software (see below).
+connector.  XAUI data transmission is always enabled whenever the corresponding
+XAUI link is up.
 
 \begin{description}
 
-\rwreg{start\_xaui} This register controls transmission over the XAUI links.
+\rwreg{start\_xaui} This register is deprecated.  It used to control
+transmission over the XAUI links and generation of the clock that is sent to
+the BEE2 calibration correlator.  These functions are now enabled
+automatically.  They do not require, and function better without, user
+intervention.  This register exists solely to maintain backwards compatibility
+with existing software.
 
 \vspace{2\parskip}
 \begin{bytefield}{32}
   \bitheader[b]{0-31} \\
-  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
-  \bitbox{1}{\rotatebox{90}{\scriptsize stx}}
+  \bitbox{32}{\color[gray]{0.75}\rule{\width}{\height}} &
 \end{bytefield}
-
-Writing a 1 to this register enables a divide-by-2 counter that drives the BEE2
-calibration correlator's \verb|usr2_clk| input and the two XAUI links' data
-valid inputs (data is de-muxed by two for XAUI transmission) thereby enabling
-transmission over the XAUI links.
-
-Writing a 0 (the default) disables, and holds in reset, the divide-by-two
-counter that drives the BEE2 calibration correlator's \verb|usr2_clk| input and
-the two XAUI links' data valid inputs (data is de-muxed by two for XAUI
-transmission).
 
 \roregn{xaui\_0/rx\_linkdown}
 \roregs{xaui\_1/rx\_linkdown} A value of 1 indicates a ``link down'' status on
@@ -762,8 +899,7 @@ connector.
 
 \begin{description}
 
-\item[0] Outputs a 128~MHz square wave (50\% duty cycle) if XAUI output is
-enabled (i.e. register \verb|start_xaui| is 1), otherwise a constant 0.
+\item[0] Outputs a 128~MHz square wave (50\% duty cycle).
 
 \item[1] Outputs a constant 0.
 
@@ -815,7 +951,7 @@ connector.
 \end{description}
 
 \newpage
-\section{bee2\_complex\_corr}
+\section{BEE2 Calibration Correlator}
 
 This section documents the bee2\_complex\_corr\_floating\_2011\_Feb\_17\_2045
 design.
@@ -868,7 +1004,7 @@ highly correlated signals such as the lag~0 auto-correlation or coherent noise
 sources.  Inputs dominated by independent noise (e.g. astronomical cross
 correlations) have far higher maximum integration times.
 
-\subsection{XAUI alignment and monitoring}
+\subsection{XAUI Alignment and Monitoring}
 
 The alignment of the two incoming XAUI streams is critical to achieving proper
 correlation.  The design will automatically align the two XAUI streams and, if
@@ -1130,7 +1266,7 @@ snapshot sequence is enabled, the data capture will begin immediately if bit~1
 (trg) is 0.
 
 \roreg{snap/addr} During data capture, this register provides the address
-withing the shared BRAMs to which the data are being written.
+within the shared BRAMs to which the data are being written.
 
 \vspace{2\parskip}
 \begin{bytefield}{32}
@@ -1147,7 +1283,7 @@ this register).
 
 \filbreak
 \bramn{snap/in0123}
-\brams{snap/in4567} These shared BRAMs hold the snap shot data.  Each BRAM is
+\brams{snap/in4567} These shared BRAMs hold the snapshot data.  Each BRAM is
 2048 words deep and stores data for the four inputs implied by its name.
 Within a BRAM, each 32~bit word stores two complex samples for all four inputs.
 The \MSB holds two complex samples of the BRAM's lowest numbered input; the
@@ -1181,15 +1317,99 @@ is similar).
 
 \end{description}
 
-\section{dbe\_xaui\_corr}
+\newpage
+\section{XAUI-based Digital Back End (DBE)}
 
-The dbe\_xaui\_corr design receives two signals (i.e. streams of data) from two
-different iBobs via XAUI.  It must time-align these two incoming signals, sum
-them, and then process and format the final summed signal for recording to the
-Mark 5 data recorder.  The design also contains a digital noise generator that
-can be used in place of the final sum for engineering purposes.
+This section documents the dbe\_xaui\_corr\_2012\_Feb\_02\_2334 design.
 
-\subsection{XAUI alignment and monitoring}
+The dbe\_xaui\_corr design receives two phased sums of four inputs each (aka
+partial sums) from two different iBob Phased Array Processors via XAUI.  It
+time-aligns these two incoming signals, sums them (producing the final sum),
+and then processes/formats the summed signal for recording to the VLBI data
+recorder via the iBob's front panel VSI connector.
+
+The design also provides a number of additional features to facilitate system
+verification and other engineering purposes.  Most notable among the additional
+features are:
+
+\begin{itemize}
+\item Single ADC input for a so-called "comparison antenna" with optional
+fringe tracking
+\item Digial noise source compatible with the ones in the iBob Phased Array
+Processor
+\item Delay Core compatible with the one in the iBob Processor Array Processor
+\item Single baseline 16-lag correlator to compare various signals
+\item Snapshot buffer for capturing samples of various signals
+\item Versatile signal path routing
+\end{itemize}
+
+During VLBI observations, the DBE is controlled by the data recorder via the
+iBobs RS-232 port.  While all the design features are accessible over both
+Ethernet and serial interfaces, the data recorder typically accesses a fairly
+minimal subset of registers and Block RAMs.
+
+  \subsection{Synchronization}
+
+The VLBI data recorder requires a 1~PPS signal.  In order to provide this, the
+DBE must be provided an external 1~PPS sync signal (via the ADC0 board) with
+which it synchronizes internally generated 1~PPS and 1024~PPS signals (via the
+\verb|arm1pps| command).
+
+The parital sums are aligned via the 1024~PPS signals that are received over
+their XAUI out-of-band signals.  Since their upper sidebands are already
+de-Walshed, the partial and final sums have no need for Walsh timing in the
+DBE.  Currently the comparison antenna ADC input is assumed to have no phase
+switching so it, too, has no need for Walsh timing in the DBE.
+
+\begin{description}
+
+\roreg{onepps\_sync/diff} This register captures the difference, in FPGA clock
+cycles, between the external 1~PPS signal and the internally generated 1~PPS
+signal.  Normally this register will read 0, but since the external 1~PPS
+signal is not synchronous with the ADC sample clock, values of 1 or
+256,000,000 are also acceptable.  Other values indicate a problem.
+
+\roreg{onepps\_sync/ext\_cnt} This register contains the number of rising edges
+seen on the external 1~PPS signal since the last re-arming of the internal
+1~PPS signal.
+
+\roreg{onepps\_sync/ext\_period} This register contains the number of FPGA clock
+cycles between the two most recent rising edges seen on the external 1~PPS
+signal.  It should read 256,000,000 $\pm$ 1.
+
+\rwreg{onepps\_sync/arm1pps} A 0 to 1 transition of bit~0 of this register will
+arm the internal 1~PPS generator to re-synchronize with the next rising edge of
+the selected sync pulse.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize arm}}
+\end{bytefield}
+
+This register is not often used directly since (re-)arming is normally done via
+the \verb|arm1pps| command.
+
+\roreg{onepps\_sync/arm1pps\_ack} A 1 to 0 transition of bit~0 of
+\verb|onepps_sync/arm1pps| clears (i.e. sets to zero) this register.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize ack}}
+\end{bytefield}
+
+Bit~0 of this register is set to 1 on the rising edge of the next sync pulse
+that re-synchronizes the internal 1~PPS generator.  This can be used to verify
+that the internal 1~PPS generator did indeed re-synchronize after being armed.
+This register is not often used directly since (re-)arming is normally done via
+the \verb|arm1pps| command.
+
+\end{description}
+
+  \subsection{XAUI Alignment and Monitoring}
 
 The alignment of the two incoming XAUI streams is critical to achieving proper
 summing.  The design will automatically align the two XAUI streams and, if ever
@@ -1200,62 +1420,537 @@ anomalous behavior.  The registers involved in the XAUI alignment and
 monitoring are described here.
 
 \begin{description}
-\rwreg{xaui\_rst}  Resets various parts of XAUI related logic.  Setting the
-bit~0 to 1 will reset the XAUI core itself (rarely needed).  Setting bit 1 to 1
-will reset the counters associated with XAUI monitoring.  Setting bit 2 to 1
-will reset the registers that capture the relative delays of the two XAUI
-links.
+\rwreg{xaui\_rst}  Resets various parts of XAUI related logic.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{29}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize del}} &&
+  \bitbox{1}{\rotatebox{90}{\scriptsize mon}} &&
+  \bitbox{1}{\rotatebox{90}{\scriptsize cor}}
+\end{bytefield}
+
+Setting bit~0 (cor) to 1 will reset the XAUI core itself (rarely needed).
+Setting bit~1 (mon) to 1 will reset the counters associated with XAUI
+monitoring.  Setting bit~2 (del) to 1 will reset the registers that capture the
+relative delays of the two XAUI links.  These bits are level sensitive, not
+edge sensitive, so they must be cleared to take the associated circuitry out of
+reset.
+
+\roregn{xaui0/linkdown\_cnt}
+\roregs{xaui1/linkdown\_cnt} Indicates how many times the link has gone down
+(i.e. transitioned from up to down).  Under normal operations this register
+should read~0, though it may increment some during system startup.
+Reset by bit~1 of the \verb|xaui_rst| register.
+
+\roregn{xaui0/period}
+\roregs{xaui1/period}
+Indicates the number of FPGA (256 MHz) clock cycles between the most recently
+received 1024~PPS pulse and the previous one.  Under normal operations, this
+register should read~250000.
+Reset by bit~1 of the \verb|xaui_rst| register.
+
+\roregn{xaui0/period\_err}
+\roregn{xaui1/period\_err}
+\roregn{xaui0/period\_err\_cnt}
+\roregs{xaui1/period\_err\_cnt}
+The XAUI monitoring logic constantly monitors the number of FPGA cycles between
+1024~PPS pulses.  It counts the number of period errors and remembers the most
+recent erroneous period value.  The \verb|xauiN/period_err_cnt| registers
+indicate the total number of erroneous periods detected.  Under normal
+operations, these registers should read~0.  The \verb|xauiN/period_err|
+registers indicate the most recent erroneous period value.  Under normal
+operations, these registers should read~0 (i.e. no erroneous period measured).
+These registers are reset by bit~1 of the \verb|xaui_rst| register.
+
+\roregn{xaui0/sync\_cnt}
+\roregs{xaui1/sync\_cnt} This register indicates the total number of 1024~PPS
+pulses received.  Since it is a 32~bit counter, it will roll over approximately
+every 48.5 days.
+Reset by bit~1 of the \verb|xaui_rst| register.
+
+\roregn{xaui0/rx\_empty\_cnt}
+\roregs{xaui1/rx\_empty\_cnt} Indicates how many times the XAUI FIFO has
+underflowed.  Under normal operations this register should read~0, though it
+may increment some during system startup.
+Reset by bit~1 of the \verb|xaui_rst| register.
+
+\roregn{xaui0/almost\_full}
+\roregs{xaui1/almost\_full} Indicates the current state of the XAUI's
+\verb|almost_full| status bit.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize af}}
+\end{bytefield}
+
+Under normal operation, this register should read~0.
+
+\roregn{xaui0/rx\_linkdown}
+\roregs{xaui1/rx\_linkdown} Indicates the current state of the XAUI's
+\verb|link_down| status bit.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize ldn}}
+\end{bytefield}
+
+Under normal operation, this register should read~0.
+
+\roregn{xaui0/valid}
+\roregs{xaui1/valid} The two \LSbs of this register contain the current and
+previous value of the XAUI block's \verb|valid| status bit.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{30}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{2}{\scriptsize val}
+\end{bytefield}
+
+Since this status bit should toggle every clock cycle, this register should
+read~1 or~2 under normal operation.
+
+\roregn{xaui\_aligner/delay0}
+\roregs{xaui\_aligner/delay1} These registers indicate the number of cycles
+from the stream's incoming 1024~PPS and the reference 1024~PPS.  Since the
+reference 1024~PPS is just a 32 cycle delayed version of XAUI0's 1024~PPS,
+\verb|xaui_aligner/delay0| should always read 32.  Under normal operations,
+\verb|xaui_aligner/delay1| should be $32\pm32$, but usually it will be
+$32\pm4$.
+
+\rwreg{delay\_adj} Delays the internal 1024~PPS signal so that it will align
+with the incoming 1024~PPS signals within the window of the alignment buffer's
+64 sample window.  This register is initialized to 7 at FPGA startup.
+
 \end{description}
 
-{}xaui0/linkdown\_cnt
-xaui0/period
-xaui0/period\_err
-xaui0/period\_err\_cnt
-xaui0/sync\_cnt
+  \subsection{Signal Path Routing}
 
-{}xaui0/almost\_full
-xaui0/rx\_empty\_cnt
-xaui0/rx\_linkdown
-xaui0/valid
-xaui1/almost\_full
-xaui1/linkdown\_cnt
-xaui1/period
-xaui1/period\_err
-xaui1/period\_err\_cnt
-xaui1/rx\_empty\_cnt
-xaui1/rx\_linkdown
-xaui1/sync\_cnt
-xaui1/valid
+The signal path routing options control the selection of the comparison input,
+the output to the data recorder, and the inputs to the single baseline
+correlator and snap block.  The inputs to the single baseline correlator are
+independent from the output to the data recorder.  This allows, for examle,
+recording the final sum while correlating the two partial sums to verify that
+they are being properly aligned by the XAUI alignment logic.
 
-{}correlate
-delay\_adj
-ibob\_lwip/ethlite
-ibob\_lwip/macbits
-insel
-noise/arm
-noise/seed
-onepps\_sync/arm1pps
-onepps\_sync/arm1pps\_ack
-outsel
-pol0/gainctrl0
-pol0/gainctrl1
-pol0/gainreset
-shiftctrl\_reg
-sma1pps\_sel
-smavsisel
-snap/addr
-snap/bram
-snap/ctrl
-trig\_capt
-xaui\_summer/corr\_out-4
-xaui\_summer/corr\_out-8
-xaui\_summer/corr\_out0
-xaui\_summer/corr\_out4
-xaui\_summer/corr\_out8
-xaui\_summer/delay0
-xaui\_summer/delay1
+\begin{description}
+
+\filbreak
+\rwreg{compsel} Selects the comparison input signal.  Either the ADC0 input or
+DBE's digital noise source can be the comparison input signal that passes
+through the Delay Core.  Uses one bit per time sample (i.e. demux path), but
+most often the same input, either ADC0 or digial noise source, will be selected
+for all four demux paths.  The Delay Core transforms the comparison input
+signal from real demux-by-4 to complex demux-by-2.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{28}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize sel3}}
+  \bitbox{1}{\rotatebox{90}{\scriptsize sel2}}
+  \bitbox{1}{\rotatebox{90}{\scriptsize sel1}}
+  \bitbox{1}{\rotatebox{90}{\scriptsize sel0}}
+\end{bytefield}
+
+\begin{description}
+\item[0] Selects the ADC0 input for the given demux path.
+\item[1] Selects the digital noise source for the given demux path.
+\end{description}
+
+\rwreg{vsisel} Selects the signal to send to the data recorder via the VSI
+interface.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{30}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{2}{\rotatebox{90}{\scriptsize sel}}
+\end{bytefield}
+
+\begin{description}
+\item[0] Sends the final sum to the data recorder.
+\item[1] Sends the comparison input to the data recorder.  See the
+\verb|compsel| register.
+\item[2] Sends the partial sum from XAUI 0 to the data recorder.
+\item[3] Sends the partial sum from XAUI 1 to the data recorder.
+\end{description}
+
+\rwregn{corrsel0}
+\rwregs{corrsel1} Selects the input signals to the single baseline correlator.
+\verb|corrsel0| selects the correlator's first input signal; \verb|corrsel1|
+selects the second.  The first input to the correlator is also the input to the
+snap block.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{30}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{2}{\rotatebox{90}{\scriptsize sel}}
+\end{bytefield}
+
+\begin{description}
+\item[0] Selects the final sum.
+\item[1] Selects the comparison input.  See the \verb|compsel| register.
+\item[2] Selects the partial sum from XAUI 0.
+\item[3] Selects the partial sum from XAUI 1.
+\end{description}
 
 
-\section{dbe\_adc\_single}
+\end{description}
+
+\filbreak
+  \subsection{Noise Generator}
+
+\begin{description}
+
+\rwreg{noise/arm}  A 0 to 1 transition of bit~0 arms the digital noise
+generator to re-seed on the next internal 1~PPS pulse.  This can be used to
+synchronously seed noise generators across multiple devices or within one
+device.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize arm}}
+\end{bytefield}
+
+\rwreg{noise/seed} Sets the 32~bit seed for the digital noise generator.
+Because the inputs are demultiplexed by 4, the digital noise generator actually
+contains two noise generators that each output two independent normally
+distributed values each.  The 32~bit seed is actually split into two 16~bits
+seeds to seed the two contained noise generators.  Using a seed whose two
+halves are identical (i.e.\ a multiple of 65537) will result in a signal that
+has a lag-2 correlation coefficient of 1 resulting in a non-flat spectrum.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{16}{seed high} &
+  \bitbox{16}{seed low}
+\end{bytefield}
+
+\end{description}
+
+  \subsection{Delay Core}
+
+The Delay Core delays the comparison input signal and converts it from real to
+complex representation.  The delay can range from $0$ to $8191\frac{15}{16}$
+samples in increments of $\frac{1}{16}$ of a sample.  The delay is implemented
+as a combination of coarse delay (in units of FPGA clock cycles), fine delay
+(in units of ADC sample clock cycles), and sub-sample delay (in units of
+$\frac{1}{16}$ an ADC sample clock cycle).  The sub-sample delay is implemented
+using a quadrature fractional delay FIR filter that not only does sub sample
+delay, but also the conversion to complex form.  Converting to complex form
+involves mixing by a local oscillator at $\pm F_s/4$.  The sign of the LO
+frequency is user selectable and determines whether the Delay Core's complex
+output will consist of the positive or negative frequencies of the real input.
+Selecting the negative frequencies will result in a frequency reversal and
+conjugation relative the positive frequencies.  See the \verb|sbsel| register
+for more details.
+
+\begin{description}
+
+\rwreg{delay0} The 17 \LSbs of this register specify the delay to be
+applied to the comparison input by the Delay Core.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{15}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{17}{delay}
+\end{bytefield}
+
+\filbreak
+The value written into these registers can be computed as
+
+\begin{align*}
+register\_value &= 16 \cdot adc\_sample\_delay + 64 &(\mathrm{mod}\:2^{17}) \\
+                &= \mathrm{round}(16.384 \cdot ns\_delay) + 64 &(\mathrm{mod}\:2^{17})
+\end{align*}
+
+For example, to obtain a delay of 123.456~ns, the value to use would be
+computed as
+
+\begin{align*}
+register\_value &= \mathrm{round}(16.384 \cdot 123.456) + 64 &(\mathrm{mod}\:2^{17}) \\
+                &= 2087
+\end{align*}
+
+Because of the 64 sample offset and modulo $2^{17}$ behavior, minimum delay is
+obtained with a value of 64, while maximum delay is obtained with a value of
+63.
+
+\rwreg{sbsel} The \verb|sbsel| (sideband select) register specifies whether the
+complex output will consist of the positive or negative frequencies of the real
+input.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{30}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize sel}}
+\end{bytefield}
+
+A value of 0 selects the positive frequencies; a value of 1 selects the
+negative frequencies.
+
+\end{description}
+
+  \subsection{Phase Offset and Fringe Tracking}
+
+The comparison input can have a constant phase offset and variable pahse offset
+(i.e. fringe tracking) applied.
+
+\begin{description}
+
+\rwreg{phase0} This register specifies the amount of user-specified "constant"
+(i.e. rarely changing) phase rotation to be applied to the comparison input's
+complex signal.  The overall phase offset that is applied may optionally
+include an additional time-varying phase offset from the fringe tracking logic.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{20}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{12}{phase}
+\end{bytefield}
+
+Because only the 12 least significant bits of these registers are used for one
+complete turn in phase, the resolution is $\frac{2 \pi}{2^{12}}$ radians per
+step or $\frac{360}{2^{12}}$ degrees per step (i.e. approximately 88
+millidegrees per step).
+
+\filbreak
+\rwreg{fringe\_rate} This register specifies the fringe rate that is to be
+applied to the comparison input (in addition to the phase offset).  The \MSb is
+the sign of the fringe rate.  The 12 \LSbs specify the fringe rate.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{1}{\rotatebox{90}{\scriptsize sign}}
+  \bitbox{19}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{12}{rate}
+\end{bytefield}
+
+TODO: What is the unit of rate?
+
+\end{description}
+
+  \subsection{Single Baseline Correlator}
+
+\begin{description}
+
+\rwregn{quant/thresh0}
+\rwregs{quant/thresh1}  These registers set the thresholding level used for
+quantizing the inputs to the single baseline correlator.  The first input's
+threshold is given by \verb|quant/thresh0|; the second input's by
+\verb|quant/thresh1|.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{25}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{7}{threshold}
+\end{bytefield}
+
+For more details. see the $\mathtt{quant/thresh}N$ registers in the iBob Phased
+Array section.
+
+\rwreg{corr/syncsel} This register selects the sync signal used to drive integration
+timing.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{30}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{2}{\scriptsize sel}
+\end{bytefield}
+
+The sync signal selection determines the units of the \verb|integ_time|
+register.  The four choices are:
+
+\begin{description}
+\item[0] Use the 1024~PPS signal to define the integration units.
+\item[1] Use the HB signal to define the integration units.
+\item[2] Use the SOWF signal to define the integration units.
+\item[3] Use the 1~PPS signal to define the integration units.
+\end{description}
+
+\rwreg{corr/integ\_time} This register sets the integration time in units of
+the sync signal selected via the \verb|syncsel| register.  Changing the value
+of this register resets the correlator's internals as well as the
+\verb|integ_cnt| register.
+
+\roreg{corr/integ\_cnt} This register simply counts the number of integrations
+that have completed.  When this register increments, a new integration is ready
+to be read.  Changing the \verb|integ_time| register resets this register.
+
+\roreg{corr/sample\_cnt} The correlator always integrates in multiples of 32
+samples (since there are 16 lags per baseline and 2 samples per FPGA clock
+cycle).  If the selected integration unit (see \verb|syncsel|) is not
+commensurate with 32 samples (e.g. the Heartbeat signal) then the number of
+samples per integration can vary from integration to integration.  This
+register provides the number of 32-sample sub-integrations in the most recently
+completed integration.  It can be used to properly average the data.  Since the
+integrated values are pre-divided by 32 in the FPGA, the output values can be
+divided by this register value directly to get the average of the integrated
+products.
+
+\roreg{corr/subint\_cnt} This register indicates how far along the current
+integration is.  It is in units of the sync signal selected via the
+\verb|syncsel| register.  It counts from 0 to $integ\_time - 1$, then starts
+over.
+
+\bramn{corr/real}
+\brams{corr/imag} These shared BRAMs hold the integrated 16~lag spectrum for
+the single baseline correlator.  The \verb|corr/real| BRAM contains the
+integrated real component.  The \verb|corr/imag_imag| BRAM contains the
+integrated imaginary component.  The 16 lags are stored from lag~-8 to lag~+7.
+
+\end{description}
+
+  \subsection{Snapshot Data}
+
+The DBE design includes a snapshot block that can be used to capture some input
+samples to help set the threshold registers and other diagnostic purposes.  The
+input to the snap block is the same as the input to the single baseline
+correlator (see the \verb|corrsel0| register).
+
+\begin{description}
+
+\rwreg{snap/ctrl} This register controls the snapshot block.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{30}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize trg}} &&
+  \bitbox{1}{\rotatebox{90}{\scriptsize en}}
+\end{bytefield}
+
+A 0 to 1 transition of bit~0 (en) enables a snapshot sequence.  Once the
+snapshot sequence is enabled, the data capture will begin immediately if bit~1
+(trg) is 1 or on the next selected sync pulse (see \verb|syncsel|) if bit~1
+(trg) is 0.
+
+\filbreak
+\roreg{snap/addr} During data capture, this register provides the address
+within the shared BRAMs to which the data are being written.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{21}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{11}{snap address}
+\end{bytefield}
+
+When the data capture is complete, the address holds at the final value of
+2047.  The data capture completes in 8~\textmu s, so this register is useful
+primarily when the data capture is setup to begin on the next sync pulse
+(otherwise it is unlikely that any value other than 2047 will be observed in
+this register).
+
+\bram{snap/bram} This shared BRAMs hold the snapshot data.  Each BRAM is 2048
+words deep.  Within the BRAM, each 32~bit word stores two complex samples for
+the selected input.  The \MSB holds the real component of the first complex
+sample; the \LSB holds the imaginary component of the second complex sample.
+Thus, the shared BRAM can hold 4096 complex samples for the selected input.
+The storage format for the first word (BRAM address 0) of \verb|snap/bram| is
+shown in the following diagram.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{8}{re0} &
+  \bitbox{8}{im0} &
+  \bitbox{8}{re1} &
+  \bitbox{8}{im1}
+\end{bytefield}
+
+\end{description}
+
+  \subsection{VSI Formatting}
+
+\begin{description}
+
+\rwreg{outsel} This register has something to do with the formatting of the
+data for the data recorder.  It is initialized to 3 at FPGA startup.
+\textbf{Do not change this register!}
+
+\bramn{pol0/gainctrl0}
+\brams{pol0/gainctrl1} These Block RAMs control the 2-bit quantization of the
+data being sent to the data recorder.  The first 8 locations are initialized
+to 200 at FPGA startup.  The data recorder have software that analyzes the
+histogram of the 2-bit data to compute new values to optimize the quantization.
+
+\rwreg{pol0/gainreset} This register has something to do with the
+$\mathtt{pol0/gainctrl}N$ Block RAMs, but I'm not sure of the exact purpose.
+
+\rwreg{shiftctrl\_reg}  This register controls the shifting within the PFB that
+channelizes the data before sending it to the data recorder.  It is
+initialized to \verb|0xffffffff| (i.e. shift every stage) at FGPA startup.
+
+\end{description}
+
+\filbreak
+  \subsection{Front Panel SMA Output}
+
+\begin{description}
+
+\rwreg{sma1pps\_sel} Selects which signal to output over the front panel
+\verb|SMA1| (lower) connector.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{30}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{2}{sel}
+\end{bytefield}
+
+\begin{description}
+
+\item[0] Outputs the sampled 1~PPS signal (from ADC0)
+
+\item[1] Outputs the internal 1~PPS signal.
+
+\item[2] Outputs the internal 1024~PPS signal.
+
+\end{description}
+
+\rwreg{smavsisel} Selects which signal to output over the front panel
+\verb|SMA0| (upper) connector.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{sel}
+\end{bytefield}
+
+\begin{description}
+
+\item[0] Outputs the 64~MHz clock being sent over VSI to the data recorder.
+
+\item[1] Outputs the 1~PPS signal being sent over VSI to the data recorder.
+
+\end{description}
+
+
+\end{description}
+
+  \subsection{Front Panel LEDs}
+
+The DBE design does not use any of the front panel LEDs.
+
+\verb|LED8| indicates that the FPGA is configured (non-functional on some iBobs).
 
 \end{document}

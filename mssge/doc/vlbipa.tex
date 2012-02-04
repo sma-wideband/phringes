@@ -106,7 +106,7 @@ Git repository is available using one of these URLs:
 \end{center}
 
 \newpage
-\section{iBob Phased Array}
+\section{iBob Phased Array (IPA)}
 
 This section documents the ibob\_phased\_array\_2k\_2012\_Feb\_02\_1601 design.
 
@@ -398,7 +398,8 @@ for more details.
 \rwregs{delay3} The 17 \LSbs of these registers specify the "constant" (i.e.
 rarely changing) delay to be applied by each input's Delay Core.  The overall
 delay that is applied may optionally include an additional time-varying delay
-from the delay LUTs (see section TODO).
+from the delay LUTs.
+% TODO: Create a cross reference to the LUT section(s)
 
 \vspace{2\parskip}
 \begin{bytefield}{32}
@@ -472,9 +473,9 @@ described in a separate subsection.
 \rwregs{phase3} These registers specify the amount of user-specified "constant"
 (i.e. rarely changing) phase rotation to be applied to each input's complex
 signal.  The overall phase offset that is applied may optionally include an
-additional time-varying phase offset from the phase LUTs (see section TODO).
-These phase offsets are independent phase switching, which is handled
-separately (see section TODO).
+additional time-varying phase offset from the phase LUTs.  These phase offsets
+are independent phase switching, which is handled separately.
+% TODO: Create cross references to the LUT and Phase Switching sections
 
 \vspace{2\parskip}
 \begin{bytefield}{32}
@@ -960,7 +961,7 @@ connector.
 \end{description}
 
 \newpage
-\section{BEE2 Calibration Correlator}
+\section{BEE2 Calibration Correlator (BCC)}
 
 This section documents the bee2\_complex\_corr\_floating\_2011\_Feb\_17\_2045
 design.
@@ -1747,10 +1748,10 @@ the sign of the fringe rate.  The 12 \LSbs specify the fringe rate.
   \bitheader[b]{0-31} \\
   \bitbox{1}{\rotatebox{90}{\scriptsize sign}}
   \bitbox{19}{\color[gray]{0.75}\rule{\width}{\height}} &
-  \bitbox{12}{rate}
+  \bitbox{12}{fringe\_rate}
 \end{bytefield}
 
-TODO: What is the unit of rate?
+[TODO: What is the unit of fringe\_rate?]
 
 \end{description}
 

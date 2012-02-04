@@ -1526,17 +1526,22 @@ previous value of the XAUI block's \verb|valid| status bit.
 Since this status bit should toggle every clock cycle, this register should
 read~1 or~2 under normal operation.
 
-\roregn{xaui\_aligner/delay0}
-\roregs{xaui\_aligner/delay1} These registers indicate the number of cycles
-from the stream's incoming 1024~PPS and the reference 1024~PPS.  Since the
-reference 1024~PPS is just a 32 cycle delayed version of XAUI0's 1024~PPS,
-\verb|xaui_aligner/delay0| should always read 32.  Under normal operations,
-\verb|xaui_aligner/delay1| should be $32\pm32$, but usually it will be
-$32\pm4$.
+\roregn{xaui\_summer/delay0}
+\roregs{xaui\_summer/delay1} These registers indicate the number of cycles from
+the XAUI stream's incoming 1024~PPS to the internally generated 1024~PPS
+(delayed by \verb|delay_adj|).  A number near 250,000 indicates that the XAUI
+stream's sync pulse arrived shortly after the delayed internal 1024~PPS signal.
+If \verb|delay_adj| is set correctly and the XAUI links are funtioning
+properly, these registers will read $32\pm24$.  They should rarely change and
+even then only by a few cycles.  If the vaues seem inconsistent with
+expectations, the XAUI core may need to be reset (see bit 0 of the
+\verb|xaui_rst| register).
 
 \rwreg{delay\_adj} Delays the internal 1024~PPS signal so that it will align
 with the incoming 1024~PPS signals within the window of the alignment buffer's
-64 sample window.  This register is initialized to 7 at FPGA startup.
+64 sample window.  This register is initialized to 7 at FPGA startup, but it
+should be set to 150 to properly align the internal sync with the delayed syncs
+arriving from the IPAs via the XAUI links.
 
 \end{description}
 

@@ -1417,8 +1417,13 @@ that the internal 1~PPS generator did indeed re-synchronize after being armed.
 This register is not often used directly since (re-)arming is normally done via
 the \verb|arm1pps| command.
 
+\roreg{uptime} The uptime register is a 32~bit counter that counts seconds
+since the FPGA started running.  It cannot be reset (other than reprogramming
+the FPGA) and is not synchronized with any other 1 PPS source.
+
 \end{description}
 
+\filbreak
   \subsection{XAUI Alignment and Monitoring}
 
 The alignment of the two incoming XAUI streams is critical to achieving proper
@@ -1474,6 +1479,7 @@ registers indicate the most recent erroneous period value.  Under normal
 operations, these registers should read~0 (i.e. no erroneous period measured).
 These registers are reset by bit~1 of the \verb|xaui_rst| register.
 
+\filbreak
 \roregn{xaui0/sync\_cnt}
 \roregs{xaui1/sync\_cnt} This register indicates the total number of 1024~PPS
 pulses received.  Since it is a 32~bit counter, it will roll over approximately
@@ -1512,19 +1518,32 @@ Under normal operation, this register should read~0.
 
 Under normal operation, this register should read~0.
 
-\roregn{xaui0/valid}
-\roregs{xaui1/valid} The two \LSbs of this register contain the current and
-previous value of the XAUI block's \verb|valid| status bit.
+\roregn{xaui0/empty}
+\roregs{xaui1/empty} This register contains the 32 most recent values of the
+XAUI block's \verb|empty| status bit.
 
 \vspace{2\parskip}
 \begin{bytefield}{32}
   \bitheader[b]{0-31} \\
-  \bitbox{30}{\color[gray]{0.75}\rule{\width}{\height}} &
-  \bitbox{2}{\scriptsize val}
+  \bitbox{32}{32 values of XAUI \texttt{empty} bit}
 \end{bytefield}
 
-Since this status bit should toggle every clock cycle, this register should
-read~1 or~2 under normal operation.
+Under normal conditions, this bit should be 0, so normally this register will
+read exactly 0.  The \LSb holds the most recent value.
+
+\roregn{xaui0/valid}
+\roregs{xaui1/valid} This register contains the 32 most recent values of the
+XAUI block's \verb|valid| status bit.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{32}{32 values of XAUI \texttt{valid} bit}
+\end{bytefield}
+
+Under normal conditions, this bit toggles between 0 and 1 every clock cycle, so
+normally this register will read either 0xaaaaaaaa or 0x55555555.  The \LSb
+holds the most recent value.
 
 \roregn{xaui\_summer/delay0}
 \roregs{xaui\_summer/delay1} These registers indicate the number of cycles from
@@ -1556,7 +1575,6 @@ they are being properly aligned by the XAUI alignment logic.
 
 \begin{description}
 
-\filbreak
 \rwreg{compsel} Selects the comparison input signal.  Either the ADC0 input or
 DBE's digital noise source can be the comparison input signal that passes
 through the Delay Core.  Uses one bit per time sample (i.e. demux path), but
@@ -1579,6 +1597,7 @@ signal from real demux-by-4 to complex demux-by-2.
 \item[1] Selects the digital noise source for the given demux path.
 \end{description}
 
+\filbreak
 \rwreg{vsisel} Selects the signal to send to the data recorder via the VSI
 interface.
 
@@ -1620,7 +1639,6 @@ snap block.
 
 \end{description}
 
-\filbreak
   \subsection{Noise Generator}
 
 \begin{description}
@@ -1743,7 +1761,6 @@ complete turn in phase, the resolution is $\frac{2 \pi}{2^{12}}$ radians per
 step or $\frac{360}{2^{12}}$ degrees per step (i.e. approximately 88
 millidegrees per step).
 
-\filbreak
 \rwreg{fringe\_rate} This register specifies the fringe rate that is to be
 applied to the comparison input (in addition to the phase offset).  The \MSb is
 the sign of the fringe rate.  The 12 \LSbs specify the fringe rate.
@@ -1780,6 +1797,7 @@ threshold is given by \verb|quant/thresh0|; the second input's by
 For more details. see the $\mathtt{quant/thresh}N$ registers in the iBob Phased
 Array section.
 
+\filbreak
 \rwreg{corr/syncsel} This register selects the sync signal used to drive integration
 timing.
 
@@ -1857,7 +1875,6 @@ snapshot sequence is enabled, the data capture will begin immediately if bit~1
 (trg) is 1 or on the next selected sync pulse (see \verb|syncsel|) if bit~1
 (trg) is 0.
 
-\filbreak
 \roreg{snap/addr} During data capture, this register provides the address
 within the shared BRAMs to which the data are being written.
 
@@ -1901,6 +1918,7 @@ shown in the following diagram.
 data for the data recorder.  It is initialized to 3 at FPGA startup.
 \textbf{Do not change this register!}
 
+\filbreak
 \bramn{pol0/gainctrl0}
 \brams{pol0/gainctrl1} These Block RAMs control the 2-bit quantization of the
 data being sent to the data recorder.  The first 8 locations are initialized

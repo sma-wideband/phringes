@@ -866,6 +866,52 @@ XAUI link is up.
 
 \begin{description}
 
+\rwreg{xaui\_rst}  Resets the XAUI cores.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize rst}}
+\end{bytefield}
+
+Setting the \LSb to 1 will reset the XAUI core.  This bit is level sensitive,
+not edge sensitive, so it must be cleared to take the XAUI cores out of reset.
+This bit also resets the 1-bit counter that drives the \verb|tx_valid| port for
+XAUI1 (the link to the DBE).  It does not reset the 1-bit counter that drives
+the \verb|tx_valid| port for XAUI0 (the link to the BCC).  The counter that
+drives XAUI0's \verb|tx_valid| port is reset by the internally generated
+1024~PPS.
+
+\roregn{xaui0/valid}
+\roregs{xaui1/valid} This register contains the 32 most recent values of the
+XAUI block's \verb|valid| input bit.  A value of 0 means that no data are being
+sent over the XAUI link.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{32}{32 values of XAUI \texttt{valid} bit}
+\end{bytefield}
+
+Under normal conditions, this bit toggles between 0 and 1 every clock cycle, so
+normally this register will read either 0xaaaaaaaa or 0x55555555.  The \LSb
+holds the most recent value.
+
+\filbreak
+\roregn{xaui\_0/rx\_linkdown}
+\roregs{xaui\_1/rx\_linkdown} A value of 1 indicates a ``link down'' status on
+the (unused) receive side of the indicated XAUI connection, which strongly
+implies a similar status for its transmit side.  If this register is 1, data
+transmission through the corresponding XAUI link will be disabled.
+
+\vspace{2\parskip}
+\begin{bytefield}{32}
+  \bitheader[b]{0-31} \\
+  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize ldn}}
+\end{bytefield}
+
 \rwreg{start\_xaui} This register is deprecated.  It used to control
 transmission over the XAUI links and generation of the clock that is sent to
 the BEE2 calibration correlator.  These functions are now enabled
@@ -877,18 +923,6 @@ with existing software.
 \begin{bytefield}{32}
   \bitheader[b]{0-31} \\
   \bitbox{32}{\color[gray]{0.75}\rule{\width}{\height}} &
-\end{bytefield}
-
-\roregn{xaui\_0/rx\_linkdown}
-\roregs{xaui\_1/rx\_linkdown} A value of 1 indicates a ``link down'' status on
-the (unused) receive side of the indicated XAUI connection, which strongly
-implies a similar status for its transmit side.
-
-\vspace{2\parskip}
-\begin{bytefield}{32}
-  \bitheader[b]{0-31} \\
-  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
-  \bitbox{1}{\rotatebox{90}{\scriptsize ldn}}
 \end{bytefield}
 
 \end{description}

@@ -1010,14 +1010,14 @@ links' out of band channel.  This allows the correlator to perform sideband
 separation, producing both upper and lower sideband lag spectra for each
 baseline.
 
-\subsection{Input numbering}
+\subsection{Input Numbering}
 
 The four signals arriving over XAUI1 are considered to be input0 through
 input3.  The four signals arriving over XAUI0 are considered to be input4
 through input7.  Note that the higher number XAUI port contains the lower
 number inputs and vice versa.
 
-\subsection{Input values}
+\subsection{Input Values}
 
 The four distinct values of the 2~bit samples represent signal values of -3,
 -1, +1, and +3.  The threshold registers in the ibob\_phased\_array\_2k design
@@ -1025,11 +1025,11 @@ should be set such that approximately 1/6 of the samples are -3, 1/3 are -1,
 1/3 are +1, and 1/6 are +3.  With this distribution, the lag~0 auto-correlation
 will have a mean of 11/3 and a variance of 128/9.
 
-\subsection{Integration limit}
+\subsection{Integration Limit}
 
 With an input signal distribution as described above, a one second (i.e.
 1024\e6 samples) integration will have a mean of $\frac{11}{3}\cdot1024\e6$ and
-a variance of $\frac{128}{8}\cdot1024\e6$.  This integrated mean is more
+a variance of $\frac{128}{9}\cdot1024\e6$.  This integrated mean is more
 3.75\e9, which is well over 2.1475\e9, the maximum value supported by a signed
 32-bit value.  To delay overflowing, the BRAM vector accumulators are 36 bits
 wide.  Their output values are rounded to 32 bits wide before writing them into

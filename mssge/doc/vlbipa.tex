@@ -74,6 +74,11 @@
 \newcommand{\degree}[1]{$#1^{\circ}$}
 \newcommand{\e}[1]{\ensuremath{\times 10^{#1}}}
 
+% Version strings for the different designs
+\newcommand{\ipaver}{\_2012\_Feb\_23\_0953}
+\newcommand{\dbever}{\_2012\_Feb\_09\_2131}
+\newcommand{\bccver}{\_2011\_Feb\_17\_2045}
+
 \begin{abstract}
 Describes the registers and devices in the various iBob and BEE2 designs used
 in the VLBI phased array processor for CARMA and SMA.
@@ -108,7 +113,7 @@ Git repository is available using one of these URLs:
 \newpage
 \section{iBob Phased Array (IPA)}
 
-This section documents the ibob\_phased\_array\_2k\_2012\_Feb\_02\_1601 design.
+This section documents the ibob\_phased\_array\ipaver\ design.
 
 In addition to synchronizing internal timing signals with external timing
 signals.  The ibob\_phased\_array\_2k design has a few critical registers that
@@ -997,8 +1002,7 @@ with existing software.
 \newpage
 \section{BEE2 Calibration Correlator (BCC)}
 
-This section documents the bee2\_complex\_corr\_floating\_2011\_Feb\_17\_2045
-design.
+This section documents the bee2\_complex\_corr\_floating\bccver\ design.
 
 The bee2\_complex\_corr design receives 2+2 bit samples (i.e. 2 real bits and 2
 imaginary bits per sample) from a total of eight inputs (two IPAs).  It cross
@@ -1364,7 +1368,7 @@ is similar).
 \newpage
 \section{XAUI-based Digital Back End (DBE)}
 
-This section documents the dbe\_xaui\_corr\_2012\_Feb\_02\_2334 design.
+This section documents the dbe\_xaui\_corr\dbever\ design.
 
 The dbe\_xaui\_corr design receives two phased sums of four inputs each (aka
 partial sums) from two different iBob Phased Array Processors via XAUI.  It

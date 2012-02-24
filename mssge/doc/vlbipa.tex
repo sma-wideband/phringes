@@ -153,7 +153,6 @@ must always be supplied and the internal 1~PPS must always be synchronized to
 it via the \verb|arm1pps| command.
 
 \begin{description}
-\filbreak
 \rwreg{ppssel} Selects the ADC sync pulse to which the internally generated
 1~PPS signal will be synchronized.
 
@@ -213,7 +212,6 @@ that the internal 1~PPS generator did indeed re-synchronize after being armed.
 This register is not often used directly since (re-)arming is normally done via
 the \verb|arm1pps| command.
 
-\filbreak
 \rwreg{sowfsel} Selects the source of the external SOWF signal to which the
 internally generated SOWF signal will be synchronized.
 
@@ -229,6 +227,7 @@ internally generated SOWF signal will be synchronized.
 \item[1] Select ADC0 sync signal
 \end{description}
 
+\filbreak
 \roreg{hb\_sync/diff} This register captures the difference, in FPGA clock
 cycles, between the external SOWF signal and the internally generated SOWF
 signal.  Normally this register will read 0, but since the external SOWF period
@@ -279,6 +278,7 @@ the FPGA) and is not synchronized with any other 1 PPS source.
 
 \end{description}
 
+\filbreak
   \subsection{Input Selection}
 
 \begin{description}
@@ -866,8 +866,10 @@ arguably erroneous behavior.
 
 The sum of the phased inputs is sent to the DBE via the XAUI0 connector.  The
 2-bit quantized inputs are sent to the calibration correlator via the XAUI1
-connector.  XAUI data transmission is always enabled whenever the corresponding
-XAUI link is up.
+connector.  XAUI data transmission is generally enabled whenever the
+corresponding XAUI link is up, but the design includes a 1.048576 second
+"hold-off" interval when the FPGA first starts up.  The hold-off interval can
+also be software initiated at run time.
 
 \begin{description}
 
@@ -876,18 +878,29 @@ XAUI link is up.
 \vspace{2\parskip}
 \begin{bytefield}{32}
   \bitheader[b]{0-31} \\
-  \bitbox{31}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{29}{\color[gray]{0.75}\rule{\width}{\height}} &
+  \bitbox{1}{\rotatebox{90}{\scriptsize ho1}}
+  \bitbox{1}{\rotatebox{90}{\scriptsize ho0}}
   \bitbox{1}{\rotatebox{90}{\scriptsize rst}}
 \end{bytefield}
 
-Setting the \LSb to 1 will reset the XAUI core.  This bit is level sensitive,
-not edge sensitive, so it must be cleared to take the XAUI cores out of reset.
-This bit also resets the 1-bit counter that drives the \verb|tx_valid| port for
-XAUI1 (the link to the DBE).  It does not reset the 1-bit counter that drives
-the \verb|tx_valid| port for XAUI0 (the link to the BCC).  The counter that
-drives XAUI0's \verb|tx_valid| port is reset by the internally generated
-1024~PPS.
+Setting bit 0 (rst) to 1 will reset the XAUI core.  This bit is level
+sensitive, not edge sensitive, so it must be cleared to take the XAUI cores out
+of reset.  This bit also resets the 1-bit counter that drives the
+\verb|tx_valid| port for XAUI1 (the link to the DBE).  It does not reset the
+1-bit counter that drives the \verb|tx_valid| port for XAUI0 (the link to the
+BCC).  The counter that drives XAUI0's \verb|tx_valid| port is reset by the
+internally generated 1024~PPS.
 
+Setting bit 1 (ho0) will reset the counter controlling the hold-off interval
+for XAUI0.  It is level sensitive, so the hold-off interval begins immediately
+upon a 0 to 1 transition and ends 1.048576 seconds after a 1 to 0 transition.
+
+Setting bit 2 (ho1) will reset the counter controlling the hold-off interval
+for XAUI1.  It is level sensitive, so the hold-off interval begins immediately
+upon a 0 to 1 transition and ends 1.048576 seconds after a 1 to 0 transition.
+
+\filbreak
 \roregn{xaui0/valid}
 \roregs{xaui1/valid} This register contains the 32 most recent values of the
 XAUI block's \verb|valid| input bit.  A value of 0 means that no data are being

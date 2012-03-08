@@ -29,9 +29,12 @@ Xfloat32 deltrip[4][3] = { {0, 0, 0},
 			   {0, 0, 0},
 			   {0, 0, 0},
 			   {0, 0, 0} };
-Xfloat32 delay_ns[4] = {0, 0, 0, 0};
+Xfloat32 delay[4] = {0, 0, 0, 0};
 Xfloat32 phase[4] = {0, 0, 0, 0};
 
+// Used for phasing up inputs
+Xfloat32 phaseoff[4] = {0, 0, 0, 0};
+Xfloat32 delayoff[4] = {0, 0, 0, 0};
 
 // Fringe stopping frequency for 
 // calculating geometric phases
@@ -383,6 +386,84 @@ void set_fstop_cmd(int argc, char** argv)
 
 }
 
+void get_phase_offset_cmd(int argc, char** argv)
+/* command = "get_phase_offset" */
+/* help    = "Return the phase offset for one input." */
+/* params  = "<input>" */
+{
+  int input;
+  Xfloat32 phaseval;
+
+  // Make sure we have all arguments
+  if(argc != 2) {
+    xil_printf("Wrong number of arguments\n\r");
+    return;
+  }
+
+  // Grab and print the value
+  input = tinysh_atoxi(argv[1]);
+  phaseval = phaseoff[input];
+  xil_printf("PO%d=%d.%05d\n\r", input, (int)phaseval, (int)((phaseval-(int)phaseval)*pow(10, 5)));
+}
+
+void set_phase_offset_cmd(int argc, char** argv)
+/* command = "set_phase_offset" */
+/* help    = "Set phase offset for one input." */
+/* params  = "<input> <phase_offset>" */
+{
+  int input;
+
+  // Make sure we have all arguments
+  if(argc != 3) {
+    xil_printf("Wrong number of arguments\n\r");
+    return;
+  }
+
+  // Store all values
+  input = tinysh_atoxi(argv[1]);
+  phaseoff[input] = ((Xfloat32)tinysh_atoxi(argv[2])) * pow(10, -5);
+
+}
+
+void get_delay_offset_cmd(int argc, char** argv)
+/* command = "get_delay_offset" */
+/* help    = "Return the delay offset for one input." */
+/* params  = "<input>" */
+{
+  int input;
+  Xfloat32 delayval;
+
+  // Make sure we have all arguments
+  if(argc != 2) {
+    xil_printf("Wrong number of arguments\n\r");
+    return;
+  }
+
+  // Grab and print the value
+  input = tinysh_atoxi(argv[1]);
+  delayval = delayoff[input];
+  xil_printf("DO%d=%d.%05d\n\r", input, (int)delayval, (int)((delayval-(int)delayval)*pow(10, 5)));
+}
+
+void set_delay_offset_cmd(int argc, char** argv)
+/* command = "set_delay_offset" */
+/* help    = "Set delay offset for one input." */
+/* params  = "<input> <delay_offset>" */
+{
+  int input;
+
+  // Make sure we have all arguments
+  if(argc != 3) {
+    xil_printf("Wrong number of arguments\n\r");
+    return;
+  }
+
+  // Store all values
+  input = tinysh_atoxi(argv[1]);
+  delayoff[input] = ((Xfloat32)tinysh_atoxi(argv[2])) * pow(10, -5);
+
+}
+
 void show_params_cmd(int argc, char** argv)
 /* command = "show_params" */
 /* help    = "Show the parameters used for stopping fringes." */
@@ -414,7 +495,7 @@ void show_params_cmd(int argc, char** argv)
   xil_printf(  "Hour angle (r) -- %d.%05d\n\r", (int)cur_ha, (int)((cur_ha-(int)cur_ha)*pow(10, 5)));
   xil_printf(  "Hour angle (d) -- %d:%02d:%02d\n\r", ha_hr, ha_min, (int)ha_sec);
   for (i = 0; i<4; i++) {
-    xil_printf("Delay %d (ns)   -- %d.%05d\n\r", i, (int)delay_ns[i], (int)((delay_ns[i]-(int)delay_ns[i])*pow(10, 5)));
+    xil_printf("Delay %d (ns)   -- %d.%05d\n\r", i, (int)delay[i], (int)((delay[i]-(int)delay[i])*pow(10, 5)));
   }
   for (i = 0; i<4; i++) {
     xil_printf("Phase %d (deg)  -- %d.%05d\n\r", i, (int)phase[i], (int)fabs((phase[i]-(int)phase[i])*pow(10, 5)));
@@ -460,12 +541,12 @@ void stop_fringes()
     // Calculate delays and phases for all inputs
     for (i = 0; i<4; i++) {
       // delays...
-      delay_ns[i] = deltrip[i][0] + 
+      delay[i] = delayoff[i] + deltrip[i][0] + 
 	cos(cur_ha)*deltrip[i][1] + 
 	sin(cur_ha)*deltrip[i][2];
-      delay_step[i] = (int)mod(round(16*1.024*delay_ns[i]) + 64, pow(2, 17));
+      delay_step[i] = (int)mod(round(16*1.024*delay[i]) + 64, pow(2, 17));
       // and phases...
-      phase[i] = sign(fstop) * mod(360*delay_ns[i]*fabs(fstop), 360);
+      phase[i] = phaseoff[i] + sign(fstop) * mod(360*delay[i]*fabs(fstop), 360);
       phase_step[i] = (int)mod(round(phase[i]/deg_per_step), pow(2, 12));
     }
 
